@@ -3,15 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package eapli.base.clientusermanagement.domain;
-
-import javax.persistence.Entity;
+package eapli.base.app.backoffice.console.presentation.catalogue;
 
 /**
  *
  * @author andre
  */
-//@Entity
-public class Colaborator {
+public class RegisterCatalogueAction {
     
 }

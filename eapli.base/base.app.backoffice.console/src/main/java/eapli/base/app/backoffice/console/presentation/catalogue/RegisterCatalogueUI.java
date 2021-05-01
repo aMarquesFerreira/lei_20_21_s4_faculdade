@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package eapli.base.clientusermanagement.domain;
+package eapli.base.app.backoffice.console.presentation.catalogue;
 
 /**
  *
  * @author andre
  */
-public class CatalogueId {
+public class RegisterCatalogueUI {
     
 }
