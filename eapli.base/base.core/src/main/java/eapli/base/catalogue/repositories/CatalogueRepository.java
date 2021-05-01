@@ -1,37 +1,40 @@
-package eapli.base.clientusermanagement.repositories;
+package eapli.base.catalogue.repositories;
 
+import eapli.base.cataloguemanagement.domain.Catalogue;
+import eapli.base.cataloguemanagement.domain.CatalogueId;
+import eapli.base.clientusermanagement.repositories.*;
 import java.util.Optional;
 
 import eapli.base.clientusermanagement.domain.ClientUser;
 import eapli.base.clientusermanagement.domain.MecanographicNumber;
 import eapli.framework.domain.repositories.DomainRepository;
-import eapli.framework.infrastructure.authz.domain.model.Username;
+//import eapli.framework.infrastructure.authz.domain.model.
 
 /**
  *
  * @author Jorge Santos ajs@isep.ipp.pt 02/04/2016
  */
-public interface ClientUserRepository
-        extends DomainRepository<MecanographicNumber, ClientUser> {
+public interface CatalogueRepository
+        extends DomainRepository<CatalogueId, Catalogue> {
 
     /**
-     * returns the client user (utente) whose username is given
+     * returns the catalogue whose Catalogue ID is given
      *
-     * @param name
-     *            the username to search for
+     * @param catalogueId
+     *            the Catalogue ID to search for
      * @return
      */
-    Optional<ClientUser> findByUsername(Username name);
+    /*Optional<Catalogue> findByCatalogueId(CatalogueId catalogueId);*/
 
     /**
-     * returns the client user (utente) with the given mecanographic number
+     * returns the Catalogue with the given ID number
      *
-     * @param number
+     * @param catalogueId
      * @return
      */
-    default Optional<ClientUser> findByMecanographicNumber(MecanographicNumber number) {
-        return ofIdentity(number);
+    default Optional<Catalogue> findByCatalogueId(CatalogueId catalogueId) {
+        return ofIdentity(catalogueId);
     }
 
-    public Iterable<ClientUser> findAllActive();
+    public Iterable<Catalogue> findAllActive();
 }
