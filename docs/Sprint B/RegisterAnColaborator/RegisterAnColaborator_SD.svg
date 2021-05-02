@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="706.5px" preserveAspectRatio="none" style="width:1290px;height:706px;" version="1.1" viewBox="0 0 1290 706" width="1290px" zoomAndPan="magnify"><defs><filter height="300%" id="f1jcdo54vvoxes" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="1.5"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="3.0" dy="3.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f1jcdo54vvoxes)" height="45.5273" style="stroke:#A80036;stroke-width:0.75;" width="7.5" x="302.25" y="91.4707"/><rect fill="#FFFFFF" filter="url(#f1jcdo54vvoxes)" height="469.7461" style="stroke:#A80036;stroke-width:0.75;" width="7.5" x="302.25" y="159.7617"/><rect fill="#FFFFFF" filter="url(#f1jcdo54vvoxes)" height="424.2188" style="stroke:#A80036;stroke-width:0.75;" width="7.5" x="581.25" y="182.5254"/><rect fill="#FFFFFF" filter="url(#f1jcdo54vvoxes)" height="22.5" style="stroke:#A80036;stroke-width:0.75;" width="7.5" x="718.125" y="205.2891"/><rect fill="#FFFFFF" filter="url(#f1jcdo54vvoxes)" height="22.5" style="stroke:#A80036;stroke-width:0.75;" width="7.5" x="718.125" y="250.5527"/><rect fill="#FFFFFF" filter="url(#f1jcdo54vvoxes)" height="68.291" style="stroke:#A80036;stroke-width:0.75;" width="7.5" x="718.125" y="326.0801"/><rect fill="#FFFFFF" filter="url(#f1jcdo54vvoxes)" height="75.791" style="stroke:#A80036;stroke-width:0.75;" width="7.5" x="1003.5" y="417.1348"/><rect fill="#FFFFFF" filter="url(#f1jcdo54vvoxes)" height="45.5273" style="stroke:#A80036;stroke-width:0.75;" width="7.5" x="1113.75" y="515.6895"/><line style="stroke:#A80036;stroke-width:0.75;stroke-dasharray:5.0,5.0;" x1="72" x2="72" y1="67.207" y2="643.0078"/><line style="stroke:#A80036;stroke-width:0.75;stroke-dasharray:5.0,5.0;" x1="306" x2="306" y1="67.207" y2="643.0078"/><line style="stroke:#A80036;stroke-width:0.75;stroke-dasharray:5.0,5.0;" x1="585" x2="585" y1="67.207" y2="643.0078"/><line style="stroke:#A80036;stroke-width:0.75;stroke-dasharray:5.0,5.0;" x1="721.5" x2="721.5" y1="67.207" y2="643.0078"/><line style="stroke:#A80036;stroke-width:0.75;stroke-dasharray:5.0,5.0;" x1="883.5" x2="883.5" y1="67.207" y2="643.0078"/><line style="stroke:#A80036;stroke-width:0.75;stroke-dasharray:5.0,5.0;" x1="1007.25" x2="1007.25" y1="67.207" y2="643.0078"/><line style="stroke:#A80036;stroke-width:0.75;stroke-dasharray:5.0,5.0;" x1="1117.5" x2="1117.5" y1="67.207" y2="643.0078"/><line style="stroke:#A80036;stroke-width:0.75;stroke-dasharray:5.0,5.0;" x1="1230.75" x2="1230.75" y1="67.207" y2="643.0078"/><text fill="#000000" font-family="sans-serif" font-size="10.5" lengthAdjust="spacing" textLength="132" x="3.75" y="64.8999">Human Resources Manager</text><ellipse cx="72" cy="11.25" fill="#FEFECE" filter="url(#f1jcdo54vvoxes)" rx="6" ry="6" style="stroke:#A80036;stroke-width:1.5;"/><path d="M72,17.25 L72,37.5 M62.25,23.25 L81.75,23.25 M72,37.5 L62.25,48.75 M72,37.5 L81.75,48.75 " fill="none" filter="url(#f1jcdo54vvoxes)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="10.5" lengthAdjust="spacing" textLength="132" x="3.75" y="653.1577">Human Resources Manager</text><ellipse cx="72" cy="662.9648" fill="#FEFECE" filter="url(#f1jcdo54vvoxes)" rx="6" ry="6" style="stroke:#A80036;stroke-width:1.5;"/><path d="M72,668.9648 L72,689.2148 M62.25,674.9648 L81.75,674.9648 M72,689.2148 L62.25,700.4648 M72,689.2148 L81.75,700.4648 " fill="none" filter="url(#f1jcdo54vvoxes)" style="stroke:#A80036;stroke-width:1.5;"/><rect fill="#FEFECE" filter="url(#f1jcdo54vvoxes)" height="23.707" style="stroke:#A80036;stroke-width:1.125;" width="115.5" x="246.75" y="39.75"/><text fill="#000000" font-family="sans-serif" font-size="10.5" lengthAdjust="spacing" textLength="105" x="252" y="55.8999">RegisterColaboratorUI</text><rect fill="#FEFECE" filter="url(#f1jcdo54vvoxes)" height="23.707" style="stroke:#A80036;stroke-width:1.125;" width="115.5" x="246.75" y="642.2578"/><text fill="#000000" font-family="sans-serif" font-size="10.5" lengthAdjust="spacing" textLength="105" x="252" y="658.4077">RegisterColaboratorUI</text><rect fill="#FEFECE" filter="url(#f1jcdo54vvoxes)" height="23.707" style="stroke:#A80036;stroke-width:1.125;" width="153" x="507" y="39.75"/><text fill="#000000" font-family="sans-serif" font-size="10.5" lengthAdjust="spacing" textLength="142.5" x="512.25" y="55.8999">RegisterColaboratorController</text><rect fill="#FEFECE" filter="url(#f1jcdo54vvoxes)" height="23.707" style="stroke:#A80036;stroke-width:1.125;" width="153" x="507" y="642.2578"/><text fill="#000000" font-family="sans-serif" font-size="10.5" lengthAdjust="spacing" textLength="142.5" x="512.25" y="658.4077">RegisterColaboratorController</text><rect fill="#FEFECE" filter="url(#f1jcdo54vvoxes)" height="23.707" style="stroke:#A80036;stroke-width:1.125;" width="99.75" x="670.5" y="39.75"/><text fill="#000000" font-family="sans-serif" font-size="10.5" lengthAdjust="spacing" textLength="89.25" x="675.75" y="55.8999">ColaboratorBuilder</text><rect fill="#FEFECE" filter="url(#f1jcdo54vvoxes)" height="23.707" style="stroke:#A80036;stroke-width:1.125;" width="99.75" x="670.5" y="642.2578"/><text fill="#000000" font-family="sans-serif" font-size="10.5" lengthAdjust="spacing" textLength="89.25" x="675.75" y="658.4077">ColaboratorBuilder</text><rect fill="#FEFECE" filter="url(#f1jcdo54vvoxes)" height="23.707" style="stroke:#A80036;stroke-width:1.125;" width="123.75" x="820.5" y="39.75"/><text fill="#000000" font-family="sans-serif" font-size="10.5" lengthAdjust="spacing" textLength="113.25" x="825.75" y="55.8999">colaborator:Colaborator</text><rect fill="#FEFECE" filter="url(#f1jcdo54vvoxes)" height="23.707" style="stroke:#A80036;stroke-width:1.125;" width="123.75" x="820.5" y="642.2578"/><text fill="#000000" font-family="sans-serif" font-size="10.5" lengthAdjust="spacing" textLength="113.25" x="825.75" y="658.4077">colaborator:Colaborator</text><rect fill="#FEFECE" filter="url(#f1jcdo54vvoxes)" height="23.707" style="stroke:#A80036;stroke-width:1.125;" width="102" x="954.75" y="39.75"/><text fill="#000000" font-family="sans-serif" font-size="10.5" lengthAdjust="spacing" textLength="91.5" x="960" y="55.8999">PersistenceContext</text><rect fill="#FEFECE" filter="url(#f1jcdo54vvoxes)" height="23.707" style="stroke:#A80036;stroke-width:1.125;" width="102" x="954.75" y="642.2578"/><text fill="#000000" font-family="sans-serif" font-size="10.5" lengthAdjust="spacing" textLength="91.5" x="960" y="658.4077">PersistenceContext</text><rect fill="#FEFECE" filter="url(#f1jcdo54vvoxes)" height="23.707" style="stroke:#A80036;stroke-width:1.125;" width="97.5" x="1067.25" y="39.75"/><text fill="#000000" font-family="sans-serif" font-size="10.5" lengthAdjust="spacing" textLength="87" x="1072.5" y="55.8999">RepositoryFactory</text><rect fill="#FEFECE" filter="url(#f1jcdo54vvoxes)" height="23.707" style="stroke:#A80036;stroke-width:1.125;" width="97.5" x="1067.25" y="642.2578"/><text fill="#000000" font-family="sans-serif" font-size="10.5" lengthAdjust="spacing" textLength="87" x="1072.5" y="658.4077">RepositoryFactory</text><text fill="#000000" font-family="sans-serif" font-size="10.5" lengthAdjust="spacing" textLength="107.25" x="1175.25" y="64.8999">ColaboratorRepository</text><path d="M1217.625,27 C1217.625,19.5 1231.125,19.5 1231.125,19.5 C1231.125,19.5 1244.625,19.5 1244.625,27 L1244.625,46.5 C1244.625,54 1231.125,54 1231.125,54 C1231.125,54 1217.625,54 1217.625,46.5 L1217.625,27 " fill="#FEFECE" filter="url(#f1jcdo54vvoxes)" style="stroke:#000000;stroke-width:1.125;"/><path d="M1217.625,27 C1217.625,34.5 1231.125,34.5 1231.125,34.5 C1231.125,34.5 1244.625,34.5 1244.625,27 " fill="none" style="stroke:#000000;stroke-width:1.125;"/><text fill="#000000" font-family="sans-serif" font-size="10.5" lengthAdjust="spacing" textLength="107.25" x="1175.25" y="653.1577">ColaboratorRepository</text><path d="M1217.625,662.9648 C1217.625,655.4648 1231.125,655.4648 1231.125,655.4648 C1231.125,655.4648 1244.625,655.4648 1244.625,662.9648 L1244.625,682.4648 C1244.625,689.9648 1231.125,689.9648 1231.125,689.9648 C1231.125,689.9648 1217.625,689.9648 1217.625,682.4648 L1217.625,662.9648 " fill="#FEFECE" filter="url(#f1jcdo54vvoxes)" style="stroke:#000000;stroke-width:1.125;"/><path d="M1217.625,662.9648 C1217.625,670.4648 1231.125,670.4648 1231.125,670.4648 C1231.125,670.4648 1244.625,670.4648 1244.625,662.9648 " fill="none" style="stroke:#000000;stroke-width:1.125;"/><rect fill="#FFFFFF" filter="url(#f1jcdo54vvoxes)" height="45.5273" style="stroke:#A80036;stroke-width:0.75;" width="7.5" x="302.25" y="91.4707"/><rect fill="#FFFFFF" filter="url(#f1jcdo54vvoxes)" height="469.7461" style="stroke:#A80036;stroke-width:0.75;" width="7.5" x="302.25" y="159.7617"/><rect fill="#FFFFFF" filter="url(#f1jcdo54vvoxes)" height="424.2188" style="stroke:#A80036;stroke-width:0.75;" width="7.5" x="581.25" y="182.5254"/><rect fill="#FFFFFF" filter="url(#f1jcdo54vvoxes)" height="22.5" style="stroke:#A80036;stroke-width:0.75;" width="7.5" x="718.125" y="205.2891"/><rect fill="#FFFFFF" filter="url(#f1jcdo54vvoxes)" height="22.5" style="stroke:#A80036;stroke-width:0.75;" width="7.5" x="718.125" y="250.5527"/><rect fill="#FFFFFF" filter="url(#f1jcdo54vvoxes)" height="68.291" style="stroke:#A80036;stroke-width:0.75;" width="7.5" x="718.125" y="326.0801"/><rect fill="#FFFFFF" filter="url(#f1jcdo54vvoxes)" height="75.791" style="stroke:#A80036;stroke-width:0.75;" width="7.5" x="1003.5" y="417.1348"/><rect fill="#FFFFFF" filter="url(#f1jcdo54vvoxes)" height="45.5273" style="stroke:#A80036;stroke-width:0.75;" width="7.5" x="1113.75" y="515.6895"/><polygon fill="#A80036" points="293.25,88.4707,300.75,91.4707,293.25,94.4707,296.25,91.4707" style="stroke:#A80036;stroke-width:0.75;"/><line style="stroke:#A80036;stroke-width:0.75;stroke-dasharray:2.0,2.0;" x1="72" x2="297.75" y1="91.4707" y2="91.4707"/><text fill="#000000" font-family="sans-serif" font-size="9.75" font-weight="bold" lengthAdjust="spacing" textLength="5.25" x="77.25" y="87.8284">1</text><text fill="#000000" font-family="sans-serif" font-size="9.75" lengthAdjust="spacing" textLength="95.25" x="85.5" y="87.8284">Register a colaborator</text><polygon fill="#A80036" points="576,111.2344,583.5,114.2344,576,117.2344,579,114.2344" style="stroke:#A80036;stroke-width:0.75;"/><line style="stroke:#A80036;stroke-width:0.75;" x1="309.75" x2="580.5" y1="114.2344" y2="114.2344"/><text fill="#000000" font-family="sans-serif" font-size="9.75" font-weight="bold" lengthAdjust="spacing" textLength="5.25" x="315" y="110.592">2</text><text fill="#000000" font-family="sans-serif" font-size="9.75" lengthAdjust="spacing" textLength="27" x="323.25" y="110.592">create</text><polygon fill="#A80036" points="80.25,133.998,72.75,136.998,80.25,139.998,77.25,136.998" style="stroke:#A80036;stroke-width:0.75;"/><line style="stroke:#A80036;stroke-width:0.75;stroke-dasharray:2.0,2.0;" x1="75.75" x2="305.25" y1="136.998" y2="136.998"/><text fill="#000000" font-family="sans-serif" font-size="9.75" font-weight="bold" lengthAdjust="spacing" textLength="5.25" x="84.75" y="133.3557">3</text><text fill="#000000" font-family="sans-serif" font-size="9.75" lengthAdjust="spacing" textLength="204" x="93" y="133.3557">Requests necessary credentials for colaborator</text><polygon fill="#A80036" points="293.25,156.7617,300.75,159.7617,293.25,162.7617,296.25,159.7617" style="stroke:#A80036;stroke-width:0.75;"/><line style="stroke:#A80036;stroke-width:0.75;stroke-dasharray:2.0,2.0;" x1="72" x2="297.75" y1="159.7617" y2="159.7617"/><text fill="#000000" font-family="sans-serif" font-size="9.75" font-weight="bold" lengthAdjust="spacing" textLength="5.25" x="77.25" y="156.1194">4</text><text fill="#000000" font-family="sans-serif" font-size="9.75" lengthAdjust="spacing" textLength="67.5" x="85.5" y="156.1194">Inserts the data</text><polygon fill="#A80036" points="572.25,179.5254,579.75,182.5254,572.25,185.5254,575.25,182.5254" style="stroke:#A80036;stroke-width:0.75;"/><line style="stroke:#A80036;stroke-width:0.75;" x1="309.75" x2="576.75" y1="182.5254" y2="182.5254"/><text fill="#000000" font-family="sans-serif" font-size="9.75" font-weight="bold" lengthAdjust="spacing" textLength="5.25" x="315" y="178.8831">5</text><text fill="#000000" font-family="sans-serif" font-size="9.75" lengthAdjust="spacing" textLength="249" x="323.25" y="178.8831">colaborator = newColaborator(nif, name, email, password)</text><polygon fill="#A80036" points="709.125,202.2891,716.625,205.2891,709.125,208.2891,712.125,205.2891" style="stroke:#A80036;stroke-width:0.75;"/><line style="stroke:#A80036;stroke-width:0.75;" x1="588.75" x2="713.625" y1="205.2891" y2="205.2891"/><text fill="#000000" font-family="sans-serif" font-size="9.75" font-weight="bold" lengthAdjust="spacing" textLength="5.25" x="594" y="201.6467">6</text><text fill="#000000" font-family="sans-serif" font-size="9.75" lengthAdjust="spacing" textLength="27" x="602.25" y="201.6467">create</text><polygon fill="#A80036" points="709.125,247.5527,716.625,250.5527,709.125,253.5527,712.125,250.5527" style="stroke:#A80036;stroke-width:0.75;"/><line style="stroke:#A80036;stroke-width:0.75;" x1="588.75" x2="713.625" y1="250.5527" y2="250.5527"/><text fill="#000000" font-family="sans-serif" font-size="9.75" font-weight="bold" lengthAdjust="spacing" textLength="5.25" x="594" y="246.9104">7</text><text fill="#000000" font-family="sans-serif" font-size="9.75" lengthAdjust="spacing" textLength="106.5" x="602.25" y="246.9104">setUsername(username)</text><path d="M522,282.8027 L522,302.3027 L784.5,302.3027 L784.5,290.3027 L777,282.8027 L522,282.8027 " fill="#FBFB77" filter="url(#f1jcdo54vvoxes)" style="stroke:#A80036;stroke-width:0.75;"/><path d="M777,282.8027 L777,290.3027 L784.5,290.3027 L777,282.8027 " fill="#FBFB77" style="stroke:#A80036;stroke-width:0.75;"/><text fill="#000000" font-family="sans-serif" font-size="9.75" lengthAdjust="spacing" textLength="133.5" x="581.625" y="296.6741">Sets the rest of the information</text><polygon fill="#A80036" points="709.125,323.0801,716.625,326.0801,709.125,329.0801,712.125,326.0801" style="stroke:#A80036;stroke-width:0.75;"/><line style="stroke:#A80036;stroke-width:0.75;" x1="588.75" x2="713.625" y1="326.0801" y2="326.0801"/><text fill="#000000" font-family="sans-serif" font-size="9.75" font-weight="bold" lengthAdjust="spacing" textLength="5.25" x="594" y="322.4377">8</text><text fill="#000000" font-family="sans-serif" font-size="9.75" lengthAdjust="spacing" textLength="82.5" x="602.25" y="322.4377">createColaborator()</text><polygon fill="#A80036" points="874.875,345.8438,882.375,348.8438,874.875,351.8438,877.875,348.8438" style="stroke:#A80036;stroke-width:0.75;"/><line style="stroke:#A80036;stroke-width:0.75;" x1="725.625" x2="879.375" y1="348.8438" y2="348.8438"/><text fill="#000000" font-family="sans-serif" font-size="9.75" font-weight="bold" lengthAdjust="spacing" textLength="5.25" x="730.875" y="345.2014">9</text><text fill="#000000" font-family="sans-serif" font-size="9.75" lengthAdjust="spacing" textLength="132" x="739.125" y="345.2014">create(username,password,...)</text><polygon fill="#A80036" points="733.875,368.6074,726.375,371.6074,733.875,374.6074,730.875,371.6074" style="stroke:#A80036;stroke-width:0.75;"/><line style="stroke:#A80036;stroke-width:0.75;" x1="729.375" x2="883.125" y1="371.6074" y2="371.6074"/><text fill="#000000" font-family="sans-serif" font-size="9.75" font-weight="bold" lengthAdjust="spacing" textLength="10.5" x="738.375" y="367.9651">10</text><text fill="#000000" font-family="sans-serif" font-size="9.75" lengthAdjust="spacing" textLength="48" x="751.875" y="367.9651">colaborator</text><polygon fill="#A80036" points="597,391.3711,589.5,394.3711,597,397.3711,594,394.3711" style="stroke:#A80036;stroke-width:0.75;"/><line style="stroke:#A80036;stroke-width:0.75;" x1="592.5" x2="721.125" y1="394.3711" y2="394.3711"/><text fill="#000000" font-family="sans-serif" font-size="9.75" font-weight="bold" lengthAdjust="spacing" textLength="10.5" x="601.5" y="390.7288">11</text><text fill="#000000" font-family="sans-serif" font-size="9.75" lengthAdjust="spacing" textLength="48" x="615" y="390.7288">colaborator</text><polygon fill="#A80036" points="994.5,414.1348,1002,417.1348,994.5,420.1348,997.5,417.1348" style="stroke:#A80036;stroke-width:0.75;"/><line style="stroke:#A80036;stroke-width:0.75;" x1="588.75" x2="999" y1="417.1348" y2="417.1348"/><text fill="#000000" font-family="sans-serif" font-size="9.75" font-weight="bold" lengthAdjust="spacing" textLength="10.5" x="594" y="413.4924">12</text><text fill="#000000" font-family="sans-serif" font-size="9.75" lengthAdjust="spacing" textLength="0" x="610.5" y="413.4924"/><path d="M954.75,426.8848 L954.75,446.3848 L1283.25,446.3848 L1283.25,434.3848 L1275.75,426.8848 L954.75,426.8848 " fill="#FBFB77" filter="url(#f1jcdo54vvoxes)" style="stroke:#A80036;stroke-width:0.75;"/><path d="M1275.75,426.8848 L1275.75,434.3848 L1283.25,434.3848 L1275.75,426.8848 " fill="#FBFB77" style="stroke:#A80036;stroke-width:0.75;"/><text fill="#000000" font-family="sans-serif" font-size="9.75" lengthAdjust="spacing" textLength="186" x="1021.125" y="440.7561">can create an repository in memory or JPA</text><polygon fill="#A80036" points="1108.5,467.1621,1116,470.1621,1108.5,473.1621,1111.5,470.1621" style="stroke:#A80036;stroke-width:0.75;"/><line style="stroke:#A80036;stroke-width:0.75;" x1="1011" x2="1113" y1="470.1621" y2="470.1621"/><text fill="#000000" font-family="sans-serif" font-size="9.75" font-weight="bold" lengthAdjust="spacing" textLength="10.5" x="1016.25" y="466.5198">13</text><text fill="#000000" font-family="sans-serif" font-size="9.75" lengthAdjust="spacing" textLength="27" x="1029.75" y="466.5198">create</text><polygon fill="#A80036" points="597,489.9258,589.5,492.9258,597,495.9258,594,492.9258" style="stroke:#A80036;stroke-width:0.75;"/><line style="stroke:#A80036;stroke-width:0.75;" x1="592.5" x2="1006.5" y1="492.9258" y2="492.9258"/><text fill="#000000" font-family="sans-serif" font-size="9.75" font-weight="bold" lengthAdjust="spacing" textLength="10.5" x="601.5" y="489.2834">14</text><text fill="#000000" font-family="sans-serif" font-size="9.75" lengthAdjust="spacing" textLength="29.25" x="615" y="489.2834">factory</text><polygon fill="#A80036" points="1104.75,512.6895,1112.25,515.6895,1104.75,518.6895,1107.75,515.6895" style="stroke:#A80036;stroke-width:0.75;"/><line style="stroke:#A80036;stroke-width:0.75;" x1="588.75" x2="1109.25" y1="515.6895" y2="515.6895"/><text fill="#000000" font-family="sans-serif" font-size="9.75" font-weight="bold" lengthAdjust="spacing" textLength="10.5" x="594" y="512.0471">15</text><text fill="#000000" font-family="sans-serif" font-size="9.75" lengthAdjust="spacing" textLength="59.25" x="607.5" y="512.0471">colaborators()</text><polygon fill="#A80036" points="1222.125,535.4531,1229.625,538.4531,1222.125,541.4531,1225.125,538.4531" style="stroke:#A80036;stroke-width:0.75;"/><line style="stroke:#A80036;stroke-width:0.75;" x1="1121.25" x2="1226.625" y1="538.4531" y2="538.4531"/><text fill="#000000" font-family="sans-serif" font-size="9.75" font-weight="bold" lengthAdjust="spacing" textLength="10.5" x="1126.5" y="534.8108">16</text><text fill="#000000" font-family="sans-serif" font-size="9.75" lengthAdjust="spacing" textLength="27" x="1140" y="534.8108">create</text><polygon fill="#A80036" points="597,558.2168,589.5,561.2168,597,564.2168,594,561.2168" style="stroke:#A80036;stroke-width:0.75;"/><line style="stroke:#A80036;stroke-width:0.75;" x1="592.5" x2="1116.75" y1="561.2168" y2="561.2168"/><text fill="#000000" font-family="sans-serif" font-size="9.75" font-weight="bold" lengthAdjust="spacing" textLength="10.5" x="601.5" y="557.5745">17</text><text fill="#000000" font-family="sans-serif" font-size="9.75" lengthAdjust="spacing" textLength="100.5" x="615" y="557.5745">colaboratorRepository()</text><polygon fill="#A80036" points="1222.125,580.9805,1229.625,583.9805,1222.125,586.9805,1225.125,583.9805" style="stroke:#A80036;stroke-width:0.75;"/><line style="stroke:#A80036;stroke-width:0.75;" x1="588.75" x2="1226.625" y1="583.9805" y2="583.9805"/><text fill="#000000" font-family="sans-serif" font-size="9.75" font-weight="bold" lengthAdjust="spacing" textLength="10.5" x="594" y="580.3381">18</text><text fill="#000000" font-family="sans-serif" font-size="9.75" lengthAdjust="spacing" textLength="73.5" x="607.5" y="580.3381">save(colaborator)</text><polygon fill="#A80036" points="318,603.7441,310.5,606.7441,318,609.7441,315,606.7441" style="stroke:#A80036;stroke-width:0.75;"/><line style="stroke:#A80036;stroke-width:0.75;" x1="313.5" x2="584.25" y1="606.7441" y2="606.7441"/><text fill="#000000" font-family="sans-serif" font-size="9.75" font-weight="bold" lengthAdjust="spacing" textLength="10.5" x="322.5" y="603.1018">19</text><text fill="#000000" font-family="sans-serif" font-size="9.75" lengthAdjust="spacing" textLength="48" x="336" y="603.1018">colaborator</text><polygon fill="#A80036" points="80.25,626.5078,72.75,629.5078,80.25,632.5078,77.25,629.5078" style="stroke:#A80036;stroke-width:0.75;"/><line style="stroke:#A80036;stroke-width:0.75;stroke-dasharray:2.0,2.0;" x1="75.75" x2="305.25" y1="629.5078" y2="629.5078"/><text fill="#000000" font-family="sans-serif" font-size="9.75" font-weight="bold" lengthAdjust="spacing" textLength="10.5" x="84.75" y="625.8655">20</text><text fill="#000000" font-family="sans-serif" font-size="9.75" lengthAdjust="spacing" textLength="95.25" x="98.25" y="625.8655">displayColaboratorInfo</text><!--MD5=[ecade7be4e794e8cd0d4c127e12d8fb5]
+@startuml
+autonumber
+'hide footbox
+actor "Human Resources Manager" as HRM
+
+participant "RegisterColaboratorUI" as UI
+participant "RegisterColaboratorController" as CTRL
+participant "ColaboratorBuilder" as CB
+participant "colaborator:Colaborator" as CC
+participant "PersistenceContext" as PC
+participant "RepositoryFactory" as RF
+
+
+database "ColaboratorRepository" as CR
+
+HRM - -> UI : Register a colaborator
+activate UI
+    UI -> CTRL : create
+    UI - -> HRM : Requests necessary credentials for colaborator
+deactivate UI
+
+HRM - -> UI : Inserts the data
+activate UI
+    UI -> CTRL : colaborator = newColaborator(nif, name, email, password)
+    activate CTRL
+        CTRL -> CB: create
+        activate CB
+        deactivate CB
+
+        CTRL -> CB: setUsername(username)
+        activate CB
+        deactivate CB
+
+note over CTRL, CB : Sets the rest of the information
+
+
+        CTRL -> CB: createColaborator()
+        activate CB
+                CB -> CC: create(username,password,...)
+                CC -> CB: colaborator
+                CB -> CTRL: colaborator
+        deactivate CB
+
+        CTRL -> PC:
+        activate PC
+        note over PC, CR : can create an repository in memory or JPA
+         PC->RF: create
+         PC->CTRL: factory
+
+        deactivate PC
+
+        CTRL->RF:colaborators()
+        activate RF
+        RF->CR:create
+        RF->CTRL:colaboratorRepository()
+        deactivate RF
+
+        CTRL->CR:save(colaborator)
+
+        CTRL->UI:colaborator
+    deactivate CTRL
+
+    UI - -> HRM : displayColaboratorInfo
+deactivate UI
+
+
+@enduml
+
+@startuml
+autonumber
+actor "Human Resources Manager" as HRM
+
+participant "RegisterColaboratorUI" as UI
+participant "RegisterColaboratorController" as CTRL
+participant "ColaboratorBuilder" as CB
+participant "colaborator:Colaborator" as CC
+participant "PersistenceContext" as PC
+participant "RepositoryFactory" as RF
+
+
+database "ColaboratorRepository" as CR
+
+HRM - -> UI : Register a colaborator
+activate UI
+    UI -> CTRL : create
+    UI - -> HRM : Requests necessary credentials for colaborator
+deactivate UI
+
+HRM - -> UI : Inserts the data
+activate UI
+    UI -> CTRL : colaborator = newColaborator(nif, name, email, password)
+    activate CTRL
+        CTRL -> CB: create
+        activate CB
+        deactivate CB
+
+        CTRL -> CB: setUsername(username)
+        activate CB
+        deactivate CB
+
+note over CTRL, CB : Sets the rest of the information
+
+
+        CTRL -> CB: createColaborator()
+        activate CB
+                CB -> CC: create(username,password,...)
+                CC -> CB: colaborator
+                CB -> CTRL: colaborator
+        deactivate CB
+
+        CTRL -> PC:
+        activate PC
+        note over PC, CR : can create an repository in memory or JPA
+         PC->RF: create
+         PC->CTRL: factory
+
+        deactivate PC
+
+        CTRL->RF:colaborators()
+        activate RF
+        RF->CR:create
+        RF->CTRL:colaboratorRepository()
+        deactivate RF
+
+        CTRL->CR:save(colaborator)
+
+        CTRL->UI:colaborator
+    deactivate CTRL
+
+    UI - -> HRM : displayColaboratorInfo
+deactivate UI
+
+
+@enduml
+
+PlantUML version 1.2021.4(Sun Apr 04 09:49:39 BST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

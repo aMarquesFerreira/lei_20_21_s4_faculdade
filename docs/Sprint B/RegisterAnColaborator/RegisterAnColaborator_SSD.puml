@@ -1,0 +1,17 @@
+@startuml
+autonumber
+
+actor "Human Resources Manager" as HRM
+
+participant "System" as UI
+activate HRM
+HRM --> UI : Register a colaborator
+activate UI
+    UI --> HRM : Requests necessary credentials for colaborator
+deactivate UI
+HRM --> UI : Inserts the data
+activate UI
+UI --> HRM : displayColaboratorInfo
+deactivate UI
+
+@enduml

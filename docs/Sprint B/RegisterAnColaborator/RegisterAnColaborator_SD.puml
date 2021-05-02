@@ -1,0 +1,67 @@
+@startuml
+autonumber
+
+actor "Human Resources Manager" as HRM
+
+participant "RegisterColaboratorUI" as UI
+participant "RegisterColaboratorController" as CTRL
+participant "ColaboratorBuilder" as CB
+participant "colaborator:Colaborator" as CC
+participant "PersistenceContext" as PC
+participant "RepositoryFactory" as RF
+
+
+database "ColaboratorRepository" as CR
+
+HRM --> UI : Register a colaborator
+activate UI
+    UI -> CTRL : create
+    UI --> HRM : Requests necessary credentials for colaborator
+deactivate UI
+
+HRM --> UI : Inserts the data
+activate UI
+    UI -> CTRL : colaborator = newColaborator(nif, name, email, password)
+    activate CTRL
+        CTRL -> CB: create
+        activate CB
+        deactivate CB
+
+        CTRL -> CB: setUsername(username)
+        activate CB
+        deactivate CB
+
+note over CTRL, CB : Sets the rest of the information
+
+
+        CTRL -> CB: createColaborator()
+        activate CB
+                CB -> CC: create(username,password,...)
+                CC -> CB: colaborator
+                CB -> CTRL: colaborator
+        deactivate CB
+
+        CTRL -> PC:
+        activate PC
+        note over PC, CR : can create an repository in memory or JPA
+         PC->RF: create
+         PC->CTRL: factory
+
+        deactivate PC
+
+        CTRL->RF:colaborators()
+        activate RF
+        RF->CR:create
+        RF->CTRL:colaboratorRepository()
+        deactivate RF
+
+        CTRL->CR:save(colaborator)
+
+        CTRL->UI:colaborator
+    deactivate CTRL
+
+    UI --> HRM : displayColaboratorInfo
+deactivate UI
+
+
+@enduml
