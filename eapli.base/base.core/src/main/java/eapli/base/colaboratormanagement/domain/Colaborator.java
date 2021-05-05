@@ -3,7 +3,6 @@ package eapli.base.colaboratormanagement.domain;
 import eapli.base.clientusermanagement.domain.MecanographicNumber;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
-import eapli.framework.domain.model.DomainEntity;
 import eapli.framework.infrastructure.authz.domain.model.SystemUser;
 
 import javax.persistence.EmbeddedId;
@@ -12,7 +11,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Version;
 
 @Entity
-public abstract class Colaborator implements AggregateRoot<MecanographicNumber>{
+public class Colaborator implements AggregateRoot<MecanographicNumber> {
 
     @Version
     private Long version;
@@ -29,7 +28,7 @@ public abstract class Colaborator implements AggregateRoot<MecanographicNumber>{
     @OneToOne()
     private SystemUser systemUser;
 
-    public Colaborator(final SystemUser user,
+    public Colaborator(SystemUser user,
                        MecanographicNumber mecanographicNumber,
                        Name name,
                        Address address,
@@ -64,12 +63,21 @@ public abstract class Colaborator implements AggregateRoot<MecanographicNumber>{
 
     @Override
     public int hashCode() {
-        return DomainEntities.hashCode((DomainEntity<?>) this);
+        return DomainEntities.hashCode(this);
     }
 
     @Override
     public boolean sameAs(final Object other) {
-        return DomainEntities.areEqual((DomainEntity<?>) this, other);
+        return DomainEntities.areEqual(this, other);
     }
 
+    @Override
+    public MecanographicNumber identity() {
+        return this.mecanographicNumber;
+    }
+
+    @Override
+    public boolean hasIdentity(MecanographicNumber otherId) {
+        return AggregateRoot.super.hasIdentity(otherId);
+    }
 }
