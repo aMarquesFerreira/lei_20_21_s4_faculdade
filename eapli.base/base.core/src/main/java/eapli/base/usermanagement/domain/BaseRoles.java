@@ -54,17 +54,24 @@ public final class BaseRoles {
      *
      */
     public static final Role CASHIER = Role.valueOf("CASHIER");
-
+    /**
+     *
+     */
+    public static final Role HUMAN_RESOURCES_MANAGER = Role.valueOf("HUMAN_RESOURCES_MANAGER");
+    /**
+     *
+     */
+    public static final Role HELP_DESK_SERVICE_MANAGER = Role.valueOf("HELP_DESK_SERVICE_MANAGER");
     /**
      * get available role types for adding new users
      *
      * @return
      */
     public static Role[] nonUserValues() {
-        return new Role[] { ADMIN, KITCHEN_MANAGER, MENU_MANAGER, CASHIER };
+        return new Role[] { ADMIN, KITCHEN_MANAGER, MENU_MANAGER, CASHIER, HUMAN_RESOURCES_MANAGER, HELP_DESK_SERVICE_MANAGER};
     }
 
-    public boolean isCollaborator(final Role role) {
+    public boolean isColaborator(final Role role) {
         return role != CLIENT_USER;
     }
 }
