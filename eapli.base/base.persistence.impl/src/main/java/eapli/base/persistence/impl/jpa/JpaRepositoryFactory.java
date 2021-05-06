@@ -1,6 +1,7 @@
 package eapli.base.persistence.impl.jpa;
 
 import eapli.base.Application;
+import eapli.base.catalogue.repositories.CatalogueRepository;
 import eapli.base.clientusermanagement.repositories.SignupRequestRepository;
 import eapli.base.infrastructure.persistence.RepositoryFactory;
 import eapli.framework.domain.repositories.TransactionalContext;
@@ -52,6 +53,11 @@ public class JpaRepositoryFactory implements RepositoryFactory {
 		return JpaAutoTxRepository.buildTransactionalContext(Application.settings().getPersistenceUnitName(),
 				Application.settings().getExtendedPersistenceProperties());
 	}
+
+    @Override
+    public CatalogueRepository catalogues() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 
 }

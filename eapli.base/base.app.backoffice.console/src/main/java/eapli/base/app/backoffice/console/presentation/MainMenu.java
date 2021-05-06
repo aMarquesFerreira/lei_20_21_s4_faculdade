@@ -193,7 +193,7 @@ public class MainMenu extends AbstractUI {
     private Menu buildCataloguesMenu() {
         final Menu menu = new Menu("Catalogues >");
 
-        menu.addItem(CATALOGUE_REGISTER_OPTION, "Register Catalogue", new RegisterCatalogueUI()::show);
+        menu.addItem(CATALOGUE_REGISTER_OPTION, "Register Catalogue", new RegisterCatalogueAction());
         menu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
 
         return menu;

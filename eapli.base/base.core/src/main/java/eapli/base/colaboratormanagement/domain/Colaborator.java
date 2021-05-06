@@ -1,5 +1,6 @@
 package eapli.base.colaboratormanagement.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import eapli.base.clientusermanagement.domain.MecanographicNumber;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
@@ -9,6 +10,7 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.persistence.Version;
+import javax.xml.bind.annotation.XmlElement;
 /**
  *
  * @author andre
@@ -48,9 +50,14 @@ public class Colaborator implements AggregateRoot<MecanographicNumber> {
         this.birthDate = birthDate;
         this.evaluation = evaluation;
         this.contact = contact;
+        this.active = true;
 
     }
 
+    @XmlElement
+    @JsonProperty
+    private boolean active;
+    
     protected Colaborator() {
         // for ORM only
     }
@@ -71,7 +78,9 @@ public class Colaborator implements AggregateRoot<MecanographicNumber> {
 
     @Override
     public boolean sameAs(final Object other) {
-        return DomainEntities.areEqual(this, other);
+        final Colaborator colaborator = (Colaborator) other;
+        return DomainEntities.areEqual(this, other) && isActive() == colaborator.isActive();
+        
     }
 
     @Override
@@ -84,4 +93,15 @@ public class Colaborator implements AggregateRoot<MecanographicNumber> {
         return AggregateRoot.super.hasIdentity(otherId);
     }
 
+    public boolean isActive() {
+        return this.active;
+    }
+
+    
+    public boolean toogleState() {
+
+        this.active = !this.active;
+        return isActive();
+    }
+    
 }

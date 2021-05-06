@@ -5,10 +5,17 @@
  */
 package eapli.base.app.backoffice.console.presentation.catalogue;
 
+import eapli.framework.actions.Action;
+
+
 /**
  *
  * @author andre
  */
-public class RegisterCatalogueAction {
+public class RegisterCatalogueAction implements Action{
     
+    @Override
+    public boolean execute() {
+        return new RegisterCatalogueUI().show();
+    }
 }

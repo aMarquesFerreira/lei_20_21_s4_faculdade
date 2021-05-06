@@ -5,6 +5,7 @@
  */
 package eapli.base.cataloguemanagement.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.framework.domain.model.DomainEntities;
 import eapli.framework.domain.model.AggregateRoot;
@@ -15,6 +16,7 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.persistence.Version;
+import javax.xml.bind.annotation.XmlElement;
 
 
 /**
@@ -27,6 +29,8 @@ public class Catalogue implements AggregateRoot<CatalogueId>/* DTOable<Catalogue
     @Version
     private Long version;
 
+    @XmlElement
+    @JsonProperty
     @EmbeddedId
     private CatalogueId catalogueId;
     

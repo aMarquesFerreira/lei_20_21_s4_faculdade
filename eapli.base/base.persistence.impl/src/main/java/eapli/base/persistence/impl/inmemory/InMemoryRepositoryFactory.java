@@ -1,5 +1,6 @@
 package eapli.base.persistence.impl.inmemory;
 
+import eapli.base.catalogue.repositories.CatalogueRepository;
 import eapli.base.clientusermanagement.repositories.ClientUserRepository;
 import eapli.base.clientusermanagement.repositories.SignupRequestRepository;
 import eapli.base.infrastructure.bootstrapers.BaseBootstrapper;
@@ -57,5 +58,10 @@ public class InMemoryRepositoryFactory implements RepositoryFactory {
 		// in memory does not support transactions...
 		return null;
 	}
+
+    @Override
+    public CatalogueRepository catalogues() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }
