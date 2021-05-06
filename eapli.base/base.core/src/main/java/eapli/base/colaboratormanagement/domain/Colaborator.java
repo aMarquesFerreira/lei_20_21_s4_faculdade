@@ -11,4 +11,7 @@ package eapli.base.colaboratormanagement.domain;
  */
 public class Colaborator {
     
+    public Colaborator(){
+    }
+    
 }

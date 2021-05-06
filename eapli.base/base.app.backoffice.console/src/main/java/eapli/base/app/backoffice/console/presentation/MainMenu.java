@@ -28,6 +28,8 @@ import eapli.base.Application;
 import eapli.base.app.backoffice.console.presentation.authz.AddUserUI;
 import eapli.base.app.backoffice.console.presentation.authz.DeactivateUserAction;
 import eapli.base.app.backoffice.console.presentation.authz.ListUsersAction;
+import eapli.base.app.backoffice.console.presentation.catalogue.RegisterCatalogueAction;
+import eapli.base.app.backoffice.console.presentation.catalogue.RegisterCatalogueUI;
 import eapli.base.app.backoffice.console.presentation.clientuser.AcceptRefuseSignupRequestAction;
 import eapli.base.usermanagement.domain.BaseRoles;
 import eapli.framework.actions.Actions;
@@ -93,6 +95,9 @@ public class MainMenu extends AbstractUI {
     // MEALS
     private static final int LIST_MEALS_OPTION = 1;
     private static final int MEAL_REGISTER_OPTION = 2;
+    
+    // CATALOGUES
+    private static final int CATALOGUE_REGISTER_OPTION = 1;
 
     // MAIN MENU
     private static final int MY_USER_OPTION = 1;
@@ -102,6 +107,7 @@ public class MainMenu extends AbstractUI {
     private static final int TRACEABILITY_OPTION = 6;
     private static final int MEALS_OPTION = 7;
     private static final int REPORTING_DISHES_OPTION = 8;
+    private static final int CATALOGUE_OPTION = 9;
 
     private static final String SEPARATOR_LABEL = "--------------";
 
@@ -183,7 +189,17 @@ public class MainMenu extends AbstractUI {
 
         return menu;
     }
+    
+    private Menu buildCataloguesMenu() {
+        final Menu menu = new Menu("Catalogues >");
 
+        menu.addItem(CATALOGUE_REGISTER_OPTION, "Register Catalogue", new RegisterCatalogueUI()::show);
+        menu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
+
+        return menu;
+    }
+    
+    
 
 
 

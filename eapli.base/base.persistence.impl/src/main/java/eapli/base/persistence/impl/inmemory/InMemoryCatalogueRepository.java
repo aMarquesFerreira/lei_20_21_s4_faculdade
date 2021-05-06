@@ -6,18 +6,21 @@
 package eapli.base.persistence.impl.inmemory;
 
 //import eapli.base.clientusermanagement.
+
 import eapli.base.catalogue.repositories.CatalogueRepository;
 import eapli.base.cataloguemanagement.domain.Catalogue;
 import eapli.base.cataloguemanagement.domain.CatalogueId;
 import eapli.framework.infrastructure.repositories.impl.inmemory.InMemoryDomainRepository;
 import java.util.Optional;
+import eapli.framework.infrastructure.authz.domain.model.Username;
+import eapli.framework.infrastructure.repositories.impl.inmemory.InMemoryDomainRepository;
 
 /**
  *
  * @author andre
  */
-public class InMemoryCatalogueRepository /*extends InMemoryDomainRepository<Catalogue, CatalogueId> 
-                                                                  implements CatalogueRepository*/ {
+public class InMemoryCatalogueRepository extends InMemoryDomainRepository<Catalogue, CatalogueId> 
+                                                                  implements CatalogueRepository{
     
     static {
         InMemoryInitializer.init();
@@ -28,14 +31,19 @@ public class InMemoryCatalogueRepository /*extends InMemoryDomainRepository<Cata
         return matchOne(e -> e.user().username().equals(name));
     }
 */
-    //@Override
-    /*public Optional<Catalogue> findByCatalogueId(CatalogueId catalogueId) {
+    @Override
+    public Optional<Catalogue> findByCatalogueId(CatalogueId catalogueId) {
         return Optional.of(data().get(catalogueId));
+    }
+
+   /*@Override
+    public Iterable<Catalogue> findAllActive() {
+        return match(e -> e.colaborator().isActive());
     }*/
 
-    /*@Override
+    @Override
     public Iterable<Catalogue> findAllActive() {
-        return match(e -> e.user().isActive());
-    }*/
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

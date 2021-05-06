@@ -3,6 +3,7 @@
  */
 package eapli.base.infrastructure.persistence;
 
+import eapli.base.catalogue.repositories.CatalogueRepository;
 import eapli.base.clientusermanagement.repositories.ClientUserRepository;
 
 import eapli.base.clientusermanagement.repositories.SignupRequestRepository;
@@ -49,6 +50,7 @@ public interface RepositoryFactory {
 	 * @return
 	 */
 	ClientUserRepository clientUsers();
+        
 
 	/**
 	 *
@@ -63,5 +65,7 @@ public interface RepositoryFactory {
 	 * @return
 	 */
 	SignupRequestRepository signupRequests();
+        
+        CatalogueRepository catalogues();
 
 }
