@@ -7,13 +7,24 @@ package eapli.base.cataloguemanagement.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import eapli.base.colaboratormanagement.domain.Colaborator;
+import eapli.base.teammanagement.domain.Team;
 import eapli.framework.domain.model.DomainEntities;
 import eapli.framework.domain.model.AggregateRoot;
+import eapli.framework.general.domain.model.Description;
+import eapli.framework.general.domain.model.Designation;
 //import eapli.framework.general.domain.model.
 import eapli.framework.representations.Representationable;
 import eapli.framework.representations.dto.DTOable;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.AttributeOverride;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlElement;
@@ -34,27 +45,61 @@ public class Catalogue implements AggregateRoot<CatalogueId>/* DTOable<Catalogue
     @EmbeddedId
     private CatalogueId catalogueId;
     
+    @XmlElement
+    @JsonProperty
+    @AttributeOverride(name = "value", column = @Column(name = "shortDescription"))
+    private Description shortDescription;
+    
+    @XmlElement
+    @JsonProperty
+    @AttributeOverride(name = "value", column = @Column(name = "Title"))
+    private Designation catalogueTitle;
+    
+    
+    
     /**
      * cascade = CascadeType.NONE as the systemUser is part of another aggregate
      */
     @OneToOne()
-    private Colaborator colaborator;
-    
-    public Catalogue(final Colaborator colab, final CatalogueId catId) {
-        if (catId == null || colab == null) {
+    private Colaborator respColaborator;
+    /* @OneToMany()
+    private Team teams;
+     */
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "Teams", joinColumns = {@JoinColumn(name="CatalogueID")})
+    private List<Team> teams;
+   
+               
+    /**
+     * Constructor.
+     *
+     * @param respColaborator
+     * @param catalogueId
+     * @param shortDescription
+     * @param catalogueTitle
+     */
+    public Catalogue(final Colaborator respColaborator, final CatalogueId catalogueId, final Description shortDescription, final Designation catalogueTitle) {
+        this.teams = new ArrayList<Team>();
+        if (catalogueId == null || respColaborator == null || shortDescription == null || catalogueTitle == null || teams == null) {
             throw new IllegalArgumentException();
         }
-        this.colaborator = colab;
+        this.respColaborator = respColaborator;
         this.catalogueId = catalogueId;
+        this.shortDescription = shortDescription;
+        this.catalogueTitle = catalogueTitle;
+        teams = new ArrayList<>();
+        
     }
     
     protected Catalogue() {
         // for ORM only
     }
+
     
     public Colaborator colaborator() {
-        return this.colaborator;
+        return this.respColaborator;
     }
+    
     
     @Override
     public boolean equals(final Object o) {
@@ -79,5 +124,27 @@ public class Catalogue implements AggregateRoot<CatalogueId>/* DTOable<Catalogue
     public CatalogueId identity() {
         return this.catalogueId;
     }
+    
+     public Description shortDescription() {
+        return this.shortDescription;
+    }
+    
+    public Designation catalogueTitle() {
+        return this.catalogueTitle;
+    }
+    
+    public Iterable<Team> teams(){
+        return this.teams;
+    }
+    
+    public boolean addTeams(final Team tms){
+        for (Team teams : teams) {
+            if(teams.equals(tms)){
+                return false;
+            }
+        }
+        return teams.add(tms);
+    }
+    
     
 }

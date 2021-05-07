@@ -1,0 +1,25 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package eapli.base.app.backoffice.console.presentation.team;
+
+import eapli.base.teammanagement.domain.Team;
+import eapli.framework.visitor.Visitor;
+
+
+/**
+ *
+ * @author andre
+ */
+@SuppressWarnings("squid:S106")
+public class TeamPrinter implements Visitor<Team> {
+    
+    @Override
+    public void visit(final Team visitee) {
+        System.out.printf("%-10s", visitee.identity(),
+                String.valueOf(visitee.isActive()));
+    }
+    
+}

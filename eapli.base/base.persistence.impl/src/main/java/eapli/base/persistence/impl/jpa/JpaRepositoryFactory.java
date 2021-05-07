@@ -4,6 +4,7 @@ import eapli.base.Application;
 import eapli.base.catalogue.repositories.CatalogueRepository;
 import eapli.base.clientusermanagement.repositories.SignupRequestRepository;
 import eapli.base.infrastructure.persistence.RepositoryFactory;
+import eapli.base.teammanagement.repositories.TeamRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.authz.domain.repositories.UserRepository;
 import eapli.framework.infrastructure.authz.repositories.impl.JpaAutoTxUserRepository;
@@ -56,6 +57,11 @@ public class JpaRepositoryFactory implements RepositoryFactory {
 
     @Override
     public CatalogueRepository catalogues() {
+                return  null;//To change body of generated methods, choose Tools | Templates.
+    }
+    
+    @Override
+    public TeamRepository teams() {
                 return  null;//To change body of generated methods, choose Tools | Templates.
     }
 

@@ -6,13 +6,18 @@
 package eapli.base.app.backoffice.console.presentation.catalogue;
 
 import eapli.base.app.backoffice.console.presentation.colaborator.ColaboratorPrinter;
+import eapli.base.app.backoffice.console.presentation.team.TeamPrinter;
 import eapli.base.cataloguemanagement.application.RegisterCatalogueController;
 import eapli.base.cataloguemanagement.domain.Catalogue;
 import eapli.base.colaboratormanagement.domain.Colaborator;
+import eapli.base.teammanagement.application.ListTeamService;
+import eapli.base.teammanagement.domain.Team;
 import eapli.framework.domain.repositories.IntegrityViolationException;
 import eapli.framework.io.util.Console;
 import eapli.framework.presentation.console.SelectWidget;
 import eapli.framework.presentation.console.AbstractUI;
+import eapli.framework.presentation.console.ListWidget;
+import java.util.ArrayList;
 
 /**
  *
@@ -21,22 +26,39 @@ import eapli.framework.presentation.console.AbstractUI;
 public class RegisterCatalogueUI extends AbstractUI {
     
     private final RegisterCatalogueController theController = new RegisterCatalogueController();
+    private final ListTeamService listTeamService = new ListTeamService();
     
     
     protected boolean doShow() {
-        //final String catalogueName = Console.readLine("Catalogue Name:");
+        final Iterable<Team> teams = this.theController.teams();
+        
+        final SelectWidget<Team> selector = new SelectWidget<>("Teams:", teams,
+                new TeamPrinter());
+        selector.show();
+        
+         final Team theTeam = selector.selectedElement();
+        
         
         final Iterable<Colaborator> colaborators = this.theController.colaborators();
-
-        final SelectWidget<Colaborator> selector = new SelectWidget<>("Colaborators:", colaborators,
+        
+        final SelectWidget<Colaborator> Colabselector = new SelectWidget<>("Colaborators:", colaborators,
                 new ColaboratorPrinter());
-        selector.show();
-        final Colaborator theColaborator = selector.selectedElement();
+        Colabselector.show();
+        
+        final Colaborator theColaborator = Colabselector.selectedElement();
+        
+        
             
         final String catalogueId = Console.readLine("CatalogueId");
-
+        
+        final String shortDescription = Console.readLine("Short Description");
+        
+        final String catalogueTitle = Console.readLine("Catalogue Title");
+       
+       // ArrayList<Team> teams = new ArrayList<Team>();      
+        
         try {
-            this.theController.RegisterCatalogue(theColaborator, catalogueId);
+            this.theController.RegisterCatalogue(theColaborator, catalogueId, shortDescription, catalogueTitle);
         } catch (@SuppressWarnings("unused") final IntegrityViolationException e) {
             System.out.println("You tried to enter a catalogue which already exists in the database.");
         }
@@ -49,5 +71,7 @@ public class RegisterCatalogueUI extends AbstractUI {
     public String headline() {
         return "Register Catalogue";
     }
+    
+   
     
 }

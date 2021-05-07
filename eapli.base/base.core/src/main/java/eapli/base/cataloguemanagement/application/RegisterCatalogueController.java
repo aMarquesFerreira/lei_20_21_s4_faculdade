@@ -11,10 +11,14 @@ import eapli.base.cataloguemanagement.domain.CatalogueId;
 import eapli.base.colaboratormanagement.application.ListColaboratorService;
 import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.infrastructure.persistence.PersistenceContext;
+import eapli.base.teammanagement.application.ListTeamService;
+import eapli.base.teammanagement.domain.Team;
 import eapli.base.usermanagement.domain.BaseRoles;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
 import eapli.framework.infrastructure.authz.application.AuthzRegistry;
 import eapli.framework.general.domain.model.Description;
+import eapli.framework.general.domain.model.Designation;
+import java.util.ArrayList;
 
 /**
  *
@@ -24,27 +28,35 @@ public class RegisterCatalogueController {
    
     private final AuthorizationService authz = AuthzRegistry.authorizationService();
     private final ListColaboratorService svcColaborators = new ListColaboratorService();
+    private final ListTeamService svcTeams = new ListTeamService();
     private final CatalogueRepository catalogueRepository = PersistenceContext.repositories().catalogues();
 
     /**
      *
      * @param colaborator
      * @param catalogueId
+     * @param shortDescription
+     * @param catalogueTitle
+     * @param teams
      * @return
      */
-    public Catalogue RegisterCatalogue(final Colaborator colaborator, final String catalogueId) {
+    public Catalogue RegisterCatalogue(final Colaborator respColaborator, final String catalogueId, final String shortDescription, final String catalogueTitle) {
        
         authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN);
 
-        final Catalogue newCatalogue = new Catalogue(colaborator, CatalogueId.valueOf(catalogueId));
+        final Catalogue newCatalogue = new Catalogue(respColaborator, CatalogueId.valueOf(catalogueId), Description.valueOf(shortDescription),  Designation.valueOf(shortDescription));
 
         return catalogueRepository.save(newCatalogue);
       
     }
     
     
- public Iterable<Colaborator> colaborators() {
+    public Iterable<Colaborator> colaborators() {
         return svcColaborators.activeColaborators();
+    }
+ 
+    public Iterable<Team> teams() {
+        return svcTeams.allTeams();
     }
     
 }
