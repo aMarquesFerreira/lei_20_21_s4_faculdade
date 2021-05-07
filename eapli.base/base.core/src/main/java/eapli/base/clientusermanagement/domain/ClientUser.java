@@ -31,6 +31,7 @@ import javax.persistence.Version;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 import eapli.framework.infrastructure.authz.domain.model.SystemUser;
+import javax.persistence.Column;
 
 /**
  * A Client User.

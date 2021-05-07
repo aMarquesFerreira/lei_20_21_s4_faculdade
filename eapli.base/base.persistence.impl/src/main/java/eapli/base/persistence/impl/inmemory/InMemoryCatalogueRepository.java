@@ -36,14 +36,10 @@ public class InMemoryCatalogueRepository extends InMemoryDomainRepository<Catalo
         return Optional.of(data().get(catalogueId));
     }
 
-   /*@Override
+   @Override
     public Iterable<Catalogue> findAllActive() {
         return match(e -> e.colaborator().isActive());
-    }*/
-
-    @Override
-    public Iterable<Catalogue> findAllActive() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
     
 }

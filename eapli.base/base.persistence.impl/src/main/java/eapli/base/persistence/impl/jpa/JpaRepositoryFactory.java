@@ -56,7 +56,7 @@ public class JpaRepositoryFactory implements RepositoryFactory {
 
     @Override
     public CatalogueRepository catalogues() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                return  null;//To change body of generated methods, choose Tools | Templates.
     }
 
 

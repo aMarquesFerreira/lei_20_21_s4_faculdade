@@ -21,8 +21,8 @@ import eapli.framework.infrastructure.repositories.impl.jpa.JpaAutoTxRepository;
  */
 class JpaCatalogueRepository
         extends JpaAutoTxRepository<Catalogue, CatalogueId, CatalogueId>
-        implements CatalogueRepository {
-
+        implements CatalogueRepository {   
+    
     public JpaCatalogueRepository(TransactionalContext autoTx) {
         super(autoTx, "catalogueId");
     }
@@ -44,3 +44,4 @@ class JpaCatalogueRepository
         return match("e.catalogue.active = true");
     }
 }
+
