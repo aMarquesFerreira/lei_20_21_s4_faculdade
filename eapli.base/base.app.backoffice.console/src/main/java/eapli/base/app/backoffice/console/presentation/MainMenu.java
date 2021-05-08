@@ -31,6 +31,8 @@ import eapli.base.app.backoffice.console.presentation.authz.ListUsersAction;
 import eapli.base.app.backoffice.console.presentation.catalogue.RegisterCatalogueAction;
 import eapli.base.app.backoffice.console.presentation.catalogue.RegisterCatalogueUI;
 import eapli.base.app.backoffice.console.presentation.clientuser.AcceptRefuseSignupRequestAction;
+import eapli.base.app.backoffice.console.presentation.colaborator.RegisterColaboratorAction;
+import eapli.base.app.backoffice.console.presentation.team.RegisterTeamAction;
 import eapli.base.usermanagement.domain.BaseRoles;
 import eapli.framework.actions.Actions;
 import eapli.framework.actions.menu.Menu;
@@ -98,6 +100,12 @@ public class MainMenu extends AbstractUI {
     
     // CATALOGUES
     private static final int CATALOGUE_REGISTER_OPTION = 1;
+    
+    // COLABORATORS
+    private static final int COLABORATOR_REGISTER_OPTION = 1;
+    
+    // TEAMS
+    private static final int TEAM_REGISTER_OPTION = 1;
 
     // MAIN MENU
     private static final int MY_USER_OPTION = 1;
