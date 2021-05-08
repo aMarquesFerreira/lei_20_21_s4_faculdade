@@ -18,8 +18,7 @@ public class TeamPrinter implements Visitor<Team> {
     
     @Override
     public void visit(final Team visitee) {
-        System.out.printf("%-10s", visitee.identity(),
-                String.valueOf(visitee.isActive()));
+        System.out.printf("%-10s", visitee.identity(), visitee.isActive());
     }
     
 }

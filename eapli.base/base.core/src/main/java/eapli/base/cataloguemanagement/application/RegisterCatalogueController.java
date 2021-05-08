@@ -33,18 +33,17 @@ public class RegisterCatalogueController {
 
     /**
      *
-     * @param colaborator
+     * @param respColaborator
      * @param catalogueId
      * @param shortDescription
      * @param catalogueTitle
-     * @param teams
      * @return
      */
     public Catalogue RegisterCatalogue(final Colaborator respColaborator, final String catalogueId, final String shortDescription, final String catalogueTitle) {
        
-        authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN);
+        authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.HELP_DESK_SERVICE_MANAGER);
 
-        final Catalogue newCatalogue = new Catalogue(respColaborator, CatalogueId.valueOf(catalogueId), Description.valueOf(shortDescription),  Designation.valueOf(shortDescription));
+        final Catalogue newCatalogue = new Catalogue(respColaborator, CatalogueId.valueOf(catalogueId), Description.valueOf(shortDescription),  Designation.valueOf(catalogueTitle));
 
         return catalogueRepository.save(newCatalogue);
       

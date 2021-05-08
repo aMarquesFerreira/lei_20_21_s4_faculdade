@@ -33,19 +33,21 @@ public class Colaborator implements AggregateRoot<MecanographicNumber> {
     @OneToOne()
     private SystemUser systemUser;
 
-    public Colaborator(SystemUser user,
+    public Colaborator(SystemUser theUser,
                        MecanographicNumber mecanographicNumber,
-                       Name name,
                        Address address,
                        BirthDate birthDate,
                        Evaluation evaluation,
                        Contact contact) {
-        if (user == null) {
+        if (theUser == null) {
             throw new IllegalArgumentException();
         }
-        this.systemUser = user;
+        String username = theUser.name().toString();
+        Name newName = new Name(username);
+
+        this.systemUser = theUser;
         this.mecanographicNumber = mecanographicNumber;
-        this.name = name;
+        this.name = newName;
         this.address = address;
         this.birthDate = birthDate;
         this.evaluation = evaluation;
@@ -57,6 +59,7 @@ public class Colaborator implements AggregateRoot<MecanographicNumber> {
     @XmlElement
     @JsonProperty
     private boolean active;
+
     
     protected Colaborator() {
         // for ORM only
@@ -98,10 +101,9 @@ public class Colaborator implements AggregateRoot<MecanographicNumber> {
     }
 
     
-    public boolean toogleState() {
+    public boolean toggleState() {
 
         this.active = !this.active;
         return isActive();
     }
-    
 }
