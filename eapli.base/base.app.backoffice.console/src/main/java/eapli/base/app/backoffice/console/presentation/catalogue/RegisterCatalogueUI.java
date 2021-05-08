@@ -38,7 +38,7 @@ public class RegisterCatalogueUI extends AbstractUI {
         
         List<Team> theTeams = new ArrayList<>();
         
-        boolean moreTeams=true;
+        boolean moreTeams = true;
         while(moreTeams){
             final SelectWidget<Team> selector = new SelectWidget<>("Teams:", teams, new TeamPrinter());
             selector.show();
@@ -46,7 +46,7 @@ public class RegisterCatalogueUI extends AbstractUI {
             final Team theTeam = selector.selectedElement();
             theTeams.add(theTeam);
             
-            moreTeams = Console.readBoolean("Add more Teams ?");
+            moreTeams = Console.readBoolean("Add more Teams? (y/n)");
         }
 
 

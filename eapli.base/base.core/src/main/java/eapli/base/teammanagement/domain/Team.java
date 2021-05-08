@@ -19,6 +19,7 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
@@ -55,13 +56,10 @@ public class Team implements AggregateRoot<TeamCode>{
     private boolean active;
     
     
-    
-    /**
-     * cascade = CascadeType.NONE as the systemUser is part of another aggregate
-     */
-    
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "Colaborator", joinColumns = {@JoinColumn(name="TeamCode")})
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    //@JoinTable(name = "Colaborator", joinColumns = {@JoinColumn(name="TeamCode", nullable = true)})
+    //@JoinColumn(name="TeamCode")
     private List<Colaborator> colaborators;
     
     
@@ -136,6 +134,10 @@ public class Team implements AggregateRoot<TeamCode>{
 
         this.active = !this.active;
         return isActive();
+    }
+
+    public void addColaborator(Colaborator colab) {
+        colaborators.add(colab);
     }
     
 }

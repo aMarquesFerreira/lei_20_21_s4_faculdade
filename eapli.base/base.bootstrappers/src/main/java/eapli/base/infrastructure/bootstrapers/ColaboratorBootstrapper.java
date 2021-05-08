@@ -8,16 +8,23 @@ import eapli.base.colaboratormanagement.application.RegisterColaboratorControlle
 import eapli.base.colaboratormanagement.domain.Address;
 import eapli.base.colaboratormanagement.domain.BirthDate;
 import eapli.base.colaboratormanagement.domain.Colaborator;
+import eapli.base.colaboratormanagement.domain.Contact;
+import eapli.base.colaboratormanagement.domain.Evaluation;
 import eapli.base.colaboratormanagement.domain.Name;
+import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.myclientuser.application.SignupController;
 import eapli.framework.actions.Action;
 import eapli.framework.domain.repositories.ConcurrencyException;
 import eapli.framework.domain.repositories.IntegrityViolationException;
 import eapli.framework.infrastructure.authz.domain.model.SystemUser;
+import eapli.framework.infrastructure.authz.domain.model.SystemUserBuilder;
+import eapli.framework.infrastructure.authz.domain.model.Username;
+import eapli.framework.infrastructure.authz.domain.repositories.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Date;
+import java.util.logging.Level;
 
 public class ColaboratorBootstrapper implements Action {
     private static final Logger LOGGER = LoggerFactory.getLogger(
@@ -28,11 +35,15 @@ public class ColaboratorBootstrapper implements Action {
             .build();
     private final RegisterColaboratorController registerColaboratorController = new RegisterColaboratorController();
 
+    UserRepository userRepository = PersistenceContext.repositories().users();
+    
     @Override
     public boolean execute() {
         signupAndApproveUser(TestDataConstants.USER_TEST1, "Password1", "John", "Smith",
                 "john@smith.com", TestDataConstants.USER_TEST1);
         signupAndApproveUser("isep959", "Password1", "Mary", "Smith", "mary@smith.com", "isep959");
+        
+        registerColaborator();
         return true;
     }
 
@@ -53,12 +64,20 @@ public class ColaboratorBootstrapper implements Action {
         return request;
     }
 
-    /*private Colaborator registerColaborator(){
-        SystemUser systemUser = new SystemUser("isep959", "Password1", "Mary Smith", "mary@smith.com", "isep959");
-        registerColaboratorController.registerColaborator(systemUser, new MecanographicNumber("isep959"), new Name("Mary Smith"),
+    private Colaborator registerColaborator(){ 
+        
+        try {
+            Thread.sleep(1000);   //se nao tiver um delay o systemuser nao é encontrado
+        } catch (InterruptedException ex) {
+            java.util.logging.Logger.getLogger(ColaboratorBootstrapper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        SystemUser systemUser = userRepository.ofIdentity(Username.valueOf("isep959")).get();
+        
+        return registerColaboratorController.registerColaborator(
+                systemUser, new MecanographicNumber("isep959"), new Name("Mary Smith"),
                 new Address("Rua","Cidade"),
-                new BirthDate(new Date(2005,12,12)),);
-
-        return;
-    }*/
+                new BirthDate(new Date(105,12,12)), new Evaluation(5), new Contact(123456789));
+    }
 }

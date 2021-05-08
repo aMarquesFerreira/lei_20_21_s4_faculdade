@@ -25,7 +25,7 @@ public class ListColaboratorService {
     public Iterable<Colaborator> activeColaborators() {
         authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER,
                 BaseRoles.ADMIN);
-        return this.colaboratorRepository.findAll();
+        return this.colaboratorRepository.findAllActive();
         
     }
     

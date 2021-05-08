@@ -65,12 +65,12 @@ public class RegisterColaboratorUI extends AbstractUI {
     protected boolean doShow() {
         // FIXME avoid duplication with SignUpUI. reuse UserDataWidget from
 
-        final String user = Console.readLine("Username");
+        //final String user = Console.readLine("Username");
         final String mecanographicNumber = Console.readLine("Mecanographic Number");
         final String name = Console.readLine("Name");
         final String street = Console.readLine("Street");
         final String city = Console.readLine("City");
-        final Date birthdate = Console.readDate("Birthdate","dd/MM/YYYY");
+        final Date birthdate = Console.readDate("Birthdate (dd/MM/YYYY)","dd/MM/YYYY");
         final double evaluation = Console.readDouble("Evaluation");
         final long contact = Console.readLong("Contact");
 

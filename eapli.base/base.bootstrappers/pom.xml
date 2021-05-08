@@ -35,5 +35,11 @@
             <artifactId>base.core</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
+        <dependency>
+            <groupId>eapli.ecafeteria</groupId>
+            <artifactId>bootstrappers</artifactId>
+            <version>4.0.0</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
 </project>

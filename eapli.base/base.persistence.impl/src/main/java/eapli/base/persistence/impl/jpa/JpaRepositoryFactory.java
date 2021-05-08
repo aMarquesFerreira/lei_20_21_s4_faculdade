@@ -58,12 +58,12 @@ public class JpaRepositoryFactory implements RepositoryFactory {
 
     @Override
     public CatalogueRepository catalogues() {
-                return  null;//To change body of generated methods, choose Tools | Templates.
+        return new JpaCatalogueRepository(Application.settings().getPersistenceUnitName());
     }
     
     @Override
     public ColaboratorRepository colaborators() {
-                return  null;//To change body of generated methods, choose Tools | Templates.
+        return new JpaColaboratorRepository(Application.settings().getPersistenceUnitName());
     }
     
     @Override

@@ -5,12 +5,13 @@ import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.framework.domain.repositories.DomainRepository;
 import eapli.framework.infrastructure.authz.domain.model.Username;
 
+
 import java.util.Optional;
 
 public interface ColaboratorRepository extends DomainRepository<MecanographicNumber, Colaborator> {
 
     /**
-     * returns the coalborator whose username is given
+     * returns the colaborator whose username is given
      *
      * @param name
      *            the username to search for

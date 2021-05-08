@@ -24,6 +24,7 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Version;
@@ -65,8 +66,8 @@ public class Catalogue implements AggregateRoot<CatalogueId>/* DTOable<Catalogue
     /* @OneToMany()
     private Team teams;
      */
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "Teams", joinColumns = {@JoinColumn(name="CatalogueID")})
+    @ManyToMany(cascade = CascadeType.ALL)
+    //@JoinTable(name = "Teams", joinColumns = {@JoinColumn(name="CatalogueID")})
     private List<Team> teams;
    
                

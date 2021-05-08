@@ -31,6 +31,7 @@ import eapli.base.app.backoffice.console.presentation.authz.ListUsersAction;
 import eapli.base.app.backoffice.console.presentation.catalogue.RegisterCatalogueAction;
 import eapli.base.app.backoffice.console.presentation.catalogue.RegisterCatalogueUI;
 import eapli.base.app.backoffice.console.presentation.clientuser.AcceptRefuseSignupRequestAction;
+import eapli.base.app.backoffice.console.presentation.colaborator.AddColaboratorToTeamAction;
 import eapli.base.app.backoffice.console.presentation.colaborator.RegisterColaboratorAction;
 import eapli.base.app.backoffice.console.presentation.team.RegisterTeamAction;
 import eapli.base.usermanagement.domain.BaseRoles;
@@ -103,6 +104,7 @@ public class MainMenu extends AbstractUI {
     
     // COLABORATORS
     private static final int COLABORATOR_REGISTER_OPTION = 1;
+    private static final int COLABORATOR_ADD_TOTEAM = 2;
     
     // TEAMS
     private static final int TEAM_REGISTER_OPTION = 1;
@@ -171,7 +173,17 @@ public class MainMenu extends AbstractUI {
             final Menu usersMenu = buildCataloguesMenu();
             mainMenu.addSubMenu(CATALOGUE_OPTION, usersMenu);
         }
-
+        
+        if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.ADMIN)) {
+            final Menu usersMenu = buildColaboratorMenu();
+            mainMenu.addSubMenu(COLABORATOR_OPTION, usersMenu);
+        }
+        
+        if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.ADMIN)) {
+            final Menu usersMenu = buildTeamMenu();
+            mainMenu.addSubMenu(TEAM_OPTION, usersMenu);
+        }
+        
         if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.ADMIN)) {
             final Menu usersMenu = buildUsersMenu();
             mainMenu.addSubMenu(USERS_OPTION, usersMenu);
@@ -215,27 +227,26 @@ public class MainMenu extends AbstractUI {
         final Menu menu = new Menu("Catalogues >");
 
         menu.addItem(CATALOGUE_REGISTER_OPTION, "Register Catalogue", new RegisterCatalogueAction());
-        menu.addItem(COLABORATOR_REGISTER_OPTION, "Register Colaborator", new RegisterColaboratorAction());
-        menu.addItem(TEAM_REGISTER_OPTION, "Register a Team", new RegisterTeamAction());
         menu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
 
         return menu;
     }
     
      private Menu buildColaboratorMenu() {
-        final Menu menu = new Menu("Catalogues >");
+        final Menu menu = new Menu("Colaborators >");
 
-        menu.addItem(COLABORATOR_REGISTER_OPTION, "Register Catalogue", new RegisterCatalogueAction());
+        menu.addItem(COLABORATOR_REGISTER_OPTION, "Register Colaborator", new RegisterColaboratorAction());
+        menu.addItem(COLABORATOR_ADD_TOTEAM, "Add Colaborator to team", new AddColaboratorToTeamAction());
         menu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
 
         return menu;
     }
      
      
-      private Menu buildCTeamMenu() {
+      private Menu buildTeamMenu() {
         final Menu menu = new Menu("Teams >");
 
-        menu.addItem(CATALOGUE_REGISTER_OPTION, "Register a Team", new RegisterCatalogueAction());
+        menu.addItem(TEAM_REGISTER_OPTION, "Register a Team", new RegisterTeamAction());
         menu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
 
         return menu;

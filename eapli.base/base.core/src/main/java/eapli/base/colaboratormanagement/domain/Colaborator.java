@@ -2,6 +2,7 @@ package eapli.base.colaboratormanagement.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import eapli.base.clientusermanagement.domain.MecanographicNumber;
+import eapli.base.teammanagement.domain.Team;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 import eapli.framework.infrastructure.authz.domain.model.SystemUser;
@@ -22,7 +23,7 @@ public class Colaborator implements AggregateRoot<MecanographicNumber> {
     private Long version;
 
     @EmbeddedId
-    private MecanographicNumber mecanographicNumber;
+    private MecanographicNumber mecanographicNumber;    
     private Name name;
     private Address address;
     private BirthDate birthDate;
@@ -106,4 +107,12 @@ public class Colaborator implements AggregateRoot<MecanographicNumber> {
         this.active = !this.active;
         return isActive();
     }
+
+    @Override
+    public String toString() {
+        return mecanographicNumber + ": " + name;
+    }
+    
+    
+    
 }
