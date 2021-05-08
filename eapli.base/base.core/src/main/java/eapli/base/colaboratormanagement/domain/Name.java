@@ -11,8 +11,7 @@ public class Name implements ValueObject, Comparable<Name> {
 
     public Name(final String name) {
         if (StringPredicates.isNullOrEmpty(name)) {
-            throw new IllegalArgumentException(
-                    "Name should neither be null or empty");
+            throw new IllegalArgumentException("Name should neither be null or empty");
         }
         // TODO validate invariants, i.e., mecanographic number regular
         // expression
@@ -32,7 +31,7 @@ public class Name implements ValueObject, Comparable<Name> {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof Address)) {
+        if (!(o instanceof Name)) {
             return false;
         }
 

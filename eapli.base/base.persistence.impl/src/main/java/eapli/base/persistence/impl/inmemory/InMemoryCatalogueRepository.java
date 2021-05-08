@@ -5,8 +5,6 @@
  */
 package eapli.base.persistence.impl.inmemory;
 
-//import eapli.base.clientusermanagement.
-
 import eapli.base.catalogue.repositories.CatalogueRepository;
 import eapli.base.cataloguemanagement.domain.Catalogue;
 import eapli.base.cataloguemanagement.domain.CatalogueId;

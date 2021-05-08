@@ -1,27 +1,65 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-abstract class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
-
-List <|-- AbstractList
-Collection <|-- AbstractCollection
-
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
-class ArrayList {
-Object[] elementData
-size()
+class RegisterAnColaboratorUI {
 }
 
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
+class RegisterAnColaboratorController {
+registerColaborator();
 }
+
+class Colaborator {
+SystemUser user;
+MecanographicNumber mecanographicNumber;
+Name name;
+Address address;
+BirthDate birthDate;
+Evaluation evaluation;
+Contact contact;
+}
+
+class MecanographicNumber{
+String mecanographicNumber;
+}
+
+class Name{
+String name;
+}
+
+class Address{
+String street;
+String city;
+}
+
+class BirthDate{
+Date birthDate;
+}
+
+class Evaluation{
+long evaluation;
+}
+
+class Contact{
+long contact
+}
+
+class SystemUser{
+Username username;
+Password password;
+Name name;
+EmailAddress email;
+RoleSet roles;
+}
+
+RegisterAnColaboratorUI -> RegisterAnColaboratorController
+RegisterAnColaboratorController -> Colaborator
+
+SystemUser -> Colaborator
+Colaborator -> MecanographicNumber
+Colaborator -> Name
+Colaborator -> Address
+Colaborator -> BirthDate
+Colaborator -> Evaluation
+Colaborator -> Contact
 
 @enduml

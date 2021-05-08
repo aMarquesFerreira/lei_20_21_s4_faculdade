@@ -22,7 +22,7 @@ import java.util.Set;
 public class RegisterColaboratorController {
 
     private final AuthorizationService authz = AuthzRegistry.authorizationService();
-    //private final UserManagementService userSvc = AuthzRegistry.userService();
+    private final UserManagementService userSvc = AuthzRegistry.userService();
 
     /**
      * Get existing RoleTypes available to the user.
@@ -40,8 +40,8 @@ public class RegisterColaboratorController {
                                           BirthDate birthDate,
                                           Evaluation evaluation,
                                           Contact contact) {
-        authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN);
+        authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.HUMAN_RESOURCES_MANAGER);
 
-        return new Colaborator(user,mecanographicNumber,name,address,birthDate,evaluation,contact) ;
+        return new Colaborator(user,mecanographicNumber,address,birthDate,evaluation,contact);
     }
 }

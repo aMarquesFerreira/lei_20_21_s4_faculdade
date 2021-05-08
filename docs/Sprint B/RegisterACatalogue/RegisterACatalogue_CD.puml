@@ -1,0 +1,49 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class RegisterCatalogueUI {
+}
+
+class RegisterCatalogueController {
+registerCatalogue();
+}
+
+class Catalogue{
+Colaborator respColaborator;
+CatalogueId catalogueId;
+Description shortDescription;
+Designation catalogueTitle;
+}
+
+class Colaborator {
+SystemUser user;
+MecanographicNumber mecanographicNumber;
+Name name;
+Address address;
+BirthDate birthDate;
+Evaluation evaluation;
+Contact contact;
+}
+
+class CatalogueId{
+String number;
+}
+
+class Description{
+String street;
+String city;
+}
+
+class Designation{
+Date birthDate;
+}
+
+RegisterCatalogueUI -> RegisterCatalogueController
+RegisterCatalogueController -> Catalogue
+
+Catalogue -> Colaborator
+Catalogue -> CatalogueId
+Catalogue -> Description
+Catalogue -> Designation
+
+@enduml

@@ -23,6 +23,7 @@
  */
 package eapli.base.app.backoffice.console.presentation.colaborator;
 
+import eapli.base.app.backoffice.console.presentation.authz.SystemUserPrinter;
 import eapli.base.clientusermanagement.domain.MecanographicNumber;
 import eapli.base.colaboratormanagement.application.RegisterColaboratorController;
 import eapli.base.colaboratormanagement.domain.*;
@@ -39,6 +40,7 @@ import eapli.framework.infrastructure.authz.domain.model.SystemUser;
 import eapli.framework.infrastructure.authz.domain.model.Username;
 import eapli.framework.io.util.Console;
 import eapli.framework.presentation.console.AbstractUI;
+import eapli.framework.presentation.console.SelectWidget;
 import eapli.framework.presentation.console.menu.MenuItemRenderer;
 import eapli.framework.presentation.console.menu.MenuRenderer;
 import eapli.framework.presentation.console.menu.VerticalMenuRenderer;
@@ -63,7 +65,7 @@ public class RegisterColaboratorUI extends AbstractUI {
     protected boolean doShow() {
         // FIXME avoid duplication with SignUpUI. reuse UserDataWidget from
 
-        //final SystemUser user = Console.readLine("Username");
+        final String user = Console.readLine("Username");
         final String mecanographicNumber = Console.readLine("Mecanographic Number");
         final String name = Console.readLine("Name");
         final String street = Console.readLine("Street");
@@ -72,6 +74,14 @@ public class RegisterColaboratorUI extends AbstractUI {
         final double evaluation = Console.readDouble("Evaluation");
         final long contact = Console.readLong("Contact");
 
+        final Iterable<SystemUser> systemUsers = this.userSvc.activeUsers();
+
+        final SelectWidget<SystemUser> userSelector = new SelectWidget<>("Users:", systemUsers,
+                new SystemUserPrinter());
+        userSelector.show();
+
+        final SystemUser theUser = userSelector.selectedElement();
+
         final Set<Role> roleTypes = new HashSet<>();
         boolean show;
         do {
@@ -79,7 +89,7 @@ public class RegisterColaboratorUI extends AbstractUI {
         } while (!show);
 
         try {
-            this.theController.registerColaborator(null,
+            this.theController.registerColaborator(theUser,
                     new MecanographicNumber(mecanographicNumber),
                     new Name(name),
                     new Address(street,city),
@@ -103,7 +113,7 @@ public class RegisterColaboratorUI extends AbstractUI {
     private Menu buildRolesMenu(final Set<Role> roleTypes) {
         final Menu rolesMenu = new Menu();
         int counter = 0;
-        rolesMenu.addItem(MenuItem.of(counter++, "No Role", Actions.SUCCESS));
+        rolesMenu.addItem(MenuItem.of(counter++, "No role", Actions.SUCCESS));
         for (final Role roleType : theController.getRoleTypes()) {
             rolesMenu.addItem(MenuItem.of(counter++, roleType.toString(), () -> roleTypes.add(roleType)));
         }
