@@ -34,8 +34,8 @@ public class InMemoryTeamRepository extends InMemoryDomainRepository<Team, TeamC
 
    @Override
     public Iterable<Team> findAllActive() {
-        return match(e -> e.colaborator().isActive());
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    
+   
 }

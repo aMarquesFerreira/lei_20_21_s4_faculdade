@@ -10,10 +10,16 @@ import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 import eapli.framework.general.domain.model.Designation;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.AttributeOverride;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,8 +59,10 @@ public class Team implements AggregateRoot<TeamCode>{
     /**
      * cascade = CascadeType.NONE as the systemUser is part of another aggregate
      */
-    @OneToMany()
-    private Colaborator colaborator;
+    
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "Colaborator", joinColumns = {@JoinColumn(name="TeamCode")})
+    private List<Colaborator> colaborators;
     
     
     /**
@@ -72,7 +80,7 @@ public class Team implements AggregateRoot<TeamCode>{
         this.teamCode = teamCode;
         this.teamDesignation = teamDesignation;
         this.teamAcronym = teamAcronym;
-        this.colaborator = colaborator;
+        colaborators = new ArrayList<>();
         this.active = true;
         
     }
@@ -81,8 +89,9 @@ public class Team implements AggregateRoot<TeamCode>{
         // for ORM only
     }
     
-    public Colaborator colaborator() {
-        return this.colaborator;
+    
+    public Iterable<Colaborator> colaborators(){
+        return this.colaborators;
     }
     
     @Override

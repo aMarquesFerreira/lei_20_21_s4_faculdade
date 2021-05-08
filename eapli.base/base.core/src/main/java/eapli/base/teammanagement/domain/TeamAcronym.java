@@ -5,10 +5,66 @@
  */
 package eapli.base.teammanagement.domain;
 
+import eapli.framework.domain.model.ValueObject;
+import eapli.framework.strings.util.StringPredicates;
+
 /**
  *
  * @author andre
  */
-public class TeamAcronym {
+public class TeamAcronym implements ValueObject, Comparable<TeamAcronym> {
+    
+    //private static final String serialVersionUID = 1L;
+     
+     private String name;
+     
+      public TeamAcronym(final String name) {
+        if (StringPredicates.isNullOrEmpty(name)) {
+            throw new IllegalArgumentException(
+                    "Team acronym should neither be null nor empty");
+        }
+        // TODO validate invariants, i.e., mecanographic number regular
+        // expression
+        this.name = name;
+    }
+      
+    protected TeamAcronym() {
+        // for ORM
+    }
+    
+    public static TeamAcronym valueOf(final String name) {
+        return new TeamAcronym(name);
+    }
+    
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof TeamAcronym)) {
+            return false;
+        }
+
+        final TeamAcronym that = (TeamAcronym) o;
+        return this.name.equals(that.name);
+    }
+    
+     @Override
+    public int hashCode() {
+        return this.name.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
+    
+    @Override
+    public int compareTo(final TeamAcronym arg0) {
+        return name.compareTo(arg0.name);
+    }
+      
+     
+    
     
 }
