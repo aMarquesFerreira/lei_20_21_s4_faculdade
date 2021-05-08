@@ -137,7 +137,7 @@ public class Catalogue implements AggregateRoot<CatalogueId>/* DTOable<Catalogue
         return this.teams;
     }
     
-    public boolean addTeams(final Team tms){
+    public boolean addTeam(final Team tms){
         for (Team teams : teams) {
             if(teams.equals(tms)){
                 return false;

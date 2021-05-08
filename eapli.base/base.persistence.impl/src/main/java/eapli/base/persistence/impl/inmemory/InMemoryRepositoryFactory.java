@@ -3,6 +3,7 @@ package eapli.base.persistence.impl.inmemory;
 import eapli.base.catalogue.repositories.CatalogueRepository;
 import eapli.base.clientusermanagement.repositories.ClientUserRepository;
 import eapli.base.clientusermanagement.repositories.SignupRequestRepository;
+import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
 import eapli.base.infrastructure.bootstrapers.BaseBootstrapper;
 import eapli.base.infrastructure.persistence.RepositoryFactory;
 import eapli.base.teammanagement.repositories.TeamRepository;
@@ -67,6 +68,11 @@ public class InMemoryRepositoryFactory implements RepositoryFactory {
     
     @Override
     public TeamRepository teams() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ColaboratorRepository colaborators() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

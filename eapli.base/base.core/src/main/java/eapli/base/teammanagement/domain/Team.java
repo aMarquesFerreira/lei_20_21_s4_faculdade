@@ -73,8 +73,9 @@ public class Team implements AggregateRoot<TeamCode>{
      * @param shortDescription
      * @param catalogueTitle
      */
-    public Team(final TeamCode teamCode, final Designation teamDesignation, final TeamAcronym teamAcronym, final Colaborator colaborator) {
-        if (teamCode == null || teamDesignation == null || teamAcronym == null || colaborator == null) {
+    public Team(final TeamCode teamCode, final Designation teamDesignation, final TeamAcronym teamAcronym
+    /*, final Colaborator colaborator   manager ????*/) {
+        if (teamCode == null || teamDesignation == null || teamAcronym == null /*|| colaborator == null*/) {
             throw new IllegalArgumentException();
         }
         this.teamCode = teamCode;

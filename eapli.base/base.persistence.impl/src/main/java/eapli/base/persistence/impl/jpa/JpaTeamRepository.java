@@ -11,6 +11,9 @@ import eapli.base.cataloguemanagement.domain.CatalogueId;
 import eapli.base.clientusermanagement.domain.ClientUser;
 import eapli.base.clientusermanagement.domain.MecanographicNumber;
 import eapli.base.clientusermanagement.repositories.ClientUserRepository;
+import eapli.base.teammanagement.domain.Team;
+import eapli.base.teammanagement.domain.TeamCode;
+import eapli.base.teammanagement.repositories.TeamRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.authz.domain.model.Username;
 import eapli.framework.infrastructure.repositories.impl.jpa.JpaAutoTxRepository;
@@ -19,29 +22,28 @@ import eapli.framework.infrastructure.repositories.impl.jpa.JpaAutoTxRepository;
  *
  * @author Jorge Santos ajs@isep.ipp.pt 02/04/2016
  */
-class JpaCatalogueRepository
-        extends JpaAutoTxRepository<Catalogue, CatalogueId, CatalogueId>
-        implements CatalogueRepository {   
+class JpaTeamRepository
+        extends JpaAutoTxRepository<Team, TeamCode, TeamCode>
+        implements TeamRepository {   
     
-    public JpaCatalogueRepository(TransactionalContext autoTx) {
-        super(autoTx, "catalogueId");
+    public JpaTeamRepository(TransactionalContext autoTx) {
+        super(autoTx, "teamCode");
     }
 
-    public JpaCatalogueRepository(String puname) {
+    public JpaTeamRepository(String puname) {
         super(puname, Application.settings().getExtendedPersistenceProperties(),
-                "catalogueId");
+                "teamCode");
     }
 
     @Override
-    public Optional<Catalogue> findByCatalogueId(CatalogueId catalogueId) {
+    public Optional<Team> findByTeamCode(TeamCode teamCode) {
         final Map<String, Object> params = new HashMap<>();
-        params.put("catalogueId", catalogueId);
-        return matchOne("e.catalogueId=:catalogueId", params);
+        params.put("teamCode", teamCode);
+        return matchOne("e.teamCode=:teamCode", params);
     }
 
     @Override
-    public Iterable<Catalogue> findAllActive() {
-        //return match("e.catalogue.active = true");
+    public Iterable<Team> findAllActive() {
         return match("e.active = true");
     }
 }

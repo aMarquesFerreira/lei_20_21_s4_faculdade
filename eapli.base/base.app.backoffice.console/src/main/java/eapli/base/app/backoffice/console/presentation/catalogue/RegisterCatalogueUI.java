@@ -18,6 +18,9 @@ import eapli.framework.presentation.console.SelectWidget;
 import eapli.framework.presentation.console.AbstractUI;
 import eapli.framework.presentation.console.ListWidget;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import javax.security.auth.callback.ConfirmationCallback;
 
 /**
  *
@@ -26,18 +29,23 @@ import java.util.ArrayList;
 public class RegisterCatalogueUI extends AbstractUI {
     
     private final RegisterCatalogueController theController = new RegisterCatalogueController();
-    private final ListTeamService listTeamService = new ListTeamService();
-    
+    //private final ListTeamService listTeamService = new ListTeamService();
     
     protected boolean doShow() {
         final Iterable<Team> teams = this.theController.teams();
         
-        final SelectWidget<Team> selector = new SelectWidget<>("Teams:", teams,
-                new TeamPrinter());
-        selector.show();
+        List<Team> theTeams = new ArrayList<>();
         
-         final Team theTeam = selector.selectedElement();
+        boolean moreTeams=true;
+        while(moreTeams){
+            final SelectWidget<Team> selector = new SelectWidget<>("Teams:", teams, new TeamPrinter());
+            selector.show();
         
+            final Team theTeam = selector.selectedElement();
+            theTeams.add(theTeam);
+            
+            moreTeams = Console.readBoolean("Add more Teams ?");
+        }
         
         final Iterable<Colaborator> colaborators = this.theController.colaborators();
         
@@ -58,7 +66,7 @@ public class RegisterCatalogueUI extends AbstractUI {
        // ArrayList<Team> teams = new ArrayList<Team>();      
         
         try {
-            this.theController.RegisterCatalogue(theColaborator, catalogueId, shortDescription, catalogueTitle);
+            this.theController.RegisterCatalogue(theColaborator, catalogueId, shortDescription, catalogueTitle, theTeams);
         } catch (@SuppressWarnings("unused") final IntegrityViolationException e) {
             System.out.println("You tried to enter a catalogue which already exists in the database.");
         }

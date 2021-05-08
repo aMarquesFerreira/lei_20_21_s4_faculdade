@@ -5,20 +5,24 @@
  */
 package eapli.base.teammanagement.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import eapli.framework.domain.model.ValueObject;
+import eapli.framework.strings.StringMixin;
 import eapli.framework.strings.util.StringPredicates;
+import javax.xml.bind.annotation.XmlAttribute;
 
 /**
  *
  * @author andre
  */
-public class TeamAcronym implements ValueObject, Comparable<TeamAcronym> {
+public class TeamAcronym implements ValueObject, Comparable<TeamAcronym>, StringMixin {
     
-    //private static final String serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
+    @XmlAttribute
+    @JsonProperty     
+    private String name;
      
-     private String name;
-     
-      public TeamAcronym(final String name) {
+    public TeamAcronym(final String name) {
         if (StringPredicates.isNullOrEmpty(name)) {
             throw new IllegalArgumentException(
                     "Team acronym should neither be null nor empty");

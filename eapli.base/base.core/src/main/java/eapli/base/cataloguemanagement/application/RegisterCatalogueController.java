@@ -19,6 +19,7 @@ import eapli.framework.infrastructure.authz.application.AuthzRegistry;
 import eapli.framework.general.domain.model.Description;
 import eapli.framework.general.domain.model.Designation;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -40,12 +41,14 @@ public class RegisterCatalogueController {
      * @param teams
      * @return
      */
-    public Catalogue RegisterCatalogue(final Colaborator respColaborator, final String catalogueId, final String shortDescription, final String catalogueTitle) {
+    public Catalogue RegisterCatalogue(final Colaborator respColaborator, final String catalogueId, final String shortDescription, final String catalogueTitle, List<Team> teams) {
        
         authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN);
 
         final Catalogue newCatalogue = new Catalogue(respColaborator, CatalogueId.valueOf(catalogueId), Description.valueOf(shortDescription),  Designation.valueOf(shortDescription));
-
+            
+        teams.forEach(t -> {newCatalogue.addTeam(t);});
+        
         return catalogueRepository.save(newCatalogue);
       
     }

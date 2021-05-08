@@ -102,12 +102,20 @@ public class MainMenu extends AbstractUI {
     // MAIN MENU
     private static final int MY_USER_OPTION = 1;
     private static final int USERS_OPTION = 2;
-    private static final int SETTINGS_OPTION = 4;
-    private static final int DISH_OPTION = 5;
-    private static final int TRACEABILITY_OPTION = 6;
-    private static final int MEALS_OPTION = 7;
-    private static final int REPORTING_DISHES_OPTION = 8;
-    private static final int CATALOGUE_OPTION = 9;
+    private static final int CATALOGUE_OPTION = 3;
+    private static final int COLABORATOR_OPTION = 4;
+    private static final int TEAM_OPTION = 5;
+    
+    
+    
+    
+    
+    private static final int SETTINGS_OPTION = 6;
+    private static final int DISH_OPTION = 7;
+    private static final int TRACEABILITY_OPTION = 8;
+    private static final int MEALS_OPTION = 9;
+    private static final int REPORTING_DISHES_OPTION = 10;
+    
 
     private static final String SEPARATOR_LABEL = "--------------";
 
@@ -149,6 +157,11 @@ public class MainMenu extends AbstractUI {
 
         if (!Application.settings().isMenuLayoutHorizontal()) {
             mainMenu.addItem(MenuItem.separator(SEPARATOR_LABEL));
+        }
+
+        if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.ADMIN)) {
+            final Menu usersMenu = buildCataloguesMenu();
+            mainMenu.addSubMenu(CATALOGUE_OPTION, usersMenu);
         }
 
         if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.ADMIN)) {
@@ -194,6 +207,27 @@ public class MainMenu extends AbstractUI {
         final Menu menu = new Menu("Catalogues >");
 
         menu.addItem(CATALOGUE_REGISTER_OPTION, "Register Catalogue", new RegisterCatalogueAction());
+        menu.addItem(COLABORATOR_REGISTER_OPTION, "Register Colaborator", new RegisterColaboratorAction());
+        menu.addItem(TEAM_REGISTER_OPTION, "Register a Team", new RegisterTeamAction());
+        menu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
+
+        return menu;
+    }
+    
+     private Menu buildColaboratorMenu() {
+        final Menu menu = new Menu("Catalogues >");
+
+        menu.addItem(COLABORATOR_REGISTER_OPTION, "Register Catalogue", new RegisterCatalogueAction());
+        menu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
+
+        return menu;
+    }
+     
+     
+      private Menu buildCTeamMenu() {
+        final Menu menu = new Menu("Teams >");
+
+        menu.addItem(CATALOGUE_REGISTER_OPTION, "Register a Team", new RegisterCatalogueAction());
         menu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
 
         return menu;
