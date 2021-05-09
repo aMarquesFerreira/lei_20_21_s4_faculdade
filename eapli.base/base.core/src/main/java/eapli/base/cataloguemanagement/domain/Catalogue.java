@@ -36,7 +36,7 @@ import javax.xml.bind.annotation.XmlElement;
  * @author andre
  */
 @Entity
-public class Catalogue implements AggregateRoot<CatalogueId>/* DTOable<CatalogueDTO>, Representationable */{
+public class Catalogue implements AggregateRoot<CatalogueId>{
     
     @Version
     private Long version;
@@ -57,6 +57,10 @@ public class Catalogue implements AggregateRoot<CatalogueId>/* DTOable<Catalogue
     private Designation catalogueTitle;
     
     
+    @XmlElement
+    @JsonProperty
+    private boolean active;
+    
     
     /**
      * cascade = CascadeType.NONE as the systemUser is part of another aggregate
@@ -69,6 +73,8 @@ public class Catalogue implements AggregateRoot<CatalogueId>/* DTOable<Catalogue
     @ManyToMany(cascade = CascadeType.ALL)
     //@JoinTable(name = "Teams", joinColumns = {@JoinColumn(name="CatalogueID")})
     private List<Team> teams;
+    
+    
    
                
     /**
@@ -89,6 +95,7 @@ public class Catalogue implements AggregateRoot<CatalogueId>/* DTOable<Catalogue
         this.shortDescription = shortDescription;
         this.catalogueTitle = catalogueTitle;
         teams = new ArrayList<>();
+        this.active = true;
         
     }
     
@@ -114,8 +121,11 @@ public class Catalogue implements AggregateRoot<CatalogueId>/* DTOable<Catalogue
 
     @Override
     public boolean sameAs(final Object other) {
-        return DomainEntities.areEqual(this, other);
+        final Catalogue catalogue = (Catalogue) other;
+        return DomainEntities.areEqual(this, other) && isActive() == catalogue.isActive();
     }
+    
+  
     
     public CatalogueId catalogueId() {
         return identity();
@@ -145,6 +155,16 @@ public class Catalogue implements AggregateRoot<CatalogueId>/* DTOable<Catalogue
             }
         }
         return teams.add(tms);
+    }
+    
+    public boolean isActive() {
+        return this.active;
+    }
+    
+    public boolean toggleState() {
+
+        this.active = !this.active;
+        return isActive();
     }
     
     
