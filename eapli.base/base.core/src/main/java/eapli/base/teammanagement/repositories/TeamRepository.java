@@ -40,7 +40,7 @@ public interface TeamRepository
         return ofIdentity(teamCode);
     }
 
-    public Iterable<Team> findAllActive();
+    Iterable<Team> findAllActive();
 
     
 }

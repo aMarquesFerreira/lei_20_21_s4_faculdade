@@ -1,0 +1,67 @@
+@startuml
+autonumber
+
+actor "HelpDesk Manager" as HDM
+
+participant "RegisterCatalogueUI" as UI
+participant "RegisterCatalogueController" as CTRL
+participant "CatalogueBuilder" as CB
+participant "Catalogue:Catalogue" as CC
+participant "PersistenceContext" as PC
+participant "RepositoryFactory" as RF
+
+
+database "CatalogueRepository" as CR
+
+HDM --> UI : Register a Catalogue
+activate UI
+    UI -> CTRL : create
+    UI --> HDM : Requests necessary credentials for Catalogue
+deactivate UI
+
+HDM --> UI : Inserts the data
+activate UI
+    UI -> CTRL : Catalogue = newCatalogue(Colaborator respColaborator,CatalogueId catalogueId,\nDescription shortDescription,Designation catalogueTitle)
+    activate CTRL
+        CTRL -> CB: create
+        activate CB
+        deactivate CB
+
+        CTRL -> CB: setColaborator(respColaborator)
+        activate CB
+        deactivate CB
+
+note over CTRL, CB : Sets the rest of the information
+
+
+        CTRL -> CB: createCatalogue()
+        activate CB
+                CB -> CC: create(Colaborator respColaborator,CatalogueId catalogueId,\nDescription shortDescription,Designation catalogueTitle)
+                CC -> CB: Catalogue
+                CB -> CTRL: Catalogue
+        deactivate CB
+
+        CTRL -> PC:
+        activate PC
+        note over PC, CR : can create an repository in memory or JPA
+         PC->RF: create
+         PC->CTRL: factory
+
+        deactivate PC
+
+        CTRL->RF:Catalogues()
+        activate RF
+        RF->CR:create
+        RF->CTRL:CatalogueRepository()
+        deactivate RF
+
+        CTRL->CR:save(Catalogue)
+
+        CTRL->UI:Catalogue
+    deactivate CTRL
+
+    UI --> HDM : displayCatalogueInfo
+deactivate UI
+
+
+@enduml

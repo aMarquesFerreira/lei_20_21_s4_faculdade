@@ -28,6 +28,6 @@ public interface ServiceRepository extends DomainRepository<ServiceCode, Service
         return ofIdentity(serviceCode);
     }
 
-    public Iterable<Service> findAllActive();
+    Iterable<Service> findAllActive();
     
 }

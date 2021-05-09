@@ -36,5 +36,5 @@ public interface CatalogueRepository
         return ofIdentity(catalogueId);
     }
 
-    public Iterable<Catalogue> findAllActive();
+    Iterable<Catalogue> findAllActive();
 }
