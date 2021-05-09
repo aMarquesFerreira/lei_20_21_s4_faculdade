@@ -34,7 +34,7 @@ public class RegisterCatalogueController {
 
     /**
      *
-     * @param colaborator
+     * @param respColaborator
      * @param catalogueId
      * @param shortDescription
      * @param catalogueTitle

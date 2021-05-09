@@ -24,11 +24,21 @@ public class ColaboratorBuilder implements DomainFactory<Colaborator> {
 
     private SystemUser systemUser;
     private MecanographicNumber mecanographicNumber;
-    private Name name;
     private Address address;
     private BirthDate birthdate;
     private Evaluation evaluation;
     private Contact contact;
+
+    public ColaboratorBuilder withAll(SystemUser systemUser, MecanographicNumber mecanographicNumber, Address address,
+                                      BirthDate birthdate, Evaluation evaluation, Contact contact) {
+        this.systemUser = systemUser;
+        this.mecanographicNumber = mecanographicNumber;
+        this.address = address;
+        this.birthdate = birthdate;
+        this.evaluation = evaluation;
+        this.contact = contact;
+        return this;
+    }
 
     public ColaboratorBuilder withSystemUser(SystemUser systemUser) {
         this.systemUser = systemUser;
@@ -44,11 +54,6 @@ public class ColaboratorBuilder implements DomainFactory<Colaborator> {
         this.mecanographicNumber = new MecanographicNumber(mecanographicNumber);
         return this;
     }
-
-    /*public ColaboratorBuilder withName(Name name) {
-        this.name = name;
-        return this;
-    }*/
 
     public ColaboratorBuilder withAddress(String street,String city) {
         this.address = new Address(street, city);
@@ -75,6 +80,5 @@ public class ColaboratorBuilder implements DomainFactory<Colaborator> {
         // since the factory knows that all the parts are needed it could throw
         // an exception. however, we will leave that to the constructor
         return new Colaborator(this.systemUser, this.mecanographicNumber, this.address, this.birthdate, this.evaluation, this.contact);
-        //Sem name temporariamente
     }
 }
