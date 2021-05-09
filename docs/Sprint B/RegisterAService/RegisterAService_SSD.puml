@@ -1,0 +1,17 @@
+@startuml
+autonumber
+
+actor "HelpDesk Manager" as HDM
+participant "System" as UI
+
+activate HDM
+HDM --> UI : Register a Service
+activate UI
+    UI --> HDM : Requests necessary credentials for Service
+deactivate UI
+HDM --> UI : Inserts the data
+activate UI
+UI --> HDM : displayServiceInfo
+deactivate UI
+
+@enduml

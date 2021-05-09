@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class RegisterServiceUI {
+}
+
+class RegisterServiceController {
+registerService();
+}
+
+class Service{
+ServiceCode scode;
+ServiceTitle stitle;
+ServiceIcon sicon;
+ServiceDescription sdescription;
+}
+
+class ServiceCode{
+}
+
+class ServiceTitle{
+}
+
+class ServiceIcon{
+}
+
+class ServiceDescription {
+}
+
+RegisterServiceUI -> RegisterServiceController
+RegisterServiceController -> Service
+
+Service -> ServiceCode
+Service -> ServiceTitle
+Service -> ServiceIcon
+Service -> ServiceDescription
+
+@enduml
