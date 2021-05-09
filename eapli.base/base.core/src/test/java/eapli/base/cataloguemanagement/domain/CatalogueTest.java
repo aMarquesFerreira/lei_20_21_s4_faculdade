@@ -23,77 +23,94 @@
  */
 package eapli.base.cataloguemanagement.domain;
 
-import eapli.base.colaboratormanagement.domain.Colaborator;
-import eapli.base.colaboratormanagement.domain.ColaboratorBuilder;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import eapli.base.clientusermanagement.domain.MecanographicNumber;
+import eapli.base.colaboratormanagement.domain.*;
+import eapli.base.usermanagement.domain.BaseRoles;
+import eapli.framework.general.domain.model.Description;
+import eapli.framework.general.domain.model.Designation;
+import eapli.framework.infrastructure.authz.domain.model.*;
+import org.junit.Test;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.junit.Test;
-
-import eapli.base.usermanagement.domain.BaseRoles;
-import eapli.framework.infrastructure.authz.domain.model.NilPasswordPolicy;
-import eapli.framework.infrastructure.authz.domain.model.PlainTextEncoder;
-import eapli.framework.infrastructure.authz.domain.model.Role;
-import eapli.framework.infrastructure.authz.domain.model.SystemUser;
-import eapli.framework.infrastructure.authz.domain.model.SystemUserBuilder;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by andre
  */
 public class CatalogueTest {
 
-   /* private final String aCatalogueId = "abc";
-    private final String anotherCatalogueId = "xyz";
+    Description shortDescription = Description.valueOf("Description");
+    Designation catalogueTitle = Designation.valueOf("Designation");
 
-    public static Colaborator dummyColaborator(final String username, final Role... roles) {
+    public static SystemUser dummyUser(final String username, final Role... roles) {
         // should we load from spring context?
-        final ColaboratorBuilder colaboratorBuilder = new ColaboratorBuilder(new NilPasswordPolicy(), new PlainTextEncoder());
-        return colaboratorBuilder.with(username, "duMMy1", "dummy", "dummy", "a@b.ro").withRoles(roles).build();
+        final SystemUserBuilder userBuilder = new SystemUserBuilder(new NilPasswordPolicy(), new PlainTextEncoder());
+        return userBuilder.with(username, "duMMy1", "dummy", "dummy", "a@b.ro").withRoles(roles).build();
     }
 
-    private SystemUser getNewDummyUser() {
+    private static SystemUser getNewDummyUser() {
         return dummyUser("dummy", BaseRoles.ADMIN);
     }
 
-    private SystemUser getNewDummyUserTwo() {
-        return dummyUser("dummy-two", BaseRoles.ADMIN);
+    public Colaborator dummyColaborator(MecanographicNumber id) {
+        // should we load from spring context?
+        final ColaboratorBuilder colaboratorBuilder = new ColaboratorBuilder();
+        return colaboratorBuilder.withAll(getNewDummyUser(), id, new Address("dummy", "dummy"),
+                new BirthDate(new Date(2020, 05, 13)),
+                new Evaluation(7.3), new Contact(912255444)).build();
+    }
+
+    public Catalogue dummyCatalogue(String id) {
+        // should we load from spring context?
+        final CatalogueBuilder catalogueBuilder = new CatalogueBuilder();
+        return catalogueBuilder.withColaborator(getNewColaborator()).withCatalogueId(id).
+                withDescription(shortDescription).withDesignation(catalogueTitle).build();
+    }
+
+    private Colaborator getNewColaborator() {
+        return dummyColaborator(new MecanographicNumber("dummy-one"));
+    }
+
+    private Colaborator getNewColaboratorTwo() {
+        return dummyColaborator(new MecanographicNumber("dummy-two"));
+    }
+
+    private Catalogue getNewCatalogue() {
+        return dummyCatalogue("DUMMY");
+    }
+
+    private Catalogue getNewCatalogueTwo() {
+        return dummyCatalogue("DUMMY1");
     }
 
     @Test
-    public void ensureClientUserEqualsPassesForTheSameMecanographicNumber() throws Exception {
+    public void ensureCatalogueEqualsPassesForTheSameCatalogueID() {
 
-        final ClientUser aClientUser = new ClientUserBuilder().withMecanographicNumber("DUMMY")
-                .withSystemUser(getNewDummyUser()).build();
+        final Catalogue aCatalogue = new CatalogueBuilder().withColaborator(getNewColaborator()).withCatalogueId("DUMMY")
+                .withDescription(shortDescription).withDesignation(catalogueTitle).build();
 
-        final ClientUser anotherClientUser = new ClientUserBuilder().withMecanographicNumber("DUMMY")
-                .withSystemUser(getNewDummyUser()).build();
+        final Catalogue anotherCatalogue = new CatalogueBuilder().withColaborator(getNewColaboratorTwo()).withCatalogueId("DUMMY")
+                .withDescription(shortDescription).withDesignation(catalogueTitle).build();
 
-        final boolean expected = aClientUser.equals(anotherClientUser);
+        final boolean expected = aCatalogue.equals(anotherCatalogue);
 
         assertTrue(expected);
     }
 
     @Test
-    public void ensureClientUserEqualsFailsForDifferenteMecanographicNumber() throws Exception {
-        final Set<Role> roles = new HashSet<>();
-        roles.add(BaseRoles.ADMIN);
+    public void ensureCatalogueUserEqualsFailsForDifferenteCatalogueID() {
 
-        final ClientUser aClientUser = new ClientUserBuilder().withMecanographicNumber(aMecanographicNumber)
-                .withSystemUser(getNewDummyUser()).build();
-
-        final ClientUser anotherClientUser = new ClientUserBuilder()
-                .withMecanographicNumber(anotherMecanographicNumber).withSystemUser(getNewDummyUser()).build();
-
-        final boolean expected = aClientUser.equals(anotherClientUser);
+        final boolean expected = getNewCatalogue().equals(getNewCatalogueTwo());
 
         assertFalse(expected);
     }
 
     @Test
-    public void ensureClientUserEqualsAreTheSameForTheSameInstance() throws Exception {
+    public void ensureCatalogueEqualsAreTheSameForTheSameInstance() {
         final Catalogue aCatalogue = new Catalogue();
 
         final boolean expected = aCatalogue.equals(aCatalogue);
@@ -102,40 +119,38 @@ public class CatalogueTest {
     }
 
     @Test
-    public void ensureClientUserEqualsFailsForDifferenteObjectTypes() throws Exception {
-        final Set<Role> roles = new HashSet<>();
-        roles.add(BaseRoles.ADMIN);
+    public void ensureCatalogueEqualsFailsForDifferenteObjectTypes() {
+        final Catalogue aCatalogue = new CatalogueBuilder().withColaborator(getNewColaborator()).withCatalogueId("DUMMY").
+                withDescription(shortDescription).withDesignation(catalogueTitle).build();
 
-        final ClientUser aClientUser = new ClientUserBuilder().withMecanographicNumber("DUMMY")
-                .withSystemUser(getNewDummyUser()).build();
-
-        final boolean expected = aClientUser.equals(getNewDummyUser());
+        final boolean expected = aCatalogue.equals(getNewCatalogueTwo());
 
         assertFalse(expected);
     }
 
     @Test
-    public void ensureClientUserIsTheSameAsItsInstance() throws Exception {
-        final ClientUser aClientUser = new ClientUserBuilder().withMecanographicNumber("DUMMY")
-                .withSystemUser(getNewDummyUser()).build();
+    public void ensureCatalogueIsTheSameAsItsInstance() {
+        final Catalogue aCatalogue = new CatalogueBuilder().withColaborator(getNewColaborator()).withCatalogueId("DUMMY").
+                withDescription(shortDescription).withDesignation(catalogueTitle).build();
 
-        final boolean expected = aClientUser.sameAs(aClientUser);
+        final boolean expected = aCatalogue.sameAs(aCatalogue);
 
         assertTrue(expected);
     }
 
     @Test
-    public void ensureTwoClientUserWithDifferentMecanographicNumbersAreNotTheSame() throws Exception {
+    public void ensureTwoCatalogueWithDifferentCatalogueIDAreNotTheSame() {
         final Set<Role> roles = new HashSet<>();
         roles.add(BaseRoles.ADMIN);
-        final ClientUser aClientUser = new ClientUserBuilder().withMecanographicNumber(aMecanographicNumber)
-                .withSystemUser(getNewDummyUser()).build();
+        final Catalogue aCatalogue = new CatalogueBuilder().withColaborator(getNewColaborator()).withCatalogueId("DUMMY").
+                withDescription(shortDescription).withDesignation(catalogueTitle).build();
 
-        final ClientUser anotherClientUser = new ClientUserBuilder()
-                .withMecanographicNumber(anotherMecanographicNumber).withSystemUser(getNewDummyUser()).build();
+        final Catalogue anotherCatalogue = new CatalogueBuilder().withColaborator(getNewColaborator()).withCatalogueId("DUMMY1").
+                withDescription(shortDescription).withDesignation(catalogueTitle).build();
 
-        final boolean expected = aClientUser.sameAs(anotherClientUser);
+        final boolean expected = aCatalogue.sameAs(anotherCatalogue);
 
         assertFalse(expected);
-    }*/
+    }
+
 }

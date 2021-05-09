@@ -21,7 +21,7 @@ deactivate UI
 
 HRM --> UI : Inserts the data
 activate UI
-    UI -> CTRL : colaborator = newColaborator(nif, name, email, password)
+    UI -> CTRL : colaborator = newColaborator(SystemUser theUser,MecanographicNumber mecanographicNumber,\nAddress address,BirthDate birthDate,\nEvaluation evaluation,Contact contact)
     activate CTRL
         CTRL -> CB: create
         activate CB
@@ -36,7 +36,7 @@ note over CTRL, CB : Sets the rest of the information
 
         CTRL -> CB: createColaborator()
         activate CB
-                CB -> CC: create(username,password,...)
+                CB -> CC: create(SystemUser theUser,MecanographicNumber mecanographicNumber,\nAddress address,BirthDate birthDate,\nEvaluation evaluation,Contact contact)
                 CC -> CB: colaborator
                 CB -> CTRL: colaborator
         deactivate CB
