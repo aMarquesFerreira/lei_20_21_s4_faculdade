@@ -1,0 +1,36 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class RegisterTeamUI {
+}
+
+class RegisterTeamController {
+RegisterTeam();
+}
+
+class Team{
+TeamAcronym teamAcronym;
+Designation teamDesignation;
+TeamCode teamCode;
+}
+
+class TeamAcronym {
+String name;
+}
+
+class Designation{
+String name;
+}
+
+class TeamCode{
+String teamCode
+}
+
+
+RegisterTeamUI -> RegisterTeamController
+RegisterTeamController -> Team
+Team -> TeamAcronym
+Team -> Designation
+Team -> TeamCode
+
+@enduml

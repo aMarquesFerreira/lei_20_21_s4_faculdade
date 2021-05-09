@@ -1,0 +1,17 @@
+@startuml
+autonumber
+
+actor "HelpDesk Manager" as HDM
+participant "System" as UI
+
+activate HDM
+HDM --> UI : Create a team
+activate UI
+    UI --> HDM : Requests necessary credentials for a team
+deactivate UI
+HDM --> UI : Inserts the data
+activate UI
+UI --> HDM : displayTeamInfo
+deactivate UI
+
+@enduml
