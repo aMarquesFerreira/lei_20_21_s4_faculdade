@@ -31,81 +31,58 @@ import org.springframework.transaction.TransactionSystemException;
 import eapli.base.infrastructure.bootstrapers.TestDataConstants;
 import eapli.base.teammanagement.domain.TeamCode;
 import eapli.base.teammanagement.repositories.TeamRepository;
+import eapli.base.infrastructure.bootstrapers.demo.TeamBootstrapper;
+import eapli.base.teammanagement.application.RegisterTeamController;
+import eapli.base.teammanagement.domain.TeamAcronym;
+import java.util.ArrayList;
 
 /**
  *
  * @author andre
  */
-public class CatalogueBootstrapper /*implements Action*/{
+public class CatalogueBootstrapper implements Action {
     
-    /* private static final Logger LOGGER = LoggerFactory.getLogger(
-            CatalogueBootstrapper.class);
-     
-    private final ColaboratorRepository colaboratorRepo = PersistenceContext.repositories().colaborators();
+    
+     private static final Logger LOGGER = LoggerFactory.getLogger(CatalogueBootstrapper.class);
+
+    private final RegisterCatalogueController catalogueController = new RegisterCatalogueController();
+    private final TeamBootstrapper teamBoot = new TeamBootstrapper();
+    private final RegisterTeamController teamController = new RegisterTeamController();
+    private final RegisterColaboratorController colabController = new RegisterColaboratorController();
+    //private final ColaboratorBootstrapper colabBoot = new ColaboratorBootstrapper();
+    private final ColaboratorRepository colabRepo = PersistenceContext.repositories().colaborators();
     private final TeamRepository teamRepo = PersistenceContext.repositories().teams();
-    private final RegisterCatalogueController controller = new RegisterCatalogueController();
-
-    private Optional<Colaborator> getColaborator(final String mecanographicNumber) {
-        return colaboratorRepo.ofIdentity(new MecanographicNumber(mecanographicNumber));
-    }
     
-    private Optional<Team> getTeam(final String teamCode) {
-        return teamRepo.ofIdentity(new TeamCode(teamCode));
-    }
+    private List<Team> teams = new ArrayList<Team>();
     
-    private final RegisterCatalogueController registerCatalogueController = new RegisterCatalogueController();
-
+   
+    
     @Override
-    public boolean execute() {
-        final Optional<Colaborator> colab1 = getColaborator(TestDataConstants.MECANOGRAPHIC_NUMBER_1);
-        final Optional<Colaborator> colab2 = getColaborator(TestDataConstants.MECANOGRAPHIC_NUMBER_2);
-        final Optional<Colaborator> colab3 = getColaborator(TestDataConstants.MECANOGRAPHIC_NUMBER_3);
+    public boolean execute() {       
+        Colaborator c1 = colabRepo.findByMecanographicNumber(MecanographicNumber.valueOf("isep959")).get();
+        Team team1 = teamRepo.findByTeamCode(TeamCode.valueOf("001")).get();
+        Team team2 = teamRepo.findByTeamCode(TeamCode.valueOf("002")).get();
         
-        final Optional<Team> team1 = getTeam(TestDataConstants.TEAM_CODE_1);
-        final Optional<Team> team2 = getTeam(TestDataConstants.TEAM_CODE_2);
-        final Optional<Team> team3 = getTeam(TestDataConstants.TEAM_CODE_3);
+        List<Team> teams = new ArrayList<>();
+        teams.add(team1);
+        teams.add(team2);
         
-       
+        registerNewCatalogue(c1, "Catalogue with services for vacations", "Vacations", "Vacations Catalogue", teams);
+        registerNewCatalogue(c1, "Catalogue for repairs", "Repairs", "Repairs Catalogue", teams);
+        teams.remove(1);
+        registerNewCatalogue(c1, "Catalogue For Books", "Books", "Books Catalogue", teams);
         
-        registerCatalogue(colab1, TestDataConstants.CATALOGUE_ID_1, TestDataConstants.SHORT_DESCRIPTION_1 TestDataConstants.CATALOGUE_TITLE_1);
-        registerCatalogue(colab2, TestDataConstants.DISH_NAME_LENTILHAS_SALTEADAS, 180, 1, 2.85, allergeans4);
-        registerCatalogue(colab3, TestDataConstants.DISH_NAME_BACALHAU_A_BRAZ, 250, 2, 3.99, allergeans1);
-        
-               
-
         return true;
-        
     }
-
-    private Catalogue registerCatalogue(final Colaborator respColaborator, final String catalogueId, final String shortDescription, final String catalogueTitle, List<Team> teams) {
-        try {
-            LOGGER.debug("{} ( {} )", catalogueId, respColaborator);
-            
-           final Catalogue newCatalogue = new Catalogue(respColaborator, CatalogueId.valueOf(catalogueId), Description.valueOf(shortDescription),  Designation.valueOf(catalogueTitle));
-           teams.forEach(t -> {newCatalogue.addTeam(t);});
-            
-           return controller.RegisterCatalogue(respColaborator, catalogueId, shortDescription, catalogueTitle, teams);
-             
-        } catch (final IntegrityViolationException | ConcurrencyException
-                | TransactionSystemException e) {
-            // ignoring exception. assuming it is just a primary key violation
-            // due to the tentative of inserting a duplicated object
-            LOGGER.warn("Assuming {} already exists (see trace log for details on {} {})", 
-                    catalogueId,
-                    e.getClass().getSimpleName(), e.getMessage());
-            LOGGER.trace("Assuming existing record", e);
-            return null;
-            
-        }
+    
+    private void registerNewCatalogue(Colaborator respColaborator, String catalogueId, String shortDescription, String catalogueTitle, List<Team> teams) {
+        //Catalogue newCatalogue = new Catalogue(respColaborator, CatalogueId.valueOf(catalogueId), Description.valueOf(shortDescription),  Designation.valueOf(catalogueTitle));
+        //teams.forEach(t -> {newCatalogue.addTeam(t);});
+        catalogueController.RegisterCatalogue(respColaborator, catalogueId, shortDescription,  catalogueTitle, teams);
+        LOGGER.debug("»»» Creating new Team %s", catalogueId);
     }
-
-    /*private Colaborator registerColaborator(){
-        SystemUser systemUser = new SystemUser("isep959", "Password1", "Mary Smith", "mary@smith.com", "isep959");
-        registerColaboratorController.registerColaborator(systemUser, new MecanographicNumber("isep959"), new Name("Mary Smith"),
-                new Address("Rua","Cidade"),
-                new BirthDate(new Date(2005,12,12)),);
-
-        return;
-    }*/
+    
+    
+    
     
 }

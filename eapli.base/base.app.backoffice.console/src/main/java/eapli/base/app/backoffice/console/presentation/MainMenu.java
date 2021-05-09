@@ -34,6 +34,7 @@ import eapli.base.app.backoffice.console.presentation.clientuser.AcceptRefuseSig
 import eapli.base.app.backoffice.console.presentation.colaborator.AddColaboratorToTeamAction;
 import eapli.base.app.backoffice.console.presentation.colaborator.RegisterColaboratorAction;
 import eapli.base.app.backoffice.console.presentation.team.RegisterTeamAction;
+import eapli.base.backoffice.console.presentation.service.RegisterServiceAction;
 import eapli.base.usermanagement.domain.BaseRoles;
 import eapli.framework.actions.Actions;
 import eapli.framework.actions.menu.Menu;
@@ -108,6 +109,9 @@ public class MainMenu extends AbstractUI {
     
     // TEAMS
     private static final int TEAM_REGISTER_OPTION = 1;
+    
+    // SERVICES
+    private static final int SERVICE_REGISTER_OPTION = 1;
 
     // MAIN MENU
     private static final int MY_USER_OPTION = 1;
@@ -115,16 +119,17 @@ public class MainMenu extends AbstractUI {
     private static final int CATALOGUE_OPTION = 3;
     private static final int COLABORATOR_OPTION = 4;
     private static final int TEAM_OPTION = 5;
+    private static final int SERVICE_OPTION = 6;
     
     
     
     
     
-    private static final int SETTINGS_OPTION = 6;
-    private static final int DISH_OPTION = 7;
-    private static final int TRACEABILITY_OPTION = 8;
-    private static final int MEALS_OPTION = 9;
-    private static final int REPORTING_DISHES_OPTION = 10;
+    private static final int SETTINGS_OPTION = 7;
+    private static final int DISH_OPTION = 8;
+    private static final int TRACEABILITY_OPTION = 9;
+    private static final int MEALS_OPTION = 10;
+    private static final int REPORTING_DISHES_OPTION = 11;
     
 
     private static final String SEPARATOR_LABEL = "--------------";
@@ -182,6 +187,11 @@ public class MainMenu extends AbstractUI {
         if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.ADMIN)) {
             final Menu usersMenu = buildTeamMenu();
             mainMenu.addSubMenu(TEAM_OPTION, usersMenu);
+        }
+        
+         if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.ADMIN)) {
+            final Menu usersMenu = buildServiceMenu();
+            mainMenu.addSubMenu(SERVICE_OPTION, usersMenu);
         }
         
         if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.ADMIN)) {
@@ -247,6 +257,15 @@ public class MainMenu extends AbstractUI {
         final Menu menu = new Menu("Teams >");
 
         menu.addItem(TEAM_REGISTER_OPTION, "Register a Team", new RegisterTeamAction());
+        menu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
+
+        return menu;
+    }
+      
+      private Menu buildServiceMenu() {
+        final Menu menu = new Menu("Services >");
+
+        menu.addItem(SERVICE_REGISTER_OPTION, "Register Service", new RegisterServiceAction());
         menu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
 
         return menu;

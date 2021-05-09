@@ -6,6 +6,8 @@ import eapli.base.teammanagement.domain.Team;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 import eapli.framework.infrastructure.authz.domain.model.SystemUser;
+import javax.persistence.AttributeOverride;
+import javax.persistence.Column;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -23,11 +25,27 @@ public class Colaborator implements AggregateRoot<MecanographicNumber> {
     private Long version;
 
     @EmbeddedId
-    private MecanographicNumber mecanographicNumber;    
+    private MecanographicNumber mecanographicNumber;
+
+    @XmlElement
+    @JsonProperty
+    @AttributeOverride(name = "value", column = @Column(name = "Name"))
     private Name name;
+    
+    @XmlElement
+    @JsonProperty
     private Address address;
+    
+    @XmlElement
+    @JsonProperty
     private BirthDate birthDate;
+    
+    @XmlElement
+    @JsonProperty
     private Evaluation evaluation;
+    
+    @XmlElement
+    @JsonProperty
     private Contact contact;
 
 

@@ -16,10 +16,8 @@ import eapli.framework.visitor.Visitor;
 @SuppressWarnings("squid:S106")
 public class CataloguePrinter implements Visitor<Catalogue>{
     
-    @Override
+     @Override
     public void visit(final Catalogue visitee) {
-        System.out.printf("%-10s", visitee.identity(),
-                String.valueOf(visitee.isActive()));
+        System.out.printf("%-10s", visitee.identity(), visitee.isActive());
     }
-    
 }

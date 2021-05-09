@@ -64,7 +64,7 @@ public class ColaboratorBootstrapper implements Action {
         return request;
     }
 
-    private Colaborator registerColaborator(){ 
+    public Colaborator registerColaborator(){ 
         
         try {
             Thread.sleep(1000);   //se nao tiver um delay o systemuser nao é encontrado

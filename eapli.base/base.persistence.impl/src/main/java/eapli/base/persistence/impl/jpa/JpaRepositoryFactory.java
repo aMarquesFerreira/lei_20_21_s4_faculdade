@@ -5,6 +5,7 @@ import eapli.base.catalogue.repositories.CatalogueRepository;
 import eapli.base.clientusermanagement.repositories.SignupRequestRepository;
 import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
 import eapli.base.infrastructure.persistence.RepositoryFactory;
+import eapli.base.servicemanagement.repositories.ServiceRepository;
 import eapli.base.teammanagement.repositories.TeamRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.authz.domain.repositories.UserRepository;
@@ -69,6 +70,11 @@ public class JpaRepositoryFactory implements RepositoryFactory {
     @Override
     public TeamRepository teams() {
         return new JpaTeamRepository(Application.settings().getPersistenceUnitName());
+    }
+    
+    @Override
+    public ServiceRepository services() {
+        return new JpaServiceRepository(Application.settings().getPersistenceUnitName());
     }
 
 

@@ -8,6 +8,7 @@ import eapli.base.clientusermanagement.repositories.ClientUserRepository;
 
 import eapli.base.clientusermanagement.repositories.SignupRequestRepository;
 import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
+import eapli.base.servicemanagement.repositories.ServiceRepository;
 import eapli.base.teammanagement.repositories.TeamRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.authz.domain.repositories.UserRepository;
@@ -73,5 +74,7 @@ public interface RepositoryFactory {
         ColaboratorRepository colaborators();
         
         TeamRepository teams();
+
+        ServiceRepository services();
 
 }

@@ -24,18 +24,18 @@ public class JpaColaboratorRepository extends JpaAutoTxRepository<Colaborator, M
         implements ColaboratorRepository{
     
      public JpaColaboratorRepository(TransactionalContext autoTx) {
-        super(autoTx, "Mecanographic Number");
+        super(autoTx, "mecanographicNumber");
     }
 
     public JpaColaboratorRepository(String puname) {
         super(puname, Application.settings().getExtendedPersistenceProperties(),
-                "Mecanographic Number");
+                "mecanographicNumber");
     }
 
     @Override
     public Optional<Colaborator> findByMecanographicNumber(MecanographicNumber mecanographicNumber) {
         final Map<String, Object> params = new HashMap<>();
-        params.put("Mecanographic Number", mecanographicNumber);
+        params.put("mecanographicNumber", mecanographicNumber);
         return matchOne("e.mecanographicNumber=:mecanographicNumber", params);
     }
 
@@ -48,7 +48,7 @@ public class JpaColaboratorRepository extends JpaAutoTxRepository<Colaborator, M
     @Override
     public Optional<Colaborator> findByUsername(Username name) {
         final Map<String, Object> params = new HashMap<>();
-        params.put("Mecanographic Number", name);
+        params.put("username", name);
         return matchOne("e.username=:username", params);
     }
     

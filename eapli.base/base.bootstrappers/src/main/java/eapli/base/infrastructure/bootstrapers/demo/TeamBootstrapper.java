@@ -14,6 +14,7 @@ import eapli.base.clientusermanagement.domain.SignupRequest;
 import eapli.base.infrastructure.bootstrapers.TestDataConstants;
 import eapli.base.myclientuser.application.SignupController;
 import eapli.base.teammanagement.application.RegisterTeamController;
+import eapli.base.teammanagement.domain.Team;
 import eapli.framework.actions.Action;
 import eapli.framework.domain.repositories.ConcurrencyException;
 import eapli.framework.domain.repositories.IntegrityViolationException;
@@ -30,7 +31,7 @@ public class TeamBootstrapper implements Action {
     
     
     @Override
-    public boolean execute() {
+    public boolean execute() {  
         
         registerNewTeam("001", "TeamA", "Team AAAA");
         registerNewTeam("002", "TeamB", "Team BBBB");
@@ -40,7 +41,7 @@ public class TeamBootstrapper implements Action {
         return true;
     }
     
-    private void registerNewTeam(String number, String acronym, String name) {
+    public void registerNewTeam(String number, String acronym, String name) {
         teamController.registerTeam(number, acronym, name);
         LOGGER.debug("»»» Creating new Team %s", number);
     }
