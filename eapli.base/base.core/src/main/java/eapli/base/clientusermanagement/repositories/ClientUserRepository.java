@@ -33,5 +33,5 @@ public interface ClientUserRepository
         return ofIdentity(number);
     }
 
-    public Iterable<ClientUser> findAllActive();
+    Iterable<ClientUser> findAllActive();
 }

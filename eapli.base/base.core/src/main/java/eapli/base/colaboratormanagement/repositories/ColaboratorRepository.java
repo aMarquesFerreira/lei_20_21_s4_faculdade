@@ -29,5 +29,5 @@ public interface ColaboratorRepository extends DomainRepository<MecanographicNum
         return ofIdentity(number);
     }
 
-    public Iterable<Colaborator> findAllActive();
+    Iterable<Colaborator> findAllActive();
 }

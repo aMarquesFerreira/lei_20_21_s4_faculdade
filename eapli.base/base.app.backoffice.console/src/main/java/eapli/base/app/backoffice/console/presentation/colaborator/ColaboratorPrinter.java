@@ -17,6 +17,6 @@ public class ColaboratorPrinter implements Visitor<Colaborator>{
     @Override
     public void visit(final Colaborator visitee) {
         System.out.printf("%-10s", visitee.identity(),
-                String.valueOf(visitee.isActive()));
+                visitee.isActive());
     }
 }
