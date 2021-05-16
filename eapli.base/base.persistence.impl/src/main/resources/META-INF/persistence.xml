@@ -15,6 +15,7 @@
     <class>eapli.base.cataloguemanagement.domain.Catalogue</class>
     <class>eapli.base.colaboratormanagement.domain.Colaborator</class>
     <class>eapli.base.teammanagement.domain.Team</class>
+    <class>eapli.base.servicemanagement.domain.Service</class>
 
     <properties>
       <!--<property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/base"/>-->

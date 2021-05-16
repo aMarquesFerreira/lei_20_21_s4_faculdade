@@ -5,10 +5,18 @@
  */
 package eapli.base.backoffice.console.presentation.service;
 
+import eapli.base.servicemanagement.domain.Service;
+import eapli.framework.visitor.Visitor;
+
 /**
  *
  * @author andre
  */
-public class ServicePrinter {
+public class ServicePrinter implements Visitor<Service> {
+    
+     @Override
+    public void visit(final Service visitee) {
+        System.out.printf("%-10s", visitee.identity(), visitee.isActive());
+    }
     
 }

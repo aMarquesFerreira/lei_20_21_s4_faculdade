@@ -4,6 +4,7 @@ import eapli.base.catalogue.repositories.CatalogueRepository;
 import eapli.base.clientusermanagement.repositories.ClientUserRepository;
 import eapli.base.clientusermanagement.repositories.SignupRequestRepository;
 import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
+import eapli.base.formmanagement.repositories.FormRepository;
 import eapli.base.infrastructure.bootstrapers.BaseBootstrapper;
 import eapli.base.infrastructure.persistence.RepositoryFactory;
 import eapli.base.servicemanagement.repositories.ServiceRepository;
@@ -79,6 +80,11 @@ public class InMemoryRepositoryFactory implements RepositoryFactory {
     
     @Override
     public ServiceRepository services() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public FormRepository forms() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

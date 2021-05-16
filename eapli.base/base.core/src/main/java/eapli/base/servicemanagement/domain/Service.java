@@ -54,6 +54,11 @@ public class Service implements AggregateRoot<ServiceCode>{
     @AttributeOverride(name = "value", column = @Column(name = "Title"))
     private Designation serviceTitle;
     
+    @XmlElement
+    @JsonProperty
+    private boolean active;
+
+    
     
     
     /**
@@ -79,6 +84,7 @@ public class Service implements AggregateRoot<ServiceCode>{
         this.serviceDescription = serviceDescription;
         this.serviceTitle = serviceTitle;
         this.catalogue = catalogue;
+        this.active = true;
         
         
     }
@@ -125,7 +131,15 @@ public class Service implements AggregateRoot<ServiceCode>{
         return this.serviceTitle;
     }
     
-    
+    public boolean isActive() {
+        return this.active;
+    }
+
+    public boolean toggleState() {
+
+        this.active = !this.active;
+        return isActive();
+    }
     
     
 }

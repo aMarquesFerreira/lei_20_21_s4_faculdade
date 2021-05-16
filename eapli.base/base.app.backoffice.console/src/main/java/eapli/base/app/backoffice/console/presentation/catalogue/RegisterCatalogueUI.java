@@ -9,16 +9,12 @@ import eapli.base.app.backoffice.console.presentation.colaborator.ColaboratorPri
 import eapli.base.app.backoffice.console.presentation.team.TeamPrinter;
 import eapli.base.cataloguemanagement.application.RegisterCatalogueController;
 import eapli.base.colaboratormanagement.domain.Colaborator;
-import eapli.base.teammanagement.application.ListTeamService;
 import eapli.base.teammanagement.domain.Team;
 import eapli.framework.domain.repositories.IntegrityViolationException;
 import eapli.framework.io.util.Console;
 import eapli.framework.presentation.console.AbstractUI;
-import eapli.framework.presentation.console.ListWidget;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-import javax.security.auth.callback.ConfirmationCallback;
 import eapli.framework.presentation.console.SelectWidget;
 
 
