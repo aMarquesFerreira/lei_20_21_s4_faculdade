@@ -28,7 +28,7 @@ public class RegisterFormUI extends AbstractUI {
     //private final ListTeamService listTeamService = new ListTeamService();
     
     @Override
-    protected boolean doShow() {
+    public boolean doShow() {
         
         final String formId = Console.readLine("formId");
         final String name = Console.readLine("name");
@@ -67,12 +67,12 @@ public class RegisterFormUI extends AbstractUI {
         }
 
         return false;
-    
-
     }
+    
+    
     @Override
     public String headline() {
-        return "Register Catalogue";
+        return "Register Form";
     }
 
     

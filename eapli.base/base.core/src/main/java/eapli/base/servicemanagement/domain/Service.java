@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import eapli.base.cataloguemanagement.domain.Catalogue;
 import eapli.base.cataloguemanagement.domain.CatalogueId;
 import eapli.base.colaboratormanagement.domain.Colaborator;
+import eapli.base.formmanagement.domain.Form;
 import eapli.base.teammanagement.domain.Team;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
@@ -66,6 +67,9 @@ public class Service implements AggregateRoot<ServiceCode>{
      */
     @ManyToOne()
     private Catalogue catalogue;
+    
+    @OneToOne()
+    private Form form;
    
                
     /**
@@ -76,14 +80,15 @@ public class Service implements AggregateRoot<ServiceCode>{
      * @param serviceTitle
      * @param catalogue
      */
-    public Service(final ServiceCode serviceCode, final Description serviceDescription, final Designation serviceTitle, final Catalogue catalogue) {
-        if (serviceCode == null || serviceDescription == null || serviceTitle == null || catalogue == null) {
+    public Service(final ServiceCode serviceCode, final Description serviceDescription, final Designation serviceTitle, final Catalogue catalogue, final Form form) {
+        if (serviceCode == null || serviceDescription == null || serviceTitle == null || catalogue == null|| form == null) {
             throw new IllegalArgumentException();
         }
         this.serviceCode = serviceCode;
         this.serviceDescription = serviceDescription;
         this.serviceTitle = serviceTitle;
         this.catalogue = catalogue;
+        this.form = form;
         this.active = true;
         
         
@@ -96,6 +101,10 @@ public class Service implements AggregateRoot<ServiceCode>{
     
     public Catalogue catalogue() {
         return this.catalogue;
+    }
+    
+    public Form form() {
+        return this.form;
     }
     
     

@@ -15,6 +15,7 @@ import java.util.List;
 import javax.persistence.AttributeOverride;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -25,6 +26,7 @@ import javax.xml.bind.annotation.XmlElement;
  *
  * @author andre
  */
+@Entity
 public class Form implements AggregateRoot<FormId>{
     
     @Version
