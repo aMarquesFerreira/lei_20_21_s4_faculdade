@@ -34,6 +34,7 @@ import eapli.base.app.backoffice.console.presentation.clientuser.AcceptRefuseSig
 import eapli.base.app.backoffice.console.presentation.colaborator.AddColaboratorToTeamAction;
 import eapli.base.app.backoffice.console.presentation.colaborator.RegisterColaboratorAction;
 import eapli.base.app.backoffice.console.presentation.team.RegisterTeamAction;
+import eapli.base.backoffice.console.presentation.form.RegisterFormAction;
 import eapli.base.backoffice.console.presentation.service.RegisterServiceAction;
 import eapli.base.usermanagement.domain.BaseRoles;
 import eapli.framework.actions.Actions;
@@ -112,6 +113,7 @@ public class MainMenu extends AbstractUI {
     
     // SERVICES
     private static final int SERVICE_REGISTER_OPTION = 1;
+    private static final int FORM_REGISTER_OPTION = 2;
 
     // MAIN MENU
     private static final int MY_USER_OPTION = 1;
@@ -266,11 +268,13 @@ public class MainMenu extends AbstractUI {
         final Menu menu = new Menu("Services >");
 
         menu.addItem(SERVICE_REGISTER_OPTION, "Register Service", new RegisterServiceAction());
+        menu.addItem(FORM_REGISTER_OPTION, "Register Form", new RegisterFormAction());
         menu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
 
         return menu;
     }
-    
+      
+       
     
 
 

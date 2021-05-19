@@ -41,31 +41,27 @@ public class RegisterServiceController {
      * @param serviceDescription
      * @param serviceTitle
      * @param catalogue
-     * @param form
      * @return
      */
-    public Service RegisterService(final String serviceCode, final String serviceDescription, final String serviceTitle, final Catalogue catalogue, final Form form) {
+    public Service RegisterService(final String serviceCode, final String serviceDescription, final String serviceTitle, final Catalogue catalogue) {
        
         authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN);
 
-        final Service newService = new Service(ServiceCode.valueOf(serviceCode), Description.valueOf(serviceDescription),  Designation.valueOf(serviceTitle), catalogue, form);
-                    
+        final Service newService = new Service(ServiceCode.valueOf(serviceCode), Description.valueOf(serviceDescription),  Designation.valueOf(serviceTitle), catalogue);
+           
+        /*final Form newForm = formController.RegisterForm(formId, name, newService, formPar);
+        newService.form();*/
+        
         return serviceRepository.save(newService);
       
     }
     
-    
+      
     public Iterable<Catalogue> catalogues() {
         return svcCatalogues.activeCatalogues();
     }
 
-    public Form RegisterForm(final String formId, final String name,final Service service, List<FormParameters> formPar) {
-       
-        final Form newForm = formController.RegisterForm(formId, name, service, formPar);
-                
-        return formRepository.save(newForm);
-      
-    }
+    
     
     
     

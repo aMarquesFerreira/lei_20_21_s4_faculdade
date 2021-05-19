@@ -7,25 +7,17 @@ package eapli.base.servicemanagement.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import eapli.base.cataloguemanagement.domain.Catalogue;
-import eapli.base.cataloguemanagement.domain.CatalogueId;
-import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.formmanagement.domain.Form;
-import eapli.base.teammanagement.domain.Team;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 import eapli.framework.general.domain.model.Description;
 import eapli.framework.general.domain.model.Designation;
-import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.AttributeOverride;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlElement;
@@ -68,6 +60,7 @@ public class Service implements AggregateRoot<ServiceCode>{
     @ManyToOne()
     private Catalogue catalogue;
     
+    
     @OneToOne()
     private Form form;
    
@@ -80,8 +73,8 @@ public class Service implements AggregateRoot<ServiceCode>{
      * @param serviceTitle
      * @param catalogue
      */
-    public Service(final ServiceCode serviceCode, final Description serviceDescription, final Designation serviceTitle, final Catalogue catalogue, final Form form) {
-        if (serviceCode == null || serviceDescription == null || serviceTitle == null || catalogue == null|| form == null) {
+    public Service(final ServiceCode serviceCode, final Description serviceDescription, final Designation serviceTitle, final Catalogue catalogue) {
+        if (serviceCode == null || serviceDescription == null || serviceTitle == null || catalogue == null) {
             throw new IllegalArgumentException();
         }
         this.serviceCode = serviceCode;

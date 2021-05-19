@@ -37,8 +37,6 @@ public class RegisterFormUI extends AbstractUI {
         final String label = Console.readLine("label");
         final String description = Console.readLine("description");
         
-        //final FormParameters theAttribute = new FormParameters(parameterData, variableName, label, description);
-        
         List<FormParameters> theAttributes = new ArrayList<>();
         
         boolean moreAttributes = true;
@@ -53,7 +51,7 @@ public class RegisterFormUI extends AbstractUI {
         //select service//
         final Iterable<Service> services = this.theController.services();
 
-        final SelectWidget<Service> selector = new SelectWidget<>("Services:", services,
+        final SelectWidget<Service> selector = new SelectWidget<>("Associate this form to a  Service:", services,
                 new ServicePrinter());
         selector.show();
 
@@ -63,7 +61,7 @@ public class RegisterFormUI extends AbstractUI {
         try {
             this.theController.RegisterForm(formId, name, theService, theAttributes);
         } catch (@SuppressWarnings("unused") final IntegrityViolationException e) {
-            System.out.println("You tried to enter a catalogue which already exists in the database.");
+            System.out.println("You tried to enter a Form which already exists in the database.");
         }
 
         return false;

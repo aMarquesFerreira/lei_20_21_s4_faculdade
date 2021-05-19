@@ -13,6 +13,7 @@ import eapli.framework.general.domain.model.Designation;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.AttributeOverride;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -49,7 +50,7 @@ public class Form implements AggregateRoot<FormId>{
 
 
     /**
-     * cascade = CascadeType.NONE as the systemUser is part of another aggregate
+     * cascade = CascadeType.NONE
      */
     @OneToOne()
     private Service service;
@@ -84,6 +85,7 @@ public class Form implements AggregateRoot<FormId>{
         // for ORM only
     }
 
+    
 
     public Service service() {
         return this.service;
