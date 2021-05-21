@@ -97,7 +97,7 @@ public class Team implements AggregateRoot<TeamCode> {
         return DomainEntities.areEqual(this, other) && isActive() == team.isActive();
     }
 
-    public TeamCode catalogueId() {
+    public TeamCode teamCode() {
         return identity();
     }
 

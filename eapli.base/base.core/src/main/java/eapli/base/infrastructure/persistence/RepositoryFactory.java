@@ -11,6 +11,7 @@ import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
 import eapli.base.formmanagement.repositories.FormRepository;
 import eapli.base.servicemanagement.repositories.ServiceRepository;
 import eapli.base.teammanagement.repositories.TeamRepository;
+import eapli.base.typeofteammanagement.repositories.TypeOfTeamRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.authz.domain.repositories.UserRepository;
 
@@ -79,5 +80,7 @@ public interface RepositoryFactory {
         ServiceRepository services();
         
         FormRepository forms();
+        
+        TypeOfTeamRepository typesofteam();
 
 }

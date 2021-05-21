@@ -8,6 +8,7 @@ import eapli.base.formmanagement.repositories.FormRepository;
 import eapli.base.infrastructure.persistence.RepositoryFactory;
 import eapli.base.servicemanagement.repositories.ServiceRepository;
 import eapli.base.teammanagement.repositories.TeamRepository;
+import eapli.base.typeofteammanagement.repositories.TypeOfTeamRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.authz.domain.repositories.UserRepository;
 import eapli.framework.infrastructure.authz.repositories.impl.JpaAutoTxUserRepository;
@@ -78,10 +79,14 @@ public class JpaRepositoryFactory implements RepositoryFactory {
         return new JpaServiceRepository(Application.settings().getPersistenceUnitName());
     }
     
-     @Override
+    @Override
     public FormRepository forms() {
         return new JpaFormRepository(Application.settings().getPersistenceUnitName());
     }
 
+    @Override
+    public TypeOfTeamRepository typesofteam() {
+        return new JpaTypeOfTeamRepository(Application.settings().getPersistenceUnitName());
+    }
 
 }
