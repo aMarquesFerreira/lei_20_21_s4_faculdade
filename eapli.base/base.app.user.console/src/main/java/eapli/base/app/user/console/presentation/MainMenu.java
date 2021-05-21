@@ -28,10 +28,12 @@ import eapli.framework.actions.menu.Menu;
 import eapli.framework.actions.menu.MenuItem;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
 import eapli.framework.infrastructure.authz.application.AuthzRegistry;
+import eapli.framework.infrastructure.authz.application.UserSession;
 import eapli.framework.presentation.console.ExitWithMessageAction;
 import eapli.framework.presentation.console.menu.MenuItemRenderer;
 import eapli.framework.presentation.console.menu.MenuRenderer;
 import eapli.framework.presentation.console.menu.VerticalMenuRenderer;
+import java.util.Optional;
 
 /**
  * @author Paulo Gandra Sousa
@@ -51,6 +53,10 @@ class MainMenu extends ClientUserBaseUI {
     private static final int BOOKINGS_OPTION = 2;
     private static final int ACCOUNT_OPTION = 3;
     private static final int SETTINGS_OPTION = 4;
+    
+    //LIST CATALOGUES MENU
+    private static final int LIST_CATALOGUES_OPTION = 1;
+    
 
     // BOOKINGS MENU
     private static final int BOOK_A_MEAL_OPTION = 2;
@@ -94,4 +100,22 @@ class MainMenu extends ClientUserBaseUI {
 
         return mainMenu;
     }
+    
+   /* private Menu buildAccountMenu() {
+        final Menu catalogueMenu = new Menu("Catalogues");
+        catalogueMenu.addItem(LIST_CATALOGUES_OPTION, "List catalogues", () -> {
+            final Optional<UserSession> s = authz.session();
+            // example of using an extended class of generic list ui from the
+            // framework
+            new ListCataloguesUI<>(
+                    () -> new ListMovementsController().allMovementsByUsername(
+                            s.orElseThrow(IllegalStateException::new).authenticatedUser()
+                                    .identity()),
+                    new MovementPrinter(), "Movement", "List My Movements",
+                    "No data").show();
+            return true;
+        });
+        accountMenu.addItem(EXIT_OPTION, RETURN, Actions.SUCCESS);
+        return accountMenu;
+    }*/
 }

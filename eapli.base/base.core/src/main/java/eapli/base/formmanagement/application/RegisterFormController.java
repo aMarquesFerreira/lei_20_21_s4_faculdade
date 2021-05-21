@@ -39,7 +39,7 @@ public class RegisterFormController {
     public Form RegisterForm(final String formId, final String name,final Service service, List<FormParameters> formPar) {
        //value of form ID??
         
-        authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN);
+        authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.HELP_DESK_SERVICE_MANAGER);
 
         final Form newForm = new Form(FormId.valueOf(formId), Designation.valueOf(name), service, formPar);
                    

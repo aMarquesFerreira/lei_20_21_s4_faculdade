@@ -15,12 +15,16 @@ import eapli.framework.infrastructure.authz.domain.model.Role;
 /**
  * @author Paulo Gandra Sousa
  */
+
+//nao usar esta class
 public class MasterUsersBootstrapper extends UsersBootstrapperBase implements Action {
 
     @Override
     public boolean execute() {
         registerAdmin("admin", TestDataConstants.PASSWORD1, "Jane", "Doe Admin",
                 "jane.doe@email.local");
+        /*registerAdmin("andreFe", TestDataConstants.PASSANDRE, "Andre", "Ferreira",
+                "andre.rangel.ferreira.123@gmail.com");*/
         return true;
     }
 

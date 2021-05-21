@@ -26,6 +26,7 @@ package eapli.base.infrastructure.bootstrapers.demo;
 import eapli.base.infrastructure.bootstrapers.BaseBootstrapper;
 import eapli.base.infrastructure.bootstrapers.CatalogueBootstrapper;
 import eapli.base.infrastructure.bootstrapers.ColaboratorBootstrapper;
+import eapli.base.infrastructure.bootstrapers.MasterUsersBootstrapper;
 import eapli.framework.actions.Action;
 import eapli.framework.infrastructure.authz.application.AuthenticationService;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
@@ -56,6 +57,7 @@ public class BaseDemoBootstrapper implements Action {
                                    new ColaboratorBootstrapper(),
                                    new TeamBootstrapper(),
                                    new CatalogueBootstrapper()
+                                   //new MasterUsersBootstrapper()
         
         
                                 };

@@ -62,6 +62,10 @@ public final class BaseRoles {
      *
      */
     public static final Role HELP_DESK_SERVICE_MANAGER = Role.valueOf("HELP_DESK_SERVICE_MANAGER");
+     /**
+     *
+     */
+    public static final Role COLABORATOR = Role.valueOf("COLABORATOR");
     /**
      * get available role types for adding new users
      *
