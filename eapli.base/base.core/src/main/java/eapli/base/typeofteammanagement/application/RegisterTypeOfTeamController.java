@@ -30,10 +30,8 @@ public class RegisterTypeOfTeamController {
 
     /**
      *
-     * @param respColaborator
-     * @param catalogueId
-     * @param shortDescription
-     * @param catalogueTitle
+     * @param color
+     * @param description
      * @param teams
      * @return
      */

@@ -22,8 +22,7 @@ import eapli.framework.domain.repositories.IntegrityViolationException;
 /**
  *
  * @author Paulo Sousa
- */
-public class TeamBootstrapper implements Action {
+ */public class TeamBootstrapper implements Action {
     private static final Logger LOGGER = LoggerFactory.getLogger(TeamBootstrapper.class);
 
     private final RegisterTeamController teamController = new RegisterTeamController();

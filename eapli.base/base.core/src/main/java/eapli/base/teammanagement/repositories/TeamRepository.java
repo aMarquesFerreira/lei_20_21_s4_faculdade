@@ -8,6 +8,7 @@ import java.util.Optional;
 
 import eapli.base.clientusermanagement.domain.ClientUser;
 import eapli.base.clientusermanagement.domain.MecanographicNumber;
+import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.teammanagement.domain.Team;
 import eapli.base.teammanagement.domain.TeamCode;
 import eapli.framework.domain.repositories.DomainRepository;
@@ -41,6 +42,8 @@ public interface TeamRepository
     }
 
     Iterable<Team> findAllActive();
+
+    public Iterable<Team> findByColaborator(Colaborator who);
 
     
 }

@@ -11,6 +11,7 @@ import eapli.base.cataloguemanagement.domain.CatalogueId;
 import eapli.base.clientusermanagement.domain.ClientUser;
 import eapli.base.clientusermanagement.domain.MecanographicNumber;
 import eapli.base.clientusermanagement.repositories.ClientUserRepository;
+import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.teammanagement.domain.Team;
 import eapli.base.teammanagement.domain.TeamCode;
 import eapli.base.teammanagement.repositories.TeamRepository;
@@ -46,5 +47,15 @@ class JpaTeamRepository
     public Iterable<Team> findAllActive() {
         return match("e.active = true");
     }
+
+    @Override
+    public Iterable<Team> findByColaborator(Colaborator who) {
+        final Map<String, Object> params = new HashMap<>();
+        params.put("who", who);
+        return match("e.colaborators contains :who", params);
+    }
+    
+    
+    
 }
 

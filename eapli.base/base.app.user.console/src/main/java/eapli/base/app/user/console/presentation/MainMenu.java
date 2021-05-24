@@ -24,12 +24,16 @@
 package eapli.base.app.user.console.presentation;
 
 import eapli.base.app.common.console.presentation.authz.MyUserMenu;
+import eapli.base.app.user.console.presentation.mycatalogues.CataloguePrinter;
+import eapli.base.cataloguemanagement.application.MyCataloguesController;
+import eapli.framework.actions.Actions;
 import eapli.framework.actions.menu.Menu;
 import eapli.framework.actions.menu.MenuItem;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
 import eapli.framework.infrastructure.authz.application.AuthzRegistry;
 import eapli.framework.infrastructure.authz.application.UserSession;
 import eapli.framework.presentation.console.ExitWithMessageAction;
+import eapli.framework.presentation.console.ListUI;
 import eapli.framework.presentation.console.menu.MenuItemRenderer;
 import eapli.framework.presentation.console.menu.MenuRenderer;
 import eapli.framework.presentation.console.menu.VerticalMenuRenderer;
@@ -51,7 +55,7 @@ class MainMenu extends ClientUserBaseUI {
     // MAIN MENU
     private static final int MY_USER_OPTION = 1;
     private static final int BOOKINGS_OPTION = 2;
-    private static final int ACCOUNT_OPTION = 3;
+    private static final int CATALOGUES_OPTION = 3;
     private static final int SETTINGS_OPTION = 4;
     
     //LIST CATALOGUES MENU
@@ -95,27 +99,25 @@ class MainMenu extends ClientUserBaseUI {
         mainMenu.addSubMenu(MY_USER_OPTION, myUserMenu);
 
         mainMenu.addItem(MenuItem.separator(SEPARATOR_LABEL));
+        
+        mainMenu.addSubMenu(CATALOGUES_OPTION, buildCataloguesMenu());
 
         mainMenu.addItem(EXIT_OPTION, "Exit", new ExitWithMessageAction("Bye, Bye"));
 
         return mainMenu;
     }
     
-   /* private Menu buildAccountMenu() {
-        final Menu catalogueMenu = new Menu("Catalogues");
-        catalogueMenu.addItem(LIST_CATALOGUES_OPTION, "List catalogues", () -> {
-            final Optional<UserSession> s = authz.session();
-            // example of using an extended class of generic list ui from the
-            // framework
-            new ListCataloguesUI<>(
-                    () -> new ListMovementsController().allMovementsByUsername(
-                            s.orElseThrow(IllegalStateException::new).authenticatedUser()
-                                    .identity()),
-                    new MovementPrinter(), "Movement", "List My Movements",
+    private Menu buildCataloguesMenu() {
+        final Menu menu = new Menu("Catalogues");
+       // menu.addItem(BOOK_A_MEAL_OPTION, "Book a meal", () -> new RegisterBookingUI().show());*/
+
+        menu.addItem(LIST_CATALOGUES_OPTION, "My Bookings", () -> {
+            new ListUI<>(new MyCataloguesController().myCatalogues(), new CataloguePrinter(), "Catalogue",
+                    String.format("   %-40s %-15s %s", "TOKEN", "DAY", "STATUS"), "List My Bookings",
                     "No data").show();
             return true;
         });
-        accountMenu.addItem(EXIT_OPTION, RETURN, Actions.SUCCESS);
-        return accountMenu;
-    }*/
+        menu.addItem(EXIT_OPTION, RETURN, Actions.SUCCESS);
+        return menu;
+    }
 }

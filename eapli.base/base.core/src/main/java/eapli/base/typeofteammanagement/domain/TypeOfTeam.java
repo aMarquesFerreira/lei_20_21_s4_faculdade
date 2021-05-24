@@ -13,11 +13,15 @@ import eapli.framework.general.domain.model.Description;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.AttributeOverride;
+import javax.persistence.CascadeType;
 //import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlElement;
 
@@ -26,6 +30,7 @@ import javax.xml.bind.annotation.XmlElement;
  * @author Omen
  */
 @Entity
+@Table(name = "TYPE_OF_TEAM")
 public class TypeOfTeam implements AggregateRoot<Color>{
     
     @Version
@@ -38,7 +43,7 @@ public class TypeOfTeam implements AggregateRoot<Color>{
 
     @XmlElement
     @JsonProperty
-    @AttributeOverride(name = "value", column = @Column(name = "Type of team description"))
+    //@AttributeOverride(name = "value", column = @Column(name = "description"))
     private Description description;
 
     @XmlElement
@@ -46,9 +51,8 @@ public class TypeOfTeam implements AggregateRoot<Color>{
     private boolean active;
 
 
-    @OneToMany//(cascade = CascadeType.ALL)
-    //@JoinTable(name = "Colaborator", joinColumns = {@JoinColumn(name="TeamCode", nullable = true)})
-    //@JoinColumn(name="TeamCode")
+    @OneToMany(cascade = CascadeType.ALL)
+    //@JoinTable(name = "Teams", joinColumns = {@JoinColumn(name="CatalogueID")})
     private List<Team> teams;
 
 
@@ -58,8 +62,8 @@ public class TypeOfTeam implements AggregateRoot<Color>{
      * @param color
      * @param description
      */
-    public TypeOfTeam(final Color color, final Description description
-            /*, final Colaborator colaborator   manager ????*/) {
+    public TypeOfTeam(final Color color, final Description description) {
+        this.teams = new ArrayList<Team>();
         if (color == null || description == null  /*|| colaborator == null*/) {
             throw new IllegalArgumentException();
         }
@@ -116,10 +120,14 @@ public class TypeOfTeam implements AggregateRoot<Color>{
 
         this.active = !this.active;
         return isActive();
-    }
-
-    public void addTeam(Team team) {
-        teams.add(team);
-    }
+    }    
     
+    public boolean addTeam(final Team tms) {
+        for (Team teams : teams) {
+            if (teams.equals(tms)) {
+                return false;
+            }
+        }
+        return teams.add(tms);
+    }
 }

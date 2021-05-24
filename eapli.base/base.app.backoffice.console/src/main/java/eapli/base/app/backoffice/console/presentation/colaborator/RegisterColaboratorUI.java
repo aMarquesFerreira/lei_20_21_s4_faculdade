@@ -85,7 +85,7 @@ public class RegisterColaboratorUI extends AbstractUI {
         final Set<Role> roleTypes = new HashSet<>();
         boolean show;
         do {
-            show = showRoles(roleTypes);
+            show = showRoles(roleTypes); 
         } while (!show);
 
         try {
@@ -95,7 +95,8 @@ public class RegisterColaboratorUI extends AbstractUI {
                     new Address(street,city),
                     new BirthDate(birthdate),
                     new Evaluation(evaluation),
-                    new Contact(contact));
+                    new Contact(contact),
+                    roleTypes);
         } catch (final IntegrityViolationException | ConcurrencyException e) {
             System.out.println("This colaborator already exists.");
         }

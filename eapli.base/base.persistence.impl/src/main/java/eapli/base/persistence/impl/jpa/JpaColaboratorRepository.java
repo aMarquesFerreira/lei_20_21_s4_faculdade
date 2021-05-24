@@ -49,7 +49,7 @@ public class JpaColaboratorRepository extends JpaAutoTxRepository<Colaborator, M
     public Optional<Colaborator> findByUsername(Username name) {
         final Map<String, Object> params = new HashMap<>();
         params.put("username", name);
-        return matchOne("e.username=:username", params);
+        return matchOne("e.systemUser.username=:username", params);
     }
     
 }

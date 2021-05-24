@@ -40,7 +40,7 @@ public class TypeOfTeamBootstrapper implements Action{
         teams.add(team2);
         
         registerNewTypeOfTeam("ColorA", "TypeOfTeamA", teams);
-        registerNewTypeOfTeam("ColorB", "TypeOfTeamB", teams);
+       // registerNewTypeOfTeam("ColorB", "TypeOfTeamB", teams);
         
         return true;
     }

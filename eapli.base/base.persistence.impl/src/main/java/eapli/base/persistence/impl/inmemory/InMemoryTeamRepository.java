@@ -5,6 +5,7 @@
  */
 package eapli.base.persistence.impl.inmemory;
 
+import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.teammanagement.domain.Team;
 import eapli.base.teammanagement.domain.TeamCode;
 import eapli.base.teammanagement.repositories.TeamRepository;
@@ -35,6 +36,11 @@ public class InMemoryTeamRepository extends InMemoryDomainRepository<Team, TeamC
    @Override
     public Iterable<Team> findAllActive() {
         throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Iterable<Team> findByColaborator(Colaborator who) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
    

@@ -32,10 +32,6 @@ public class CatalogueBootstrapper implements Action {
     private static final Logger LOGGER = LoggerFactory.getLogger(CatalogueBootstrapper.class);
 
     private final RegisterCatalogueController catalogueController = new RegisterCatalogueController();
-    private final TeamBootstrapper teamBoot = new TeamBootstrapper();
-    private final RegisterTeamController teamController = new RegisterTeamController();
-    private final RegisterColaboratorController colabController = new RegisterColaboratorController();
-    //private final ColaboratorBootstrapper colabBoot = new ColaboratorBootstrapper();
     private final ColaboratorRepository colabRepo = PersistenceContext.repositories().colaborators();
     private final TeamRepository teamRepo = PersistenceContext.repositories().teams();
 

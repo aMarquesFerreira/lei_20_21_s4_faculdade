@@ -35,14 +35,17 @@ public class RegisterColaboratorController {
     public Role[] getRoleTypes() {
         return BaseRoles.nonUserValues();
     }
-
+    
     public Colaborator registerColaborator(SystemUser user,
                                           MecanographicNumber mecanographicNumber,
                                           Name name,
                                           Address address,
                                           BirthDate birthDate,
                                           Evaluation evaluation,
-                                          Contact contact) {
+                                          Contact contact,
+                                          Set<Role> roleTypes) {
+        //TODO register roles
+        
         authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.HUMAN_RESOURCES_MANAGER);
 
         Colaborator colaborator = new Colaborator(user,mecanographicNumber,address,birthDate,evaluation,contact);

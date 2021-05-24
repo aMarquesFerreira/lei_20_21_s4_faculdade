@@ -15,14 +15,17 @@ import javax.persistence.*;
 import javax.xml.bind.annotation.XmlElement;
 import java.util.ArrayList;
 import java.util.List;
+import org.hibernate.annotations.OptimisticLockType;
+import org.hibernate.annotations.OptimisticLocking;
 
 /**
  * @author andre
  */
-
+//@OptimisticLocking(type = OptimisticLockType.DIRTY)
 @Entity
 public class Team implements AggregateRoot<TeamCode> {
 
+    //pode ter que se retirar por causa do optimisticLock exeption no addColabToTeam
     @Version
     private Long version;
 

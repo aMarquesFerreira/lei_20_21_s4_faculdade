@@ -7,11 +7,13 @@ package eapli.base.typeofteammanagement.domain;
 
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.util.StringPredicates;
+import javax.persistence.Embeddable;
 
 /**
  *
  * @author Omen
  */
+@Embeddable
 public class Color implements ValueObject, Comparable<Color> {
     
      private static final long serialVersionUID = 1L;

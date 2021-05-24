@@ -17,19 +17,10 @@ import java.util.Optional;
 public interface TypeOfTeamRepository
     extends DomainRepository<Color, TypeOfTeam>{
     
-    /**
-     * returns the catalogue whose Catalogue ID is given
+     /**
+     * returns the typeOfTeam with the given color
      *
-     * @param catalogueId
-     *            the Catalogue ID to search for
-     * @return
-     */
-    /*Optional<Catalogue> findByCatalogueId(CatalogueId catalogueId);*/
-
-    /**
-     * returns the Catalogue with the given ID number
-     *
-     * @param catalogueId
+     * @param color
      * @return
      */
     default Optional<TypeOfTeam> findByColor(Color color) {

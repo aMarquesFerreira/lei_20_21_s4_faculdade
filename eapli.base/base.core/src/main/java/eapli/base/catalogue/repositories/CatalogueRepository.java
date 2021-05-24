@@ -7,6 +7,7 @@ import java.util.Optional;
 
 import eapli.base.clientusermanagement.domain.ClientUser;
 import eapli.base.clientusermanagement.domain.MecanographicNumber;
+import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.framework.domain.repositories.DomainRepository;
 //import eapli.framework.infrastructure.authz.domain.model.
 
@@ -17,14 +18,7 @@ import eapli.framework.domain.repositories.DomainRepository;
 public interface CatalogueRepository
         extends DomainRepository<CatalogueId, Catalogue> {
 
-    /**
-     * returns the catalogue whose Catalogue ID is given
-     *
-     * @param catalogueId
-     *            the Catalogue ID to search for
-     * @return
-     */
-    /*Optional<Catalogue> findByCatalogueId(CatalogueId catalogueId);*/
+    Iterable<Catalogue> findByColaborator(Colaborator who);
 
     /**
      * returns the Catalogue with the given ID number

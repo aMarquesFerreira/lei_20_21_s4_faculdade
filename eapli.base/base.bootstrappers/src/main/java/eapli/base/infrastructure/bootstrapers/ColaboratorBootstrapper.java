@@ -13,9 +13,11 @@ import eapli.base.colaboratormanagement.domain.Evaluation;
 import eapli.base.colaboratormanagement.domain.Name;
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.myclientuser.application.SignupController;
+import eapli.base.usermanagement.domain.BaseRoles;
 import eapli.framework.actions.Action;
 import eapli.framework.domain.repositories.ConcurrencyException;
 import eapli.framework.domain.repositories.IntegrityViolationException;
+import eapli.framework.infrastructure.authz.domain.model.Role;
 import eapli.framework.infrastructure.authz.domain.model.SystemUser;
 import eapli.framework.infrastructure.authz.domain.model.SystemUserBuilder;
 import eapli.framework.infrastructure.authz.domain.model.Username;
@@ -24,6 +26,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.logging.Level;
 
 public class ColaboratorBootstrapper implements Action {
@@ -41,9 +45,19 @@ public class ColaboratorBootstrapper implements Action {
     public boolean execute() {
         signupAndApproveUser(TestDataConstants.USER_TEST1, "Password1", "John", "Smith",
                 "john@smith.com", TestDataConstants.USER_TEST1);
-        signupAndApproveUser("isep959", "Password1", "Mary", "Smith", "mary@smith.com", "isep959");
         
-        registerColaborator();
+        signupAndApproveUser("isep959", "Password1", "Mary", "Smith", "mary@smith.com", "isep959");
+        registerColaborator("isep959","Mary");
+        
+        signupAndApproveUser("isep960", "Password1", "Lamb", "Smith", "lamb@smith.com", "isep960");        
+        registerColaborator("isep960","Lamb");
+        
+        signupAndApproveUser("isep961", "Password1", "Johnny", "Smith", "johnny@smith.com", "isep961");
+        registerColaborator("isep961","Jhonny");
+        
+        signupAndApproveUser("isep962", "Password1", "Cash", "Smith", "cash@smith.com", "isep962");
+        registerColaborator("isep962","Cash");
+        
         return true;
     }
 
@@ -64,7 +78,7 @@ public class ColaboratorBootstrapper implements Action {
         return request;
     }
 
-    public Colaborator registerColaborator(){ 
+    public Colaborator registerColaborator(String number, String name){ 
         
         try {
             Thread.sleep(1000);   //se nao tiver um delay o systemuser nao é encontrado
@@ -73,11 +87,15 @@ public class ColaboratorBootstrapper implements Action {
         }
         
         
-        SystemUser systemUser = userRepository.ofIdentity(Username.valueOf("isep959")).get();
+        SystemUser systemUser = userRepository.ofIdentity(Username.valueOf(number)).get();
+        
+        Set<Role> roles = new HashSet<>();
+        roles.add(BaseRoles.COLABORATOR);
         
         return registerColaboratorController.registerColaborator(
-                systemUser, new MecanographicNumber("isep959"), new Name("Mary Smith"),
+                systemUser, new MecanographicNumber(number), new Name(name),
                 new Address("Rua","Cidade"),
-                new BirthDate(new Date(105,12,12)), new Evaluation(5), new Contact(123456789));
+                new BirthDate(new Date(105,12,12)), new Evaluation(5), new Contact(123456789),
+                roles);
     }
 }

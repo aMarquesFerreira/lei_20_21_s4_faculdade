@@ -23,6 +23,7 @@
  */
 package eapli.base.infrastructure.bootstrapers.demo;
 
+import eapli.base.infrastructure.bootstrapers.AddColabToTeamBootstrapper;
 import eapli.base.infrastructure.bootstrapers.BaseBootstrapper;
 import eapli.base.infrastructure.bootstrapers.CatalogueBootstrapper;
 import eapli.base.infrastructure.bootstrapers.ColaboratorBootstrapper;
@@ -58,7 +59,8 @@ public class BaseDemoBootstrapper implements Action {
                                    new ColaboratorBootstrapper(),
                                    new TeamBootstrapper(),
                                    new CatalogueBootstrapper(),
-                                   new TypeOfTeamBootstrapper()
+                                   new TypeOfTeamBootstrapper(),
+                                   new AddColabToTeamBootstrapper()
                                    //new MasterUsersBootstrapper()
         
         

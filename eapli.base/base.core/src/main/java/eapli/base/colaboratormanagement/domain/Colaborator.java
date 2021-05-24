@@ -13,10 +13,13 @@ import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlElement;
+import org.hibernate.annotations.OptimisticLockType;
+import org.hibernate.annotations.OptimisticLocking;
 /**
  *
  * @author andre
  */
+//@OptimisticLocking(type = OptimisticLockType.DIRTY)
 @Entity
 public class Colaborator implements AggregateRoot<MecanographicNumber> {
 
