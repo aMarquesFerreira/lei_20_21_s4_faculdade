@@ -69,49 +69,23 @@ public class MainMenu extends AbstractUI {
     private static final int ACCEPT_REFUSE_SIGNUP_REQUEST_OPTION = 4;
 
     // SETTINGS
-    private static final int SET_KITCHEN_ALERT_LIMIT_OPTION = 1;
+    private static final int SET_LABORAL_TIME = 1;
 
-    // DISH TYPES
-    private static final int DISH_TYPE_REGISTER_OPTION = 1;
-    private static final int DISH_TYPE_LIST_OPTION = 2;
-    private static final int DISH_TYPE_CHANGE_OPTION = 3;
-    private static final int DISH_TYPE_ACTIVATE_DEACTIVATE_OPTION = 4;
-
-    // DISHES
-    private static final int DISH_REGISTER_OPTION = 5;
-    private static final int DISH_LIST_OPTION = 6;
-    private static final int DISH_REGISTER_DTO_OPTION = 7;
-    private static final int DISH_LIST_DTO_OPTION = 8;
-    private static final int DISH_ACTIVATE_DEACTIVATE_OPTION = 9;
-    private static final int DISH_CHANGE_OPTION = 10;
-
-    // DISH PROPERTIES
-    private static final int CHANGE_DISH_NUTRICIONAL_INFO_OPTION = 1;
-    private static final int CHANGE_DISH_PRICE_OPTION = 2;
-
-    // MATERIALS
-    private static final int MATERIAL_REGISTER_OPTION = 1;
-    private static final int MATERIAL_LIST_OPTION = 2;
-
-    // REPORTING
-    private static final int REPORTING_DISHES_PER_DISHTYPE_OPTION = 1;
-    private static final int REPORTING_HIGH_CALORIES_DISHES_OPTION = 2;
-    private static final int REPORTING_DISHES_PER_CALORIC_CATEGORY_OPTION = 3;
 
     // MEALS
     private static final int LIST_MEALS_OPTION = 1;
     private static final int MEAL_REGISTER_OPTION = 2;
-    
+
     // CATALOGUES
     private static final int CATALOGUE_REGISTER_OPTION = 1;
-    
+
     // COLABORATORS
     private static final int COLABORATOR_REGISTER_OPTION = 1;
     private static final int COLABORATOR_ADD_TOTEAM = 2;
-    
+
     // TEAMS
     private static final int TEAM_REGISTER_OPTION = 1;
-    
+
     // SERVICES
     private static final int SERVICE_REGISTER_OPTION = 1;
     private static final int FORM_REGISTER_OPTION = 2;
@@ -185,18 +159,18 @@ public class MainMenu extends AbstractUI {
             final Menu usersMenu = buildCataloguesMenu();
             mainMenu.addSubMenu(CATALOGUE_OPTION, usersMenu);
         }
-        
+
         if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.ADMIN)) {
             final Menu usersMenu = buildColaboratorMenu();
             mainMenu.addSubMenu(COLABORATOR_OPTION, usersMenu);
         }
-        
+
         if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.ADMIN)) {
             final Menu usersMenu = buildTeamMenu();
             mainMenu.addSubMenu(TEAM_OPTION, usersMenu);
         }
-        
-         if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.ADMIN)) {
+
+        if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.ADMIN)) {
             final Menu usersMenu = buildServiceMenu();
             mainMenu.addSubMenu(SERVICE_OPTION, usersMenu);
         }
@@ -225,7 +199,7 @@ public class MainMenu extends AbstractUI {
     private Menu buildAdminSettingsMenu() {
         final Menu menu = new Menu("Settings >");
 
-        menu.addItem(SET_KITCHEN_ALERT_LIMIT_OPTION, "Set kitchen alert limit",
+        menu.addItem(SET_LABORAL_TIME, "Set laboral time",
                 new ShowMessageAction("Not implemented yet"));
         menu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
 
@@ -244,7 +218,7 @@ public class MainMenu extends AbstractUI {
 
         return menu;
     }
-    
+
     private Menu buildCataloguesMenu() {
         final Menu menu = new Menu("Catalogues >");
 
@@ -253,8 +227,8 @@ public class MainMenu extends AbstractUI {
 
         return menu;
     }
-    
-     private Menu buildColaboratorMenu() {
+
+    private Menu buildColaboratorMenu() {
         final Menu menu = new Menu("Colaborators >");
 
         menu.addItem(COLABORATOR_REGISTER_OPTION, "Register Colaborator", new RegisterColaboratorAction());
@@ -263,9 +237,9 @@ public class MainMenu extends AbstractUI {
 
         return menu;
     }
-     
-     
-      private Menu buildTeamMenu() {
+
+
+    private Menu buildTeamMenu() {
         final Menu menu = new Menu("Teams >");
 
         menu.addItem(TEAM_REGISTER_OPTION, "Register a Team", new RegisterTeamAction());
