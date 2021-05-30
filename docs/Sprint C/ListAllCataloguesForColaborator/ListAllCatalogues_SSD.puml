@@ -1,0 +1,13 @@
+@startuml
+autonumber
+
+actor "Colaborator" as C
+participant "System" as UI
+
+activate C
+C --> UI : Wants see all the catalogues
+activate UI
+    UI -> C : Shows all catalogues on the database
+deactivate UI
+
+@enduml
