@@ -6,10 +6,12 @@
 package eapli.base.backoffice.console.presentation.service;
 
 import eapli.base.app.backoffice.console.presentation.catalogue.CataloguePrinter;
+import eapli.base.backoffice.console.presentation.form.RegisterFormUI;
 import eapli.base.cataloguemanagement.domain.Catalogue;
 import eapli.base.formmanagement.application.RegisterFormController;
-import eapli.base.formmanagement.domain.FormParameters;
+import eapli.base.formmanagement.domain.FormParameter;
 import eapli.base.servicemanagement.application.RegisterServiceController;
+import eapli.base.servicemanagement.domain.Service;
 import eapli.framework.domain.repositories.IntegrityViolationException;
 import eapli.framework.io.util.Console;
 import eapli.framework.presentation.console.AbstractUI;
@@ -27,7 +29,7 @@ public class RegisterServiceUI extends AbstractUI{
     
     private final RegisterServiceController theController = new RegisterServiceController();
     private final RegisterFormController formController =  new RegisterFormController();
-    //private final RegisterFormUI formUI = new RegisterFormUI();
+    private final RegisterFormUI formUI = new RegisterFormUI();
     
     
     @Override
@@ -50,13 +52,27 @@ public class RegisterServiceUI extends AbstractUI{
         final String serviceTitle = Console.readLine("Service Title");
         //--------
         
+        Service service;
          try {
-            this.theController.RegisterService(serviceCode, serviceDescription, serviceTitle, theCatalogue);
+            service = this.theController.RegisterService(serviceCode, serviceDescription, serviceTitle, theCatalogue);
             
         } catch (@SuppressWarnings("unused") final IntegrityViolationException e) {
             System.out.println("You tried to enter a Service which already exists in the database.");
+            return true;
         }
 
+        //
+        boolean createForm = Console.readBoolean("Create a Form ?");
+        
+        if (createForm){
+            boolean created = formUI.doShow(service);
+            
+            if (created){
+                boolean markActive = Console.readBoolean("Mark Service as Active ?");
+                theController.markActive(service);
+            }
+        }
+        
         
       return false;
     

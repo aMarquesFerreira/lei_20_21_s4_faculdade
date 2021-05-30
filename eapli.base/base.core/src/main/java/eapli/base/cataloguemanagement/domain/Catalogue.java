@@ -7,6 +7,7 @@ package eapli.base.cataloguemanagement.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import eapli.base.colaboratormanagement.domain.Colaborator;
+import eapli.base.servicemanagement.domain.Service;
 import eapli.base.teammanagement.domain.Team;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
@@ -60,6 +61,10 @@ public class Catalogue implements AggregateRoot<CatalogueId> {
     @ManyToMany(cascade = CascadeType.ALL)
     //@JoinTable(name = "Teams", joinColumns = {@JoinColumn(name="CatalogueID")})
     private List<Team> teams;
+    
+    /*@OneToMany/*(cascade = CascadeType.ALL)*/
+    //@JoinTable(name = "Teams", joinColumns = {@JoinColumn(name="CatalogueID")})
+    /*private List<Service> services;*/
 
 
     /**
@@ -80,6 +85,7 @@ public class Catalogue implements AggregateRoot<CatalogueId> {
         this.shortDescription = shortDescription;
         this.catalogueTitle = catalogueTitle;
         teams = new ArrayList<>();
+        //services = new ArrayList<>();
         this.active = true;
 
     }
@@ -133,13 +139,22 @@ public class Catalogue implements AggregateRoot<CatalogueId> {
     }
 
     public boolean addTeam(final Team tms) {
-        for (Team teams : teams) {
-            if (teams.equals(tms)) {
+        for (Team team : teams) {
+            if (team.equals(tms)) {
                 return false;
             }
         }
         return teams.add(tms);
     }
+    
+    /*public boolean addService(final Service srv) {
+        for (Service service : services) {
+            if (service.equals(srv)) {
+                return false;
+            }
+        }
+        return services.add(srv);
+    }*/
 
     public boolean isActive() {
         return this.active;

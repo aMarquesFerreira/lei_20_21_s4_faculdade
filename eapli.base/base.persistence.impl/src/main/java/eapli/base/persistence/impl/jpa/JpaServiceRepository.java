@@ -6,6 +6,7 @@
 package eapli.base.persistence.impl.jpa;
 
 import eapli.base.Application;
+import eapli.base.cataloguemanagement.domain.Catalogue;
 import eapli.base.servicemanagement.domain.Service;
 import eapli.base.servicemanagement.domain.ServiceCode;
 import eapli.base.servicemanagement.repositories.ServiceRepository;
@@ -24,7 +25,7 @@ public class JpaServiceRepository  extends JpaAutoTxRepository<Service, ServiceC
         implements ServiceRepository {
     
     public JpaServiceRepository(TransactionalContext autoTx) {
-        super(autoTx, "serviiceCode");
+        super(autoTx, "serviceCode");
     }
 
     public JpaServiceRepository(String puname) {
@@ -43,6 +44,26 @@ public class JpaServiceRepository  extends JpaAutoTxRepository<Service, ServiceC
     public Iterable<Service> findAllActive() {
         //return match("e.catalogue.active = true");
         return match("e.active = true");
+    }
+    
+    @Override
+    public Iterable<Service> findAllInactive() {
+        //return match("e.catalogue.active = true");
+        return match("e.active = false");
+    }
+    
+    @Override
+    public Iterable<Service> findAll() {
+        //return match("e.catalogue.active = true");
+        //TODO fix!
+        return match("e.active = false inner join e.active = true");
+    }
+
+    @Override
+    public Iterable<Service> findByCatalogue(Catalogue catalogue) {
+        final Map<String, Object> params = new HashMap<>();
+        params.put("catalogue", catalogue);
+        return match("e.catalogue = :catalogue",params);
     }
 
     

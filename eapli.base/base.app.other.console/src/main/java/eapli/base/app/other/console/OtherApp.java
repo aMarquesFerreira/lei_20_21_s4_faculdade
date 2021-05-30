@@ -28,10 +28,10 @@ public final class OtherApp {
 
     public static void main(final String[] args) {
         System.out.println("=====================================");
-        System.out.println("Base POS");
+        System.out.println("Executor Actividades");
         System.out.println("(C) 2016, 2017, 2018");
         System.out.println("=====================================");
-
+/*
         AuthzRegistry.configure(PersistenceContext.repositories().users(),
                 new BasePasswordPolicy(), new PlainTextEncoder());
 
@@ -39,7 +39,9 @@ public final class OtherApp {
         if (new LoginAction(BaseRoles.CASHIER).execute()) {
             final MainMenu menu = new MainMenu();
             menu.mainLoop();
-        }
+        }*/
+
+        TcpServer tcpServer = new TcpServer();
 
         // exiting the application, closing all threads
         System.exit(0);

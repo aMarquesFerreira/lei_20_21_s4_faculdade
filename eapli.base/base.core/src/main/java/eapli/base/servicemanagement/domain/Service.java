@@ -8,16 +8,19 @@ package eapli.base.servicemanagement.domain;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import eapli.base.cataloguemanagement.domain.Catalogue;
 import eapli.base.formmanagement.domain.Form;
+import eapli.base.workflowmanagement.domain.WorkFlow;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 import eapli.framework.general.domain.model.Description;
 import eapli.framework.general.domain.model.Designation;
+import java.util.List;
 import javax.persistence.AttributeOverride;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,7 +54,8 @@ public class Service implements AggregateRoot<ServiceCode>{
     @JsonProperty
     private boolean active;
 
-    
+    @OneToOne
+    private WorkFlow workFlow;
     
     
     /**
@@ -61,7 +65,7 @@ public class Service implements AggregateRoot<ServiceCode>{
     private Catalogue catalogue;
     
     
-    @OneToOne()
+    @ManyToOne //(mappedBy = "service")
     private Form form;
    
                
@@ -81,10 +85,9 @@ public class Service implements AggregateRoot<ServiceCode>{
         this.serviceDescription = serviceDescription;
         this.serviceTitle = serviceTitle;
         this.catalogue = catalogue;
-        this.form = form;
-        this.active = true;
-        
-        
+        this.form = null;
+        this.active = false;//true;
+        this.workFlow = null;       
     }
     
     protected Service() {
@@ -96,8 +99,12 @@ public class Service implements AggregateRoot<ServiceCode>{
         return this.catalogue;
     }
     
-    public Form form() {
+    public Form getForm() {
         return this.form;
+    }
+
+    public void setForm(Form form) {
+        this.form = form;
     }
     
     
@@ -142,6 +149,9 @@ public class Service implements AggregateRoot<ServiceCode>{
         this.active = !this.active;
         return isActive();
     }
-    
+
+    public WorkFlow getWorkFlow() {
+        return workFlow;
+    }
     
 }

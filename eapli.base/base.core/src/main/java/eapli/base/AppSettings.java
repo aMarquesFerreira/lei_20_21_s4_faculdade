@@ -24,6 +24,8 @@ public class AppSettings {
     private static final String PERSISTENCE_UNIT_KEY = "persistence.persistenceUnit";
     private static final String SCHEMA_GENERATION_KEY = "javax.persistence.schema-generation.database.action";
     private static final String HIGH_CALORIES_DISH_LIMIT = "HighCaloriesDishLimit";
+    
+    private static final String USE_EVENTFUL_CONTROLLERS = "UseEventfulControllers";
 
     private final Properties applicationProperties = new Properties();
 
@@ -83,5 +85,9 @@ public class AppSettings {
 
     public String getProperty(String prop) {
         return this.applicationProperties.getProperty(prop);
+    }
+    
+    public boolean getUseEventfulControllers() {
+        return Boolean.valueOf(this.applicationProperties.getProperty(USE_EVENTFUL_CONTROLLERS));
     }
 }

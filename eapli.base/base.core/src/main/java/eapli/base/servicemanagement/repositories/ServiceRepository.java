@@ -21,6 +21,7 @@ public interface ServiceRepository extends DomainRepository<ServiceCode, Service
      /**
      * returns the Catalogue with the given ID number
      *
+     * @param serviceCode
      * @param catalogueId
      * @return
      */
@@ -29,5 +30,13 @@ public interface ServiceRepository extends DomainRepository<ServiceCode, Service
     }
 
     Iterable<Service> findAllActive();
+    
+    Iterable<Service> findAllInactive();
+    
+     Iterable<Service> findAll();
+
+    public Iterable<Service> findByCatalogue(Catalogue catalogue);
+
+   //public Service ofIdentity(Long serviceId);
     
 }

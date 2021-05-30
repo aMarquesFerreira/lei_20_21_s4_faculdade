@@ -23,9 +23,12 @@
  */
 package eapli.base.app.user.console.presentation;
 
+
 import eapli.base.app.common.console.presentation.authz.MyUserMenu;
 import eapli.base.app.user.console.presentation.mycatalogues.CataloguePrinter;
+import eapli.base.app.user.console.presentation.myservices.RequestServiceAction;
 import eapli.base.cataloguemanagement.application.MyCataloguesController;
+import eapli.base.ticketmanagement.application.RequestServiceController;
 import eapli.framework.actions.Actions;
 import eapli.framework.actions.menu.Menu;
 import eapli.framework.actions.menu.MenuItem;
@@ -56,10 +59,14 @@ class MainMenu extends ClientUserBaseUI {
     private static final int MY_USER_OPTION = 1;
     private static final int BOOKINGS_OPTION = 2;
     private static final int CATALOGUES_OPTION = 3;
-    private static final int SETTINGS_OPTION = 4;
+    private static final int REQUEST_OPTION = 4;
+    private static final int SETTINGS_OPTION = 5;
     
-    //LIST CATALOGUES MENU
+    //CATALOGUES MENU
     private static final int LIST_CATALOGUES_OPTION = 1;
+    
+    //REQUESTS MENU
+    private static final int REQUEST_SERVICE_OPTION = 2;
     
 
     // BOOKINGS MENU
@@ -101,6 +108,8 @@ class MainMenu extends ClientUserBaseUI {
         mainMenu.addItem(MenuItem.separator(SEPARATOR_LABEL));
         
         mainMenu.addSubMenu(CATALOGUES_OPTION, buildCataloguesMenu());
+        
+        mainMenu.addSubMenu(REQUEST_SERVICE_OPTION, buildRequestMenu());
 
         mainMenu.addItem(EXIT_OPTION, "Exit", new ExitWithMessageAction("Bye, Bye"));
 
@@ -111,13 +120,22 @@ class MainMenu extends ClientUserBaseUI {
         final Menu menu = new Menu("Catalogues");
        // menu.addItem(BOOK_A_MEAL_OPTION, "Book a meal", () -> new RegisterBookingUI().show());*/
 
-        menu.addItem(LIST_CATALOGUES_OPTION, "My Bookings", () -> {
+        menu.addItem(LIST_CATALOGUES_OPTION, "My Catalogues", () -> {
             new ListUI<>(new MyCataloguesController().myCatalogues(), new CataloguePrinter(), "Catalogue",
-                    String.format("   %-40s %-15s %s", "TOKEN", "DAY", "STATUS"), "List My Bookings",
+                    String.format("   %-40s %-15s %s", "TOKEN", "DAY", "STATUS"), "List My Catalogues",
                     "No data").show();
             return true;
         });
         menu.addItem(EXIT_OPTION, RETURN, Actions.SUCCESS);
         return menu;
     }
+    
+     private Menu buildRequestMenu() {
+        final Menu menu = new Menu("Requests");
+        menu.addItem(REQUEST_SERVICE_OPTION, "Request Services", new RequestServiceAction());
+        menu.addItem(EXIT_OPTION, RETURN, Actions.SUCCESS);
+        return menu;
+    }
+     
+     
 }

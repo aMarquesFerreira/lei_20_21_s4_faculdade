@@ -18,6 +18,14 @@
     <class>eapli.base.servicemanagement.domain.Service</class>
     <class>eapli.base.formmanagement.domain.Form</class>
     <class>eapli.base.typeofteammanagement.domain.TypeOfTeam</class>
+    <class>eapli.base.formmanagement.domain.FormParameter</class>
+    <class>eapli.base.formmanagement.domain.FormAnswer</class>
+    <class>eapli.base.formmanagement.domain.FormParameterAnswer</class>
+    <class>eapli.base.workflowmanagement.domain.WorkFlow</class>
+    <class>eapli.base.activitymanagement.domain.Activity</class>
+    <class>eapli.base.workflowmanagement.domain.WorkFlowExecution</class>
+    <class>eapli.base.activitymanagement.domain.ActivityExecution</class>
+
 
     <properties>
       <!--<property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/base"/>-->

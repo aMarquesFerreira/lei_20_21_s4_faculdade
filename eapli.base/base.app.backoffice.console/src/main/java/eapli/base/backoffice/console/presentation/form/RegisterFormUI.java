@@ -7,12 +7,18 @@ package eapli.base.backoffice.console.presentation.form;
 
 import eapli.base.backoffice.console.presentation.service.ServicePrinter;
 import eapli.base.formmanagement.application.RegisterFormController;
-import eapli.base.formmanagement.domain.FormParameters;
+import eapli.base.formmanagement.domain.Form;
+import eapli.base.formmanagement.domain.FormParameter;
+import eapli.base.formmanagement.domain.FormParameterData;
+import eapli.base.formmanagement.domain.FormParameterId;
 import eapli.base.servicemanagement.domain.Service;
 import eapli.framework.domain.repositories.IntegrityViolationException;
+import eapli.framework.general.domain.model.Designation;
 import eapli.framework.io.util.Console;
 import eapli.framework.presentation.console.AbstractUI;
 import eapli.framework.presentation.console.SelectWidget;
+import eapli.base.formmanagement.domain.Label;
+import eapli.framework.general.domain.model.Description;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,37 +35,58 @@ public class RegisterFormUI extends AbstractUI {
     
     @Override
     public boolean doShow() {
+        return doShow(null);
+    }
+    
+    
+    public boolean doShow(Service service) {
         
         final String formId = Console.readLine("formId");
         final String name = Console.readLine("name");
-        final String parameterData = Console.readLine("parameterData");
-        final String variableName = Console.readLine("FormvariableNameId");
-        final String label = Console.readLine("label");
-        final String description = Console.readLine("description");
+
         
-        List<FormParameters> theAttributes = new ArrayList<>();
+        List<FormParameter> theAttributes = new ArrayList<>();
         
         boolean moreAttributes = true;
         while(moreAttributes){
-            final FormParameters theAttribute = new FormParameters(parameterData, variableName, label, description);
+            final String parameterId = Console.readLine("parameterId");
+            final String parameterData = Console.readLine("parameterData");
+            final String variableName = Console.readLine("Form variable Name");
+            final String label = Console.readLine("label");
+            final String description = Console.readLine("description"); 
+
+            final FormParameter theAttribute = new FormParameter(
+                    FormParameterId.valueOf(parameterId), 
+                    Designation.valueOf(variableName), Label.valueOf(label), 
+                    Description.valueOf(description),
+                    FormParameterData.valueOf(parameterData));
            
             theAttributes.add(theAttribute);
             
             moreAttributes = Console.readBoolean("Add more Attributes? (y/n)");
         }
 
-        //select service//
-        final Iterable<Service> services = this.theController.services();
+        
+        //select service if not already defined//
+        if (service==null){
+            final Iterable<Service> services = this.theController.inactiveServices();
 
-        final SelectWidget<Service> selector = new SelectWidget<>("Associate this form to a  Service:", services,
-                new ServicePrinter());
-        selector.show();
-
-        final Service theService = selector.selectedElement();
+            final SelectWidget<Service> selector = new SelectWidget<>("Associate this form to a Service:", services,
+                    new ServicePrinter());
+            selector.show();
+        
+            service = selector.selectedElement();
+        }
         //---------//
 
+        if (service==null){
+            System.out.println("No service specified, not saving");
+            return false;
+        }
+            
         try {
-            this.theController.RegisterForm(formId, name, theService, theAttributes);
+            this.theController.RegisterFormInService(formId, name, service, theAttributes);
+            return true;
         } catch (@SuppressWarnings("unused") final IntegrityViolationException e) {
             System.out.println("You tried to enter a Form which already exists in the database.");
         }

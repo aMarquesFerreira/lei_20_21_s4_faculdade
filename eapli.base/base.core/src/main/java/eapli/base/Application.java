@@ -3,6 +3,8 @@
  */
 package eapli.base;
 
+import eapli.framework.util.Utility;
+
 /**
  * A "global" static class with the application registry of well known objects
  *

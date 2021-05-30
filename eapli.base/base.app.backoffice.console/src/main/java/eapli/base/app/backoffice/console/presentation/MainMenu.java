@@ -36,6 +36,7 @@ import eapli.base.app.backoffice.console.presentation.colaborator.RegisterColabo
 import eapli.base.app.backoffice.console.presentation.team.RegisterTeamAction;
 import eapli.base.app.backoffice.console.presentation.typeofteam.RegisterTypeOfTeamAction;
 import eapli.base.backoffice.console.presentation.form.RegisterFormAction;
+import eapli.base.backoffice.console.presentation.service.FinishServiceAction;
 import eapli.base.backoffice.console.presentation.service.RegisterServiceAction;
 import eapli.base.usermanagement.domain.BaseRoles;
 import eapli.framework.actions.Actions;
@@ -115,6 +116,11 @@ public class MainMenu extends AbstractUI {
     // SERVICES
     private static final int SERVICE_REGISTER_OPTION = 1;
     private static final int FORM_REGISTER_OPTION = 2;
+    private static final int SERVICE_FINISH_OPTION = 3;
+    private static final int LIST_ACTIVE_SERVICES= 4;
+    private static final int LIST_INACTIVE_SERVICES = 5;
+    //private static final int LIST_ALL_SERVICES = 6;
+    
     
     // TYPES OF TEAM
     private static final int TYPEOFTEAM_REGISTER_OPTION = 1;
@@ -288,6 +294,8 @@ public class MainMenu extends AbstractUI {
 
         menu.addItem(SERVICE_REGISTER_OPTION, "Register Service", new RegisterServiceAction());
         menu.addItem(FORM_REGISTER_OPTION, "Register Form", new RegisterFormAction());
+        menu.addItem(SERVICE_FINISH_OPTION, "Finish Service Registration", new FinishServiceAction());
+        //menu.addItem(SERVICE_REGISTER_OPTION, "Register Service", new RegisterServiceAction());
         menu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
 
         return menu;

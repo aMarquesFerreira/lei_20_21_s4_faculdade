@@ -10,7 +10,7 @@ import eapli.base.cataloguemanagement.domain.Catalogue;
 import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.formmanagement.application.RegisterFormController;
 import eapli.base.formmanagement.domain.Form;
-import eapli.base.formmanagement.domain.FormParameters;
+import eapli.base.formmanagement.domain.FormParameter;
 import eapli.base.formmanagement.repositories.FormRepository;
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.servicemanagement.domain.Service;
@@ -31,6 +31,7 @@ public class RegisterServiceController {
      
     private final AuthorizationService authz = AuthzRegistry.authorizationService();
     private final ListCatalogueService svcCatalogues = new ListCatalogueService();
+    private final ListServiceService svcServices = new ListServiceService();
     private final ServiceRepository serviceRepository = PersistenceContext.repositories().services();
     private final FormRepository formRepository = PersistenceContext.repositories().forms();
     private final RegisterFormController formController = new RegisterFormController();
@@ -59,6 +60,19 @@ public class RegisterServiceController {
       
     public Iterable<Catalogue> catalogues() {
         return svcCatalogues.activeCatalogues();
+    }
+    
+    public Iterable<Service> inactiveSservices() {
+        return svcServices.inactiveServices();
+    }
+
+    public Service markActive(Service service) {
+        if (service.isActive())
+            throw new IllegalStateException("Service is already Active");
+        
+        service.toggleState();
+        
+        return serviceRepository.save(service);
     }
 
     

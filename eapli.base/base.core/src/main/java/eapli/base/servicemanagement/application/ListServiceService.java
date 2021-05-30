@@ -31,4 +31,20 @@ public class ListServiceService {
     
 }
     
+    public Iterable<Service> inactiveServices() {
+        authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER,
+                BaseRoles.ADMIN);
+        return this.serviceRepository.findAllInactive();
+        
+    
+}
+    
+    public Iterable<Service> allServices() {
+        authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER,
+                BaseRoles.ADMIN);
+        return this.serviceRepository.findAll();
+        
+    
+}
+    
 }

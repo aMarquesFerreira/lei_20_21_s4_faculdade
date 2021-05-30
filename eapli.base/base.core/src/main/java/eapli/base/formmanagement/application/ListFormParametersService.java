@@ -5,7 +5,7 @@
  */
 package eapli.base.formmanagement.application;
 
-import eapli.base.formmanagement.domain.FormParameters;
+import eapli.base.formmanagement.domain.FormParameter;
 import eapli.base.formmanagement.repositories.FormRepository;
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.usermanagement.domain.BaseRoles;

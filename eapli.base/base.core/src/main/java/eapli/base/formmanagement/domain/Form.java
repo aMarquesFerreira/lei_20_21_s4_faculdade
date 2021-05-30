@@ -52,13 +52,12 @@ public class Form implements AggregateRoot<FormId>{
     /**
      * cascade = CascadeType.NONE
      */
-    @OneToOne()
-    private Service service;
+    /*@ManyToOne()
+    private Service service;*/
     
     
-    //private List<FormParameters> formPar;
-    //private List<String> formPar;
-    private FormParameters formParameters;
+    @OneToMany()
+    private List<FormParameter> formParameters;
    
     /**
      * Constructor.
@@ -68,14 +67,14 @@ public class Form implements AggregateRoot<FormId>{
      * @param service
      * @param formParameters
      */
-    public Form(final FormId formId, final Designation name, Service service, List<FormParameters> formParameters) {
+    public Form(final FormId formId, final Designation name, /*Service service, */List<FormParameter> formParameters) {
         //this.formPar = new ArrayList<String>();        
-        if (formId == null || name == null || service == null || formParameters == null) {
+        if (formId == null || name == null ||/* service == null || */formParameters == null) {
             throw new IllegalArgumentException();
         }
         this.formId = formId;
         this.name = name;
-        this.service = service;
+        /*this.service = service;*/
         formParameters = new ArrayList<>();
         this.active = true;
 
@@ -85,14 +84,22 @@ public class Form implements AggregateRoot<FormId>{
         // for ORM only
     }
 
-    
-
-    public Service service() {
+    /*public Service service() {
         return this.service;
+    }*/
+
+    public Iterable<FormParameter> getFormParameters() {
+        return formParameters;
     }
+
     
-    public FormParameters formParameters() {
-        return this.formParameters;
+    public boolean addFormParameters(final FormParameter fp) {
+        for (FormParameter formP : formParameters) {
+            if (formP.equals(fp)) {
+                return false;
+            }
+        }
+        return formParameters.add(fp);
     }
 
     @Override

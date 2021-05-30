@@ -8,6 +8,7 @@ import eapli.base.formmanagement.repositories.FormRepository;
 import eapli.base.infrastructure.persistence.RepositoryFactory;
 import eapli.base.servicemanagement.repositories.ServiceRepository;
 import eapli.base.teammanagement.repositories.TeamRepository;
+import eapli.base.ticketmanagement.repositories.TicketRepository;
 import eapli.base.typeofteammanagement.repositories.TypeOfTeamRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.authz.domain.repositories.UserRepository;
@@ -87,6 +88,11 @@ public class JpaRepositoryFactory implements RepositoryFactory {
     @Override
     public TypeOfTeamRepository typesofteam() {
         return new JpaTypeOfTeamRepository(Application.settings().getPersistenceUnitName());
+    }
+    
+    @Override
+    public TicketRepository tickets() {
+        return new JpaTicketRepository(Application.settings().getPersistenceUnitName());
     }
 
 }

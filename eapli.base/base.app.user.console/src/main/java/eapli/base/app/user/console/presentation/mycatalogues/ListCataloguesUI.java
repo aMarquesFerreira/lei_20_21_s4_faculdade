@@ -5,7 +5,7 @@
  */
 package eapli.base.app.user.console.presentation.mycatalogues;
 
-import eapli.base.myclientuser.application.MyClientUserService;
+
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
 import eapli.framework.infrastructure.authz.application.AuthzRegistry;
 import eapli.framework.presentation.console.ListUI;
@@ -18,7 +18,7 @@ import java.util.function.Supplier;
  * @author andre
  */
 public class ListCataloguesUI<T> extends ListUI<T> {
-    private final MyClientUserService theController = new MyClientUserService();
+    
     private final AuthorizationService authz = AuthzRegistry.authorizationService();
 
     public ListCataloguesUI(final Supplier<Iterable<T>> source, final Visitor<T> printer,
@@ -43,10 +43,7 @@ public class ListCataloguesUI<T> extends ListUI<T> {
         return true;
     }
 
-    /*public String showBalance() {
-        return "CURRENT BALANCE OF YOUR USERCARD:  " + theController.myBalance().toString();
-
-    }*/
+    
 
     @Override
     public String headline() {

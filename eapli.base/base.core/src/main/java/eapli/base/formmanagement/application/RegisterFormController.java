@@ -7,25 +7,35 @@ package eapli.base.formmanagement.application;
 
 import eapli.base.formmanagement.domain.Form;
 import eapli.base.formmanagement.domain.FormId;
-import eapli.base.formmanagement.domain.FormParameters;
+import eapli.base.formmanagement.domain.FormParameter;
 import eapli.base.formmanagement.repositories.FormRepository;
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.servicemanagement.application.ListServiceService;
 import eapli.base.servicemanagement.domain.Service;
+import eapli.base.servicemanagement.repositories.ServiceRepository;
 import eapli.base.usermanagement.domain.BaseRoles;
 import eapli.framework.general.domain.model.Designation;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
 import eapli.framework.infrastructure.authz.application.AuthzRegistry;
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceUnit;
+import org.hibernate.Session;
 
 /**
  *
  * @author andre
  */
 public class RegisterFormController {
+    @PersistenceUnit
+    private EntityManagerFactory entityManagerFactory;
+    
     private final AuthorizationService authz = AuthzRegistry.authorizationService();
     private final FormRepository formRepository = PersistenceContext.repositories().forms();
     private final ListServiceService svcServices = new ListServiceService();
+    private final ServiceRepository serviceRepository = PersistenceContext.repositories().services();
 
     /**
      * Constructor.
@@ -36,14 +46,30 @@ public class RegisterFormController {
      * @param formPar
      * @return 
      */
-    public Form RegisterForm(final String formId, final String name,final Service service, List<FormParameters> formPar) {
+    public Form RegisterFormInService(final String formId, final String name, Service service, List<FormParameter> formPar) {
        //value of form ID??
         
         authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.HELP_DESK_SERVICE_MANAGER);
 
-        final Form newForm = new Form(FormId.valueOf(formId), Designation.valueOf(name), service, formPar);
-                   
-        return formRepository.save(newForm);
+        final Form newForm = new Form(FormId.valueOf(formId), Designation.valueOf(name), /*service, */formPar);
+        
+        
+        //EntityManager em = entityManagerFactory.createEntityManager();
+        //Session session = em.unwrap(Session.class);
+        //EntityTransaction tx = em.getTransaction();
+        
+        //tx.begin();
+        
+        formRepository.save(newForm);
+        
+        service.setForm(newForm);
+        
+        service = serviceRepository.save(service);
+        
+        //tx.commit();
+        
+        return service.getForm();
+        //return formRepository.save(newForm);
       
     }
     
@@ -55,5 +81,13 @@ public class RegisterFormController {
     /*public Iterable<> teams() {
         return svcTeams.allTeams();
     }*/
+
+    public Iterable<Service> inactiveServices() {
+        return svcServices.inactiveServices();
+    }
+
+    public Iterable<Service> allServices() {
+        return svcServices.allServices();
+    }
     
 }
