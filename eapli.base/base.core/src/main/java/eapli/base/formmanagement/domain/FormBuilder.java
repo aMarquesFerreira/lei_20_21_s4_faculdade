@@ -13,9 +13,9 @@ public class FormBuilder implements DomainFactory<Form> {
     private FormId formId;
     private Designation designation;
     private Service service;
-    private List<FormParameters> formParametersList = new ArrayList<>();
+    private List<FormParameter> formParametersList = new ArrayList<>();
 
-    public FormBuilder withAll(FormId formId, Designation designation, Service service, FormParameters formParameter) {
+    public FormBuilder withAll(FormId formId, Designation designation, Service service, FormParameter formParameter) {
         this.formId = formId;
         this.designation = designation;
         this.service = service;
@@ -37,7 +37,7 @@ public class FormBuilder implements DomainFactory<Form> {
         return this.service = service1;
     }
 
-    public List<FormParameters> withFormParameters(FormParameters formParameters) {
+    public List<FormParameter> withFormParameters(FormParameter formParameters) {
         formParametersList.add(formParameters);
         return formParametersList;
     }
@@ -46,6 +46,6 @@ public class FormBuilder implements DomainFactory<Form> {
     public Form build() {
         // since the factory knows that all the parts are needed it could throw
         // an exception. however, we will leave that to the constructor
-        return new Form(this.formId, this.designation, this.service, this.formParametersList);
+        return new Form(this.formId, this.designation, this.formParametersList);
     }
 }

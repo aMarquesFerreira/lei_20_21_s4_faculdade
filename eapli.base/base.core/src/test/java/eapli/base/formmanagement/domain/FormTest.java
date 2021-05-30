@@ -24,7 +24,7 @@ import static org.junit.Assert.assertTrue;
 public class FormTest {
 
 
-    private static List<FormParameters> lfP = new ArrayList<>();
+    /*private static List<FormParameter> lfP = new ArrayList<>();
 
     public static SystemUser dummyUser(final String username, final Role... roles) {
         // should we load from spring context?
@@ -46,7 +46,7 @@ public class FormTest {
                                 new Address("dummy","bothDummy"),
                                 new BirthDate(new Date(2020,12,1)),
                                 new Evaluation(2.2), new Contact(912365478)), new CatalogueId("1"),Description.valueOf("2"),Designation.valueOf("3"))),
-                                new FormParameters( "parameterData", "variableName", "label", "description")).build();
+                                new FormParameter( "parameterData", "variableName", "label", "description")).build();
     }
 
     private Form getNewDummyForm() {
@@ -124,5 +124,5 @@ public class FormTest {
         final boolean expected = aForm.sameAs(anotherForm);
 
         assertFalse(expected);
-    }
+    }*/
 }
