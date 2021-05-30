@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="173px" preserveAspectRatio="none" style="width:944px;height:173px;" version="1.1" viewBox="0 0 944 173" width="944px" zoomAndPan="magnify"><defs><filter height="300%" id="foq4oc1p067os" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[b17bb124848497100bbcd27c8c99c98d]
+class RegisterTeamUI--><rect codeLine="3" fill="#FEFECE" filter="url(#foq4oc1p067os)" height="48" id="RegisterTeamUI" style="stroke:#A80036;stroke-width:1.5;" width="123" x="7" y="91.37"/><ellipse cx="22" cy="107.37" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M24,103.87 Q24.2031,103.37 24.4375,103.12 Q24.6719,102.87 24.9375,102.87 Q25.4063,102.87 25.7031,103.1513 Q26,103.4325 26,104.0888 L26,105.6513 Q26,106.3075 25.7188,106.5888 Q25.4375,106.87 25,106.87 Q24.6094,106.87 24.3594,106.6981 Q24.1094,106.5263 24,106.0731 Q23.9531,105.7606 23.7813,105.5888 Q23.4688,105.2606 22.9063,105.0731 Q22.3438,104.87 21.7813,104.87 Q21.0781,104.87 20.4844,105.1513 Q19.9063,105.4325 19.4531,106.0575 Q19,106.6825 19,107.5419 L19,108.4638 Q19,109.495 19.8438,110.1825 Q20.6875,110.87 22.1875,110.87 Q23.0781,110.87 23.7031,110.6669 Q24.0625,110.5575 24.4688,110.1981 Q24.7344,109.995 24.875,109.9325 Q25.0156,109.87 25.1875,109.87 Q25.5156,109.87 25.75,110.1356 Q26,110.3856 26,110.745 Q26,111.0888 25.6563,111.495 Q25.1563,112.0888 24.3594,112.4169 Q23.3125,112.87 22.0313,112.87 Q20.5313,112.87 19.3281,112.2763 Q18.3594,111.8075 17.6719,110.7919 Q17,109.7763 17,108.5731 L17,107.4794 Q17,106.2294 17.5938,105.1356 Q18.2031,104.0419 19.25,103.4638 Q20.3125,102.87 21.5,102.87 Q22.2188,102.87 22.8438,103.12 Q23.4688,103.37 24,103.87 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="91" x="36" y="112.2802">RegisterTeamUI</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="129" y1="123.37" y2="123.37"/><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="129" y1="131.37" y2="131.37"/><!--MD5=[1fb11e82fbca85091ef18e1662fa0a39]
+class RegisterTeamController--><rect codeLine="6" fill="#FEFECE" filter="url(#foq4oc1p067os)" height="61.8359" id="RegisterTeamController" style="stroke:#A80036;stroke-width:1.5;" width="165" x="165" y="84.37"/><ellipse cx="180" cy="100.37" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M182,96.87 Q182.2031,96.37 182.4375,96.12 Q182.6719,95.87 182.9375,95.87 Q183.4063,95.87 183.7031,96.1513 Q184,96.4325 184,97.0888 L184,98.6513 Q184,99.3075 183.7188,99.5888 Q183.4375,99.87 183,99.87 Q182.6094,99.87 182.3594,99.6981 Q182.1094,99.5263 182,99.0731 Q181.9531,98.7606 181.7813,98.5888 Q181.4688,98.2606 180.9063,98.0731 Q180.3438,97.87 179.7813,97.87 Q179.0781,97.87 178.4844,98.1513 Q177.9063,98.4325 177.4531,99.0575 Q177,99.6825 177,100.5419 L177,101.4638 Q177,102.495 177.8438,103.1825 Q178.6875,103.87 180.1875,103.87 Q181.0781,103.87 181.7031,103.6669 Q182.0625,103.5575 182.4688,103.1981 Q182.7344,102.995 182.875,102.9325 Q183.0156,102.87 183.1875,102.87 Q183.5156,102.87 183.75,103.1356 Q184,103.3856 184,103.745 Q184,104.0888 183.6563,104.495 Q183.1563,105.0888 182.3594,105.4169 Q181.3125,105.87 180.0313,105.87 Q178.5313,105.87 177.3281,105.2763 Q176.3594,104.8075 175.6719,103.7919 Q175,102.7763 175,101.5731 L175,100.4794 Q175,99.2294 175.5938,98.1356 Q176.2031,97.0419 177.25,96.4638 Q178.3125,95.87 179.5,95.87 Q180.2188,95.87 180.8438,96.12 Q181.4688,96.37 182,96.87 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="133" x="194" y="105.2802">RegisterTeamController</text><line style="stroke:#A80036;stroke-width:1.5;" x1="166" x2="329" y1="116.37" y2="116.37"/><line style="stroke:#A80036;stroke-width:1.5;" x1="166" x2="329" y1="124.37" y2="124.37"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="77" x="171" y="139.7889">RegisterTeam();</text><!--MD5=[dfb0845b8492ffe07b1ce50e003034d7]
+class Team--><rect codeLine="10" fill="#FEFECE" filter="url(#foq4oc1p067os)" height="89.5078" id="Team" style="stroke:#A80036;stroke-width:1.5;" width="155" x="365" y="70.37"/><ellipse cx="422.25" cy="86.37" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M424.25,82.87 Q424.4531,82.37 424.6875,82.12 Q424.9219,81.87 425.1875,81.87 Q425.6563,81.87 425.9531,82.1513 Q426.25,82.4325 426.25,83.0888 L426.25,84.6513 Q426.25,85.3075 425.9688,85.5888 Q425.6875,85.87 425.25,85.87 Q424.8594,85.87 424.6094,85.6981 Q424.3594,85.5263 424.25,85.0731 Q424.2031,84.7606 424.0313,84.5888 Q423.7188,84.2606 423.1563,84.0731 Q422.5938,83.87 422.0313,83.87 Q421.3281,83.87 420.7344,84.1513 Q420.1563,84.4325 419.7031,85.0575 Q419.25,85.6825 419.25,86.5419 L419.25,87.4638 Q419.25,88.495 420.0938,89.1825 Q420.9375,89.87 422.4375,89.87 Q423.3281,89.87 423.9531,89.6669 Q424.3125,89.5575 424.7188,89.1981 Q424.9844,88.995 425.125,88.9325 Q425.2656,88.87 425.4375,88.87 Q425.7656,88.87 426,89.1356 Q426.25,89.3856 426.25,89.745 Q426.25,90.0888 425.9063,90.495 Q425.4063,91.0888 424.6094,91.4169 Q423.5625,91.87 422.2813,91.87 Q420.7813,91.87 419.5781,91.2763 Q418.6094,90.8075 417.9219,89.7919 Q417.25,88.7763 417.25,87.5731 L417.25,86.4794 Q417.25,85.2294 417.8438,84.1356 Q418.4531,83.0419 419.5,82.4638 Q420.5625,81.87 421.75,81.87 Q422.4688,81.87 423.0938,82.12 Q423.7188,82.37 424.25,82.87 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="32" x="442.75" y="91.2802">Team</text><line style="stroke:#A80036;stroke-width:1.5;" x1="366" x2="519" y1="102.37" y2="102.37"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="143" x="371" y="117.7889">TeamAcronym teamAcronym;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="141" x="371" y="131.6249">Designation teamDesignation;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="105" x="371" y="145.4608">TeamCode teamCode;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="366" x2="519" y1="151.8778" y2="151.8778"/><!--MD5=[4088a850b1e7a841602f7ba779529a26]
+class TeamAcronym--><rect codeLine="16" fill="#FEFECE" filter="url(#foq4oc1p067os)" height="61.8359" id="TeamAcronym" style="stroke:#A80036;stroke-width:1.5;" width="111" x="819" y="84.37"/><ellipse cx="834" cy="100.37" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M836,96.87 Q836.2031,96.37 836.4375,96.12 Q836.6719,95.87 836.9375,95.87 Q837.4063,95.87 837.7031,96.1513 Q838,96.4325 838,97.0888 L838,98.6513 Q838,99.3075 837.7188,99.5888 Q837.4375,99.87 837,99.87 Q836.6094,99.87 836.3594,99.6981 Q836.1094,99.5263 836,99.0731 Q835.9531,98.7606 835.7813,98.5888 Q835.4688,98.2606 834.9063,98.0731 Q834.3438,97.87 833.7813,97.87 Q833.0781,97.87 832.4844,98.1513 Q831.9063,98.4325 831.4531,99.0575 Q831,99.6825 831,100.5419 L831,101.4638 Q831,102.495 831.8438,103.1825 Q832.6875,103.87 834.1875,103.87 Q835.0781,103.87 835.7031,103.6669 Q836.0625,103.5575 836.4688,103.1981 Q836.7344,102.995 836.875,102.9325 Q837.0156,102.87 837.1875,102.87 Q837.5156,102.87 837.75,103.1356 Q838,103.3856 838,103.745 Q838,104.0888 837.6563,104.495 Q837.1563,105.0888 836.3594,105.4169 Q835.3125,105.87 834.0313,105.87 Q832.5313,105.87 831.3281,105.2763 Q830.3594,104.8075 829.6719,103.7919 Q829,102.7763 829,101.5731 L829,100.4794 Q829,99.2294 829.5938,98.1356 Q830.2031,97.0419 831.25,96.4638 Q832.3125,95.87 833.5,95.87 Q834.2188,95.87 834.8438,96.12 Q835.4688,96.37 836,96.87 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="79" x="848" y="105.2802">TeamAcronym</text><line style="stroke:#A80036;stroke-width:1.5;" x1="820" x2="929" y1="116.37" y2="116.37"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="60" x="825" y="131.7889">String name;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="820" x2="929" y1="138.2059" y2="138.2059"/><!--MD5=[232882a74bb3d7ca169cfb1ce7c7ca46]
+class Designation--><rect codeLine="20" fill="#FEFECE" filter="url(#foq4oc1p067os)" height="61.8359" id="Designation" style="stroke:#A80036;stroke-width:1.5;" width="99" x="685" y="84.37"/><ellipse cx="700" cy="100.37" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M702,96.87 Q702.2031,96.37 702.4375,96.12 Q702.6719,95.87 702.9375,95.87 Q703.4063,95.87 703.7031,96.1513 Q704,96.4325 704,97.0888 L704,98.6513 Q704,99.3075 703.7188,99.5888 Q703.4375,99.87 703,99.87 Q702.6094,99.87 702.3594,99.6981 Q702.1094,99.5263 702,99.0731 Q701.9531,98.7606 701.7813,98.5888 Q701.4688,98.2606 700.9063,98.0731 Q700.3438,97.87 699.7813,97.87 Q699.0781,97.87 698.4844,98.1513 Q697.9063,98.4325 697.4531,99.0575 Q697,99.6825 697,100.5419 L697,101.4638 Q697,102.495 697.8438,103.1825 Q698.6875,103.87 700.1875,103.87 Q701.0781,103.87 701.7031,103.6669 Q702.0625,103.5575 702.4688,103.1981 Q702.7344,102.995 702.875,102.9325 Q703.0156,102.87 703.1875,102.87 Q703.5156,102.87 703.75,103.1356 Q704,103.3856 704,103.745 Q704,104.0888 703.6563,104.495 Q703.1563,105.0888 702.3594,105.4169 Q701.3125,105.87 700.0313,105.87 Q698.5313,105.87 697.3281,105.2763 Q696.3594,104.8075 695.6719,103.7919 Q695,102.7763 695,101.5731 L695,100.4794 Q695,99.2294 695.5938,98.1356 Q696.2031,97.0419 697.25,96.4638 Q698.3125,95.87 699.5,95.87 Q700.2188,95.87 700.8438,96.12 Q701.4688,96.37 702,96.87 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="67" x="714" y="105.2802">Designation</text><line style="stroke:#A80036;stroke-width:1.5;" x1="686" x2="783" y1="116.37" y2="116.37"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="60" x="691" y="131.7889">String name;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="686" x2="783" y1="138.2059" y2="138.2059"/><!--MD5=[12e572aa812ca1b18edd68c02bb182c3]
+class TeamCode--><rect codeLine="24" fill="#FEFECE" filter="url(#foq4oc1p067os)" height="61.8359" id="TeamCode" style="stroke:#A80036;stroke-width:1.5;" width="94" x="555.5" y="84.37"/><ellipse cx="570.5" cy="100.37" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M572.5,96.87 Q572.7031,96.37 572.9375,96.12 Q573.1719,95.87 573.4375,95.87 Q573.9063,95.87 574.2031,96.1513 Q574.5,96.4325 574.5,97.0888 L574.5,98.6513 Q574.5,99.3075 574.2188,99.5888 Q573.9375,99.87 573.5,99.87 Q573.1094,99.87 572.8594,99.6981 Q572.6094,99.5263 572.5,99.0731 Q572.4531,98.7606 572.2813,98.5888 Q571.9688,98.2606 571.4063,98.0731 Q570.8438,97.87 570.2813,97.87 Q569.5781,97.87 568.9844,98.1513 Q568.4063,98.4325 567.9531,99.0575 Q567.5,99.6825 567.5,100.5419 L567.5,101.4638 Q567.5,102.495 568.3438,103.1825 Q569.1875,103.87 570.6875,103.87 Q571.5781,103.87 572.2031,103.6669 Q572.5625,103.5575 572.9688,103.1981 Q573.2344,102.995 573.375,102.9325 Q573.5156,102.87 573.6875,102.87 Q574.0156,102.87 574.25,103.1356 Q574.5,103.3856 574.5,103.745 Q574.5,104.0888 574.1563,104.495 Q573.6563,105.0888 572.8594,105.4169 Q571.8125,105.87 570.5313,105.87 Q569.0313,105.87 567.8281,105.2763 Q566.8594,104.8075 566.1719,103.7919 Q565.5,102.7763 565.5,101.5731 L565.5,100.4794 Q565.5,99.2294 566.0938,98.1356 Q566.7031,97.0419 567.75,96.4638 Q568.8125,95.87 570,95.87 Q570.7188,95.87 571.3438,96.12 Q571.9688,96.37 572.5,96.87 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="62" x="584.5" y="105.2802">TeamCode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="556.5" x2="648.5" y1="116.37" y2="116.37"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="79" x="561.5" y="131.7889">String teamCode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="556.5" x2="648.5" y1="138.2059" y2="138.2059"/><!--MD5=[3998331097d3504408bd5749cffe1ecd]
+link RegisterTeamUI to RegisterTeamController--><path codeLine="29" d="M130.03,115.37 C139.93,115.37 149.83,115.37 159.73,115.37 " fill="none" id="RegisterTeamUI-to-RegisterTeamController" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="164.9,115.37,155.9,111.37,159.9,115.37,155.9,119.37,164.9,115.37" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[37efaea0cbb19ce798fc1b4ac2ee69fb]
+link RegisterTeamController to Team--><path codeLine="30" d="M330.15,115.37 C339.99,115.37 349.83,115.37 359.67,115.37 " fill="none" id="RegisterTeamController-to-Team" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="364.82,115.37,355.82,111.37,359.82,115.37,355.82,119.37,364.82,115.37" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[6c6e6cd06c07406d795a9d7953f5fff5]
+link Team to TeamAcronym--><path codeLine="31" d="M496.65,70.36 C514.46,58.19 535.08,46.66 556,40.37 C653.04,11.2 688.67,6 784,40.37 C806.47,48.47 827.32,64.85 843.33,80.24 " fill="none" id="Team-to-TeamAcronym" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="847.29,84.13,843.6802,74.9665,843.726,80.6232,838.0693,80.669,847.29,84.13" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[adb309546e6d577f4bb781d429238078]
+link Team to Designation--><path codeLine="32" d="M496.65,70.36 C514.46,58.19 535.08,46.66 556,40.37 C596.01,28.35 610.94,25.54 650,40.37 C671.47,48.52 690.97,64.91 705.82,80.29 " fill="none" id="Team-to-Designation" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="709.5,84.17,706.207,74.888,706.0585,80.5429,700.4036,80.3944,709.5,84.17" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[894df98820321c945de3d6333c03bf99]
+link Team to TeamCode--><path codeLine="33" d="M520.31,115.37 C530.25,115.37 540.18,115.37 550.11,115.37 " fill="none" id="Team-to-TeamCode" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="555.31,115.37,546.31,111.37,550.31,115.37,546.31,119.37,555.31,115.37" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[165453853bc6fd1c60713b9cde8d3214]
+@startuml
+'https://plantuml.com/class-diagram
+
+class RegisterTeamUI {
+}
+
+class RegisterTeamController {
+RegisterTeam();
+}
+
+class Team{
+TeamAcronym teamAcronym;
+Designation teamDesignation;
+TeamCode teamCode;
+}
+
+class TeamAcronym {
+String name;
+}
+
+class Designation{
+String name;
+}
+
+class TeamCode{
+String teamCode
+}
+
+
+RegisterTeamUI -> RegisterTeamController
+RegisterTeamController -> Team
+Team -> TeamAcronym
+Team -> Designation
+Team -> TeamCode
+
+@enduml
+
+@startuml
+
+class RegisterTeamUI {
+}
+
+class RegisterTeamController {
+RegisterTeam();
+}
+
+class Team{
+TeamAcronym teamAcronym;
+Designation teamDesignation;
+TeamCode teamCode;
+}
+
+class TeamAcronym {
+String name;
+}
+
+class Designation{
+String name;
+}
+
+class TeamCode{
+String teamCode
+}
+
+
+RegisterTeamUI -> RegisterTeamController
+RegisterTeamController -> Team
+Team -> TeamAcronym
+Team -> Designation
+Team -> TeamCode
+
+@enduml
+
+PlantUML version 1.2021.5(Sun Apr 25 12:20:28 BST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

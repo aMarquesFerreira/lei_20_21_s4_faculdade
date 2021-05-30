@@ -1,0 +1,17 @@
+@startuml
+autonumber
+
+actor "Colaborator" as C
+participant "System" as UI
+
+activate HDM
+HDM --> UI : Wants to create a form
+activate UI
+    UI --> HDM : Requests necessary information for Form
+deactivate UI
+HDM --> UI : Inserts the data
+activate UI
+UI --> HDM : displayFormInfo
+deactivate UI
+
+@enduml

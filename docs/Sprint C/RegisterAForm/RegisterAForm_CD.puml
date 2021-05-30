@@ -1,0 +1,48 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class RegisterFormUI {
+}
+
+class RegisterFormController {
++registerForm();
++services();
+}
+
+class Form{
+FormId formId;
+Designation name;
+Service service;
+FormParameters formParameters;
+}
+
+class FormId{
+String number;
+}
+
+class FormParameters{
+String street;
+String city;
+}
+
+class Service{
+  String serviceCode;
+  String serviceDescription;
+  String serviceTitle;
+  Catalogue catalogue;
+}
+
+class Designation{
+String name;
+}
+
+
+RegisterFormUI -> RegisterFormController
+RegisterFormController -> Form
+
+Form -> FormId
+Form -> FormParameters
+Form -> Service
+Form -> Designation
+
+@enduml

@@ -15,6 +15,10 @@ import eapli.framework.infrastructure.authz.domain.model.PlainTextEncoder;
 import eapli.framework.infrastructure.eventpubsub.EventDispatcher;
 import eapli.framework.util.ArrayPredicates;
 
+
+
+
+
 /**
  * Base Bootstrapping data app
  *
@@ -63,6 +67,7 @@ public final class BaseBootstrap extends BaseApplication {
             isToBootstrapDemoData = ArrayPredicates.contains(args, "-bootstrap:demo");
         }
     }
+
 
     @Override
     protected String appTitle() {

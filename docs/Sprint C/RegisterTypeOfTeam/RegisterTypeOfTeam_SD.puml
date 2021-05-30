@@ -1,0 +1,64 @@
+@startuml
+autonumber
+
+actor "Human Resources Manager" as RRH
+
+participant "RegisterTypeOfTeamUI" as UI
+participant "RegisterTypeOfTeamController" as CTRL
+participant "TypeOfTeamBuilder" as CB
+participant "TypeOfTeam:TypeOfTeam" as CC
+participant "PersistenceContext" as PC
+participant "RepositoryFactory" as RF
+
+
+database "TypeOfTeamRepository" as CR
+
+RRH --> UI : Register a TypeOfTeam
+activate UI
+    UI -> CTRL : create
+    UI --> RRH : Requests color for TypeOfTeam
+deactivate UI
+
+RRH --> UI : Inserts the color
+activate UI
+    UI -> CTRL : TypeOfTeam = newTypeOfTeam(Color color)
+    activate CTRL
+        CTRL -> CB: create
+        activate CB
+        deactivate CB
+
+        CTRL -> CB: setTypeOfTeam(Color color))
+        activate CB
+        deactivate CB
+
+
+        CTRL -> CB: createTypeOfTeam()
+        activate CB
+                CB -> CC: create(Color color)
+                CC -> CB: TypeOfTeam
+                CB -> CTRL: TypeOfTeam
+        deactivate CB
+
+        CTRL -> PC:
+        activate PC
+         PC->RF: create
+         PC->CTRL: factory
+
+        deactivate PC
+
+        CTRL->RF:TypeOfTeams()
+        activate RF
+        RF->CR:create
+        RF->CTRL:TypeOfTeamRepository()
+        deactivate RF
+
+        CTRL->CR:save(TypeOfTeam)
+
+        CTRL->UI:TypeOfTeam
+    deactivate CTRL
+
+    UI --> RRH : displayTypeOfTeamInfo
+deactivate UI
+
+
+@enduml

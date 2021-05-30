@@ -1,0 +1,67 @@
+@startuml
+autonumber
+
+actor "Colaborator" as C
+
+participant "RegisterFormUI" as UI
+participant "RegisterFormController" as CTRL
+participant "FormBuilder" as CB
+participant "Form:Form" as CC
+participant "PersistenceContext" as PC
+participant "RepositoryFactory" as RF
+
+
+database "FormRepository" as CR
+
+C --> UI : Register a Form
+activate UI
+    UI -> CTRL : create
+    UI --> C : Requests necessary credentials for Form
+deactivate UI
+
+C --> UI : Inserts the data
+activate UI
+    UI -> CTRL : Form = newForm(FormId formID, FormParameters formParameter)
+    activate CTRL
+        CTRL -> CB: create
+        activate CB
+        deactivate CB
+
+        CTRL -> CB: setForm()
+        activate CB
+        deactivate CB
+
+note over CTRL, CB : Sets the rest of the information
+
+
+        CTRL -> CB: createForm()
+        activate CB
+                CB -> CC: create(FormId formID, FormParameters formParameter)
+                CC -> CB: Form
+                CB -> CTRL: Form
+        deactivate CB
+
+        CTRL -> PC:
+        activate PC
+        note over PC, CR : can create an repository in memory or JPA
+         PC->RF: create
+         PC->CTRL: factory
+
+        deactivate PC
+
+        CTRL->RF:Forms()
+        activate RF
+        RF->CR:create
+        RF->CTRL:FormRepository()
+        deactivate RF
+
+        CTRL->CR:save(Form)
+
+        CTRL->UI:Form
+    deactivate CTRL
+
+    UI --> C : displayFormInfo
+deactivate UI
+
+
+@enduml

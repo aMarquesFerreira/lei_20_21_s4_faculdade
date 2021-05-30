@@ -1,0 +1,31 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class RegisterTypeOfTeamUI {
+}
+
+class RegisterTypeOfTeamController {
+registerTypeOfTeam();
+}
+
+class TypeOfTeam{
+Color color;
+Description name;
+}
+
+class Color{
+String number;
+}
+
+class Description{
+String name;
+}
+
+
+RegisterTypeOfTeamUI -> RegisterTypeOfTeamController
+RegisterTypeOfTeamController -> TypeOfTeam
+
+TypeOfTeam -> Color
+TypeOfTeam -> Description
+
+@enduml
