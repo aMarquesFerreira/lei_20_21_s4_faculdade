@@ -12,6 +12,7 @@ import eapli.base.formmanagement.domain.Form;
 import eapli.base.servicemanagement.domain.Service;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -49,7 +50,7 @@ public class Activity implements AggregateRoot<ActivityId> {
     /*@ManyToOne()
     private Service service;*/
     
-    @OneToOne()
+    @OneToOne(cascade = CascadeType.ALL)    
     private Form form;
 
     @ManyToOne()

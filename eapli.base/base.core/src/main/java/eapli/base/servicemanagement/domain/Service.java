@@ -65,7 +65,8 @@ public class Service implements AggregateRoot<ServiceCode>{
     private Catalogue catalogue;
     
     
-    @ManyToOne //(mappedBy = "service")
+//    @ManyToOne //(mappedBy = "service")
+    @OneToOne (cascade = CascadeType.ALL)//(mappedBy = "service")
     private Form form;
    
                

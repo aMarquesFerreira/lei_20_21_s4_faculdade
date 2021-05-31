@@ -60,7 +60,7 @@ public class RegisterFormController {
         
         //tx.begin();
         
-        formRepository.save(newForm);
+        //formRepository.save(newForm);
         
         service.setForm(newForm);
         

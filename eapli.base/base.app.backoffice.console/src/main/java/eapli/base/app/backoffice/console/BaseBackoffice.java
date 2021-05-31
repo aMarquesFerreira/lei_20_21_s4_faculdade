@@ -55,6 +55,13 @@ public final class BaseBackoffice extends BaseApplication {
      */
     public static void main(final String[] args) {
 
+        try {
+            //Server.main(args);
+    //        if (true) 
+    //            return;           
+        } catch (Exception e) {
+        }
+                
         AuthzRegistry.configure(PersistenceContext.repositories().users(),
                 new BasePasswordPolicy(), new PlainTextEncoder());
 

@@ -56,7 +56,7 @@ public class Form implements AggregateRoot<FormId>{
     private Service service;*/
     
     
-    @OneToMany()
+    @OneToMany(cascade = CascadeType.ALL)
     private List<FormParameter> formParameters;
    
     /**
