@@ -60,7 +60,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>libs/</classpathPrefix>
-                            <mainClass>eapli.base.app.bootstrap.BaseBootstrap</mainClass>
+                            <mainClass>eapli.base.app.user.console.BaseUserApp</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

@@ -51,10 +51,10 @@ public class AddColabToTeamBootstrapper implements Action {
         
         
         //gera um erro de optimistic locking (o erro ocorre quando se tenta fazer com colaboradores diferentes
-        addColabToTeam("isep960", "001");
+       /* addColabToTeam("isep960", "001");
         addColabToTeam("isep961", "002");
         addColabToTeam("isep962", "002");
-        
+        */
         return true;
     }
     

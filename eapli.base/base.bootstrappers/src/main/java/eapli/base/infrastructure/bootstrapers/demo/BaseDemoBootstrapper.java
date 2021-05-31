@@ -28,6 +28,7 @@ import eapli.base.infrastructure.bootstrapers.BaseBootstrapper;
 import eapli.base.infrastructure.bootstrapers.CatalogueBootstrapper;
 import eapli.base.infrastructure.bootstrapers.ColaboratorBootstrapper;
 import eapli.base.infrastructure.bootstrapers.MasterUsersBootstrapper;
+import eapli.base.infrastructure.bootstrapers.ServiceBootstrapper;
 import eapli.base.infrastructure.bootstrapers.TypeOfTeamBootstrapper;
 import eapli.framework.actions.Action;
 import eapli.framework.infrastructure.authz.application.AuthenticationService;
@@ -60,7 +61,9 @@ public class BaseDemoBootstrapper implements Action {
                                    new TeamBootstrapper(),
                                    new CatalogueBootstrapper(),
                                    new TypeOfTeamBootstrapper(),
-                                   new AddColabToTeamBootstrapper()
+                                   new AddColabToTeamBootstrapper(),
+                                   new ServiceBootstrapper()
+                                   
                                    //new MasterUsersBootstrapper()
         
         
