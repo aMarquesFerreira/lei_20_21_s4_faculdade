@@ -12,6 +12,7 @@ import eapli.base.formmanagement.domain.Form;
 import eapli.base.servicemanagement.domain.Service;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
+import eapli.framework.general.domain.model.Description;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
@@ -41,6 +42,10 @@ public class Activity implements AggregateRoot<ActivityId> {
     
     @XmlElement
     @JsonProperty
+    private Description description;
+    
+    @XmlElement
+    @JsonProperty
     private boolean active;
 
 
@@ -64,11 +69,12 @@ public class Activity implements AggregateRoot<ActivityId> {
      * @param colaborator
      * @param form
      */
-    public Activity(final ActivityId activityId, final Form form, final Colaborator colaborator) {
-        if (activityId == null || form == null || colaborator == null) {
+    public Activity(final ActivityId activityId,final Description description, final Form form, final Colaborator colaborator) {
+        if (activityId == null || description  == null || form == null || colaborator == null) {
             throw new IllegalArgumentException();
         }
         this.activityId = activityId;
+        this.description = description;
         this.form = form;
         this.colaborator = colaborator;
         this.active = true;
@@ -109,6 +115,10 @@ public class Activity implements AggregateRoot<ActivityId> {
 
     public ActivityId activityId() {
         return identity();
+    }
+    
+     public Description description() {
+        return this.description;
     }
 
     @Override

@@ -1,6 +1,7 @@
 package eapli.base.persistence.impl.jpa;
 
 import eapli.base.Application;
+import eapli.base.activitymanagement.repositories.ActivityRepository;
 import eapli.base.catalogue.repositories.CatalogueRepository;
 import eapli.base.clientusermanagement.repositories.SignupRequestRepository;
 import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
@@ -10,6 +11,7 @@ import eapli.base.servicemanagement.repositories.ServiceRepository;
 import eapli.base.teammanagement.repositories.TeamRepository;
 import eapli.base.ticketmanagement.repositories.TicketRepository;
 import eapli.base.typeofteammanagement.repositories.TypeOfTeamRepository;
+import eapli.base.workflowmanagement.repositories.WorkFlowRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.authz.domain.repositories.UserRepository;
 import eapli.framework.infrastructure.authz.repositories.impl.JpaAutoTxUserRepository;
@@ -93,6 +95,18 @@ public class JpaRepositoryFactory implements RepositoryFactory {
     @Override
     public TicketRepository tickets() {
         return new JpaTicketRepository(Application.settings().getPersistenceUnitName());
+    }
+
+    
+    @Override
+    public WorkFlowRepository workflows() {
+        return new JpaWorkFlowRepository(Application.settings().getPersistenceUnitName());
+    }
+
+    
+    @Override
+    public ActivityRepository activities() {
+        return new JpaActivityRepository(Application.settings().getPersistenceUnitName());
     }
 
 }

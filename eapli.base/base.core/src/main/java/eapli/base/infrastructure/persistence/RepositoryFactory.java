@@ -3,6 +3,7 @@
  */
 package eapli.base.infrastructure.persistence;
 
+import eapli.base.activitymanagement.repositories.ActivityRepository;
 import eapli.base.catalogue.repositories.CatalogueRepository;
 import eapli.base.clientusermanagement.repositories.ClientUserRepository;
 
@@ -13,6 +14,7 @@ import eapli.base.servicemanagement.repositories.ServiceRepository;
 import eapli.base.teammanagement.repositories.TeamRepository;
 import eapli.base.ticketmanagement.repositories.TicketRepository;
 import eapli.base.typeofteammanagement.repositories.TypeOfTeamRepository;
+import eapli.base.workflowmanagement.repositories.WorkFlowRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.authz.domain.repositories.UserRepository;
 
@@ -85,5 +87,9 @@ public interface RepositoryFactory {
         TypeOfTeamRepository typesofteam();
         
         TicketRepository tickets();
+        
+        WorkFlowRepository workflows();
+        
+        ActivityRepository activities();
 
 }
