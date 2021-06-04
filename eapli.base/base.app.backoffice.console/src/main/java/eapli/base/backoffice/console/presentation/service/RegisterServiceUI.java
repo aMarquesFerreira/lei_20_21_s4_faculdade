@@ -7,6 +7,7 @@ package eapli.base.backoffice.console.presentation.service;
 
 import eapli.base.app.backoffice.console.presentation.catalogue.CataloguePrinter;
 import eapli.base.backoffice.console.presentation.form.RegisterFormUI;
+import eapli.base.backoffice.console.presentation.workflow.RegisterWorkflowUI;
 import eapli.base.cataloguemanagement.domain.Catalogue;
 import eapli.base.formmanagement.application.RegisterFormController;
 import eapli.base.formmanagement.domain.FormParameter;
@@ -30,6 +31,7 @@ public class RegisterServiceUI extends AbstractUI{
     private final RegisterServiceController theController = new RegisterServiceController();
     private final RegisterFormController formController =  new RegisterFormController();
     private final RegisterFormUI formUI = new RegisterFormUI();
+    private final RegisterWorkflowUI workflowUI = new RegisterWorkflowUI();
     
     
     @Override
@@ -61,11 +63,23 @@ public class RegisterServiceUI extends AbstractUI{
             return true;
         }
 
-        //
+        //especificacao de form
         boolean createForm = Console.readBoolean("Create a Form ?");
         
         if (createForm){
             boolean created = formUI.doShow(service);
+            
+            if (created){
+                boolean markActive = Console.readBoolean("Mark Service as Active ?");
+                theController.markActive(service);
+            }
+        }
+        
+        //especificacao de workflow
+        boolean createWorkflow = Console.readBoolean("Create a Workflow ?");
+        
+        if (createWorkflow){
+            boolean created = workflowUI.doShow(service);
             
             if (created){
                 boolean markActive = Console.readBoolean("Mark Service as Active ?");

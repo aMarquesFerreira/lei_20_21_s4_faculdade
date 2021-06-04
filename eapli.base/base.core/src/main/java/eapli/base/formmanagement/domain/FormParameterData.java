@@ -23,7 +23,7 @@ public class FormParameterData implements ValueObject, Comparable<FormParameterD
       public FormParameterData(final String parameterData) {
         if (StringPredicates.isNullOrEmpty(parameterData)) {
             throw new IllegalArgumentException(
-                    "Label should neither be null nor empty");
+                    "Parameter Data should neither be null nor empty");
         }
         // TODO validate invariants, i.e., mecanographic number regular
         // expression

@@ -66,6 +66,7 @@ public class Activity implements AggregateRoot<ActivityId> {
      *
      * 
      * @param activityId
+     * @param description
      * @param colaborator
      * @param form
      */

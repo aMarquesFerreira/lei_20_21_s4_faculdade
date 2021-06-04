@@ -8,12 +8,16 @@ package eapli.base.formmanagement.application;
 import eapli.base.formmanagement.domain.Form;
 import eapli.base.formmanagement.domain.FormId;
 import eapli.base.formmanagement.domain.FormParameter;
+import eapli.base.formmanagement.domain.FormParameterData;
+import eapli.base.formmanagement.domain.FormParameterId;
+import eapli.base.formmanagement.domain.Label;
 import eapli.base.formmanagement.repositories.FormRepository;
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.servicemanagement.application.ListServiceService;
 import eapli.base.servicemanagement.domain.Service;
 import eapli.base.servicemanagement.repositories.ServiceRepository;
 import eapli.base.usermanagement.domain.BaseRoles;
+import eapli.framework.general.domain.model.Description;
 import eapli.framework.general.domain.model.Designation;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
 import eapli.framework.infrastructure.authz.application.AuthzRegistry;
@@ -72,6 +76,20 @@ public class RegisterFormController {
         //return formRepository.save(newForm);
       
     }
+    
+    //create form parameters
+   /* public Form CreateFormParameters(final String formParameterId, final String variableName, final String label, final String description, final String parameterData) {
+       //value of form ID??
+        
+        authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.HELP_DESK_SERVICE_MANAGER);
+
+        final FormParameter newFormParameters = new FormParameter(FormParameterId.valueOf(formParameterId), Designation.valueOf(variableName),
+        Label.valueOf(label), Description.valueOf(description), FormParameterData.valueOf(parameterData));
+        
+        
+        //return formRepository.save(newFormParameters);
+      
+    }*/
     
     
     public Iterable<Service> services() {

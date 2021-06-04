@@ -73,13 +73,14 @@ public class FormParameter implements AggregateRoot<FormParameterId>{
     /**
      * Constructor.
      *
-     * @param formId
+     * @param formParameterId
      * @param variableName
      * @param label
      * @param description
+     * @param formParameterData
      */
     public FormParameter(final FormParameterId formParameterId, final Designation variableName, final Label label, final Description description, final FormParameterData formParameterData) {
-        if (formParameterId == null || variableName == null || label == null || description == null) {
+        if (formParameterId == null || variableName == null || label == null || description == null || formParameterData == null) {
             throw new IllegalArgumentException();
         }
         this.formParameterId = formParameterId;
@@ -128,6 +129,10 @@ public class FormParameter implements AggregateRoot<FormParameterId>{
 
     public Designation variableName() {
         return this.variableName;
+    }
+    
+    public FormParameterData formParameterData() {
+        return this.formParameterData;
     }
 
     public Label label() {

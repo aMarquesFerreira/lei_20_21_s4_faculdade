@@ -41,8 +41,8 @@ public class ServiceBootstrapper implements Action {
         Catalogue c3 = catRepo.findByCatalogueId(CatalogueId.valueOf("Catalogue For Books")).get();
 
         registerNewService("S1", "Vacations", "Vacations Service", c1);
-        registerNewService("S1", "ask for Repairs", "repairs Service", c2);
-        registerNewService("S1", "ask for books", "books Service", c3);
+        registerNewService("S2", "ask for Repairs", "repairs Service", c2);
+        registerNewService("S3", "ask for books", "books Service", c3);
 
         return true;
     }

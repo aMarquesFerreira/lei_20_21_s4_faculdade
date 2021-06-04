@@ -61,8 +61,8 @@ public class BaseDemoBootstrapper implements Action {
                                    new TeamBootstrapper(),
                                    new CatalogueBootstrapper(),
                                    new TypeOfTeamBootstrapper(),
-                                   new AddColabToTeamBootstrapper(),
-                                   new ServiceBootstrapper()
+                                   new AddColabToTeamBootstrapper()
+                                   //new ServiceBootstrapper()
                                    
                                    //new MasterUsersBootstrapper()
         

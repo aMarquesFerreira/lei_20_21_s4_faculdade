@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package eapli.base.app.backoffice.console.presentation.authz;
+package eapli.base.backoffice.console.presentation.workflow;
 
 import eapli.base.activitymanagement.domain.Activity;
 import eapli.base.app.backoffice.console.presentation.activity.ActivityPrinter;
+import eapli.base.servicemanagement.domain.Service;
 import eapli.base.workflowmanagement.application.RegisterWorkflowController;
 import eapli.framework.domain.repositories.IntegrityViolationException;
 import eapli.framework.io.util.Console;
@@ -31,9 +32,19 @@ public class RegisterWorkflowUI extends AbstractUI {
     //private final RegisterFormUI formUI = new RegisterFormUI();
     final Iterable<Activity> activities = this.theController.activities();
     
-    
     @Override
-    protected boolean doShow() { 
+    public boolean doShow() {
+        return doShow(null);
+    }
+    
+    
+    public boolean doShow(Service service) { 
+        
+        //especificacao do servico
+        final String workflowId = Console.readLine("Workflow ID");
+      
+        
+        //------------------//
         List<Activity> theActivities = new ArrayList<>();
         
         boolean moreActivities = true;
@@ -47,8 +58,6 @@ public class RegisterWorkflowUI extends AbstractUI {
             moreActivities = Console.readBoolean("Add more Activities? (y/n)");
         }
 
-        //especificacao do servico
-        final String workflowId = Console.readLine("Workflow ID");
         //--------
         
         

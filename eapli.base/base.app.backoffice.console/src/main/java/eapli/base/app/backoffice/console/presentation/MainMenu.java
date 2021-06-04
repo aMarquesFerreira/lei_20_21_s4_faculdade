@@ -38,6 +38,7 @@ import eapli.base.app.backoffice.console.presentation.typeofteam.RegisterTypeOfT
 import eapli.base.backoffice.console.presentation.form.RegisterFormAction;
 import eapli.base.backoffice.console.presentation.service.FinishServiceAction;
 import eapli.base.backoffice.console.presentation.service.RegisterServiceAction;
+import eapli.base.backoffice.console.presentation.workflow.RegisterWorkflowAction;
 import eapli.base.usermanagement.domain.BaseRoles;
 import eapli.framework.actions.Actions;
 import eapli.framework.actions.menu.Menu;
@@ -86,7 +87,9 @@ public class MainMenu extends AbstractUI {
 
     // TEAMS
     private static final int TEAM_REGISTER_OPTION = 1;
-
+    private static final int TYPEOFTEAM_REGISTER_OPTION = 1;
+    
+    
     // SERVICES
     private static final int SERVICE_REGISTER_OPTION = 1;
     private static final int FORM_REGISTER_OPTION = 2;
@@ -96,8 +99,9 @@ public class MainMenu extends AbstractUI {
     //private static final int LIST_ALL_SERVICES = 6;
     
     
-    // TYPES OF TEAM
-    private static final int TYPEOFTEAM_REGISTER_OPTION = 1;
+    //WORKFLOW 
+    private static final int WORKFLOW_REGISTER_OPTION = 1;
+    
 
     // MAIN MENU
     private static final int MY_USER_OPTION = 1;
@@ -107,16 +111,17 @@ public class MainMenu extends AbstractUI {
     private static final int TEAM_OPTION = 5;
     private static final int TYPEOFTEAM_OPTION = 6;
     private static final int SERVICE_OPTION = 7;
+    private static final int WORKFLOW_OPTION = 8;
     
     
     
     
     
-    private static final int SETTINGS_OPTION = 8;
-    private static final int DISH_OPTION = 9;
-    private static final int TRACEABILITY_OPTION = 10;
-    private static final int MEALS_OPTION = 11;
-    private static final int REPORTING_DISHES_OPTION = 12;
+    private static final int SETTINGS_OPTION = 9;
+    private static final int DISH_OPTION = 10;
+    private static final int TRACEABILITY_OPTION = 11;
+    private static final int MEALS_OPTION = 12;
+    private static final int REPORTING_DISHES_OPTION = 13;
     
 
     private static final String SEPARATOR_LABEL = "--------------";
@@ -181,9 +186,14 @@ public class MainMenu extends AbstractUI {
             mainMenu.addSubMenu(SERVICE_OPTION, usersMenu);
         }
          
-         if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.ADMIN)) {
+        if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.ADMIN)) {
             final Menu usersMenu = buildTypeOfTeamMenu();
             mainMenu.addSubMenu(TYPEOFTEAM_OPTION, usersMenu);
+        }
+        
+        if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.ADMIN)) {
+            final Menu usersMenu = buildWorkflowMenu();
+            mainMenu.addSubMenu(WORKFLOW_OPTION, usersMenu);
         }
          
         if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.ADMIN)) {
@@ -270,6 +280,15 @@ public class MainMenu extends AbstractUI {
         menu.addItem(FORM_REGISTER_OPTION, "Register Form", new RegisterFormAction());
         menu.addItem(SERVICE_FINISH_OPTION, "Finish Service Registration", new FinishServiceAction());
         //menu.addItem(SERVICE_REGISTER_OPTION, "Register Service", new RegisterServiceAction());
+        menu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
+
+        return menu;
+    }
+      
+      private Menu buildWorkflowMenu() {
+        final Menu menu = new Menu("Workflows >");
+
+        menu.addItem(WORKFLOW_REGISTER_OPTION, "Register Workflow", new RegisterWorkflowAction());
         menu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
 
         return menu;
