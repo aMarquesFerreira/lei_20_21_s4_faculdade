@@ -7,7 +7,6 @@ package eapli.base.cataloguemanagement.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import eapli.base.colaboratormanagement.domain.Colaborator;
-import eapli.base.servicemanagement.domain.Service;
 import eapli.base.teammanagement.domain.Team;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;

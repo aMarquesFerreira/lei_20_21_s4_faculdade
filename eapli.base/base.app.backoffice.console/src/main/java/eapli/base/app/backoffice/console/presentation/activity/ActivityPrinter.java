@@ -6,7 +6,6 @@
 package eapli.base.app.backoffice.console.presentation.activity;
 
 import eapli.base.activitymanagement.domain.Activity;
-import eapli.base.cataloguemanagement.domain.Catalogue;
 import eapli.framework.visitor.Visitor;
 
 /**

@@ -9,18 +9,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
-import eapli.framework.general.domain.model.Designation;
+
+import javax.persistence.*;
+import javax.xml.bind.annotation.XmlElement;
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.AttributeOverride;
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Version;
-import javax.xml.bind.annotation.XmlElement;
 
 /**
  *

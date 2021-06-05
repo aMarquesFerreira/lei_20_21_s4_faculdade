@@ -5,14 +5,6 @@
  */
 package eapli.base.app.other.console;
 
-import eapli.base.app.common.console.presentation.authz.LoginAction;
-import eapli.base.app.other.console.presentation.MainMenu;
-import eapli.base.infrastructure.persistence.PersistenceContext;
-import eapli.base.usermanagement.domain.BasePasswordPolicy;
-import eapli.base.usermanagement.domain.BaseRoles;
-import eapli.framework.infrastructure.authz.application.AuthzRegistry;
-import eapli.framework.infrastructure.authz.domain.model.PlainTextEncoder;
-
 /**
  *
  * @author Paulo Gandra Sousa
@@ -27,10 +19,10 @@ public final class OtherApp {
     }
 
     public static void main(final String[] args) {
-        System.out.println("=====================================");
+        System.out.println("======================================");
         System.out.println("Executor Actividades");
-        System.out.println("(C) 2016, 2017, 2018");
-        System.out.println("=====================================");
+        System.out.println("(C) 2016, 2017, 2018, 2019, 2020, 2021");
+        System.out.println("======================================");
 /*
         AuthzRegistry.configure(PersistenceContext.repositories().users(),
                 new BasePasswordPolicy(), new PlainTextEncoder());

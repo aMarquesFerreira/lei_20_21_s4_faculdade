@@ -5,9 +5,10 @@
  */
 package eapli.base.cataloguemanagement.domain;
 
-import eapli.framework.strings.util.StringPredicates;
-import javax.persistence.Embeddable;
 import eapli.framework.domain.model.ValueObject;
+import eapli.framework.strings.util.StringPredicates;
+
+import javax.persistence.Embeddable;
 
 
 /**

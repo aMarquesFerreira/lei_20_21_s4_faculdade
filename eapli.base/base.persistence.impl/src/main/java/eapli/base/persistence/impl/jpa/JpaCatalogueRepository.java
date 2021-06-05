@@ -1,27 +1,18 @@
 package eapli.base.persistence.impl.jpa;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
-
 import eapli.base.Application;
 import eapli.base.catalogue.repositories.CatalogueRepository;
 import eapli.base.cataloguemanagement.domain.Catalogue;
 import eapli.base.cataloguemanagement.domain.CatalogueId;
-import eapli.base.clientusermanagement.domain.ClientUser;
-import eapli.base.clientusermanagement.domain.MecanographicNumber;
-import eapli.base.clientusermanagement.repositories.ClientUserRepository;
 import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.teammanagement.domain.Team;
 import eapli.base.teammanagement.repositories.TeamRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
-import eapli.framework.infrastructure.authz.domain.model.Username;
 import eapli.framework.infrastructure.repositories.impl.jpa.JpaAutoTxRepository;
-import java.util.ArrayList;
-import java.util.List;
-import org.hibernate.SQLQuery;
+
+import java.util.*;
 
 /**
  *

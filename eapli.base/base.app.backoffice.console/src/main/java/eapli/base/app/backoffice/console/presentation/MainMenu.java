@@ -23,18 +23,17 @@
  */
 package eapli.base.app.backoffice.console.presentation;
 
-import eapli.base.app.common.console.presentation.authz.MyUserMenu;
 import eapli.base.Application;
 import eapli.base.app.backoffice.console.presentation.authz.AddUserUI;
 import eapli.base.app.backoffice.console.presentation.authz.DeactivateUserAction;
 import eapli.base.app.backoffice.console.presentation.authz.ListUsersAction;
 import eapli.base.app.backoffice.console.presentation.catalogue.RegisterCatalogueAction;
-import eapli.base.app.backoffice.console.presentation.catalogue.RegisterCatalogueUI;
 import eapli.base.app.backoffice.console.presentation.clientuser.AcceptRefuseSignupRequestAction;
 import eapli.base.app.backoffice.console.presentation.colaborator.AddColaboratorToTeamAction;
 import eapli.base.app.backoffice.console.presentation.colaborator.RegisterColaboratorAction;
 import eapli.base.app.backoffice.console.presentation.team.RegisterTeamAction;
 import eapli.base.app.backoffice.console.presentation.typeofteam.RegisterTypeOfTeamAction;
+import eapli.base.app.common.console.presentation.authz.MyUserMenu;
 import eapli.base.backoffice.console.presentation.form.RegisterFormAction;
 import eapli.base.backoffice.console.presentation.service.FinishServiceAction;
 import eapli.base.backoffice.console.presentation.service.RegisterServiceAction;

@@ -11,12 +11,11 @@ import eapli.base.ticketmanagement.domain.TicketId;
 import eapli.base.ticketmanagement.repositories.TicketRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.repositories.impl.jpa.JpaAutoTxRepository;
+
+import javax.persistence.TypedQuery;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
-import org.springframework.data.jpa.repository.Query;
 
 /**
  *

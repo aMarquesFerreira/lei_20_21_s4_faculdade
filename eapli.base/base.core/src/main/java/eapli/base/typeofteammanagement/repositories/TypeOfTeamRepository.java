@@ -8,6 +8,7 @@ package eapli.base.typeofteammanagement.repositories;
 import eapli.base.typeofteammanagement.domain.Color;
 import eapli.base.typeofteammanagement.domain.TypeOfTeam;
 import eapli.framework.domain.repositories.DomainRepository;
+
 import java.util.Optional;
 
 /**

@@ -10,14 +10,12 @@ import eapli.base.cataloguemanagement.domain.Catalogue;
 import eapli.base.cataloguemanagement.domain.CatalogueId;
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.servicemanagement.application.RegisterServiceController;
-import eapli.base.servicemanagement.domain.ServiceCode;
 import eapli.framework.actions.Action;
-import eapli.framework.general.domain.model.Description;
-import eapli.framework.general.domain.model.Designation;
-import java.util.ArrayList;
-import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *

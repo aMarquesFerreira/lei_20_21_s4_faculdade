@@ -5,12 +5,6 @@
  */
 package eapli.base.servicemanagement.application;
 
-import eapli.base.cataloguemanagement.domain.Catalogue;
-import eapli.base.clientusermanagement.repositories.ClientUserRepository;
-import eapli.base.infrastructure.persistence.PersistenceContext;
-import eapli.base.servicemanagement.domain.Service;
-import eapli.base.servicemanagement.repositories.ServiceRepository;
-
 /**
  *
  * @author andre

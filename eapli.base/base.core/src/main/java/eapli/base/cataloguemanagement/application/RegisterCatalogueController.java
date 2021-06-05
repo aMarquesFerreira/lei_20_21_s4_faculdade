@@ -14,11 +14,11 @@ import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.teammanagement.application.ListTeamService;
 import eapli.base.teammanagement.domain.Team;
 import eapli.base.usermanagement.domain.BaseRoles;
-import eapli.framework.infrastructure.authz.application.AuthorizationService;
-import eapli.framework.infrastructure.authz.application.AuthzRegistry;
 import eapli.framework.general.domain.model.Description;
 import eapli.framework.general.domain.model.Designation;
-import java.util.ArrayList;
+import eapli.framework.infrastructure.authz.application.AuthorizationService;
+import eapli.framework.infrastructure.authz.application.AuthzRegistry;
+
 import java.util.List;
 
 /**

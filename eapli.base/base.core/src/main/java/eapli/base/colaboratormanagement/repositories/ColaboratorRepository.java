@@ -2,10 +2,8 @@ package eapli.base.colaboratormanagement.repositories;
 
 import eapli.base.clientusermanagement.domain.MecanographicNumber;
 import eapli.base.colaboratormanagement.domain.Colaborator;
-import eapli.base.teammanagement.domain.Team;
 import eapli.framework.domain.repositories.DomainRepository;
 import eapli.framework.infrastructure.authz.domain.model.Username;
-
 
 import java.util.Optional;
 

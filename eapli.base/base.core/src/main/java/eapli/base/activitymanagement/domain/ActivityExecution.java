@@ -8,12 +8,10 @@ package eapli.base.activitymanagement.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import eapli.base.colaboratormanagement.domain.Colaborator;
-import eapli.base.formmanagement.domain.Form;
 import eapli.base.formmanagement.domain.FormAnswer;
-import eapli.base.servicemanagement.domain.Service;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
-import javax.persistence.Column;
+
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;

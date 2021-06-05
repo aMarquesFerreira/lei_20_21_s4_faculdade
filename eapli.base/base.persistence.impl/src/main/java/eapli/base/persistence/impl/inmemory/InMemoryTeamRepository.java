@@ -10,6 +10,7 @@ import eapli.base.teammanagement.domain.Team;
 import eapli.base.teammanagement.domain.TeamCode;
 import eapli.base.teammanagement.repositories.TeamRepository;
 import eapli.framework.infrastructure.repositories.impl.inmemory.InMemoryDomainRepository;
+
 import java.util.Optional;
 
 /**

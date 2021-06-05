@@ -3,7 +3,7 @@ package eapli.base.teammanagement.domain;
 
 import eapli.base.usermanagement.domain.BaseRoles;
 import eapli.framework.general.domain.model.Designation;
-import eapli.framework.infrastructure.authz.domain.model.*;
+import eapli.framework.infrastructure.authz.domain.model.Role;
 import org.junit.Test;
 
 import java.util.HashSet;

@@ -5,7 +5,6 @@
  */
 package eapli.base.infrastructure.bootstrapers;
 
-import eapli.base.cataloguemanagement.domain.CatalogueId;
 import eapli.base.formmanagement.application.RegisterFormController;
 import eapli.base.formmanagement.domain.FormParameter;
 import eapli.base.formmanagement.domain.FormParameterData;
@@ -18,10 +17,11 @@ import eapli.base.servicemanagement.repositories.ServiceRepository;
 import eapli.framework.actions.Action;
 import eapli.framework.general.domain.model.Description;
 import eapli.framework.general.domain.model.Designation;
-import java.util.ArrayList;
-import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *

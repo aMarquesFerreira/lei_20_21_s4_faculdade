@@ -7,6 +7,7 @@ package eapli.base.workflowmanagement.domain;
 
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.util.StringPredicates;
+
 import javax.persistence.Embeddable;
 
 /**
