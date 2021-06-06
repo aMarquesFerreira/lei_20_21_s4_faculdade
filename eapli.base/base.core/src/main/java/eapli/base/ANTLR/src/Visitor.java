@@ -1,51 +1,53 @@
 
-public class Visitor extends VerificationsBaseVisitor<Integer> {
+
+public class Visitor extends VerificationsBaseVisitor<String> {
+
     @Override
-    public Integer visitProgram(VerificationsParser.ProgramContext ctx) {
-        String program = ctx.getChild(0).getText();
-        return Integer.parseInt(program);
+    public String visitProgram(VerificationsParser.ProgramContext ctx) {
+        return ctx.getChild(0).getText();
     }
 
     @Override
-    public Integer visitState(VerificationsParser.StateContext ctx) {
-        String state = ctx.getChild(0).getText();
-        return Integer.parseInt(state);
+    public String visitState(VerificationsParser.StateContext ctx) {
+        return ctx.getParent().getText();
     }
 
     @Override
-    public Integer visitFormID(VerificationsParser.FormIDContext ctx) {
-        String formID = ctx.getChild(0).getText();
-        return Integer.parseInt(formID);
+    public String visitFormID(VerificationsParser.FormIDContext ctx) {
+        return ctx.getChild(0).getText();
     }
 
     @Override
-    public Integer visitName(VerificationsParser.NameContext ctx) {
-        String name = ctx.getChild(0).getText();
-        return Integer.parseInt(name);
+    public String visitName(VerificationsParser.NameContext ctx) {
+        return ctx.getChild(1).getText();
     }
 
     @Override
-    public Integer visitTypeOfData(VerificationsParser.TypeOfDataContext ctx) {
-        String typeOfData = ctx.getChild(0).getText();
-        return Integer.parseInt(typeOfData);
+    public String visitTypeOfData(VerificationsParser.TypeOfDataContext ctx) {
+        return ctx.getChild(2).getText();
     }
 
     @Override
-    public Integer visitDescription(VerificationsParser.DescriptionContext ctx) {
-        String description = ctx.getChild(0).getText();
-        return Integer.parseInt(description);
+    public String visitNames(VerificationsParser.NamesContext ctx){
+        return ctx.getChild(3).getText();
+
     }
 
     @Override
-    public Integer visitLetters(VerificationsParser.LettersContext ctx) {
-        String letters = ctx.getChild(0).getText();
-        return Integer.parseInt(letters);
+    public String visitDescription(VerificationsParser.DescriptionContext ctx) {
+        return ctx.getChild(4).getText();
+
     }
 
     @Override
-    public Integer visitNumber(VerificationsParser.NumberContext ctx) {
-        String numText = ctx.getChild(0).getText();
-        int num = Integer.parseInt(numText);
-        return num;
+    public String visitLetters(VerificationsParser.LettersContext ctx) {
+        return ctx.getChild(0).getText();
+
+    }
+
+    @Override
+    public String visitNumber(VerificationsParser.NumberContext ctx) {
+        return ctx.getChild(0).getText();
+
     }
 }

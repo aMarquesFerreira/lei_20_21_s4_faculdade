@@ -6,10 +6,10 @@
 package eapli.base.servicemanagement.repositories;
 
 import eapli.base.cataloguemanagement.domain.Catalogue;
-import eapli.base.cataloguemanagement.domain.CatalogueId;
 import eapli.base.servicemanagement.domain.Service;
 import eapli.base.servicemanagement.domain.ServiceCode;
 import eapli.framework.domain.repositories.DomainRepository;
+
 import java.util.Optional;
 
 /**

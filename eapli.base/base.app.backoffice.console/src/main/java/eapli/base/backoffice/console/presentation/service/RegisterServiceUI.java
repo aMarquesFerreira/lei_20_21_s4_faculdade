@@ -10,15 +10,12 @@ import eapli.base.backoffice.console.presentation.form.RegisterFormUI;
 import eapli.base.backoffice.console.presentation.workflow.RegisterWorkflowUI;
 import eapli.base.cataloguemanagement.domain.Catalogue;
 import eapli.base.formmanagement.application.RegisterFormController;
-import eapli.base.formmanagement.domain.FormParameter;
 import eapli.base.servicemanagement.application.RegisterServiceController;
 import eapli.base.servicemanagement.domain.Service;
 import eapli.framework.domain.repositories.IntegrityViolationException;
 import eapli.framework.io.util.Console;
 import eapli.framework.presentation.console.AbstractUI;
 import eapli.framework.presentation.console.SelectWidget;
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**

@@ -8,7 +8,6 @@ package eapli.base.backoffice.console.presentation.service;
 import eapli.base.backoffice.console.presentation.form.RegisterFormUI;
 import eapli.base.servicemanagement.application.RegisterServiceController;
 import eapli.base.servicemanagement.domain.Service;
-import eapli.framework.domain.repositories.IntegrityViolationException;
 import eapli.framework.io.util.Console;
 import eapli.framework.presentation.console.AbstractUI;
 import eapli.framework.presentation.console.SelectWidget;
@@ -46,17 +45,12 @@ public class FinishServiceUI extends AbstractUI{
             }
         }
         
-        
       return false;
     
 }
-    
    
     @Override
     public String headline() {
         return "Finish Service";
     }
-    
-    
-    
 }

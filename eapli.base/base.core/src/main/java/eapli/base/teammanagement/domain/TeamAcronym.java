@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.StringMixin;
 import eapli.framework.strings.util.StringPredicates;
+
 import javax.xml.bind.annotation.XmlAttribute;
 
 /**

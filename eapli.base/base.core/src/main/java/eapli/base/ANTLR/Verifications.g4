@@ -13,7 +13,7 @@ name : letters ;
 
 typeOfData : 'boolean' | 'BOOLEAN' | 'Boolean'
             | 'String' | 'string' | 'STRING'
-            | 'INTEGER' | 'INT' | 'int' | 'Int' | 'integer' | 'Integer'  ;
+            | 'INTEGER' | 'INT' | 'Int' | 'int' | 'integer' | 'Integer'  ;
 
 description : (UPPERCHAR | LOWERCHAR)*;
 

@@ -5,21 +5,13 @@
  */
 package eapli.base.ticketmanagement.application;
 
-import eapli.base.Application;
 import eapli.base.catalogue.repositories.CatalogueRepository;
 import eapli.base.cataloguemanagement.domain.Catalogue;
-import eapli.base.clientusermanagement.domain.MecanographicNumber;
 import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
-import eapli.base.formmanagement.domain.Answer;
-import eapli.base.formmanagement.domain.FormAnswer;
-import eapli.base.formmanagement.domain.FormAnswerId;
-import eapli.base.formmanagement.domain.FormParameter;
-import eapli.base.formmanagement.domain.FormParameterAnswer;
-import eapli.base.formmanagement.domain.FormParameterAnswerId;
+import eapli.base.formmanagement.domain.*;
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.servicemanagement.domain.Service;
-import eapli.base.servicemanagement.domain.ServiceCode;
 import eapli.base.servicemanagement.repositories.ServiceRepository;
 import eapli.base.ticketmanagement.domain.Ticket;
 import eapli.base.ticketmanagement.domain.TicketId;
@@ -29,11 +21,11 @@ import eapli.base.workflowmanagement.domain.WorkFlowExecution;
 import eapli.base.workflowmanagement.domain.WorkFlowExecutionId;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
 import eapli.framework.infrastructure.authz.application.AuthzRegistry;
+
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import jdk.javadoc.doclet.Reporter;
+
 
 /**
  *

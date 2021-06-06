@@ -5,12 +5,8 @@
  */
 package eapli.base.app.backoffice.console.presentation.team;
 
-import eapli.base.colaboratormanagement.application.RegisterColaboratorController;
 import eapli.base.teammanagement.application.RegisterTeamController;
-import eapli.base.teammanagement.domain.TeamAcronym;
-import eapli.base.teammanagement.domain.TeamCode;
 import eapli.framework.domain.repositories.IntegrityViolationException;
-import eapli.framework.general.domain.model.Designation;
 import eapli.framework.io.util.Console;
 import eapli.framework.presentation.console.AbstractUI;
 

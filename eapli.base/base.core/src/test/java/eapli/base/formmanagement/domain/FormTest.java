@@ -1,26 +1,5 @@
 package eapli.base.formmanagement.domain;
 
-import eapli.base.cataloguemanagement.domain.Catalogue;
-import eapli.base.cataloguemanagement.domain.CatalogueId;
-import eapli.base.clientusermanagement.domain.MecanographicNumber;
-import eapli.base.colaboratormanagement.domain.*;
-import eapli.base.servicemanagement.domain.Service;
-import eapli.base.servicemanagement.domain.ServiceCode;
-
-
-
-import eapli.base.usermanagement.domain.BaseRoles;
-import eapli.framework.general.domain.model.Description;
-import eapli.framework.general.domain.model.Designation;
-import eapli.framework.infrastructure.authz.domain.model.*;
-
-import org.junit.Test;
-
-import java.util.*;
-
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 public class FormTest {
 
 

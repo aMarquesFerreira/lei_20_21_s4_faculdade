@@ -5,7 +5,6 @@
  */
 package eapli.base.backoffice.console.presentation.service;
 
-import eapli.base.app.backoffice.console.presentation.team.RegisterTeamUI;
 import eapli.framework.actions.Action;
 
 /**

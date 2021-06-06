@@ -1,9 +1,9 @@
+import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.tree.ParseTree;
 
-import java.io.*;
-import java.util.Scanner;
-
-import org.antlr.v4.runtime.*;
-import org.antlr.v4.runtime.tree.*;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 public class teste {
         public static void main(String[] args) throws IOException {
@@ -25,6 +25,8 @@ public class teste {
             ParseTree tree = parser.program(); // parse
             Visitor eval = new Visitor();
             eval.visit(tree);
+            System.out.println(eval.visit(tree));
+
         }
     }
 

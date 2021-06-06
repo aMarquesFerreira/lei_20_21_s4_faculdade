@@ -9,17 +9,11 @@ import eapli.base.Application;
 import eapli.base.activitymanagement.domain.Activity;
 import eapli.base.activitymanagement.domain.ActivityId;
 import eapli.base.activitymanagement.repositories.ActivityRepository;
-import eapli.base.cataloguemanagement.domain.Catalogue;
 import eapli.base.colaboratormanagement.domain.Colaborator;
-import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
-import eapli.base.infrastructure.persistence.PersistenceContext;
-import eapli.base.teammanagement.domain.Team;
-import eapli.base.teammanagement.repositories.TeamRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.repositories.impl.jpa.JpaAutoTxRepository;
-import java.util.ArrayList;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 

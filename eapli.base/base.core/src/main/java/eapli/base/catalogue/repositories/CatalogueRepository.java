@@ -2,13 +2,10 @@ package eapli.base.catalogue.repositories;
 
 import eapli.base.cataloguemanagement.domain.Catalogue;
 import eapli.base.cataloguemanagement.domain.CatalogueId;
-import eapli.base.clientusermanagement.repositories.*;
-import java.util.Optional;
-
-import eapli.base.clientusermanagement.domain.ClientUser;
-import eapli.base.clientusermanagement.domain.MecanographicNumber;
 import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.framework.domain.repositories.DomainRepository;
+
+import java.util.Optional;
 //import eapli.framework.infrastructure.authz.domain.model.
 
 /**

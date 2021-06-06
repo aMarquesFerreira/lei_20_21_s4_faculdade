@@ -6,7 +6,6 @@
 package eapli.base.app.backoffice.console.presentation.activity;
 
 import eapli.base.activitymanagement.application.RegisterActivityController;
-import eapli.base.activitymanagement.domain.Activity;
 import eapli.base.app.backoffice.console.presentation.colaborator.ColaboratorPrinter;
 import eapli.base.backoffice.console.presentation.form.FormPrinter;
 import eapli.base.backoffice.console.presentation.workflow.RegisterWorkflowUI;

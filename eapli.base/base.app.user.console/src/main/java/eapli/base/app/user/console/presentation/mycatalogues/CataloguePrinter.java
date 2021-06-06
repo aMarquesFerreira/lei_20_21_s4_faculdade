@@ -6,7 +6,6 @@
 package eapli.base.app.user.console.presentation.mycatalogues;
 
 import eapli.base.cataloguemanagement.domain.Catalogue;
-import eapli.framework.time.util.Calendars;
 import eapli.framework.visitor.Visitor;
 
 /**

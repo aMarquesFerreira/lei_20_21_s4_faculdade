@@ -1,9 +1,6 @@
 package eapli.base.ticketmanagement.domain;
 
-import eapli.base.activitymanagement.domain.*;
-import eapli.base.colaboratormanagement.domain.*;
 import eapli.framework.domain.model.ValueObject;
-import eapli.framework.strings.StringMixin;
 import eapli.framework.strings.util.StringPredicates;
 
 public class TicketStatus implements ValueObject, Comparable<TicketStatus> {

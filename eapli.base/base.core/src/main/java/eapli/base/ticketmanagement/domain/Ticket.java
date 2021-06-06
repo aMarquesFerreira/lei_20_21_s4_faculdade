@@ -9,10 +9,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.formmanagement.domain.FormAnswer;
 import eapli.base.servicemanagement.domain.Service;
-import eapli.base.workflowmanagement.domain.WorkFlow;
 import eapli.base.workflowmanagement.domain.WorkFlowExecution;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
+
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

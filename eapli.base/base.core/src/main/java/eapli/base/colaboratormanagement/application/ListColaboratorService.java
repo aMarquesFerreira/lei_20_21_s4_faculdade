@@ -5,7 +5,6 @@
  */
 package eapli.base.colaboratormanagement.application;
 
-import eapli.base.catalogue.repositories.CatalogueRepository;
 import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
 import eapli.base.infrastructure.persistence.PersistenceContext;

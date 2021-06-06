@@ -1,7 +1,6 @@
 package eapli.base.colaboratormanagement.domain;
 
 import eapli.framework.domain.model.ValueObject;
-import eapli.framework.strings.StringMixin;
 import eapli.framework.strings.util.StringPredicates;
 
 public class Name implements ValueObject, Comparable<Name> {

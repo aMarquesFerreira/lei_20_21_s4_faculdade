@@ -5,13 +5,8 @@
  */
 package eapli.base.colaboratormanagement.domain;
 
-import eapli.base.cataloguemanagement.domain.Catalogue;
-import eapli.base.clientusermanagement.domain.ClientUser;
-import eapli.base.clientusermanagement.domain.ClientUserBuilder;
 import eapli.base.clientusermanagement.domain.MecanographicNumber;
 import eapli.framework.domain.model.DomainFactory;
-import eapli.framework.infrastructure.authz.domain.model.NilPasswordPolicy;
-import eapli.framework.infrastructure.authz.domain.model.PlainTextEncoder;
 import eapli.framework.infrastructure.authz.domain.model.SystemUser;
 
 import java.util.Date;

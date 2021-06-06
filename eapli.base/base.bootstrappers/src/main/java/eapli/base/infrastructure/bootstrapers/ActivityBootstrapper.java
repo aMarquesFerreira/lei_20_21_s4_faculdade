@@ -6,7 +6,6 @@
 package eapli.base.infrastructure.bootstrapers;
 
 import eapli.base.activitymanagement.application.RegisterActivityController;
-import eapli.base.cataloguemanagement.domain.Catalogue;
 import eapli.base.clientusermanagement.domain.MecanographicNumber;
 import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
@@ -15,7 +14,6 @@ import eapli.base.formmanagement.domain.FormId;
 import eapli.base.formmanagement.repositories.FormRepository;
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.framework.actions.Action;
-import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

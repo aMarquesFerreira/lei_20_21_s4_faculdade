@@ -7,7 +7,6 @@ package eapli.base.cataloguemanagement.application;
 
 import eapli.base.catalogue.repositories.CatalogueRepository;
 import eapli.base.cataloguemanagement.domain.Catalogue;
-import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.usermanagement.domain.BaseRoles;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;

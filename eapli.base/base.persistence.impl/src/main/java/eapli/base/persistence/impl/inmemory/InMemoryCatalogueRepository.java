@@ -10,9 +10,8 @@ import eapli.base.cataloguemanagement.domain.Catalogue;
 import eapli.base.cataloguemanagement.domain.CatalogueId;
 import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.framework.infrastructure.repositories.impl.inmemory.InMemoryDomainRepository;
+
 import java.util.Optional;
-import eapli.framework.infrastructure.authz.domain.model.Username;
-import eapli.framework.infrastructure.repositories.impl.inmemory.InMemoryDomainRepository;
 
 /**
  *

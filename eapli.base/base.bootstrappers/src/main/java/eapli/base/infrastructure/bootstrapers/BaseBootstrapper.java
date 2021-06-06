@@ -23,10 +23,6 @@
  */
 package eapli.base.infrastructure.bootstrapers;
 
-import eapli.base.infrastructure.bootstrapers.demo.BackofficeUsersBootstrapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.usermanagement.domain.BaseRoles;
 import eapli.base.usermanagement.domain.UserBuilderHelper;
@@ -41,6 +37,8 @@ import eapli.framework.infrastructure.authz.domain.model.SystemUserBuilder;
 import eapli.framework.infrastructure.authz.domain.repositories.UserRepository;
 import eapli.framework.strings.util.Strings;
 import eapli.framework.validations.Invariants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Base Bootstrapping data app

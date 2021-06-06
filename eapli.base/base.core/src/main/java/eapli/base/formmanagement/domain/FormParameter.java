@@ -7,22 +7,12 @@ package eapli.base.formmanagement.domain;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eapli.base.teammanagement.domain.Team;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
-import eapli.framework.domain.model.ValueObject;
 import eapli.framework.general.domain.model.Description;
 import eapli.framework.general.domain.model.Designation;
-import eapli.framework.strings.util.StringPredicates;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import javax.persistence.AttributeOverride;
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Version;
+
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlElement;
 
 

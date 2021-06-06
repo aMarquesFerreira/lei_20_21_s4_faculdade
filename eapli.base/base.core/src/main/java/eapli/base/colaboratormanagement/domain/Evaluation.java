@@ -1,7 +1,6 @@
 package eapli.base.colaboratormanagement.domain;
 
 import eapli.framework.domain.model.ValueObject;
-import org.springframework.expression.EvaluationContext;
 
 public class Evaluation implements ValueObject, Comparable<Evaluation> {
 

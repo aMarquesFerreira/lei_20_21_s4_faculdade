@@ -28,19 +28,16 @@ import eapli.base.app.common.console.presentation.authz.MyUserMenu;
 import eapli.base.app.user.console.presentation.mycatalogues.CataloguePrinter;
 import eapli.base.app.user.console.presentation.myservices.RequestServiceAction;
 import eapli.base.cataloguemanagement.application.MyCataloguesController;
-import eapli.base.ticketmanagement.application.RequestServiceController;
 import eapli.framework.actions.Actions;
 import eapli.framework.actions.menu.Menu;
 import eapli.framework.actions.menu.MenuItem;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
 import eapli.framework.infrastructure.authz.application.AuthzRegistry;
-import eapli.framework.infrastructure.authz.application.UserSession;
 import eapli.framework.presentation.console.ExitWithMessageAction;
 import eapli.framework.presentation.console.ListUI;
 import eapli.framework.presentation.console.menu.MenuItemRenderer;
 import eapli.framework.presentation.console.menu.MenuRenderer;
 import eapli.framework.presentation.console.menu.VerticalMenuRenderer;
-import java.util.Optional;
 
 /**
  * @author Paulo Gandra Sousa

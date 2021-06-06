@@ -9,6 +9,7 @@ import eapli.base.activitymanagement.domain.Activity;
 import eapli.base.activitymanagement.domain.ActivityId;
 import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.framework.domain.repositories.DomainRepository;
+
 import java.util.Optional;
 
 /**

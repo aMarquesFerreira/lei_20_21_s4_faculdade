@@ -8,8 +8,8 @@ package eapli.base.ticketmanagement.repositories;
 import eapli.base.ticketmanagement.domain.Ticket;
 import eapli.base.ticketmanagement.domain.TicketId;
 import eapli.framework.domain.repositories.DomainRepository;
+
 import java.util.Optional;
-import org.springframework.data.jpa.repository.Query;
 
 /**
  *

@@ -6,16 +6,13 @@
 package eapli.base.servicemanagement.application;
 
 import eapli.base.catalogue.repositories.CatalogueRepository;
-import eapli.base.cataloguemanagement.application.ListCatalogueService;
 import eapli.base.cataloguemanagement.domain.Catalogue;
-import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.servicemanagement.domain.Service;
 import eapli.base.servicemanagement.repositories.ServiceRepository;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
 import eapli.framework.infrastructure.authz.application.AuthzRegistry;
-import java.util.Optional;
 
 /**
  *
