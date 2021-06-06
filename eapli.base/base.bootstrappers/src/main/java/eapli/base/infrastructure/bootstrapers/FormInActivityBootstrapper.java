@@ -6,7 +6,8 @@
 package eapli.base.infrastructure.bootstrapers;
 
 import eapli.base.activitymanagement.domain.Activity;
-import eapli.base.cataloguemanagement.domain.CatalogueId;
+import eapli.base.activitymanagement.domain.ActivityId;
+import eapli.base.activitymanagement.repositories.ActivityRepository;
 import eapli.base.formmanagement.application.RegisterFormController;
 import eapli.base.formmanagement.domain.FormParameter;
 import eapli.base.formmanagement.domain.FormParameterData;
@@ -28,15 +29,13 @@ import org.slf4j.LoggerFactory;
  *
  * @author andre
  */
-
-
-/*FormId formId, final Designation name, List<FormParameter> formParameters*/
-public class FormBootstrapper implements Action{
+public class FormInActivityBootstrapper implements Action{
     
     private static final Logger LOGGER = LoggerFactory.getLogger(FormBootstrapper.class);
 
     private final RegisterFormController formController = new RegisterFormController();
     private final ServiceRepository servRepo = PersistenceContext.repositories().services();
+    private final ActivityRepository actRepo = PersistenceContext.repositories().activities();
    
     private final List<Service> services = new ArrayList<Service>();
     private final List<FormParameter> formParameters = new ArrayList<FormParameter>();
@@ -52,23 +51,14 @@ public class FormBootstrapper implements Action{
                 FormParameterData.valueOf("String"));
         formParameters.add(fp1);
         
-        Service svc1 = servRepo.findByServiceCode(ServiceCode.valueOf("S1")).get();
-
+        Activity a1 = actRepo.findByActivityId(ActivityId.valueOf("A1")).get();
         
-            
-        registerNewFormInService("F1", "Form1",svc1, formParameters);
-        
-        //registerNewFormInService("F2", "Form2",svc1, formParameters);
+        registerFormInActivity("F3", "Form1",a1, formParameters);
+        //registerFormInActivity("F4", "Form2",a1, formParameters);
 
         return true;
     }
-    private void registerNewFormInService(String formId, String name, Service service, List<FormParameter> formParameters) {
         
-        formController.RegisterFormInService(formId, name, service, formParameters);
-        LOGGER.debug("»»» Creating new Form %s", formId);
-        
-    }
-    
     
     private void registerFormInActivity(String formId, String name, Activity activity, List<FormParameter> formParameters) {
         

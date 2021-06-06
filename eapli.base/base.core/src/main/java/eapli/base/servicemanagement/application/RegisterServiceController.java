@@ -17,6 +17,7 @@ import eapli.base.servicemanagement.domain.Service;
 import eapli.base.servicemanagement.domain.ServiceCode;
 import eapli.base.servicemanagement.repositories.ServiceRepository;
 import eapli.base.usermanagement.domain.BaseRoles;
+import eapli.base.workflowmanagement.domain.WorkFlow;
 import eapli.framework.general.domain.model.Description;
 import eapli.framework.general.domain.model.Designation;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
@@ -44,14 +45,14 @@ public class RegisterServiceController {
      * @param catalogue
      * @return
      */
-    public Service RegisterService(final String serviceCode, final String serviceDescription, final String serviceTitle, final Catalogue catalogue) {
+    public Service RegisterService(final String serviceCode, final String serviceDescription, final String serviceTitle, final Catalogue catalogue /*final WorkFlow workflow*/) {
        
         authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.HELP_DESK_SERVICE_MANAGER);
 
         final Service newService = new Service(ServiceCode.valueOf(serviceCode), Description.valueOf(serviceDescription),  Designation.valueOf(serviceTitle), catalogue);
            
-        /*final Form newForm = formController.RegisterForm(formId, name, newService, formPar);
-        newService.form();*/
+        //newService.addWorkFlow(workflow);
+        
         
         return serviceRepository.save(newService);
       

@@ -7,6 +7,7 @@ package eapli.base.backoffice.console.presentation.workflow;
 
 import eapli.base.activitymanagement.domain.Activity;
 import eapli.base.app.backoffice.console.presentation.activity.ActivityPrinter;
+import eapli.base.backoffice.console.presentation.service.ServicePrinter;
 import eapli.base.servicemanagement.domain.Service;
 import eapli.base.workflowmanagement.application.RegisterWorkflowController;
 import eapli.framework.domain.repositories.IntegrityViolationException;
@@ -61,8 +62,19 @@ public class RegisterWorkflowUI extends AbstractUI {
         //--------
         
         
+        final Iterable<Service> services = this.theController.services();
+
+        final SelectWidget<Service> serviceSelector = new SelectWidget<>("Services:", services,
+                new ServicePrinter());
+        serviceSelector.show();
+
+        final Service theService = serviceSelector.selectedElement();
+        
+        //---------------
+        
+        
          try {
-            this.theController.RegisterWorkflow(workflowId, theActivities);
+            this.theController.RegisterWorkflow(workflowId, theActivities, theService);
         } catch (@SuppressWarnings("unused") final IntegrityViolationException e) {
             System.out.println("You tried to enter a workflow which already exists in the database.");
         }

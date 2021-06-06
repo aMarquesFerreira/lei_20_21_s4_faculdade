@@ -62,7 +62,7 @@ public class RegisterActivityUI extends AbstractUI {
         
         //Activity activity;
          try {
-        /*activity=*/this.theController.RegisterActivity(activityId, description, theColaborator, theForm);
+        /*activity=*/this.theController.RegisterActivity(activityId, description, theColaborator/*, theForm*/);
             
         } catch (@SuppressWarnings("unused") final IntegrityViolationException e) {
             System.out.println("You tried to enter a Activity which already exists in the database.");

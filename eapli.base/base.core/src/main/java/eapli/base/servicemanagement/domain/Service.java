@@ -154,5 +154,11 @@ public class Service implements AggregateRoot<ServiceCode>{
     public WorkFlow getWorkFlow() {
         return workFlow;
     }
+
+    /*public void addWorkFlow(WorkFlow workFlow) {
+        this.workFlow = workFlow;
+    }*/
+    
+    
     
 }

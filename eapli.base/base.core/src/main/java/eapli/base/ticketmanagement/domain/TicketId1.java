@@ -14,9 +14,9 @@ import javax.persistence.Embeddable;
  * @author andre
  */
 @Embeddable
-public class TicketId1 implements ValueObject, Comparable<TicketId1>{
+public class TicketId1 /*implements ValueObject, Comparable<TicketId1>*/{
     
-    private static final long serialVersionUID = 1L;
+   /* private static final long serialVersionUID = 1L;
 
     private String number;
     
@@ -64,6 +64,6 @@ public class TicketId1 implements ValueObject, Comparable<TicketId1>{
     @Override
     public int compareTo(final TicketId1 arg0) {
         return number.compareTo(arg0.number);
-    }
+    }*/
     
 }

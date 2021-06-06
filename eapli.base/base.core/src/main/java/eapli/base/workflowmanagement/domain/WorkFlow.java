@@ -7,6 +7,7 @@ package eapli.base.workflowmanagement.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import eapli.base.activitymanagement.domain.Activity;
+import eapli.base.servicemanagement.domain.Service;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import java.util.List;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlElement;
 
@@ -42,20 +44,25 @@ public class WorkFlow implements AggregateRoot<WorkFlowId> {
      */
     @OneToMany()
     private List<Activity> activities;
+    
+    @OneToOne()
+    private Service service;
      
 
     /**
      * Constructor.
      *
      * @param workflowId
+     * @param service
      * 
      */
-    public WorkFlow(final WorkFlowId workflowId) {
+    public WorkFlow(final WorkFlowId workflowId, final Service service) {
        
-        if (workflowId == null || activities == null) {
+        if (workflowId == null || service == null) {
             throw new IllegalArgumentException();
         }
         this.workflowId = workflowId;
+        this.service = service;
         activities = new ArrayList<>();
         this.active = true;
 
@@ -115,6 +122,12 @@ public class WorkFlow implements AggregateRoot<WorkFlowId> {
         this.active = !this.active;
         return isActive();
     }
+
+    public Service getService() {
+        return service;
+    }
+    
+    
 
     
 }

@@ -31,6 +31,8 @@ public interface TicketRepository extends DomainRepository<TicketId, Ticket> {
 
     
     public int getMaxNumber(int year);
+    
+    /*public int getMaxNumber();*/
 
     
 }

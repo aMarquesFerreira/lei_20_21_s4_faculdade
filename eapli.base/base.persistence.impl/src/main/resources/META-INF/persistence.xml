@@ -25,6 +25,7 @@
     <class>eapli.base.activitymanagement.domain.Activity</class>
     <class>eapli.base.workflowmanagement.domain.WorkFlowExecution</class>
     <class>eapli.base.activitymanagement.domain.ActivityExecution</class>
+    <class>eapli.base.ticketmanagement.domain.Ticket</class>
 
 
     <properties>

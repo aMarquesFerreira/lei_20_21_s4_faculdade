@@ -55,7 +55,7 @@ public class Activity implements AggregateRoot<ActivityId> {
     /*@ManyToOne()
     private Service service;*/
     
-    @OneToOne(cascade = CascadeType.ALL)    
+    @OneToOne(cascade = CascadeType.ALL)
     private Form form;
 
     @ManyToOne()
@@ -70,13 +70,13 @@ public class Activity implements AggregateRoot<ActivityId> {
      * @param colaborator
      * @param form
      */
-    public Activity(final ActivityId activityId,final Description description, final Form form, final Colaborator colaborator) {
-        if (activityId == null || description  == null || form == null || colaborator == null) {
+    public Activity(final ActivityId activityId,final Description description/*, final Form form*/, final Colaborator colaborator) {
+        if (activityId == null || description  == null || colaborator == null) {
             throw new IllegalArgumentException();
         }
         this.activityId = activityId;
         this.description = description;
-        this.form = form;
+        //this.form = form;
         this.colaborator = colaborator;
         this.active = true;
 
@@ -138,6 +138,8 @@ public class Activity implements AggregateRoot<ActivityId> {
         return isActive();
     }
 
+    public void addForm(Form form) {
+        this.form = form;
+    }
 
-    
 }

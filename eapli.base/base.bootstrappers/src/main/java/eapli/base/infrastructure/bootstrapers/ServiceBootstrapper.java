@@ -11,6 +11,9 @@ import eapli.base.cataloguemanagement.domain.CatalogueId;
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.servicemanagement.application.RegisterServiceController;
 import eapli.base.servicemanagement.domain.ServiceCode;
+import eapli.base.workflowmanagement.domain.WorkFlow;
+import eapli.base.workflowmanagement.domain.WorkFlowId;
+import eapli.base.workflowmanagement.repositories.WorkFlowRepository;
 import eapli.framework.actions.Action;
 import eapli.framework.general.domain.model.Description;
 import eapli.framework.general.domain.model.Designation;
@@ -29,20 +32,24 @@ public class ServiceBootstrapper implements Action {
 
     private final RegisterServiceController serviceController = new RegisterServiceController();
     private final CatalogueRepository catRepo = PersistenceContext.repositories().catalogues();
+    private final WorkFlowRepository workflowRepo = PersistenceContext.repositories().workflows();
    // private final TeamRepository teamRepo = PersistenceContext.repositories().teams();
 
-    private final List<Catalogue> catalogues = new ArrayList<Catalogue>();
+    //private final List<Catalogue> catalogues = new ArrayList<Catalogue>();
 
 
     @Override
     public boolean execute() {
         Catalogue c1 = catRepo.findByCatalogueId(CatalogueId.valueOf("Catalogue with services for vacations")).get();
         Catalogue c2 = catRepo.findByCatalogueId(CatalogueId.valueOf("Catalogue for repairs")).get();
-        Catalogue c3 = catRepo.findByCatalogueId(CatalogueId.valueOf("Catalogue For Books")).get();
+        //Catalogue c3 = catRepo.findByCatalogueId(CatalogueId.valueOf("Catalogue For Books")).get();
+        /*WorkFlow w1 = workflowRepo.findByID(WorkFlowId.valueOf("W1")).get();
+        WorkFlow w2 = workflowRepo.findByID(WorkFlowId.valueOf("W2")).get();
+        WorkFlow w3 = workflowRepo.findByID(WorkFlowId.valueOf("W3")).get();*/
 
         registerNewService("S1", "Vacations", "Vacations Service", c1);
         registerNewService("S2", "ask for Repairs", "repairs Service", c2);
-        registerNewService("S3", "ask for books", "books Service", c3);
+        registerNewService("S3", "ask for books", "books Service", c1);
 
         return true;
     }

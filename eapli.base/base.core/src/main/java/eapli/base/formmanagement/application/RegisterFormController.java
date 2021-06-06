@@ -5,6 +5,8 @@
  */
 package eapli.base.formmanagement.application;
 
+import eapli.base.activitymanagement.domain.Activity;
+import eapli.base.activitymanagement.repositories.ActivityRepository;
 import eapli.base.formmanagement.domain.Form;
 import eapli.base.formmanagement.domain.FormId;
 import eapli.base.formmanagement.domain.FormParameter;
@@ -40,6 +42,7 @@ public class RegisterFormController {
     private final FormRepository formRepository = PersistenceContext.repositories().forms();
     private final ListServiceService svcServices = new ListServiceService();
     private final ServiceRepository serviceRepository = PersistenceContext.repositories().services();
+    private final ActivityRepository activityRepository = PersistenceContext.repositories().activities();
 
     /**
      * Constructor.
@@ -91,14 +94,24 @@ public class RegisterFormController {
       
     }*/
     
+    public Form registerFormInActivity(final String formId, final String name, Activity activity, List<FormParameter> formPar) {
+       
+        authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.HELP_DESK_SERVICE_MANAGER);
+
+        final Form newForm = new Form(FormId.valueOf(formId), Designation.valueOf(name), formPar);
+        
+        
+        activity.addForm(newForm);
+        
+        activity = activityRepository.save(activity);
+    
+        
+        return activity.getForm();
+    }
     
     public Iterable<Service> services() {
         return svcServices.activeServices();
     }
- 
-    /*public Iterable<> teams() {
-        return svcTeams.allTeams();
-    }*/
 
     public Iterable<Service> inactiveServices() {
         return svcServices.inactiveServices();

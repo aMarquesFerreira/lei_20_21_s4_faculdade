@@ -14,6 +14,9 @@ import eapli.base.workflowmanagement.domain.WorkFlowExecution;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Version;
@@ -23,6 +26,7 @@ import javax.xml.bind.annotation.XmlElement;
  *
  * @author andre
  */
+@Entity
 public class Ticket implements AggregateRoot<TicketId>{
     
     
@@ -32,6 +36,7 @@ public class Ticket implements AggregateRoot<TicketId>{
     @XmlElement
     @JsonProperty
     @EmbeddedId
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private TicketId ticketId;
 
     @XmlElement

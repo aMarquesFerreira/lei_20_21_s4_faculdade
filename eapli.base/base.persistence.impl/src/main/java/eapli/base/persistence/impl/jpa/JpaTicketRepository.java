@@ -49,11 +49,38 @@ public class JpaTicketRepository extends JpaAutoTxRepository<Ticket, TicketId, T
 
     @Override
     public int getMaxNumber(int year){
-         TypedQuery<Integer> q = createQuery("SELECT max(number) FROM Ticket where number like ':year/*'", Integer.class);
+         TypedQuery<Integer> q = createQuery("select max(ticketId) FROM Ticket where number like ':year/*'", Integer.class);
+         
+         /*String hql = "SELECT max(ticketId) FROM Ticket";
+         //Query query = query.createQuery results = query.list();*/
+         
+         //Integer number = (Integer) entityManager.createQuery("SELECT max(ticketId) FROM Ticket").getSingleResult();
+         
+         
+         /*EntityManager entityManager = null;*/
+         
+         //entityManager.createQuery("select max(t.number) from Ticket t", Integer.class).getSingleResult();*/
          
          Integer number = q.getSingleResult();
          
          return number==null ? 0 : number;
+         
+         /*return matchOne("e.ticketId=:ticketId", params);*/
     }
+         
+         
+     /*public int getMaxNumber(int TicketId){
+        
+        final Map<String, Object> params = new HashMap<>();
+        params.put("ticketId", ticketId);
+        return matchOne("e.ticketId=:ticketId", params);
+        
+        
+    }*/
+
+    /*@Override
+    public int getMaxNumber() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }*/
         
 }

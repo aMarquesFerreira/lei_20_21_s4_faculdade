@@ -38,11 +38,11 @@ public class RegisterActivityController {
      * @param form
      * @return
      */
-    public Activity RegisterActivity(final String activityId, final String description, final Colaborator colaborator,final Form form) {
+    public Activity RegisterActivity(final String activityId, final String description, final Colaborator colaborator/*,final Form form*/) {
        
         authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.HELP_DESK_SERVICE_MANAGER);
 
-        final Activity newActivity = new Activity(ActivityId.valueOf(activityId), Description.valueOf(description), form, colaborator);
+        final Activity newActivity = new Activity(ActivityId.valueOf(activityId), Description.valueOf(description)/*,form*/, colaborator);
                     
         return activityRepository.save(newActivity);
       

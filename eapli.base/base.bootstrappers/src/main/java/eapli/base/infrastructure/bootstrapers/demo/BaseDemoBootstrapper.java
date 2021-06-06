@@ -23,13 +23,17 @@
  */
 package eapli.base.infrastructure.bootstrapers.demo;
 
+import eapli.base.infrastructure.bootstrapers.ActivityBootstrapper;
 import eapli.base.infrastructure.bootstrapers.AddColabToTeamBootstrapper;
 import eapli.base.infrastructure.bootstrapers.BaseBootstrapper;
 import eapli.base.infrastructure.bootstrapers.CatalogueBootstrapper;
 import eapli.base.infrastructure.bootstrapers.ColaboratorBootstrapper;
+import eapli.base.infrastructure.bootstrapers.FormBootstrapper;
+import eapli.base.infrastructure.bootstrapers.FormInActivityBootstrapper;
 import eapli.base.infrastructure.bootstrapers.MasterUsersBootstrapper;
 import eapli.base.infrastructure.bootstrapers.ServiceBootstrapper;
 import eapli.base.infrastructure.bootstrapers.TypeOfTeamBootstrapper;
+import eapli.base.infrastructure.bootstrapers.WorkflowBootstrapper;
 import eapli.framework.actions.Action;
 import eapli.framework.infrastructure.authz.application.AuthenticationService;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
@@ -61,8 +65,19 @@ public class BaseDemoBootstrapper implements Action {
                                    new TeamBootstrapper(),
                                    new CatalogueBootstrapper(),
                                    new TypeOfTeamBootstrapper(),
-                                   new AddColabToTeamBootstrapper()
-                                   //new ServiceBootstrapper()
+                                   new AddColabToTeamBootstrapper(),
+                                   new ActivityBootstrapper(), 
+                                   new FormInActivityBootstrapper(),
+                                   new ServiceBootstrapper(),
+                                   new FormBootstrapper(), //precisa de servico
+                                   new WorkflowBootstrapper()
+                                   
+                                   
+                                   
+                                   
+                                   
+                                   
+                                   
                                    
                                    //new MasterUsersBootstrapper()
         
