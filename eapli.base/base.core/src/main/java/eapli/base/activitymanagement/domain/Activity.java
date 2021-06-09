@@ -63,7 +63,6 @@ public class Activity implements AggregateRoot<ActivityId> {
      * @param activityId
      * @param description
      * @param colaborator
-     * @param form
      */
     public Activity(final ActivityId activityId,final Description description/*, final Form form*/, final Colaborator colaborator) {
         if (activityId == null || description  == null || colaborator == null) {

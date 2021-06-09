@@ -51,9 +51,8 @@ public class FormAnswer implements AggregateRoot<FormAnswerId> {
      * Constructor.
      *
      * @param formAnswerId
-     * @param name
-     * @param service
-     * @param formParameters
+     * @param form
+     * @param colaborator
      */
     public FormAnswer(final FormAnswerId formAnswerId, Form form, Colaborator colaborator) {
             

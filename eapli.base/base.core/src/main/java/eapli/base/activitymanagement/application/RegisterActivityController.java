@@ -34,7 +34,6 @@ public class RegisterActivityController {
      * @param activityId
      * @param description
      * @param colaborator
-     * @param form
      * @return
      */
     public Activity RegisterActivity(final String activityId, final String description, final Colaborator colaborator/*,final Form form*/) {

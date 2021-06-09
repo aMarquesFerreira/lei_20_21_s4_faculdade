@@ -111,6 +111,18 @@ public class VerificationsBaseListener implements VerificationsListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterIgnore(VerificationsParser.IgnoreContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIgnore(VerificationsParser.IgnoreContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterNumber(VerificationsParser.NumberContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -118,6 +130,30 @@ public class VerificationsBaseListener implements VerificationsListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitNumber(VerificationsParser.NumberContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterOk(VerificationsParser.OkContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitOk(VerificationsParser.OkContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNotok(VerificationsParser.NotokContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNotok(VerificationsParser.NotokContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

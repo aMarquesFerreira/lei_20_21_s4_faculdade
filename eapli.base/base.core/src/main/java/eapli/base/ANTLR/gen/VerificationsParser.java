@@ -1,16 +1,12 @@
 // Generated from C:/Users/torre/OneDrive/Documentos/lei20_21_s4_2db_03/eapli.base/base.core/src/main/java/eapli/base/ANTLR\Verifications.g4 by ANTLR 4.9.1
-
-import org.antlr.v4.runtime.*;
-import org.antlr.v4.runtime.atn.ATN;
-import org.antlr.v4.runtime.atn.ATNDeserializer;
-import org.antlr.v4.runtime.atn.ParserATNSimulator;
-import org.antlr.v4.runtime.atn.PredictionContextCache;
+import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
-import org.antlr.v4.runtime.tree.ParseTreeListener;
-import org.antlr.v4.runtime.tree.ParseTreeVisitor;
-import org.antlr.v4.runtime.tree.TerminalNode;
-
+import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.misc.*;
+import org.antlr.v4.runtime.tree.*;
 import java.util.List;
+import java.util.Iterator;
+import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class VerificationsParser extends Parser {
@@ -21,15 +17,16 @@ public class VerificationsParser extends Parser {
 		new PredictionContextCache();
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
-		T__9=10, T__10=11, T__11=12, T__12=13, DIGIT=14, LOWERCHAR=15, UPPERCHAR=16, 
-		WS=17;
+		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, DIGIT=16, LOWERCHAR=17, 
+		UPPERCHAR=18, WS=19, IF=20, ELSE=21, SPACE=22;
 	public static final int
 		RULE_program = 0, RULE_state = 1, RULE_formID = 2, RULE_names = 3, RULE_name = 4, 
-		RULE_typeOfData = 5, RULE_description = 6, RULE_letters = 7, RULE_number = 8;
+		RULE_typeOfData = 5, RULE_description = 6, RULE_letters = 7, RULE_ignore = 8, 
+		RULE_number = 9, RULE_ok = 10, RULE_notok = 11;
 	private static String[] makeRuleNames() {
 		return new String[] {
 			"program", "state", "formID", "names", "name", "typeOfData", "description", 
-			"letters", "number"
+			"letters", "ignore", "number", "ok", "notok"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -37,14 +34,16 @@ public class VerificationsParser extends Parser {
 	private static String[] makeLiteralNames() {
 		return new String[] {
 			null, "'F'", "'boolean'", "'BOOLEAN'", "'Boolean'", "'String'", "'string'", 
-			"'STRING'", "'INTEGER'", "'INT'", "'int'", "'Int'", "'integer'", "'Integer'"
+			"'STRING'", "'INTEGER'", "'INT'", "'Int'", "'int'", "'integer'", "'Integer'", 
+			"'OK'", "'NotOk'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
 			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, null, "DIGIT", "LOWERCHAR", "UPPERCHAR", "WS"
+			null, null, null, null, "DIGIT", "LOWERCHAR", "UPPERCHAR", "WS", "IF", 
+			"ELSE", "SPACE"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -128,9 +127,9 @@ public class VerificationsParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(18);
+			setState(24);
 			state();
-			setState(19);
+			setState(25);
 			match(EOF);
 			}
 		}
@@ -184,18 +183,64 @@ public class VerificationsParser extends Parser {
 		StateContext _localctx = new StateContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_state);
 		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(21);
-			formID();
-			setState(22);
-			name();
-			setState(23);
-			typeOfData();
-			setState(24);
-			names();
-			setState(25);
-			description();
+			setState(47);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,0,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(27);
+				formID();
+				setState(28);
+				name();
+				setState(29);
+				typeOfData();
+				setState(30);
+				names();
+				setState(31);
+				description();
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(33);
+				formID();
+				setState(34);
+				name();
+				setState(35);
+				typeOfData();
+				}
+				break;
+			case 3:
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(37);
+				formID();
+				setState(38);
+				name();
+				setState(39);
+				names();
+				}
+				break;
+			case 4:
+				enterOuterAlt(_localctx, 4);
+				{
+				setState(41);
+				formID();
+				setState(42);
+				description();
+				}
+				break;
+			case 5:
+				enterOuterAlt(_localctx, 5);
+				{
+				setState(44);
+				formID();
+				setState(45);
+				typeOfData();
+				}
+				break;
 			}
 		}
 		catch (RecognitionException re) {
@@ -236,9 +281,9 @@ public class VerificationsParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(27);
+			setState(49);
 			match(T__0);
-			setState(28);
+			setState(50);
 			match(DIGIT);
 			}
 		}
@@ -285,9 +330,9 @@ public class VerificationsParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(30);
+			setState(52);
 			name();
-			setState(31);
+			setState(53);
 			name();
 			}
 		}
@@ -331,7 +376,7 @@ public class VerificationsParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(33);
+			setState(55);
 			letters();
 			}
 		}
@@ -347,6 +392,14 @@ public class VerificationsParser extends Parser {
 	}
 
 	public static class TypeOfDataContext extends ParserRuleContext {
+		public TerminalNode IF() { return getToken(VerificationsParser.IF, 0); }
+		public OkContext ok() {
+			return getRuleContext(OkContext.class,0);
+		}
+		public NotokContext notok() {
+			return getRuleContext(NotokContext.class,0);
+		}
+		public TerminalNode ELSE() { return getToken(VerificationsParser.ELSE, 0); }
 		public TypeOfDataContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -373,7 +426,9 @@ public class VerificationsParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(35);
+			setState(57);
+			match(IF);
+			setState(58);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << T__2) | (1L << T__3) | (1L << T__4) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__10) | (1L << T__11) | (1L << T__12))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -383,6 +438,14 @@ public class VerificationsParser extends Parser {
 				_errHandler.reportMatch(this);
 				consume();
 			}
+			setState(59);
+			ok();
+			{
+			setState(60);
+			match(ELSE);
+			}
+			setState(61);
+			notok();
 			}
 		}
 		catch (RecognitionException re) {
@@ -431,13 +494,13 @@ public class VerificationsParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(40);
+			setState(66);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==LOWERCHAR || _la==UPPERCHAR) {
 				{
 				{
-				setState(37);
+				setState(63);
 				_la = _input.LA(1);
 				if ( !(_la==LOWERCHAR || _la==UPPERCHAR) ) {
 				_errHandler.recoverInline(this);
@@ -449,7 +512,7 @@ public class VerificationsParser extends Parser {
 				}
 				}
 				}
-				setState(42);
+				setState(68);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -502,7 +565,7 @@ public class VerificationsParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(44); 
+			setState(70); 
 			_errHandler.sync(this);
 			_alt = 1;
 			do {
@@ -510,7 +573,7 @@ public class VerificationsParser extends Parser {
 				case 1:
 					{
 					{
-					setState(43);
+					setState(69);
 					_la = _input.LA(1);
 					if ( !(_la==LOWERCHAR || _la==UPPERCHAR) ) {
 					_errHandler.recoverInline(this);
@@ -526,10 +589,66 @@ public class VerificationsParser extends Parser {
 				default:
 					throw new NoViableAltException(this);
 				}
-				setState(46); 
+				setState(72); 
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,1,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,2,_ctx);
 			} while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER );
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class IgnoreContext extends ParserRuleContext {
+		public TerminalNode SPACE() { return getToken(VerificationsParser.SPACE, 0); }
+		public IgnoreContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_ignore; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).enterIgnore(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).exitIgnore(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof VerificationsVisitor ) return ((VerificationsVisitor<? extends T>)visitor).visitIgnore(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final IgnoreContext ignore() throws RecognitionException {
+		IgnoreContext _localctx = new IgnoreContext(_ctx, getState());
+		enterRule(_localctx, 16, RULE_ignore);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(76);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case EOF:
+				{
+				}
+				break;
+			case SPACE:
+				{
+				setState(75);
+				match(SPACE);
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -569,22 +688,22 @@ public class VerificationsParser extends Parser {
 
 	public final NumberContext number() throws RecognitionException {
 		NumberContext _localctx = new NumberContext(_ctx, getState());
-		enterRule(_localctx, 16, RULE_number);
+		enterRule(_localctx, 18, RULE_number);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(49); 
+			setState(79); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(48);
+				setState(78);
 				match(DIGIT);
 				}
 				}
-				setState(51); 
+				setState(81); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( _la==DIGIT );
@@ -601,21 +720,110 @@ public class VerificationsParser extends Parser {
 		return _localctx;
 	}
 
+	public static class OkContext extends ParserRuleContext {
+		public OkContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_ok; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).enterOk(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).exitOk(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof VerificationsVisitor ) return ((VerificationsVisitor<? extends T>)visitor).visitOk(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final OkContext ok() throws RecognitionException {
+		OkContext _localctx = new OkContext(_ctx, getState());
+		enterRule(_localctx, 20, RULE_ok);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(83);
+			match(T__13);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class NotokContext extends ParserRuleContext {
+		public NotokContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_notok; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).enterNotok(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).exitNotok(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof VerificationsVisitor ) return ((VerificationsVisitor<? extends T>)visitor).visitNotok(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final NotokContext notok() throws RecognitionException {
+		NotokContext _localctx = new NotokContext(_ctx, getState());
+		enterRule(_localctx, 22, RULE_notok);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(85);
+			match(T__14);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\238\4\2\t\2\4\3\t"+
-		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\3\2\3\2\3\2"+
-		"\3\3\3\3\3\3\3\3\3\3\3\3\3\4\3\4\3\4\3\5\3\5\3\5\3\6\3\6\3\7\3\7\3\b\7"+
-		"\b)\n\b\f\b\16\b,\13\b\3\t\6\t/\n\t\r\t\16\t\60\3\n\6\n\64\n\n\r\n\16"+
-		"\n\65\3\n\2\2\13\2\4\6\b\n\f\16\20\22\2\4\3\2\4\17\3\2\21\22\2\61\2\24"+
-		"\3\2\2\2\4\27\3\2\2\2\6\35\3\2\2\2\b \3\2\2\2\n#\3\2\2\2\f%\3\2\2\2\16"+
-		"*\3\2\2\2\20.\3\2\2\2\22\63\3\2\2\2\24\25\5\4\3\2\25\26\7\2\2\3\26\3\3"+
-		"\2\2\2\27\30\5\6\4\2\30\31\5\n\6\2\31\32\5\f\7\2\32\33\5\b\5\2\33\34\5"+
-		"\16\b\2\34\5\3\2\2\2\35\36\7\3\2\2\36\37\7\20\2\2\37\7\3\2\2\2 !\5\n\6"+
-		"\2!\"\5\n\6\2\"\t\3\2\2\2#$\5\20\t\2$\13\3\2\2\2%&\t\2\2\2&\r\3\2\2\2"+
-		"\')\t\3\2\2(\'\3\2\2\2),\3\2\2\2*(\3\2\2\2*+\3\2\2\2+\17\3\2\2\2,*\3\2"+
-		"\2\2-/\t\3\2\2.-\3\2\2\2/\60\3\2\2\2\60.\3\2\2\2\60\61\3\2\2\2\61\21\3"+
-		"\2\2\2\62\64\7\20\2\2\63\62\3\2\2\2\64\65\3\2\2\2\65\63\3\2\2\2\65\66"+
-		"\3\2\2\2\66\23\3\2\2\2\5*\60\65";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\30Z\4\2\t\2\4\3\t"+
+		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4"+
+		"\f\t\f\4\r\t\r\3\2\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3"+
+		"\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3\62\n\3\3\4\3\4\3\4\3\5\3\5\3"+
+		"\5\3\6\3\6\3\7\3\7\3\7\3\7\3\7\3\7\3\b\7\bC\n\b\f\b\16\bF\13\b\3\t\6\t"+
+		"I\n\t\r\t\16\tJ\3\n\3\n\5\nO\n\n\3\13\6\13R\n\13\r\13\16\13S\3\f\3\f\3"+
+		"\r\3\r\3\r\2\2\16\2\4\6\b\n\f\16\20\22\24\26\30\2\4\3\2\4\17\3\2\23\24"+
+		"\2U\2\32\3\2\2\2\4\61\3\2\2\2\6\63\3\2\2\2\b\66\3\2\2\2\n9\3\2\2\2\f;"+
+		"\3\2\2\2\16D\3\2\2\2\20H\3\2\2\2\22N\3\2\2\2\24Q\3\2\2\2\26U\3\2\2\2\30"+
+		"W\3\2\2\2\32\33\5\4\3\2\33\34\7\2\2\3\34\3\3\2\2\2\35\36\5\6\4\2\36\37"+
+		"\5\n\6\2\37 \5\f\7\2 !\5\b\5\2!\"\5\16\b\2\"\62\3\2\2\2#$\5\6\4\2$%\5"+
+		"\n\6\2%&\5\f\7\2&\62\3\2\2\2\'(\5\6\4\2()\5\n\6\2)*\5\b\5\2*\62\3\2\2"+
+		"\2+,\5\6\4\2,-\5\16\b\2-\62\3\2\2\2./\5\6\4\2/\60\5\f\7\2\60\62\3\2\2"+
+		"\2\61\35\3\2\2\2\61#\3\2\2\2\61\'\3\2\2\2\61+\3\2\2\2\61.\3\2\2\2\62\5"+
+		"\3\2\2\2\63\64\7\3\2\2\64\65\7\22\2\2\65\7\3\2\2\2\66\67\5\n\6\2\678\5"+
+		"\n\6\28\t\3\2\2\29:\5\20\t\2:\13\3\2\2\2;<\7\26\2\2<=\t\2\2\2=>\5\26\f"+
+		"\2>?\7\27\2\2?@\5\30\r\2@\r\3\2\2\2AC\t\3\2\2BA\3\2\2\2CF\3\2\2\2DB\3"+
+		"\2\2\2DE\3\2\2\2E\17\3\2\2\2FD\3\2\2\2GI\t\3\2\2HG\3\2\2\2IJ\3\2\2\2J"+
+		"H\3\2\2\2JK\3\2\2\2K\21\3\2\2\2LO\3\2\2\2MO\7\30\2\2NL\3\2\2\2NM\3\2\2"+
+		"\2O\23\3\2\2\2PR\7\22\2\2QP\3\2\2\2RS\3\2\2\2SQ\3\2\2\2ST\3\2\2\2T\25"+
+		"\3\2\2\2UV\7\20\2\2V\27\3\2\2\2WX\7\21\2\2X\31\3\2\2\2\7\61DJNS";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

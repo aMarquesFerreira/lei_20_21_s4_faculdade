@@ -28,10 +28,6 @@ public class ColaboratorTest {
         return dummyUser("dummy", BaseRoles.ADMIN);
     }
 
-    private SystemUser getNewDummyUserTwo() {
-        return dummyUser("dummy-two", BaseRoles.ADMIN);
-    }
-
 
     public  Colaborator dummyColaborator(MecanographicNumber id) {
         // should we load from spring context?
@@ -39,14 +35,6 @@ public class ColaboratorTest {
         return colaboratorBuilder.withAll(getNewDummyUser(), id, new Address("dummy", "dummy"),
                 new BirthDate(new Date(2020,05,13)),
                 new Evaluation(7.3), new Contact(912255444)).build();
-    }
-
-    private Colaborator getNewColaborator() {
-        return dummyColaborator(new MecanographicNumber("dummy-one"));
-    }
-
-    private Colaborator getNewColaboratorTwo() {
-        return dummyColaborator(new MecanographicNumber("dummy-two"));
     }
 
     @Test
