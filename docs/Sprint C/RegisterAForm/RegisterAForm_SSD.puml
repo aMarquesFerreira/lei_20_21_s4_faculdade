@@ -4,14 +4,14 @@ autonumber
 actor "Colaborator" as C
 participant "System" as UI
 
-activate HDM
-HDM --> UI : Wants to create a form
+activate C
+C --> UI : Wants to create a form
 activate UI
-    UI --> HDM : Requests necessary information for Form
+    UI --> C : Requests necessary information for Form
 deactivate UI
-HDM --> UI : Inserts the data
+C --> UI : Inserts the data
 activate UI
-UI --> HDM : displayFormInfo
+UI --> C : displayFormInfo
 deactivate UI
 
 @enduml
