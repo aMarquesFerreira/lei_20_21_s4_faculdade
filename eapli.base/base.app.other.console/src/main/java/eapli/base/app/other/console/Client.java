@@ -47,38 +47,20 @@ public class Client {
         DataOutputStream sOut = new DataOutputStream(sock.getOutputStream());
         DataInputStream sIn = new DataInputStream(sock.getInputStream());
 
+        byte[] bytes = new byte[1024];
+        int n;
+        while((n=sIn.read(bytes))>0){
+            System.out.println(new String(bytes));
+        }
+        
+        
+        
         String frase;
-//        long f, i, n, num;
-//        do {
-//            do {
-//                num = -1;
-//                while (num < 0) {
-//                    System.out.print("Enter a positive integer to SUM (zero to terminate): ");
-//                    frase = in.readLine();
-//                    try {
-//                        num = Integer.parseInt(frase);
-//                    } catch (NumberFormatException ex) {
-//                        num = -1;
-//                    }
-//                    if (num < 0) {
-//                        System.out.println("Invalid number");
-//                    }
-//                }
-//                n = num;
-//                for (i = 0; i < 4; i++) {
-//                    sOut.write((byte) (n % 256));
-//                    n = n / 256;
-//                }
-//            } while (num != 0);
-//            num = 0;
-//            f = 1;
-//            for (i = 0; i < 4; i++) {
-//                num = num + f * sIn.read();
-//                f = f * 256;
-//            }
-//            System.out.println("SUM RESULT = " + num);
-//        } while (num != 0);
+
         sOut.writeBytes("TEST STRING");
+        
+        
+        
         System.out.println("\nCLIENT OUTPUT = " + sIn);
         sock.close();
     }

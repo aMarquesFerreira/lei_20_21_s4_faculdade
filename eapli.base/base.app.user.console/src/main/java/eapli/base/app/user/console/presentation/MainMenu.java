@@ -27,6 +27,7 @@ package eapli.base.app.user.console.presentation;
 import eapli.base.app.common.console.presentation.authz.MyUserMenu;
 import eapli.base.app.user.console.presentation.mycatalogues.CataloguePrinter;
 import eapli.base.app.user.console.presentation.myservices.RequestServiceAction;
+import eapli.base.app.user.console.presentation.dashboard.ShowDashboardAction;
 import eapli.base.cataloguemanagement.application.MyCataloguesController;
 import eapli.framework.actions.Actions;
 import eapli.framework.actions.menu.Menu;
@@ -58,6 +59,7 @@ class MainMenu extends ClientUserBaseUI {
     private static final int CATALOGUES_OPTION = 3;
     private static final int REQUEST_OPTION = 4;
     private static final int SETTINGS_OPTION = 5;
+    private static final int DASHBOARD_OPTION = 6;
     
     //CATALOGUES MENU
     private static final int LIST_CATALOGUES_OPTION = 1;
@@ -65,6 +67,9 @@ class MainMenu extends ClientUserBaseUI {
     //REQUESTS MENU
     private static final int REQUEST_SERVICE_OPTION = 2;
     
+    
+    //DASHBOARD MENU
+    private static final int SHOW_DASHBOARD_OPTION = 1;
 
     // BOOKINGS MENU
     private static final int BOOK_A_MEAL_OPTION = 2;
@@ -108,6 +113,8 @@ class MainMenu extends ClientUserBaseUI {
         
         mainMenu.addSubMenu(REQUEST_SERVICE_OPTION, buildRequestMenu());
 
+        mainMenu.addSubMenu(DASHBOARD_OPTION, buildDashboardMenu());
+
         mainMenu.addItem(EXIT_OPTION, "Exit", new ExitWithMessageAction("Bye, Bye"));
 
         return mainMenu;
@@ -130,6 +137,14 @@ class MainMenu extends ClientUserBaseUI {
      private Menu buildRequestMenu() {
         final Menu menu = new Menu("Requests");
         menu.addItem(REQUEST_SERVICE_OPTION, "Request Services", new RequestServiceAction());
+        menu.addItem(EXIT_OPTION, RETURN, Actions.SUCCESS);
+        return menu;
+    }
+
+    private Menu buildDashboardMenu() {
+        final Menu menu = new Menu("Dashboard");
+        menu.addItem(SHOW_DASHBOARD_OPTION, "Show Dashboard", new ShowDashboardAction());
+        //menu.addItem(STOP_DASHBOARD_OPTION, "Stop Dashboard HTTP Server", new ShowDashboardAction());
         menu.addItem(EXIT_OPTION, RETURN, Actions.SUCCESS);
         return menu;
     }

@@ -5,6 +5,10 @@
  */
 package eapli.base.app.other.console;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Paulo Gandra Sousa
@@ -34,6 +38,12 @@ public final class OtherApp {
         }*/
 
         TcpServer tcpServer = new TcpServer();
+        try {
+            tcpServer.run();
+        } catch (IOException ex) {
+            System.out.println("Error: " + ex);
+            ex.printStackTrace();
+        }
 
         // exiting the application, closing all threads
         System.exit(0);

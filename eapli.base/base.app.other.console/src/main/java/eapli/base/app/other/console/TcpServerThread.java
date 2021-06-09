@@ -5,11 +5,18 @@
  */
 package eapli.base.app.other.console;
 
+import eapli.base.sdp2021.Sdp2021;
+import eapli.base.sdp2021.Sdp2021Message;
+import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.aspectj.bridge.Message;
 
 /**
  *
@@ -22,75 +29,89 @@ public class TcpServerThread implements Runnable {
 
     public TcpServerThread(Socket cliSock) {
         this.cliSock = cliSock;
+        
+        System.out.println("Accepted Connection from " + cliSock.getInetAddress().toString());
     }
 
     @Override
     public void run(){
-        long f, i, num, sum;
+        Sdp2021 sdp = new Sdp2021();
+        
         InetAddress clientIP;
         clientIP = cliSock.getInetAddress();
         System.out.println("New client connection from " + clientIP.getHostAddress()
                 + ", port number " + cliSock.getPort());
         
-        byte[] buffer = new byte[258];
-        byte[] data = new byte[0];
         try {
-            DataOutputStream sOut = new DataOutputStream(cliSock.getOutputStream());
-            DataInputStream sIn = new DataInputStream(cliSock.getInputStream());
-            
-            int size = sIn.read(buffer);
-            int versao = buffer[0];
-            int codigo = buffer[1];
-            int dataSize = buffer[2];
-            data = addToData(data,buffer,3,dataSize);
-            while (codigo==255){
-                size = sIn.read(buffer);
-                codigo = buffer[1];
-                dataSize = buffer[2];
-                data=addToData(data,buffer,3,dataSize);
-            }
-                
-            //codigo tem o tipo de mensagem
-            Mensagem resposta = processarMensagem(new Mensagem((byte) codigo, data));
-            int sent = 0;
-            
-            while (resposta.dados().length-sent > 255){
-                buffer = new byte[258];
-                buffer[0]=VERSAO;                
-                buffer[1]=(byte)255;
-                buffer[2]=(byte)255;
-            
-                System.arraycopy(resposta.dados(), sent, buffer, 3, 255);
-                sOut.write(buffer);
-            }
-            
-            buffer = new byte[3+resposta.dados().length-sent];
-            buffer[0]=VERSAO;
-            buffer[1]=resposta.getCodigo();
-            buffer[2]=(byte) (resposta.dados().length-sent);
+            boolean terminate=false;
+            while(!terminate){
+                DataOutputStream sOut = new DataOutputStream(cliSock.getOutputStream());
+                DataInputStream sIn = new DataInputStream(cliSock.getInputStream());
 
-            System.arraycopy(resposta.dados(), sent, buffer, 3, resposta.dados().length-sent);
-            sOut.write(buffer);
-            
+                Sdp2021Message request = sdp.readMessage(sIn);
+
+                switch(request.getCodigo()){
+                    case Sdp2021.MESSAGE_TEST:
+                        sdp.writeUnderstood(sOut);
+                        break;
+                    case Sdp2021.MESSAGE_END:
+                        sdp.writeUnderstood(sOut);
+                        terminate=true;
+                        break;
+                        
+                    case 5: //test 1000
+                        request.getDados()[500]=5;
+                        sdp.writeMessage(request, sOut);
+                        break;
+                        
+                        
+                    default:
+                        Sdp2021Message response = processMessage(request);
+                        sdp.writeMessage(response, sOut);
+                        break;
+                }
+            }
             cliSock.close();
         } catch (IOException ex) {
             System.out.println("IOException");
+        } catch (Exception ex) {
+            Logger.getLogger(TcpServerThread.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
 
-    private byte[] addToData(byte[] data, byte[] buffer, int ofset, int dataSize) {
-        byte[] newData = new byte[data.length+dataSize];
-        
-        System.arraycopy(data, 0, newData, 0, data.length);
-        
-        System.arraycopy(buffer, ofset, newData, data.length, dataSize);
-        
-        return newData;
-    }
 
-    private Mensagem processarMensagem(Mensagem mensagem) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+    private Sdp2021Message processMessage(Sdp2021Message message) throws IOException {
+        if (message.getCodigo()==10){//pedidos stats
+            String stat = new String(message.getDados());
+            
+            switch (stat){
+                case "STATS_CATALOG":
+                    
+                    Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)11, "53".getBytes());
+                    /*
+                    
+                    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                    ObjectOutputStream out = new ObjectOutputStream(bos);   
+                    out.write(53);
+                    out.write(53);
+                    out.write(53);
+                    out.flush();
+                    bos.flush();
+                    Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)11, bos.toByteArray());
+                    */
+                    return response;
+            }
+            
+            
+        }
+        
+        
+        
+        
+        
+        return null;
     }
 
 }

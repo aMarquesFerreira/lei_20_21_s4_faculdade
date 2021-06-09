@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Dashboard</title>
+</head>
+<body onload="refreshCatalogs()">
+	<p>EAPLI DASHBOARD</p>
+
+	<div id = "catalogs">loading...</div>
+
+
+<script>
+
+
+
+
+
+function refreshCatalogs() {
+	var request = new XMLHttpRequest();
+	 var cats=document.getElementById("catalogs");
+	 request.onload = function() {
+	 cats.innerHTML = this.responseText;
+	 setTimeout(refreshCatalogs, 2000);
+	 };
+	 request.ontimeout = function() {
+	 cats.innerHTML = "Server timeout, still trying ...";
+	 setTimeout(refreshCatalogs, 100);
+	 };
+	 request.onerror = function() {
+	 cats.innerHTML = "No server reply, still trying ...";
+	 setTimeout(refreshCatalogs, 5000);
+	 };
+	 request.open("GET", "/stats/catalogs", true);
+	request.timeout = 5000;
+	 request.send();
+}
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+
+
+
+
+
+
