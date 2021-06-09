@@ -87,6 +87,16 @@ public interface VerificationsListener extends ParseTreeListener {
 	 */
 	void exitLetters(VerificationsParser.LettersContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link VerificationsParser#ignore}.
+	 * @param ctx the parse tree
+	 */
+	void enterIgnore(VerificationsParser.IgnoreContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link VerificationsParser#ignore}.
+	 * @param ctx the parse tree
+	 */
+	void exitIgnore(VerificationsParser.IgnoreContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link VerificationsParser#number}.
 	 * @param ctx the parse tree
 	 */
@@ -96,4 +106,24 @@ public interface VerificationsListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitNumber(VerificationsParser.NumberContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link VerificationsParser#ok}.
+	 * @param ctx the parse tree
+	 */
+	void enterOk(VerificationsParser.OkContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link VerificationsParser#ok}.
+	 * @param ctx the parse tree
+	 */
+	void exitOk(VerificationsParser.OkContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link VerificationsParser#notok}.
+	 * @param ctx the parse tree
+	 */
+	void enterNotok(VerificationsParser.NotokContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link VerificationsParser#notok}.
+	 * @param ctx the parse tree
+	 */
+	void exitNotok(VerificationsParser.NotokContext ctx);
 }

@@ -58,9 +58,27 @@ public interface VerificationsVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitLetters(VerificationsParser.LettersContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link VerificationsParser#ignore}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIgnore(VerificationsParser.IgnoreContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link VerificationsParser#number}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitNumber(VerificationsParser.NumberContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link VerificationsParser#ok}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOk(VerificationsParser.OkContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link VerificationsParser#notok}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNotok(VerificationsParser.NotokContext ctx);
 }
