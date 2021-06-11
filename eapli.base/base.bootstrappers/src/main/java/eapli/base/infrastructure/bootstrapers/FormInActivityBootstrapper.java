@@ -53,7 +53,7 @@ public class FormInActivityBootstrapper implements Action{
         
         Activity a1 = actRepo.findByActivityId(ActivityId.valueOf("A1")).get();
         
-        registerFormInActivity("F3", "Form1",a1, formParameters);
+        registerFormInActivity("F3", "Form3",a1, formParameters);
         //registerFormInActivity("F4", "Form2",a1, formParameters);
 
         return true;

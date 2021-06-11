@@ -3,9 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package eapli.base.app.other.console;
+package eapli.base.app.activityflowengine;
 
+import eapli.base.app.activityflowengine.TcpServerThread;
+import eapli.base.clientusermanagement.domain.MecanographicNumber;
+import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.sdp2021.Sdp2021;
+import eapli.base.sdp2021.Sdp2021Message;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -22,6 +26,7 @@ class TcpServer {
     public static void main(String[] args) {
         System.out.println("TEST");
         
+       
         try {
             new TcpServer().run();
         } catch (IOException ex) {

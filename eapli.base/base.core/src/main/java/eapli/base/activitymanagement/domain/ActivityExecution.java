@@ -53,11 +53,12 @@ public class ActivityExecution implements AggregateRoot<ActivityExecutionId> {
      *
      * 
      * @param activityExecutionId
+     * @param activity
+     * @param formAnswer
      * @param colaborator
-     * @param form
      */
     public ActivityExecution(final ActivityExecutionId activityExecutionId, Activity activity, final FormAnswer formAnswer, final Colaborator colaborator) {
-        if (activityExecutionId == null || this.formAnswer == null || colaborator == null) {
+        if (activityExecutionId == null || activity == null || formAnswer == null || colaborator == null) {
             throw new IllegalArgumentException();
         }
         this.activityExecutionId = activityExecutionId;

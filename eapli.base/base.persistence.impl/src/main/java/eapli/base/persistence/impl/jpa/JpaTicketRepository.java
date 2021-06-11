@@ -48,7 +48,10 @@ public class JpaTicketRepository extends JpaAutoTxRepository<Ticket, TicketId, T
 
     @Override
     public int getMaxNumber(int year){
-         TypedQuery<Integer> q = createQuery("select max(ticketId) FROM Ticket where number like ':year/*'", Integer.class);
+         //TypedQuery<Integer> q = createQuery("select max(ticketId) FROM Ticket where number like ':year/*'", Integer.class);
+         
+         TypedQuery<Integer> q = createQuery("select max(ticketId.number) FROM Ticket where ticketId.year = " + year, Integer.class);
+         
          
          /*String hql = "SELECT max(ticketId) FROM Ticket";
          //Query query = query.createQuery results = query.list();*/

@@ -105,7 +105,8 @@ public class DashboardServer {
             //server.createContext("/teste", new TestHandlerRespondWithString());
             server.createContext("/dashboard", new TestHandlerRespondWithFile());
             
-            server.createContext("/stats/catalogs", new CatalogsHandlerRespondWithString());
+            server.createContext("/stats/catalogs", new ActivitiesHandlerRespondWithString());
+            server.createContext("/stats/services", new ActivitiesHandlerRespondWithString());
             server.setExecutor(null); 
             server.start();
         } catch (IOException ex) {            
@@ -188,7 +189,55 @@ public class DashboardServer {
    }
 
     
-    class CatalogsHandlerRespondWithString implements HttpHandler {
+    /*class CatalogsHandlerRespondWithString implements HttpHandler {
+       @Override
+       public void handle(HttpExchange t) throws IOException {
+           
+           InputStream is = t.getRequestBody(); //post data, vazio se for um GET
+           byte[] buffer = new byte[1024];
+           int n = is.read(buffer); 
+           if (n>0){
+               String s = new String(buffer, 0, n);
+               System.out.println("Recebido: " + s);
+           }
+           
+           
+           //criar uma mensagem para pedir stats catalogos
+           String response=null;
+           //String response2=null;
+           try {
+               Sdp2021Message m = new Sdp2021Message(Sdp2021.VERSION, (byte)10, "STATS_CATALOG".getBytes());
+               sdp.writeMessage(m, dos);
+               m = sdp.readMessage(dis);
+               if (m.getCodigo()==11){ //OK
+                   
+                   /*ByteArrayInputStream bis = new ByteArrayInputStream(m.getDados());
+                   
+                   ObjectInput in = new ObjectInputStream(bis);
+                   
+                   int numCatalogs = in.readInt();*/
+                   
+                   /*int numCatalogs = Integer.parseInt(new String(m.getDados()));
+                   //String test = new String(m.getDados());
+                   
+                   response = "{\"num_catalogs\":\""+ numCatalogs +"\"}";
+                   //response2 = "{\"num_catalogs\":\""+ test +"\"}";
+               }else{
+                   String erro = new String(m.getDados());
+                   response = "{\"error\":\""+erro+"\"}";
+               }
+           } catch (Exception ex) {
+               Logger.getLogger(DashboardServer.class.getName()).log(Level.SEVERE, null, ex);
+           }
+           
+           t.sendResponseHeaders(200, response.length());
+           OutputStream os = t.getResponseBody();
+           os.write(response.getBytes());
+           os.close();
+       }
+    }*/
+    
+    class ActivitiesHandlerRespondWithString implements HttpHandler {
        @Override
        public void handle(HttpExchange t) throws IOException {
            
@@ -203,8 +252,9 @@ public class DashboardServer {
            
            //criar uma mensagem para pedir stats catalogos
            String response=null;
+           //String response2=null;
            try {
-               Sdp2021Message m = new Sdp2021Message(Sdp2021.VERSION, (byte)10, "STATS_CATALOG".getBytes());
+               Sdp2021Message m = new Sdp2021Message(Sdp2021.VERSION, (byte)10, "STATS_ACTIVITIES".getBytes());
                sdp.writeMessage(m, dos);
                m = sdp.readMessage(dis);
                if (m.getCodigo()==11){ //OK
@@ -215,9 +265,11 @@ public class DashboardServer {
                    
                    int numCatalogs = in.readInt();*/
                    
-                   int numCatalogs = Integer.parseInt(new String(m.getDados()));
+                   //int numCatalogs = Integer.parseInt(new String(m.getDados()));
+                   String test = new String(m.getDados());
                    
-                   response = "{\"num_catalogs\":\""+ numCatalogs +"\"}";
+                   response = test ;
+                   //response2 = "{\"num_catalogs\":\""+ test +"\"}";
                }else{
                    String erro = new String(m.getDados());
                    response = "{\"error\":\""+erro+"\"}";

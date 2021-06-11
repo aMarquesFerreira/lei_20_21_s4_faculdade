@@ -46,7 +46,7 @@ public class Service implements AggregateRoot<ServiceCode>{
     @JsonProperty
     private boolean active;
 
-    @OneToOne
+    @OneToOne (cascade = CascadeType.ALL)
     private WorkFlow workFlow;
     
     
@@ -147,9 +147,9 @@ public class Service implements AggregateRoot<ServiceCode>{
         return workFlow;
     }
 
-    /*public void addWorkFlow(WorkFlow workFlow) {
+    public void addWorkFlow(WorkFlow workFlow) {
         this.workFlow = workFlow;
-    }*/
+    }
     
     
     

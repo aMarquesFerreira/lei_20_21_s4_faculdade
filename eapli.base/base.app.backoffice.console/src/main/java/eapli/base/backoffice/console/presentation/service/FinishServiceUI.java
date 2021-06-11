@@ -6,6 +6,7 @@
 package eapli.base.backoffice.console.presentation.service;
 
 import eapli.base.backoffice.console.presentation.form.RegisterFormUI;
+import eapli.base.backoffice.console.presentation.workflow.RegisterWorkflowUI;
 import eapli.base.servicemanagement.application.RegisterServiceController;
 import eapli.base.servicemanagement.domain.Service;
 import eapli.framework.io.util.Console;
@@ -20,6 +21,7 @@ public class FinishServiceUI extends AbstractUI{
  
     private final RegisterServiceController theController = new RegisterServiceController();
     private final RegisterFormUI formUI = new RegisterFormUI();
+    private final RegisterWorkflowUI workflowUI = new RegisterWorkflowUI();
     
      @Override
     protected boolean doShow() {
@@ -36,8 +38,15 @@ public class FinishServiceUI extends AbstractUI{
         
         boolean createForm = Console.readBoolean("Create a Form for this Service?");
         
+        
         if (createForm){
             boolean created = formUI.doShow(theService);
+        }
+        
+        boolean addWorkflow = Console.readBoolean("Add a workflow for this Service?");
+        
+        if (addWorkflow){
+            boolean created = workflowUI.doShow(theService);
             
             if (created){
                 boolean markActive = Console.readBoolean("Mark Service as Active ?");

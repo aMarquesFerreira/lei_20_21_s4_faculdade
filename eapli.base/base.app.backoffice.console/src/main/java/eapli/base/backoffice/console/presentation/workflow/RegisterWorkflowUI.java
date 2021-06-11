@@ -63,19 +63,26 @@ public class RegisterWorkflowUI extends AbstractUI {
         //--------
         
         
+        if (service==null){
         final Iterable<Service> services = this.theController.services();
 
-        final SelectWidget<Service> serviceSelector = new SelectWidget<>("Services:", services,
+        final SelectWidget<Service> serviceSelector = new SelectWidget<>("Associate this workflow to a Service:", services,
                 new ServicePrinter());
         serviceSelector.show();
 
-        final Service theService = serviceSelector.selectedElement();
+        service = serviceSelector.selectedElement();
+        }
         
+        
+        if (service==null){
+            System.out.println("No service specified, not saving");
+            return false;
+        }
         //---------------
         
         
          try {
-            this.theController.RegisterWorkflow(workflowId, theActivities, theService);
+            this.theController.RegisterWorkflow(workflowId, theActivities, service);
         } catch (@SuppressWarnings("unused") final IntegrityViolationException e) {
             System.out.println("You tried to enter a workflow which already exists in the database.");
         }
@@ -87,7 +94,7 @@ public class RegisterWorkflowUI extends AbstractUI {
    
     @Override
     public String headline() {
-        return "Register Service";
+        return "Register Workflow";
     }
     
 

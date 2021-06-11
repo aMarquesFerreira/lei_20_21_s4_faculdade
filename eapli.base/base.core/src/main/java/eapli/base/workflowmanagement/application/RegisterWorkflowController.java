@@ -10,6 +10,7 @@ import eapli.base.activitymanagement.domain.Activity;
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.servicemanagement.application.ListServiceService;
 import eapli.base.servicemanagement.domain.Service;
+import eapli.base.servicemanagement.repositories.ServiceRepository;
 import eapli.base.usermanagement.domain.BaseRoles;
 import eapli.base.workflowmanagement.domain.WorkFlow;
 import eapli.base.workflowmanagement.domain.WorkFlowId;
@@ -31,6 +32,8 @@ public class RegisterWorkflowController {
     private final ListServiceService svcServices = new ListServiceService();
     //private final ListTeamService svcTeams = new ListTeamService();
     private final WorkFlowRepository workflowRepo = PersistenceContext.repositories().workflows();
+    private final ServiceRepository serviceRepository = PersistenceContext.repositories().services();
+   
 
     /**
      *
@@ -39,7 +42,7 @@ public class RegisterWorkflowController {
      * @param service
      * @return
      */
-    public WorkFlow RegisterWorkflow(final String workflowId, List<Activity> activities, Service service) {
+    /*public WorkFlow RegisterWorkflow(final String workflowId, List<Activity> activities, Service service) {
        
         authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.HELP_DESK_SERVICE_MANAGER);
 
@@ -47,11 +50,30 @@ public class RegisterWorkflowController {
             
         activities.forEach(a -> {newWorkflow.addActivities(a);});
         
+        
         return workflowRepo.save(newWorkflow);
+      
+    }*/
+     
+    
+    
+    public WorkFlow RegisterWorkflow(final String workflowId, List<Activity> activities, Service service) {
+       
+        authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.HELP_DESK_SERVICE_MANAGER);
+
+        final WorkFlow newWorkflow = new WorkFlow(WorkFlowId.valueOf(workflowId)/*, service*/);
+            
+        activities.forEach(a -> {newWorkflow.addActivities(a);});
+        
+        service.addWorkFlow(newWorkflow);
+        
+        service = serviceRepository.save(service);
+        
+        return service.getWorkFlow();
       
     }
     
-    
+        
     public Iterable<Activity> activities() {
         return svcActivities.activeActivities();
     }
@@ -59,6 +81,8 @@ public class RegisterWorkflowController {
     public Iterable<Service> services() {
         return svcServices.inactiveServices();
     }
+    
+   
  
     
 }

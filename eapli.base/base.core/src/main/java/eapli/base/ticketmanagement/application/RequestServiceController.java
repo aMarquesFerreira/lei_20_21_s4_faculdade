@@ -62,7 +62,7 @@ public class RequestServiceController{
     public Ticket requestService(final Service service, List<FormParameter> params, List<String> values) {
         int year = LocalDate.now().getYear();
         
-        int number = ticketRepo.getMaxNumber(year);
+        int number = ticketRepo.getMaxNumber(year) + 1;
 
         TicketId ticketId = TicketId.valueOf(year,number);
         

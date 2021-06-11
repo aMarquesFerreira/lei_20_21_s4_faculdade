@@ -56,9 +56,6 @@ public class WorkflowBootstrapper implements Action {
 
         registerNewWorkflow("W1", activities, s1);
        
-        
-        
-
         return true;
     }
     private void registerNewWorkflow(String workflowId, List<Activity> activities, Service service) {

@@ -46,8 +46,8 @@ public class WorkFlow implements AggregateRoot<WorkFlowId> {
     @OneToMany()
     private List<Activity> activities;
     
-    @OneToOne()
-    private Service service;
+   /* @OneToOne()
+    private Service service;*/
      
 
     /**
@@ -57,13 +57,13 @@ public class WorkFlow implements AggregateRoot<WorkFlowId> {
      * @param service
      * 
      */
-    public WorkFlow(final WorkFlowId workflowId, final Service service) {
+    public WorkFlow(final WorkFlowId workflowId/*, final Service service*/) {
        
-        if (workflowId == null || service == null) {
+        if (workflowId == null) {
             throw new IllegalArgumentException();
         }
         this.workflowId = workflowId;
-        this.service = service;
+        //this.service = service;
         activities = new ArrayList<>();
         this.active = true;
 
@@ -124,9 +124,9 @@ public class WorkFlow implements AggregateRoot<WorkFlowId> {
         return isActive();
     }
 
-    public Service getService() {
+    /*public Service getService() {
         return service;
-    }
+    }*/
     
     
 

@@ -3,8 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package eapli.base.app.other.console;
+package eapli.base.app.activityflowengine;
 
+import eapli.base.clientusermanagement.domain.MecanographicNumber;
+import eapli.base.colaboratormanagement.domain.Colaborator;
+import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
+import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.sdp2021.Sdp2021;
 import eapli.base.sdp2021.Sdp2021Message;
 import java.io.ByteArrayOutputStream;
@@ -26,6 +30,8 @@ public class TcpServerThread implements Runnable {
 
     private final Socket cliSock;
     private static final int VERSAO = 0;
+    private final DataBaseFetcher fetcher = new DataBaseFetcher();
+    private final ColaboratorRepository colabRepo = PersistenceContext.repositories().colaborators();
 
     public TcpServerThread(Socket cliSock) {
         this.cliSock = cliSock;
@@ -87,9 +93,9 @@ public class TcpServerThread implements Runnable {
             String stat = new String(message.getDados());
             
             switch (stat){
-                case "STATS_CATALOG":
-                    
-                    Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)11, "53".getBytes());
+                case "STATS_ACTIVITIES":
+                    //STATS_ACTIVITIES:isep959
+                    //Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)11, "53".getBytes());
                     /*
                     
                     ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -101,6 +107,13 @@ public class TcpServerThread implements Runnable {
                     bos.flush();
                     Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)11, bos.toByteArray());
                     */
+                    Colaborator c1 = colabRepo.findByMecanographicNumber(MecanographicNumber.valueOf("isep959")).get();
+                    
+                    
+                    
+                    
+                    Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)11, fetcher.activityFetchAsJson(c1).getBytes());
+                    
                     return response;
             }
             

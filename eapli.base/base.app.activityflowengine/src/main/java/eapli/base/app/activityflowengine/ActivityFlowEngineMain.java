@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates and open the template
  * in the editor.
  */
-package eapli.base.app.other.console;
+package eapli.base.app.activityflowengine;
 
-//import eapli.base.app.activityflowengine.TcpServer;
+import eapli.base.app.activityflowengine.TcpServer;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,12 +15,12 @@ import java.util.logging.Logger;
  * @author Paulo Gandra Sousa
  */
 @SuppressWarnings("squid:S106")
-public final class OtherApp {
+public final class ActivityFlowEngineMain {
 
     /**
      * Empty constructor is private to avoid instantiation of this class.
      */
-    private OtherApp() {
+    private ActivityFlowEngineMain() {
     }
 
     public static void main(final String[] args) {
@@ -38,13 +38,13 @@ public final class OtherApp {
             menu.mainLoop();
         }*/
 
-       /* TcpServer tcpServer = new TcpServer();
+        TcpServer tcpServer = new TcpServer();
         try {
             tcpServer.run();
         } catch (IOException ex) {
             System.out.println("Error: " + ex);
             ex.printStackTrace();
-        }*/
+        }
 
         // exiting the application, closing all threads
         System.exit(0);
