@@ -1,13 +1,15 @@
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
 public class teste {
-        public static void main(String[] args) throws IOException {
+        public static void main(String[] args) throws FileNotFoundException {
             /*Scanner scanner = new Scanner(System.in);
             String teste = scanner.nextLine();
             //FileInputStream fis = new FileInputStream(new File("eapli.base/base.core/src/main/java/eapli/base/ANTLR/teste.txt"));
@@ -30,9 +32,12 @@ public class teste {
             parser.addErrorListener(new ThrowingErrorListener());
 
             ParseTree tree = parser.program(); // parse
+            ParseTreeWalker walker = new ParseTreeWalker();
             Visitor eval = new Visitor();
-            eval.visit(tree);
-            System.out.println(eval.visit(tree));
+            Listener listener = new Listener();
+            walker.walk(listener,tree);
+            //eval.visit(tree);
+            System.out.println(listener.getResult());
 
         }
     }
