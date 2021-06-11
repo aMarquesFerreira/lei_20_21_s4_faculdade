@@ -1,0 +1,48 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class RegisterActivityUI {
+}
+
+class RegisterActivityController {
+    +registerActivity();
+    +colaborators();
+    +forms();
+}
+
+class Activity{
+    ActivityId activityId;
+    Description description;
+    Form form;
+    Colaborator colaborator;
+}
+
+class ActivityExecution{
+    ActivityExecutionId activityExecutionId;
+    Activity activity;
+    FormAnswer formAnswer;
+    Colaborator colaborator;
+}
+
+class ActivityExecutionID{
+    String activityExecutionId;
+}
+
+class ActivityExecutionStatus{
+    String status;
+}
+
+class ActivityID{
+    String activityId;
+}
+
+
+RegisterActivityUI -> RegisterActivityController
+RegisterActivityController -> Activity
+
+Activity -> ActivityExecution
+Activity -> ActivityID
+Activity -> ActivityExecutionStatus
+ActivityExecution -> ActivityExecutionID
+
+@enduml

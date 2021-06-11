@@ -1,0 +1,67 @@
+@startuml
+autonumber
+
+actor "Colaborator" as C
+
+participant "RegisterActivityUI" as UI
+participant "RegisterActivityController" as CTRL
+participant "ActivityBuilder" as CB
+participant "Activity:Activity" as CC
+participant "PersistenceContext" as PC
+participant "RepositoryFactory" as RF
+
+
+database "ActivityRepository" as CR
+
+C --> UI : Register a Activity
+activate UI
+    UI -> CTRL : create
+    UI --> C : Requests necessary credentials for Activity
+deactivate UI
+
+C --> UI : Inserts the data
+activate UI
+    UI -> CTRL : Activity = newActivity(ActivityId ActivityID, ActivityParameters ActivityParameter)
+    activate CTRL
+        CTRL -> CB: registerActivity
+        activate CB
+        deactivate CB
+
+        CTRL -> CB: setActivity()
+        activate CB
+        deactivate CB
+
+note over CTRL, CB : Sets the rest of the information
+
+
+        CTRL -> CB: registerActivity()
+        activate CB
+                CB -> CC: newActivity(ActivityId ActivityID, Description description, Form form, Colaborator colaborator)
+                CC -> CB: Activity
+                CB -> CTRL: Activity
+        deactivate CB
+
+        CTRL -> PC:
+        activate PC
+        note over PC, CR : can create an repository in memory or JPA
+         PC->RF: create
+         PC->CTRL: factory
+
+        deactivate PC
+
+        CTRL->RF:Activity()
+        activate RF
+        RF->CR:create
+        RF->CTRL:ActivityRepository()
+        deactivate RF
+
+        CTRL->CR:save(Activity)
+
+        CTRL->UI:Activity
+    deactivate CTRL
+
+    UI --> C : displayActivityInfo
+deactivate UI
+
+
+@enduml
