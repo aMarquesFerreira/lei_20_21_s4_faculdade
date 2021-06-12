@@ -24,7 +24,7 @@ import static org.junit.Assert.assertTrue;
 public class WorkFlowTest {
 
 
-    public WorkFlow dummyWorkflow(final WorkFlowId id) {
+    /*public WorkFlow dummyWorkflow(final WorkFlowId id) {
         // should we load from spring context?
         final WorkflowBuilder workflowBuilder = new WorkflowBuilder();
         return workflowBuilder.withAll(id, new Service(new ServiceCode("2"),
@@ -124,6 +124,6 @@ public class WorkFlowTest {
 
         assertFalse(expected);
     }
-
+*/
 
 }
