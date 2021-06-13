@@ -1,0 +1,33 @@
+
+program : state EOF;
+
+state : email title content
+;
+
+
+email : username specialCharacters typeOfEmail domain;
+
+typeOfEmail : IF ( 'hotmail' | 'gmail' | 'isep.ipp')ok
+                   (ELSE) notok
+ ;
+
+domain : ('.pt' | '.com');
+
+title : (UPPERCHAR | LOWERCHAR){1-20};
+
+content : (UPPERCHAR | LOWERCHAR | number){1-50};
+
+username : (LOWERCHAR | UPPERCHAR | DIGIT)+;
+
+number : DIGIT+;
+
+specialCharacters : SPECIALCHARACTERS;
+
+ok: 'OK';
+notok: 'NotOk';
+
+DIGIT : [0-9]+;
+LOWERCHAR : [a-z] ;
+UPPERCHAR : [A-Z] ;
+SPECIALCHARACTERS : [ @|_|]*;
+WS : [ \t\r\n]+ -> skip;

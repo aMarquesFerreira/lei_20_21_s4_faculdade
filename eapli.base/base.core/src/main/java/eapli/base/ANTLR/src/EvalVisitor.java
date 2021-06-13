@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+
 public class EvalVisitor extends RulesBaseVisitor<Integer> {
     /*** "memory" for our calculator; variable/value pairs go here */
     Map<String, Integer> memory = new HashMap<>();
