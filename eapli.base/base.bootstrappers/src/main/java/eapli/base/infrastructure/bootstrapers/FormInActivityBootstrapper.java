@@ -44,7 +44,7 @@ public class FormInActivityBootstrapper implements Action{
 
     @Override
     public boolean execute() {
-        FormParameter fp1 = new FormParameter(FormParameterId.valueOf("FP1"),
+        FormParameter fp1 = new FormParameter(FormParameterId.valueOf("1"),
                 Designation.valueOf("User Name"),
                 Label.valueOf("NAME"),
                 Description.valueOf("Name of the person filling the form"),

@@ -59,9 +59,9 @@ public class Form implements AggregateRoot<FormId>{
      * @param service
      * @param formParameters
      */
-    public Form(final FormId formId, final Designation name, /*Service service, */List<FormParameter> formParameters) {
+    public Form(final FormId formId, final Designation name/*, Service service,List<FormParameter> formParameters */) {
         //this.formPar = new ArrayList<String>();        
-        if (formId == null || name == null ||/* service == null || */formParameters == null) {
+        if (formId == null || name == null/*  ||service == null || formParameters == null*/) {
             throw new IllegalArgumentException();
         }
         this.formId = formId;

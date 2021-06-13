@@ -8,12 +8,14 @@ package eapli.base.formmanagement.domain;
 
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.util.StringPredicates;
+import javax.persistence.Embeddable;
 
 
 /**
  *
  * @author andre
  */
+@Embeddable
 public class FormParameterId implements ValueObject, Comparable<FormParameterId> {
     
   private static final long serialVersionUID = 1L;

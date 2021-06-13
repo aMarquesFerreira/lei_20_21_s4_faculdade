@@ -39,17 +39,17 @@ public class FormBootstrapper implements Action{
     private final ServiceRepository servRepo = PersistenceContext.repositories().services();
    
     private final List<Service> services = new ArrayList<Service>();
-    private final List<FormParameter> formParameters = new ArrayList<FormParameter>();
+    List<FormParameter> formParameters = new ArrayList<>();
 
     
 
     @Override
     public boolean execute() {
-        FormParameter fp1 = new FormParameter(FormParameterId.valueOf("FP1"),
-                Designation.valueOf("User Name"),
-                Label.valueOf("NAME"),
-                Description.valueOf("Name of the person filling the form"),
-                FormParameterData.valueOf("String"));
+        FormParameter fp1 = new FormParameter(FormParameterId.valueOf("2"),
+                Designation.valueOf("test Name"),
+                Label.valueOf("test"),
+                Description.valueOf("test"),
+                FormParameterData.valueOf("Boolean"));
         formParameters.add(fp1);
         
         Service svc1 = servRepo.findByServiceCode(ServiceCode.valueOf("S1")).get();
@@ -70,12 +70,12 @@ public class FormBootstrapper implements Action{
     }
     
     
-    private void registerFormInActivity(String formId, String name, Activity activity, List<FormParameter> formParameters) {
+    /*private void registerFormInActivity(String formId, String name, Activity activity, List<FormParameter> formParameters) {
         
         formController.registerFormInActivity(formId, name, activity, formParameters);
         LOGGER.debug("»»» Creating new Form %s", formId);
         
-    }
+    }*/
     
     
 }

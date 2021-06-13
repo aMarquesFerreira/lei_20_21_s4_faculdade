@@ -46,6 +46,6 @@ public class FormBuilder implements DomainFactory<Form> {
     public Form build() {
         // since the factory knows that all the parts are needed it could throw
         // an exception. however, we will leave that to the constructor
-        return new Form(this.formId, this.designation, this.formParametersList);
+        return new Form(this.formId, this.designation/*, this.formParametersList*/);
     }
 }

@@ -53,6 +53,8 @@ public class FormParameter implements AggregateRoot<FormParameterId>{
     @AttributeOverride(name = "value", column = @Column(name = "Description"))
     private Description description;
 
+    @XmlElement
+    @JsonProperty
     private FormParameterData formParameterData;
 
     @XmlElement
