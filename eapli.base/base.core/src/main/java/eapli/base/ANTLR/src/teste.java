@@ -1,3 +1,4 @@
+import eapli.base.EmailService;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
@@ -5,7 +6,6 @@ import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class teste {
@@ -39,7 +39,16 @@ public class teste {
             //eval.visit(tree);
             System.out.println(listener.getResult());
 
+
+        }
+
+    private static void sendEmail(String from, String to, String subject, String body) {
+        EmailService eService = new EmailService(to, from);
+        eService.send(subject, body);
+
         }
     }
+
+
 
 

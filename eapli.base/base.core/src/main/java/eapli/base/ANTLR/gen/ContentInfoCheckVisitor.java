@@ -1,0 +1,24 @@
+// Generated from C:/Users/torre/OneDrive/Ambiente de Trabalho/lei20_21_s4_2db_03/eapli.base/base.core/src/main/java/eapli/base/ANTLR\ContentInfoCheck.g4 by ANTLR 4.9.1
+import org.antlr.v4.runtime.tree.ParseTreeVisitor;
+
+/**
+ * This interface defines a complete generic visitor for a parse tree produced
+ * by {@link ContentInfoCheckParser}.
+ *
+ * @param <T> The return type of the visit operation. Use {@link Void} for
+ * operations with no return type.
+ */
+public interface ContentInfoCheckVisitor<T> extends ParseTreeVisitor<T> {
+	/**
+	 * Visit a parse tree produced by {@link ContentInfoCheckParser#state}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitState(ContentInfoCheckParser.StateContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ContentInfoCheckParser#content}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitContent(ContentInfoCheckParser.ContentContext ctx);
+}
