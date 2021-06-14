@@ -8,14 +8,22 @@ package eapli.base.app.user.console.presentation.dashboard;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
+import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.sdp2021.Sdp2021;
 import eapli.base.sdp2021.Sdp2021Message;
+import eapli.framework.infrastructure.authz.application.AuthorizationService;
+import eapli.framework.infrastructure.authz.application.AuthzRegistry;
+import eapli.base.cataloguemanagement.application.MyCataloguesController;
+import eapli.base.clientusermanagement.domain.MecanographicNumber;
+import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
+import eapli.base.infrastructure.persistence.PersistenceContext;
 
 import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -25,6 +33,8 @@ import java.util.logging.Logger;
  */
 public class DashboardServer {
 
+    private final AuthorizationService authz = AuthzRegistry.authorizationService();
+    private final ColaboratorRepository colabRepo = PersistenceContext.repositories().colaborators();
     private static DashboardServer instance;
     private HttpServer server = null;
     private Socket motorFluxoClient;
@@ -124,13 +134,36 @@ public class DashboardServer {
     }
 
     class StatsHandler implements HttpHandler {
-
+        
+        //defenir o colaborador autenticado
+        private Optional<Colaborator> currentUser() {
+        return authz.session()
+                .flatMap(s -> colabRepo.findByUsername(s.authenticatedUser().username()));
+        }
+        //defenir o colaborador autenticado
+        
+        //name of user
+        public String loggedUser() {
+        Colaborator colab;
+        colab = currentUser().get();
+        MecanographicNumber current = colab.identity();
+        
+        return current.toString();
+        }
+        //name of user
+        
         @Override
         public void handle(HttpExchange t) throws IOException {
             String response;
+            //
+            Optional<Colaborator> colab = currentUser();
+            String userId = loggedUser();
+            
+            
+            //
             switch (t.getRequestURI().toString()) {
-                case "stats/activities":
-                    response = StatsFetcher.getStatsActivities(dis, dos);
+                case "/stats/activities":
+                    response = StatsFetcher.getStatsActivities(dis, dos, userId);
                     break;
 
                 //case "stats/activities":    
@@ -138,6 +171,7 @@ public class DashboardServer {
                 //break;
                 default:
                     response = "{\"error\":\"request '" + t.getRequestURI().toString() + "' not supported\"}";
+                    
             }
 
             t.sendResponseHeaders(200, response.length());

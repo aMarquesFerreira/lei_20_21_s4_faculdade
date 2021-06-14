@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 class TcpServer {
     //static ServerSocket sock;
     
-    static final int SERVER_PORT = 9999;
+    static final int SERVER_PORT = 32507;
     static final String TRUSTED_STORE = "server_J.jks";
     static final String KEYSTORE_PASS = "forgotten";
 

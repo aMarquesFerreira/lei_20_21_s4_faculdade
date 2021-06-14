@@ -28,10 +28,12 @@ public class StatsFetcher {
         try {
             String request = "STATS_ACTIVITIES:"+userId;
             
-            Sdp2021Message m = new Sdp2021Message(Sdp2021.VERSION, (byte) 10, request.getBytes());
+            Sdp2021Message m = new Sdp2021Message(Sdp2021.VERSION, (byte) 11, request.getBytes());
             sdp.writeMessage(m, dos);
             m = sdp.readMessage(dis);
-            if (m.getCodigo() == 11) { //OK
+            byte codigo = m.getCodigo();
+            
+            if (codigo == /*10*/3) { //OK
 
                 response = new String(m.getDados());
 

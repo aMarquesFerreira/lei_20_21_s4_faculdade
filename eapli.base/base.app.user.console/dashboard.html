@@ -25,31 +25,31 @@
 
 function refreshData() {
     refreshCatalogs();
-    refreshXpto();
+    refreshActivities();
 }
 
 
-function refreshCatalogs() {
-	var request = new XMLHttpRequest();
-	 var cats=document.getElementById("activities");
+function refreshActivities() {
+	 var request = new XMLHttpRequest();
+	 var acti=document.getElementById("activities");
 	 request.onload = function() {
-	 cats.innerHTML = this.responseText;
-	 setTimeout(refreshCatalogs, 2000);
+	 acti.innerHTML = this.responseText;
+	 setTimeout(refreshActivities, 2000);
 	 };
 	 request.ontimeout = function() {
-	 cats.innerHTML = "Server timeout, still trying ...";
-	 setTimeout(refreshCatalogs, 100);
+	 acti.innerHTML = "Server timeout, still trying ...";
+	 setTimeout(refreshActivities, 100);
 	 };
 	 request.onerror = function() {
-	 cats.innerHTML = "No server reply, still trying ...";
-	 setTimeout(refreshCatalogs, 5000);
+	 acti.innerHTML = "No server reply, still trying ...";
+	 setTimeout(refreshActivities, 5000);
 	 };
-	 request.open("GET", "/stats/catalogs", true);
+	 request.open("GET", "/stats/activities", true);
          request.timeout = 5000;
 	 request.send();
 }
 
-function refreshXpto() {
+function refreshCatalogs() {
 	var request = new XMLHttpRequest();
 	 var cats=document.getElementById("xpto");
 	 request.onload = function() {

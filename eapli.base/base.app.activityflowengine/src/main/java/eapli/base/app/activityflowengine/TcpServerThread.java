@@ -112,9 +112,10 @@ public class TcpServerThread implements Runnable {
                     Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)11, fetcher.activityFetchAsJson(c1).getBytes());
                     
                     return response;
-            }else if (){
-                
             }
+            /*else if (){
+                
+            }*/
             
             
         }

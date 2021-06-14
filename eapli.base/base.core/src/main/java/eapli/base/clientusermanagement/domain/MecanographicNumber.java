@@ -66,4 +66,5 @@ public class MecanographicNumber implements ValueObject, Comparable<Mecanographi
     public int compareTo(final MecanographicNumber arg0) {
         return number.compareTo(arg0.number);
     }
+    
 }
