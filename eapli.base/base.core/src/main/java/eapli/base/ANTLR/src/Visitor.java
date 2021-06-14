@@ -1,4 +1,7 @@
+package eapli.base.ANTLR.src;
 
+import eapli.base.ANTLR.gen.VerificationsBaseVisitor;
+import eapli.base.ANTLR.gen.VerificationsParser;
 
 public class Visitor extends VerificationsBaseVisitor<String> {
 

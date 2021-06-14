@@ -5,8 +5,6 @@
  */
 package eapli.base.app.other.console;
 
-import static eapli.base.app.other.console.Client.serverIP;
-import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 /**

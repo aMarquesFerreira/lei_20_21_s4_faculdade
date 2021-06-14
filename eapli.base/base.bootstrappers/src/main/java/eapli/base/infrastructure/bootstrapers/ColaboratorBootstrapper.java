@@ -5,7 +5,6 @@ import eapli.base.clientusermanagement.application.AcceptRefuseSignupRequestCont
 import eapli.base.clientusermanagement.domain.MecanographicNumber;
 import eapli.base.clientusermanagement.domain.SignupRequest;
 import eapli.base.colaboratormanagement.application.RegisterColaboratorController;
-import eapli.base.colaboratormanagement.domain.*;
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.myclientuser.application.SignupController;
 import eapli.base.usermanagement.domain.BaseRoles;

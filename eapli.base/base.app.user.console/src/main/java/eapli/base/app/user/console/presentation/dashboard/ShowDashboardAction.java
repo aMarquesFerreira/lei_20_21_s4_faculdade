@@ -6,8 +6,6 @@
 package eapli.base.app.user.console.presentation.dashboard;
 
 import eapli.framework.actions.Action;
-import java.net.Inet4Address;
-import java.net.InetAddress;
 
 /**
  *

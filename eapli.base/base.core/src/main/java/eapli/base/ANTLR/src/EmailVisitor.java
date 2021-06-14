@@ -1,9 +1,14 @@
+package eapli.base.ANTLR.src;
+
+import eapli.base.ANTLR.gen.EmailInfoCheckParser;
+import eapli.base.ANTLR.gen.EmailInfoCheckVisitor;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.RuleNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
-public class EmailVisitor implements EmailInfoCheckVisitor<String>{
+public class EmailVisitor implements EmailInfoCheckVisitor<String> {
+
     @Override
     public String visitState(EmailInfoCheckParser.StateContext ctx) {
         return ctx.getChild(0).getText();

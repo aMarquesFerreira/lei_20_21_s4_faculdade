@@ -1,8 +1,10 @@
+package eapli.base.ANTLR.src;
+
+import eapli.base.ANTLR.gen.*;
 import eapli.base.EmailService;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
-
 
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
@@ -16,10 +18,26 @@ public class AutomaticTaskEmail {
 
         Session session = criarSessionMail();
 
-        Scanner scanner = new Scanner(System.in);
+
+            Scanner scanner = new Scanner(System.in);
+
+            String teste = scanner.nextLine();
+            //FileInputStream fis = new FileInputStream(new File("eapli.base/base.core/src/main/java/eapli/base/ANTLR/teste.txt"));
+            RulesLexer lexer = new RulesLexer(new ANTLRInputStream(teste));
+            CommonTokenStream tokens = new CommonTokenStream(lexer);
+            RulesParser parser = new RulesParser(tokens);
+            ParseTree tree = parser.prog(); // parse
+            EvalVisitor eval = new EvalVisitor();
+            String content =  ("Pagamento:" + eval.visit(tree) + "€");
+
+
+        Scanner scanner1 = new Scanner(System.in);
+        System.out.println("Insira o destinatário :");
         String email = scanner.nextLine();
+        System.out.println("Insira o titulo :");
         String title = scanner.nextLine();
-        String content = scanner.nextLine();
+        //System.out.println("Insira o conteudo :");
+        //String content = scanner.nextLine();
 
         EmailInfoCheckLexer lexerEmail = new EmailInfoCheckLexer(new ANTLRInputStream(email));
         CommonTokenStream tokensEmail = new CommonTokenStream(lexerEmail);
