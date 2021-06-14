@@ -4,7 +4,6 @@ program : state EOF;
 
 state : formID  name  typeOfData  names  description
         | formID  name  typeOfData
-        | formID  name  names
         | formID  description
         | formID typeOfData
 ;
