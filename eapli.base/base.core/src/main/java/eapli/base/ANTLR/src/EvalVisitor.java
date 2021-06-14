@@ -1,7 +1,19 @@
+package eapli.base.ANTLR.src;
+
+import eapli.base.ANTLR.gen.RulesBaseVisitor;
+import eapli.base.ANTLR.gen.RulesParser;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class EvalVisitor extends RulesBaseVisitor<Integer> {
+
+    private int valor = 0;
+
+    public Integer result(){
+        return valor;
+    }
+
     /*** "memory" for our calculator; variable/value pairs go here */
     Map<String, Integer> memory = new HashMap<>();
     /**
@@ -44,9 +56,9 @@ public class EvalVisitor extends RulesBaseVisitor<Integer> {
         int left = visit(ctx.expr(0)); // get value of left subexpression
         int right = visit(ctx.expr(1)); // get value of right subexpression
         if (ctx.op.getType() == RulesParser.MUL) {
-            return left * right;
+            return valor = left * right;
         }
-        return left / right; // must be DIV
+        return valor = left / right; // must be DIV
     }
     /*** expr op=('+'|'-') expr */
     @Override
@@ -54,9 +66,9 @@ public class EvalVisitor extends RulesBaseVisitor<Integer> {
         int left = visit(ctx.expr(0)); // get value of left subexpression
         int right = visit(ctx.expr(1)); // get value of right subexpression
         if (ctx.op.getType() == RulesParser.ADD) {
-            return left + right;
+            return valor = left + right;
         }
-        return left - right; // must be SUB
+        return valor = left - right; // must be SUB
     }
     /**
      * '(' expr ')'

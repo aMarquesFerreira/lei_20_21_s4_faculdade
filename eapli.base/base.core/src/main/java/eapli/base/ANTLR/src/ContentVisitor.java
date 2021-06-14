@@ -1,9 +1,13 @@
+package eapli.base.ANTLR.src;
+
+import eapli.base.ANTLR.gen.ContentInfoCheckParser;
+import eapli.base.ANTLR.gen.ContentInfoCheckVisitor;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.RuleNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
-public class ContentVisitor implements ContentInfoCheckVisitor<String>{
+public class ContentVisitor implements ContentInfoCheckVisitor<String> {
 
     @Override
     public String visitState(ContentInfoCheckParser.StateContext ctx) {

@@ -5,26 +5,12 @@
  */
 package eapli.base.app.activityflowengine;
 
-import eapli.base.app.activityflowengine.TcpServerThread;
-import eapli.base.clientusermanagement.domain.MecanographicNumber;
-import eapli.base.colaboratormanagement.domain.Colaborator;
-import eapli.base.sdp2021.Sdp2021;
-import eapli.base.sdp2021.Sdp2021Message;
+import javax.net.ssl.SSLServerSocket;
+import javax.net.ssl.SSLServerSocketFactory;
 import java.io.IOException;
-import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import java.io.*; 
-import java.net.*; 
-
-import java.net.ServerSocket;
-import java.net.Socket;
-
-import javax.net.ssl.SSLServerSocket;
-import javax.net.ssl.SSLServerSocketFactory;
-import javax.net.ssl.SSLSocket;
 
 /**
  *

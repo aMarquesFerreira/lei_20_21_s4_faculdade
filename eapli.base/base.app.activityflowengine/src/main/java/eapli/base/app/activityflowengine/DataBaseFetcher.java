@@ -9,8 +9,6 @@ import eapli.base.activitymanagement.domain.Activity;
 import eapli.base.activitymanagement.repositories.ActivityRepository;
 import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.infrastructure.persistence.PersistenceContext;
-import java.util.ArrayList;
-import java.util.List;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 //import org.json.simple.JSONObject;

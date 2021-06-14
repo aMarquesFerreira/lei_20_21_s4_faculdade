@@ -1,9 +1,13 @@
+package eapli.base.ANTLR.src;
+
+import eapli.base.ANTLR.gen.TitleInfoCheckParser;
+import eapli.base.ANTLR.gen.TitleInfoCheckVisitor;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.RuleNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
-public class TitleVisitor implements TitleInfoCheckVisitor<String>{
+public class TitleVisitor implements TitleInfoCheckVisitor<String> {
     @Override
     public String visitState(TitleInfoCheckParser.StateContext ctx) {
         return ctx.getChild(0).getText();

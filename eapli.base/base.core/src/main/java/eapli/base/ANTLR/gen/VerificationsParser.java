@@ -1,12 +1,17 @@
-// Generated from C:/Users/torre/OneDrive/Documentos/lei20_21_s4_2db_03/eapli.base/base.core/src/main/java/eapli/base/ANTLR\Verifications.g4 by ANTLR 4.9.1
-import org.antlr.v4.runtime.atn.*;
-import org.antlr.v4.runtime.dfa.DFA;
+// Generated from C:/Users/torre/OneDrive/Ambiente de Trabalho/lei20_21_s4_2db_03/eapli.base/base.core/src/main/java/eapli/base/ANTLR\Verifications.g4 by ANTLR 4.9.1
+package eapli.base.ANTLR.gen;
+
 import org.antlr.v4.runtime.*;
-import org.antlr.v4.runtime.misc.*;
-import org.antlr.v4.runtime.tree.*;
+import org.antlr.v4.runtime.atn.ATN;
+import org.antlr.v4.runtime.atn.ATNDeserializer;
+import org.antlr.v4.runtime.atn.ParserATNSimulator;
+import org.antlr.v4.runtime.atn.PredictionContextCache;
+import org.antlr.v4.runtime.dfa.DFA;
+import org.antlr.v4.runtime.tree.ParseTreeListener;
+import org.antlr.v4.runtime.tree.ParseTreeVisitor;
+import org.antlr.v4.runtime.tree.TerminalNode;
+
 import java.util.List;
-import java.util.Iterator;
-import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class VerificationsParser extends Parser {
@@ -183,7 +188,7 @@ public class VerificationsParser extends Parser {
 		StateContext _localctx = new StateContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_state);
 		try {
-			setState(47);
+			setState(43);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,0,_ctx) ) {
 			case 1:
@@ -218,26 +223,15 @@ public class VerificationsParser extends Parser {
 				setState(37);
 				formID();
 				setState(38);
-				name();
-				setState(39);
-				names();
+				description();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
+				setState(40);
+				formID();
 				setState(41);
-				formID();
-				setState(42);
-				description();
-				}
-				break;
-			case 5:
-				enterOuterAlt(_localctx, 5);
-				{
-				setState(44);
-				formID();
-				setState(45);
 				typeOfData();
 				}
 				break;
@@ -281,9 +275,9 @@ public class VerificationsParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(49);
+			setState(45);
 			match(T__0);
-			setState(50);
+			setState(46);
 			match(DIGIT);
 			}
 		}
@@ -330,9 +324,9 @@ public class VerificationsParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(52);
+			setState(48);
 			name();
-			setState(53);
+			setState(49);
 			name();
 			}
 		}
@@ -376,7 +370,7 @@ public class VerificationsParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(55);
+			setState(51);
 			letters();
 			}
 		}
@@ -426,9 +420,9 @@ public class VerificationsParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(57);
+			setState(53);
 			match(IF);
-			setState(58);
+			setState(54);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << T__2) | (1L << T__3) | (1L << T__4) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__10) | (1L << T__11) | (1L << T__12))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -438,13 +432,13 @@ public class VerificationsParser extends Parser {
 				_errHandler.reportMatch(this);
 				consume();
 			}
-			setState(59);
+			setState(55);
 			ok();
 			{
-			setState(60);
+			setState(56);
 			match(ELSE);
 			}
-			setState(61);
+			setState(57);
 			notok();
 			}
 		}
@@ -494,13 +488,13 @@ public class VerificationsParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(66);
+			setState(62);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==LOWERCHAR || _la==UPPERCHAR) {
 				{
 				{
-				setState(63);
+				setState(59);
 				_la = _input.LA(1);
 				if ( !(_la==LOWERCHAR || _la==UPPERCHAR) ) {
 				_errHandler.recoverInline(this);
@@ -512,7 +506,7 @@ public class VerificationsParser extends Parser {
 				}
 				}
 				}
-				setState(68);
+				setState(64);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -565,7 +559,7 @@ public class VerificationsParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(70); 
+			setState(66); 
 			_errHandler.sync(this);
 			_alt = 1;
 			do {
@@ -573,7 +567,7 @@ public class VerificationsParser extends Parser {
 				case 1:
 					{
 					{
-					setState(69);
+					setState(65);
 					_la = _input.LA(1);
 					if ( !(_la==LOWERCHAR || _la==UPPERCHAR) ) {
 					_errHandler.recoverInline(this);
@@ -589,7 +583,7 @@ public class VerificationsParser extends Parser {
 				default:
 					throw new NoViableAltException(this);
 				}
-				setState(72); 
+				setState(68); 
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,2,_ctx);
 			} while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER );
@@ -633,7 +627,7 @@ public class VerificationsParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(76);
+			setState(72);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case EOF:
@@ -642,7 +636,7 @@ public class VerificationsParser extends Parser {
 				break;
 			case SPACE:
 				{
-				setState(75);
+				setState(71);
 				match(SPACE);
 				}
 				break;
@@ -693,17 +687,17 @@ public class VerificationsParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(79); 
+			setState(75); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(78);
+				setState(74);
 				match(DIGIT);
 				}
 				}
-				setState(81); 
+				setState(77); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( _la==DIGIT );
@@ -746,7 +740,7 @@ public class VerificationsParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(83);
+			setState(79);
 			match(T__13);
 			}
 		}
@@ -787,7 +781,7 @@ public class VerificationsParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(85);
+			setState(81);
 			match(T__14);
 			}
 		}
@@ -803,27 +797,26 @@ public class VerificationsParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\30Z\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\30V\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4"+
 		"\f\t\f\4\r\t\r\3\2\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3"+
-		"\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3\62\n\3\3\4\3\4\3\4\3\5\3\5\3"+
-		"\5\3\6\3\6\3\7\3\7\3\7\3\7\3\7\3\7\3\b\7\bC\n\b\f\b\16\bF\13\b\3\t\6\t"+
-		"I\n\t\r\t\16\tJ\3\n\3\n\5\nO\n\n\3\13\6\13R\n\13\r\13\16\13S\3\f\3\f\3"+
-		"\r\3\r\3\r\2\2\16\2\4\6\b\n\f\16\20\22\24\26\30\2\4\3\2\4\17\3\2\23\24"+
-		"\2U\2\32\3\2\2\2\4\61\3\2\2\2\6\63\3\2\2\2\b\66\3\2\2\2\n9\3\2\2\2\f;"+
-		"\3\2\2\2\16D\3\2\2\2\20H\3\2\2\2\22N\3\2\2\2\24Q\3\2\2\2\26U\3\2\2\2\30"+
-		"W\3\2\2\2\32\33\5\4\3\2\33\34\7\2\2\3\34\3\3\2\2\2\35\36\5\6\4\2\36\37"+
-		"\5\n\6\2\37 \5\f\7\2 !\5\b\5\2!\"\5\16\b\2\"\62\3\2\2\2#$\5\6\4\2$%\5"+
-		"\n\6\2%&\5\f\7\2&\62\3\2\2\2\'(\5\6\4\2()\5\n\6\2)*\5\b\5\2*\62\3\2\2"+
-		"\2+,\5\6\4\2,-\5\16\b\2-\62\3\2\2\2./\5\6\4\2/\60\5\f\7\2\60\62\3\2\2"+
-		"\2\61\35\3\2\2\2\61#\3\2\2\2\61\'\3\2\2\2\61+\3\2\2\2\61.\3\2\2\2\62\5"+
-		"\3\2\2\2\63\64\7\3\2\2\64\65\7\22\2\2\65\7\3\2\2\2\66\67\5\n\6\2\678\5"+
-		"\n\6\28\t\3\2\2\29:\5\20\t\2:\13\3\2\2\2;<\7\26\2\2<=\t\2\2\2=>\5\26\f"+
-		"\2>?\7\27\2\2?@\5\30\r\2@\r\3\2\2\2AC\t\3\2\2BA\3\2\2\2CF\3\2\2\2DB\3"+
-		"\2\2\2DE\3\2\2\2E\17\3\2\2\2FD\3\2\2\2GI\t\3\2\2HG\3\2\2\2IJ\3\2\2\2J"+
-		"H\3\2\2\2JK\3\2\2\2K\21\3\2\2\2LO\3\2\2\2MO\7\30\2\2NL\3\2\2\2NM\3\2\2"+
-		"\2O\23\3\2\2\2PR\7\22\2\2QP\3\2\2\2RS\3\2\2\2SQ\3\2\2\2ST\3\2\2\2T\25"+
-		"\3\2\2\2UV\7\20\2\2V\27\3\2\2\2WX\7\21\2\2X\31\3\2\2\2\7\61DJNS";
+		"\3\3\3\3\3\3\3\3\3\3\5\3.\n\3\3\4\3\4\3\4\3\5\3\5\3\5\3\6\3\6\3\7\3\7"+
+		"\3\7\3\7\3\7\3\7\3\b\7\b?\n\b\f\b\16\bB\13\b\3\t\6\tE\n\t\r\t\16\tF\3"+
+		"\n\3\n\5\nK\n\n\3\13\6\13N\n\13\r\13\16\13O\3\f\3\f\3\r\3\r\3\r\2\2\16"+
+		"\2\4\6\b\n\f\16\20\22\24\26\30\2\4\3\2\4\17\3\2\23\24\2P\2\32\3\2\2\2"+
+		"\4-\3\2\2\2\6/\3\2\2\2\b\62\3\2\2\2\n\65\3\2\2\2\f\67\3\2\2\2\16@\3\2"+
+		"\2\2\20D\3\2\2\2\22J\3\2\2\2\24M\3\2\2\2\26Q\3\2\2\2\30S\3\2\2\2\32\33"+
+		"\5\4\3\2\33\34\7\2\2\3\34\3\3\2\2\2\35\36\5\6\4\2\36\37\5\n\6\2\37 \5"+
+		"\f\7\2 !\5\b\5\2!\"\5\16\b\2\".\3\2\2\2#$\5\6\4\2$%\5\n\6\2%&\5\f\7\2"+
+		"&.\3\2\2\2\'(\5\6\4\2()\5\16\b\2).\3\2\2\2*+\5\6\4\2+,\5\f\7\2,.\3\2\2"+
+		"\2-\35\3\2\2\2-#\3\2\2\2-\'\3\2\2\2-*\3\2\2\2.\5\3\2\2\2/\60\7\3\2\2\60"+
+		"\61\7\22\2\2\61\7\3\2\2\2\62\63\5\n\6\2\63\64\5\n\6\2\64\t\3\2\2\2\65"+
+		"\66\5\20\t\2\66\13\3\2\2\2\678\7\26\2\289\t\2\2\29:\5\26\f\2:;\7\27\2"+
+		"\2;<\5\30\r\2<\r\3\2\2\2=?\t\3\2\2>=\3\2\2\2?B\3\2\2\2@>\3\2\2\2@A\3\2"+
+		"\2\2A\17\3\2\2\2B@\3\2\2\2CE\t\3\2\2DC\3\2\2\2EF\3\2\2\2FD\3\2\2\2FG\3"+
+		"\2\2\2G\21\3\2\2\2HK\3\2\2\2IK\7\30\2\2JH\3\2\2\2JI\3\2\2\2K\23\3\2\2"+
+		"\2LN\7\22\2\2ML\3\2\2\2NO\3\2\2\2OM\3\2\2\2OP\3\2\2\2P\25\3\2\2\2QR\7"+
+		"\20\2\2R\27\3\2\2\2ST\7\21\2\2T\31\3\2\2\2\7-@FJO";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

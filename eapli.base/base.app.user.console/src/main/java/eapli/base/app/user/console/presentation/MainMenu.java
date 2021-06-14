@@ -25,9 +25,9 @@ package eapli.base.app.user.console.presentation;
 
 
 import eapli.base.app.common.console.presentation.authz.MyUserMenu;
+import eapli.base.app.user.console.presentation.dashboard.ShowDashboardAction;
 import eapli.base.app.user.console.presentation.mycatalogues.CataloguePrinter;
 import eapli.base.app.user.console.presentation.myservices.RequestServiceAction;
-import eapli.base.app.user.console.presentation.dashboard.ShowDashboardAction;
 import eapli.base.cataloguemanagement.application.MyCataloguesController;
 import eapli.framework.actions.Actions;
 import eapli.framework.actions.menu.Menu;

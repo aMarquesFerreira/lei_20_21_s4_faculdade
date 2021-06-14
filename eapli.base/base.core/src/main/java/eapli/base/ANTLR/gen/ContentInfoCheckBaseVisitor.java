@@ -1,4 +1,5 @@
 // Generated from C:/Users/torre/OneDrive/Ambiente de Trabalho/lei20_21_s4_2db_03/eapli.base/base.core/src/main/java/eapli/base/ANTLR\ContentInfoCheck.g4 by ANTLR 4.9.1
+package eapli.base.ANTLR.gen;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
