@@ -12,6 +12,7 @@ import eapli.base.servicemanagement.domain.Service;
 import eapli.base.workflowmanagement.domain.WorkFlowExecution;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
+import javax.persistence.CascadeType;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -47,14 +48,14 @@ public class Ticket implements AggregateRoot<TicketId>{
     /**
      * cascade = CascadeType.NONE as the systemUser is part of another aggregate
      */
-    @OneToOne()
+    @OneToOne(cascade = CascadeType.ALL)
     private FormAnswer formAnswer;
     
     
     @ManyToOne()
     private Service service;
     
-    @OneToOne()
+    @OneToOne(cascade = CascadeType.ALL)
     private WorkFlowExecution workFlowExecution;
 
     @ManyToOne()

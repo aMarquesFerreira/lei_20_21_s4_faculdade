@@ -53,8 +53,8 @@ public class RequestServiceUI extends AbstractUI {
         List<String> values = new ArrayList<>();
         
         for(FormParameter fp: form.getFormParameters()){
-            System.out.println(fp.description());            
-            String value = Console.readLine(fp.label().toString());
+            System.out.println("Enter a value for: " + fp.description());            
+            String value = Console.readLine(fp.label().toString() + ":");
             
             params.add(fp);
             values.add(value);

@@ -23,6 +23,7 @@ import eapli.framework.infrastructure.authz.application.AuthorizationService;
 import eapli.framework.infrastructure.authz.application.AuthzRegistry;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -70,7 +71,7 @@ public class RequestServiceController{
         
         WorkFlowExecution wfe = WorkFlowExecution.from(WorkFlowExecutionId.valueOf(ticketId.toString()), workFlow);
  
-        String formAnswerId = service.getForm().identity()+"/"+LocalDate.now().hashCode();
+        String formAnswerId = service.getForm().identity()+"/"+LocalDateTime.now().hashCode();//para ter um id unico
         
         FormAnswer formAnswer = new FormAnswer(FormAnswerId.valueOf(formAnswerId), service.getForm(), currentUser().get());
     

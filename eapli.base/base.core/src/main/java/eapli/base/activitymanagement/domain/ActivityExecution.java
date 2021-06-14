@@ -39,7 +39,8 @@ public class ActivityExecution implements AggregateRoot<ActivityExecutionId> {
      */
     /*@ManyToOne()
     private Service service;*/
-
+    
+    @ManyToOne
     private Activity activity;
     
     @OneToOne()
@@ -58,7 +59,7 @@ public class ActivityExecution implements AggregateRoot<ActivityExecutionId> {
      * @param colaborator
      */
     public ActivityExecution(final ActivityExecutionId activityExecutionId, Activity activity, final FormAnswer formAnswer, final Colaborator colaborator) {
-        if (activityExecutionId == null || activity == null || formAnswer == null || colaborator == null) {
+        if (activityExecutionId == null || activity == null){// || formAnswer == null || colaborator == null) {
             throw new IllegalArgumentException();
         }
         this.activityExecutionId = activityExecutionId;

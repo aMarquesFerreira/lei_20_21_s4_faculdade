@@ -2,21 +2,36 @@
 <head>
 <title>Dashboard</title>
 </head>
-<body onload="refreshCatalogs()">
+<body onload="refreshData()">
 	<p>EAPLI DASHBOARD</p>
 
-	<div id = "catalogs">loading...</div>
-
+	<div id = "activities">loading...</div>
+        
+        <!-- Lista de atividades pendentes -->
+        
+        
+        
+        
+        
+        <!-- lista de catalogos -->
+        
+        
+        
+        
+        
 
 <script>
 
 
-
+function refreshData() {
+    refreshCatalogs();
+    refreshXpto();
+}
 
 
 function refreshCatalogs() {
 	var request = new XMLHttpRequest();
-	 var cats=document.getElementById("catalogs");
+	 var cats=document.getElementById("activities");
 	 request.onload = function() {
 	 cats.innerHTML = this.responseText;
 	 setTimeout(refreshCatalogs, 2000);
@@ -30,7 +45,27 @@ function refreshCatalogs() {
 	 setTimeout(refreshCatalogs, 5000);
 	 };
 	 request.open("GET", "/stats/catalogs", true);
-	request.timeout = 5000;
+         request.timeout = 5000;
+	 request.send();
+}
+
+function refreshXpto() {
+	var request = new XMLHttpRequest();
+	 var cats=document.getElementById("xpto");
+	 request.onload = function() {
+	 cats.innerHTML = this.responseText;
+	 setTimeout(refreshCatalogs, 2000);
+	 };
+	 request.ontimeout = function() {
+	 cats.innerHTML = "Server timeout, still trying ...";
+	 setTimeout(refreshCatalogs, 100);
+	 };
+	 request.onerror = function() {
+	 cats.innerHTML = "No server reply, still trying ...";
+	 setTimeout(refreshCatalogs, 5000);
+	 };
+	 request.open("GET", "/stats/XPTO", true);
+         request.timeout = 5000;
 	 request.send();
 }
 

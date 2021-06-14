@@ -46,8 +46,8 @@ public class FormParameterAnswer implements AggregateRoot<FormParameterAnswerId>
     @ManyToOne()
     private FormParameter formParameter;
     
-    @ManyToOne()
-    private FormAnswer formAnswer;
+    /*@ManyToOne()
+    private FormAnswer formAnswer;*/
 
     /**
      * Constructor.

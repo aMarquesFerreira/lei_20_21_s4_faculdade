@@ -92,8 +92,10 @@ public class TcpServerThread implements Runnable {
         if (message.getCodigo()==10){//pedidos stats
             String stat = new String(message.getDados());
             
-            switch (stat){
-                case "STATS_ACTIVITIES":
+            //recebe STATS_ACTIVITIES:userId
+            if (stat.startsWith("STATS_ACTIVITIES:")){
+                String userId = stat.substring(17);
+                
                     //STATS_ACTIVITIES:isep959
                     //Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)11, "53".getBytes());
                     /*
@@ -107,14 +109,13 @@ public class TcpServerThread implements Runnable {
                     bos.flush();
                     Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)11, bos.toByteArray());
                     */
-                    Colaborator c1 = colabRepo.findByMecanographicNumber(MecanographicNumber.valueOf("isep959")).get();
-                    
-                    
-                    
+                    Colaborator c1 = colabRepo.findByMecanographicNumber(MecanographicNumber.valueOf(userId)).get();
                     
                     Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)11, fetcher.activityFetchAsJson(c1).getBytes());
                     
                     return response;
+            }else if (){
+                
             }
             
             

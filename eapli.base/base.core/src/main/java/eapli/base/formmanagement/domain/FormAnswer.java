@@ -44,7 +44,7 @@ public class FormAnswer implements AggregateRoot<FormAnswerId> {
     private Colaborator colaborator;
         
     
-    @OneToMany()
+    @OneToMany(cascade = CascadeType.ALL)
     private List<FormParameterAnswer> formParametersAnswer;
    
     /**

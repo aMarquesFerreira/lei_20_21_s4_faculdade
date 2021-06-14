@@ -19,6 +19,9 @@ import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlElement;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -36,12 +39,13 @@ public class WorkFlowExecution implements AggregateRoot<WorkFlowExecutionId> {
     @EmbeddedId
     private WorkFlowExecutionId workFlowExecutionId;
 
+    @ManyToOne
     private WorkFlow workFlow;
 
     /**
      * cascade = CascadeType.NONE as the systemUser is part of another aggregate
      */
-    @OneToMany()
+    @OneToMany(cascade = CascadeType.ALL)
     private List<ActivityExecution> activityExecutions;
      
 
