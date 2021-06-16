@@ -42,13 +42,16 @@ public class CatalogueBootstrapper implements Action {
         Team team2 = teamRepo.findByTeamCode(TeamCode.valueOf("002")).get();
 
         List<Team> teams = new ArrayList<>();
+        List<Team> teams2 = new ArrayList<>();
         teams.add(team1);
-        teams.add(team2);
+        teams2.add(team2);
+        
 
-        registerNewCatalogue(c1, "Catalogue with services for vacations", "Vacations", "Vacations Catalogue", teams);
-        registerNewCatalogue(c1, "Catalogue for repairs", "Repairs", "Repairs Catalogue", teams);
-        teams.remove(1);
-        registerNewCatalogue(c1, "Catalogue For Books", "Books", "Books Catalogue", teams);
+        registerNewCatalogue(c1, "Catalogue with services for vacations ex", "Vacations", "Vacations Catalogue", teams);
+        registerNewCatalogue(c1, "Catalogue for repairs ex", "Repairs", "Repairs Catalogue", teams);
+        registerNewCatalogue(c1, "Catalogue For Books ex", "Books", "Books Catalogue", teams);
+        
+        registerNewCatalogue(c1, "Catalogue for Discounts", "In this catalogue are services for discounts", "Discounts Catalogue", teams2);
 
         return true;
     }

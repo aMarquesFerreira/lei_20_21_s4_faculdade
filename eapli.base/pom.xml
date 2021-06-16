@@ -27,6 +27,7 @@
         <module>base.core</module>
         <module>base.persistence.impl</module>
         <module>base.app.activityflowengine</module>
+        <module>base.app.automatictaskrunner</module>
     </modules>
 
     <dependencies>

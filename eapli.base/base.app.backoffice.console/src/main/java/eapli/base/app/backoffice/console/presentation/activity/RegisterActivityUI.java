@@ -37,6 +37,12 @@ public class RegisterActivityUI extends AbstractUI {
         final String activityId = Console.readLine("Activity ID");
 
         final String description = Console.readLine("Description");
+        
+        String activityType = Console.readLine("Type of Activity (M (Manual) or A (Auto))");
+        while(!"A".equals(activityType)||!"M".equals(activityType)){
+            System.out.println("Invalid Answer... (M or A)");
+            activityType = Console.readLine("Type of Activity (M (Manual) or A (Auto))");
+        }
 
         //--------
         
@@ -61,7 +67,7 @@ public class RegisterActivityUI extends AbstractUI {
         
         //Activity activity;
          try {
-        /*activity=*/this.theController.RegisterActivity(activityId, description, theColaborator/*, theForm*/);
+        /*activity=*/this.theController.RegisterActivity(activityId, description,activityType, theColaborator/*, theForm*/);
             
         } catch (@SuppressWarnings("unused") final IntegrityViolationException e) {
             System.out.println("You tried to enter a Activity which already exists in the database.");

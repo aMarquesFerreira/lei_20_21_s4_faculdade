@@ -36,11 +36,15 @@ public class TypeOfTeamBootstrapper implements Action{
         Team team1 = teamRepo.findByTeamCode(TeamCode.valueOf("001")).get();
         Team team2 = teamRepo.findByTeamCode(TeamCode.valueOf("002")).get();
 
+        List<Team> teamsEx = new ArrayList<>();
         List<Team> teams = new ArrayList<>();
-        teams.add(team1);
+        
+        teamsEx.add(team1);
         teams.add(team2);
         
-        registerNewTypeOfTeam("ColorA", "TypeOfTeamA", teams);
+        registerNewTypeOfTeam("ColorA", "TypeOfTeamA", teamsEx);
+        
+        registerNewTypeOfTeam("Blue", "Departamento de Vendas", teams);
        // registerNewTypeOfTeam("ColorB", "TypeOfTeamB", teams);
         
         return true;

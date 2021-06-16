@@ -36,14 +36,14 @@ public class ActivityBootstrapper implements Action {
         Colaborator c1 = colabRepo.findByMecanographicNumber(MecanographicNumber.valueOf("isep959")).get();
         //Form f1 = formRepo.findByFormId(FormId.valueOf("F1")).get();
         
-        registerNewActivity("A1", "send email", c1);
+        registerNewActivity("A1", "send email","A", c1);
         //registerNewActivity("A2", "sum all the costs", c1);
 
         return true;
     }
-    private void registerNewActivity(String activityId, String description, Colaborator colaborator/*, Form form*/) {
+    private void registerNewActivity(String activityId, String description, String type, Colaborator colaborator/*, Form form*/) {
         
-        activityController.RegisterActivity(activityId, description, colaborator/*, form*/);
+        activityController.RegisterActivity(activityId, description, type, colaborator);
         LOGGER.debug("»»» Creating new Activity %s", activityId);
         
     }

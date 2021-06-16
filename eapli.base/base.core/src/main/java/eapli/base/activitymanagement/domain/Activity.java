@@ -33,7 +33,7 @@ public class Activity implements AggregateRoot<ActivityId> {
 
     @XmlElement
     @JsonProperty
-    private String type;
+    private ActivityType type;
     
     @XmlElement
     @JsonProperty
@@ -64,7 +64,7 @@ public class Activity implements AggregateRoot<ActivityId> {
      * @param description
      * @param colaborator
      */
-    public Activity(final ActivityId activityId,final Description description/*, final Form form*/, final Colaborator colaborator) {
+    public Activity(final ActivityId activityId,final Description description/*, final Form form*/,ActivityType type, final Colaborator colaborator) {
         if (activityId == null || description  == null || colaborator == null) {
             throw new IllegalArgumentException();
         }
@@ -72,6 +72,7 @@ public class Activity implements AggregateRoot<ActivityId> {
         this.description = description;
         //this.form = form;
         this.colaborator = colaborator;
+        this.type = type;
         this.active = true;
 
     }
@@ -112,8 +113,12 @@ public class Activity implements AggregateRoot<ActivityId> {
         return identity();
     }
     
-     public Description description() {
+    public Description description() {
         return this.description;
+    }
+    
+    public ActivityType type() {
+        return this.type;
     }
 
     @Override
