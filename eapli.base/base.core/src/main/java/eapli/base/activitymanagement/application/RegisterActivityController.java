@@ -8,6 +8,7 @@ package eapli.base.activitymanagement.application;
 import eapli.base.activitymanagement.domain.Activity;
 import eapli.base.activitymanagement.domain.ActivityId;
 import eapli.base.activitymanagement.domain.ActivityType;
+import eapli.base.activitymanagement.domain.ExecutionTime;
 import eapli.base.activitymanagement.repositories.ActivityRepository;
 import eapli.base.colaboratormanagement.application.ListColaboratorService;
 import eapli.base.colaboratormanagement.domain.Colaborator;
@@ -38,11 +39,11 @@ public class RegisterActivityController {
      * @param colaborator
      * @return
      */
-    public Activity RegisterActivity(final String activityId, final String description,final String type, final Colaborator colaborator/*,final Form form*/) {
+    public Activity RegisterActivity(final String activityId, final String description,final String type,final Integer execTime, final Colaborator colaborator/*,final Form form*/) {
        
         authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.HELP_DESK_SERVICE_MANAGER);
 
-        final Activity newActivity = new Activity(ActivityId.valueOf(activityId), Description.valueOf(description),ActivityType.valueOf(type)/*,form*/, colaborator);
+        final Activity newActivity = new Activity(ActivityId.valueOf(activityId), Description.valueOf(description),ActivityType.valueOf(type),ExecutionTime.valueOf(execTime)/*,form*/, colaborator);
                     
         return activityRepository.save(newActivity);
       

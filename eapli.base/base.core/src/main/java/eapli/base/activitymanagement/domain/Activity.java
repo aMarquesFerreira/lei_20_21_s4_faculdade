@@ -41,6 +41,10 @@ public class Activity implements AggregateRoot<ActivityId> {
     
     @XmlElement
     @JsonProperty
+    private ExecutionTime execTime;
+    
+    @XmlElement
+    @JsonProperty
     private boolean active;
 
 
@@ -62,9 +66,11 @@ public class Activity implements AggregateRoot<ActivityId> {
      * 
      * @param activityId
      * @param description
+     * @param type
+     * @param execTime
      * @param colaborator
      */
-    public Activity(final ActivityId activityId,final Description description/*, final Form form*/,ActivityType type, final Colaborator colaborator) {
+    public Activity(final ActivityId activityId,final Description description/*, final Form form*/,ActivityType type, ExecutionTime execTime, final Colaborator colaborator) {
         if (activityId == null || description  == null || colaborator == null) {
             throw new IllegalArgumentException();
         }
@@ -115,6 +121,10 @@ public class Activity implements AggregateRoot<ActivityId> {
     
     public Description description() {
         return this.description;
+    }
+    
+    public ExecutionTime executionTime() {
+        return this.execTime;
     }
     
     public ActivityType type() {

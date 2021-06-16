@@ -12,13 +12,14 @@ public class ActivityBuilder implements DomainFactory<Activity> {
     private Colaborator colaborator;
     private Description description;
     private ActivityType activityType;
+    private ExecutionTime execTime;
 
-
-    public ActivityBuilder withAll(ActivityId activityID, Description description, ActivityType activityType, Colaborator colaborator) {
+    public ActivityBuilder withAll(ActivityId activityID, Description description, ActivityType activityType, ExecutionTime execTime, Colaborator colaborator) {
         this.activity = activityID;
         this.description = description;
         this.colaborator = colaborator;
         this.activityType = activityType;
+        this.execTime = execTime;
         return this;
     }
 
@@ -31,8 +32,12 @@ public class ActivityBuilder implements DomainFactory<Activity> {
         return this.activityType = activityType;
     }
     
-    public Description withType(Description description) {
+    public Description withDescription(Description description) {
         return this.description = description;
+    }
+    
+    public ExecutionTime withExecutionTime(ExecutionTime execTime) {
+        return this.execTime = execTime;
     }
 
     public Colaborator withColaborator(Colaborator colaborator) {
@@ -44,6 +49,6 @@ public class ActivityBuilder implements DomainFactory<Activity> {
     public Activity build() {
         // since the factory knows that all the parts are needed it could throw
         // an exception. however, we will leave that to the constructor
-        return new Activity(this.activity, this.description, this.activityType, this.colaborator);
+        return new Activity(this.activity, this.description, this.activityType,this.execTime, this.colaborator);
     }
 }
