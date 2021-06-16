@@ -35,6 +35,13 @@ public final class ActivityFlowEngineMain {
             menu.mainLoop();
         }*/
 
+        // Algorithm 1 = FCFS, 2 = task time
+        int algo = 1;
+        if(algo == 1){
+            AlgorithmFCFS fcfs = new AlgorithmFCFS();
+            fcfs.execute();
+        }
+
         TcpServer tcpServer = new TcpServer();
         try {
             tcpServer.run();
