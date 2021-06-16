@@ -9,12 +9,12 @@ import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+
 import java.io.IOException;
 import java.util.Scanner;
 
 public class teste {
-        public static void main(String[] args) throws IOException {
+       /* public static void main(String[] args) throws IOException {
             Scanner scanner = new Scanner(System.in);
             String teste = scanner.nextLine();
             FileInputStream fis = new FileInputStream(new File("eapli.base/base.core/src/main/java/eapli/base/ANTLR/testeRules.txt"));
@@ -26,7 +26,7 @@ public class teste {
             eval.visit(tree);
             System.out.println("Valor Total :" + eval.result() + "€");
 
-/*
+
             Scanner scanner = new Scanner(System.in);
             String teste = scanner.nextLine();
             FileInputStream fis = new FileInputStream("eapli.base/base.core/src/main/java/eapli/base/ANTLR/testeVerifications.txt");
@@ -45,9 +45,28 @@ public class teste {
             walker.walk(listener,tree);
             //eval.visit(tree);
             System.out.println(listener.getResult());
-*/
 
-        }
+
+        }*/
+
+    public static void main(String[] args) throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        String teste = scanner.nextLine();
+        FileInputStream fis = new FileInputStream(new File("eapli.base/base.core/src/main/java/eapli/base/ANTLR/testeRules.txt"));
+        DateLexer lexer = new DateLexer(new ANTLRInputStream(teste));
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        DateParser parser = new DateParser(tokens);
+        ParseTree tree = parser.state(); // parse
+        DateVisitor eval = new DateVisitor();
+        eval.visit(tree);
+        String value = eval.getResult();
+        System.out.println("Estado :" + value );
+
+    }
+
+
+
+
 
     private static void sendEmail(String from, String to, String subject, String body) {
         EmailService eService = new EmailService(to, from);
