@@ -1,6 +1,7 @@
 package eapli.base.workflowmanagement.domain;
 
 
+import eapli.base.activitymanagement.domain.Activity;
 import eapli.base.cataloguemanagement.domain.Catalogue;
 import eapli.base.cataloguemanagement.domain.CatalogueId;
 import eapli.base.clientusermanagement.domain.MecanographicNumber;
@@ -14,28 +15,18 @@ import eapli.framework.infrastructure.authz.domain.model.*;
 
 import org.junit.Test;
 
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class WorkFlowTest {
+    private List<Activity> activityList = new ArrayList<>();
 
-
-    /*public WorkFlow dummyWorkflow(final WorkFlowId id) {
+    public WorkFlow dummyWorkflow(final WorkFlowId id) {
         // should we load from spring context?
         final WorkflowBuilder workflowBuilder = new WorkflowBuilder();
-        return workflowBuilder.withAll(id, new Service(new ServiceCode("2"),
-                Description.valueOf("description"),
-                Designation.valueOf("designation"), new Catalogue(new Colaborator(getNewDummyUser(),
-                new MecanographicNumber("duMMy1"),
-                new Address("dummy","bothDummy"),
-                new BirthDate(new Date(2020,12,1)),
-                new Evaluation(2.2), new Contact(912365478)), new CatalogueId("1"),
-                Description.valueOf("Description"),
-                Designation.valueOf("Designation")))).build();
+        return workflowBuilder.withAll(id, activityList).build();
     }
 
     public static SystemUser dummyUser(final String username, final Role... roles) {
@@ -124,6 +115,4 @@ public class WorkFlowTest {
 
         assertFalse(expected);
     }
-*/
-
 }

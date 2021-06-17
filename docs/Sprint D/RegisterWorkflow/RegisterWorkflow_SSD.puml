@@ -1,0 +1,17 @@
+@startuml
+autonumber
+
+actor "Project Manager" as PM
+participant "System" as UI
+
+activate PM
+PM --> UI : Wants to create a activity
+activate UI
+    UI --> PM : Requests necessary information for WorkFlow
+deactivate UI
+PM --> UI : Inserts the data
+activate UI
+UI --> PM : displayWorkFlowInfo
+deactivate UI
+
+@enduml

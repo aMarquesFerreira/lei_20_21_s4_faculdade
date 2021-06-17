@@ -14,7 +14,7 @@ import static org.junit.Assert.assertTrue;
 
 public class ColaboratorTest {
 
-/*
+
     private final String aMecanographicNumber = "isep2021";
     private final String anotherMecanographicNumber = "isep2020";
 
@@ -71,7 +71,8 @@ public class ColaboratorTest {
 
     @Test
     public void ensureColaboratorEqualsAreTheSameForTheSameInstance() {
-        final Colaborator aColaborator = new Colaborator();
+        final Colaborator aColaborator = new ColaboratorBuilder().withMecanographicNumber("DUMMY")
+                .withSystemUser(getNewDummyUser()).build();
 
         final boolean expected = aColaborator.equals(aColaborator);
 
@@ -111,6 +112,6 @@ public class ColaboratorTest {
         final boolean expected = aColaborator.sameAs(anotherColaborator);
 
         assertFalse(expected);
-    }*/
+    }
 
 }

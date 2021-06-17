@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="195px" preserveAspectRatio="none" style="width:1231px;height:195px;background:#FFFFFF;" version="1.1" viewBox="0 0 1231 195" width="1231px" zoomAndPan="magnify"><defs><filter height="300%" id="fs97ojkw5s5h0" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[88d085b08ff5bde05839611e1c129680]
+class RegisterActivityUI--><rect codeLine="3" fill="#FEFECE" filter="url(#fs97ojkw5s5h0)" height="48" id="RegisterActivityUI" style="stroke:#A80036;stroke-width:1.5;" width="126" x="7" y="105.22"/><ellipse cx="22" cy="121.22" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M24,117.72 Q24.2031,117.22 24.4375,116.97 Q24.6719,116.72 24.9375,116.72 Q25.4063,116.72 25.7031,117.0013 Q26,117.2825 26,117.9388 L26,119.5013 Q26,120.1575 25.7188,120.4388 Q25.4375,120.72 25,120.72 Q24.6094,120.72 24.3594,120.5481 Q24.1094,120.3763 24,119.9231 Q23.9531,119.6106 23.7813,119.4388 Q23.4688,119.1106 22.9063,118.9231 Q22.3438,118.72 21.7813,118.72 Q21.0781,118.72 20.4844,119.0013 Q19.9063,119.2825 19.4531,119.9075 Q19,120.5325 19,121.3919 L19,122.3138 Q19,123.345 19.8438,124.0325 Q20.6875,124.72 22.1875,124.72 Q23.0781,124.72 23.7031,124.5169 Q24.0625,124.4075 24.4688,124.0481 Q24.7344,123.845 24.875,123.7825 Q25.0156,123.72 25.1875,123.72 Q25.5156,123.72 25.75,123.9856 Q26,124.2356 26,124.595 Q26,124.9388 25.6563,125.345 Q25.1563,125.9388 24.3594,126.2669 Q23.3125,126.72 22.0313,126.72 Q20.5313,126.72 19.3281,126.1263 Q18.3594,125.6575 17.6719,124.6419 Q17,123.6263 17,122.4231 L17,121.3294 Q17,120.0794 17.5938,118.9856 Q18.2031,117.8919 19.25,117.3138 Q20.3125,116.72 21.5,116.72 Q22.2188,116.72 22.8438,116.97 Q23.4688,117.22 24,117.72 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="94" x="36" y="126.1302">RegisterActivityUI</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="132" y1="137.22" y2="137.22"/><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="132" y1="145.22" y2="145.22"/><!--MD5=[2ab7b88efdd2f312ffe3aa0612b12eaa]
+class RegisterActivityController--><rect codeLine="6" fill="#FEFECE" filter="url(#fs97ojkw5s5h0)" height="89.5078" id="RegisterActivityController" style="stroke:#A80036;stroke-width:1.5;" width="168" x="168" y="84.22"/><ellipse cx="183" cy="100.22" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M185,96.72 Q185.2031,96.22 185.4375,95.97 Q185.6719,95.72 185.9375,95.72 Q186.4063,95.72 186.7031,96.0013 Q187,96.2825 187,96.9388 L187,98.5013 Q187,99.1575 186.7188,99.4388 Q186.4375,99.72 186,99.72 Q185.6094,99.72 185.3594,99.5481 Q185.1094,99.3763 185,98.9231 Q184.9531,98.6106 184.7813,98.4388 Q184.4688,98.1106 183.9063,97.9231 Q183.3438,97.72 182.7813,97.72 Q182.0781,97.72 181.4844,98.0013 Q180.9063,98.2825 180.4531,98.9075 Q180,99.5325 180,100.3919 L180,101.3138 Q180,102.345 180.8438,103.0325 Q181.6875,103.72 183.1875,103.72 Q184.0781,103.72 184.7031,103.5169 Q185.0625,103.4075 185.4688,103.0481 Q185.7344,102.845 185.875,102.7825 Q186.0156,102.72 186.1875,102.72 Q186.5156,102.72 186.75,102.9856 Q187,103.2356 187,103.595 Q187,103.9388 186.6563,104.345 Q186.1563,104.9388 185.3594,105.2669 Q184.3125,105.72 183.0313,105.72 Q181.5313,105.72 180.3281,105.1263 Q179.3594,104.6575 178.6719,103.6419 Q178,102.6263 178,101.4231 L178,100.3294 Q178,99.0794 178.5938,97.9856 Q179.2031,96.8919 180.25,96.3138 Q181.3125,95.72 182.5,95.72 Q183.2188,95.72 183.8438,95.97 Q184.4688,96.22 185,96.72 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="136" x="197" y="105.1302">RegisterActivityController</text><line style="stroke:#A80036;stroke-width:1.5;" x1="169" x2="335" y1="116.22" y2="116.22"/><line style="stroke:#A80036;stroke-width:1.5;" x1="169" x2="335" y1="124.22" y2="124.22"/><ellipse cx="179" cy="135.22" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="84" x="188" y="139.6389">registerActivity();</text><ellipse cx="179" cy="149.0559" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="72" x="188" y="153.4749">colaborators();</text><ellipse cx="179" cy="162.8919" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="39" x="188" y="167.3108">forms();</text><!--MD5=[c881b25adf3665c6568c9693d41a70f3]
+class Activity--><rect codeLine="12" fill="#FEFECE" filter="url(#fs97ojkw5s5h0)" height="103.3438" id="Activity" style="stroke:#A80036;stroke-width:1.5;" width="129" x="371.5" y="77.72"/><ellipse cx="414.4" cy="93.72" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M416.4,90.22 Q416.6031,89.72 416.8375,89.47 Q417.0719,89.22 417.3375,89.22 Q417.8063,89.22 418.1031,89.5013 Q418.4,89.7825 418.4,90.4388 L418.4,92.0013 Q418.4,92.6575 418.1188,92.9388 Q417.8375,93.22 417.4,93.22 Q417.0094,93.22 416.7594,93.0481 Q416.5094,92.8763 416.4,92.4231 Q416.3531,92.1106 416.1813,91.9388 Q415.8688,91.6106 415.3063,91.4231 Q414.7438,91.22 414.1813,91.22 Q413.4781,91.22 412.8844,91.5013 Q412.3063,91.7825 411.8531,92.4075 Q411.4,93.0325 411.4,93.8919 L411.4,94.8138 Q411.4,95.845 412.2438,96.5325 Q413.0875,97.22 414.5875,97.22 Q415.4781,97.22 416.1031,97.0169 Q416.4625,96.9075 416.8688,96.5481 Q417.1344,96.345 417.275,96.2825 Q417.4156,96.22 417.5875,96.22 Q417.9156,96.22 418.15,96.4856 Q418.4,96.7356 418.4,97.095 Q418.4,97.4388 418.0563,97.845 Q417.5563,98.4388 416.7594,98.7669 Q415.7125,99.22 414.4313,99.22 Q412.9313,99.22 411.7281,98.6263 Q410.7594,98.1575 410.0719,97.1419 Q409.4,96.1263 409.4,94.9231 L409.4,93.8294 Q409.4,92.5794 409.9938,91.4856 Q410.6031,90.3919 411.65,89.8138 Q412.7125,89.22 413.9,89.22 Q414.6188,89.22 415.2438,89.47 Q415.8688,89.72 416.4,90.22 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="35" x="434.6" y="98.6302">Activity</text><line style="stroke:#A80036;stroke-width:1.5;" x1="372.5" x2="499.5" y1="109.72" y2="109.72"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="92" x="377.5" y="125.1389">ActivityId activityId;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="113" x="377.5" y="138.9749">Description description;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="52" x="377.5" y="152.8108">Form form;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="117" x="377.5" y="166.6468">Colaborator colaborator;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="372.5" x2="499.5" y1="173.0638" y2="173.0638"/><!--MD5=[79ef8f40842bf3bbd82dcd1e7cfded72]
+class ActivityExecution--><rect codeLine="19" fill="#FEFECE" filter="url(#fs97ojkw5s5h0)" height="103.3438" id="ActivityExecution" style="stroke:#A80036;stroke-width:1.5;" width="198" x="849" y="77.72"/><ellipse cx="899.75" cy="93.72" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M901.75,90.22 Q901.9531,89.72 902.1875,89.47 Q902.4219,89.22 902.6875,89.22 Q903.1563,89.22 903.4531,89.5013 Q903.75,89.7825 903.75,90.4388 L903.75,92.0013 Q903.75,92.6575 903.4688,92.9388 Q903.1875,93.22 902.75,93.22 Q902.3594,93.22 902.1094,93.0481 Q901.8594,92.8763 901.75,92.4231 Q901.7031,92.1106 901.5313,91.9388 Q901.2188,91.6106 900.6563,91.4231 Q900.0938,91.22 899.5313,91.22 Q898.8281,91.22 898.2344,91.5013 Q897.6563,91.7825 897.2031,92.4075 Q896.75,93.0325 896.75,93.8919 L896.75,94.8138 Q896.75,95.845 897.5938,96.5325 Q898.4375,97.22 899.9375,97.22 Q900.8281,97.22 901.4531,97.0169 Q901.8125,96.9075 902.2188,96.5481 Q902.4844,96.345 902.625,96.2825 Q902.7656,96.22 902.9375,96.22 Q903.2656,96.22 903.5,96.4856 Q903.75,96.7356 903.75,97.095 Q903.75,97.4388 903.4063,97.845 Q902.9063,98.4388 902.1094,98.7669 Q901.0625,99.22 899.7813,99.22 Q898.2813,99.22 897.0781,98.6263 Q896.1094,98.1575 895.4219,97.1419 Q894.75,96.1263 894.75,94.9231 L894.75,93.8294 Q894.75,92.5794 895.3438,91.4856 Q895.9531,90.3919 897,89.8138 Q898.0625,89.22 899.25,89.22 Q899.9688,89.22 900.5938,89.47 Q901.2188,89.72 901.75,90.22 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="88" x="920.25" y="98.6302">ActivityExecution</text><line style="stroke:#A80036;stroke-width:1.5;" x1="850" x2="1046" y1="109.72" y2="109.72"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="186" x="855" y="125.1389">ActivityExecutionId activityExecutionId;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="76" x="855" y="138.9749">Activity activity;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="132" x="855" y="152.8108">FormAnswer formAnswer;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="117" x="855" y="166.6468">Colaborator colaborator;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="850" x2="1046" y1="173.0638" y2="173.0638"/><!--MD5=[1947cf5f905dbd1bd4aa69f2b720827b]
+class ActivityExecutionID--><rect codeLine="26" fill="#FEFECE" filter="url(#fs97ojkw5s5h0)" height="61.8359" id="ActivityExecutionID" style="stroke:#A80036;stroke-width:1.5;" width="135" x="1082.5" y="98.22"/><ellipse cx="1098.85" cy="114.22" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1100.85,110.72 Q1101.0531,110.22 1101.2875,109.97 Q1101.5219,109.72 1101.7875,109.72 Q1102.2563,109.72 1102.5531,110.0013 Q1102.85,110.2825 1102.85,110.9388 L1102.85,112.5013 Q1102.85,113.1575 1102.5688,113.4388 Q1102.2875,113.72 1101.85,113.72 Q1101.4594,113.72 1101.2094,113.5481 Q1100.9594,113.3763 1100.85,112.9231 Q1100.8031,112.6106 1100.6313,112.4388 Q1100.3188,112.1106 1099.7563,111.9231 Q1099.1938,111.72 1098.6313,111.72 Q1097.9281,111.72 1097.3344,112.0013 Q1096.7563,112.2825 1096.3031,112.9075 Q1095.85,113.5325 1095.85,114.3919 L1095.85,115.3138 Q1095.85,116.345 1096.6938,117.0325 Q1097.5375,117.72 1099.0375,117.72 Q1099.9281,117.72 1100.5531,117.5169 Q1100.9125,117.4075 1101.3188,117.0481 Q1101.5844,116.845 1101.725,116.7825 Q1101.8656,116.72 1102.0375,116.72 Q1102.3656,116.72 1102.6,116.9856 Q1102.85,117.2356 1102.85,117.595 Q1102.85,117.9388 1102.5063,118.345 Q1102.0063,118.9388 1101.2094,119.2669 Q1100.1625,119.72 1098.8813,119.72 Q1097.3813,119.72 1096.1781,119.1263 Q1095.2094,118.6575 1094.5219,117.6419 Q1093.85,116.6263 1093.85,115.4231 L1093.85,114.3294 Q1093.85,113.0794 1094.4438,111.9856 Q1095.0531,110.8919 1096.1,110.3138 Q1097.1625,109.72 1098.35,109.72 Q1099.0688,109.72 1099.6938,109.97 Q1100.3188,110.22 1100.85,110.72 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="100" x="1113.15" y="119.1302">ActivityExecutionID</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1083.5" x2="1216.5" y1="130.22" y2="130.22"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="123" x="1088.5" y="145.6389">String activityExecutionId;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1083.5" x2="1216.5" y1="152.0559" y2="152.0559"/><!--MD5=[e3034a5e82e82b3df81355b3b70448b9]
+class ActivityExecutionStatus--><rect codeLine="30" fill="#FEFECE" filter="url(#fs97ojkw5s5h0)" height="61.8359" id="ActivityExecutionStatus" style="stroke:#A80036;stroke-width:1.5;" width="155" x="535.5" y="98.22"/><ellipse cx="550.5" cy="114.22" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M552.5,110.72 Q552.7031,110.22 552.9375,109.97 Q553.1719,109.72 553.4375,109.72 Q553.9063,109.72 554.2031,110.0013 Q554.5,110.2825 554.5,110.9388 L554.5,112.5013 Q554.5,113.1575 554.2188,113.4388 Q553.9375,113.72 553.5,113.72 Q553.1094,113.72 552.8594,113.5481 Q552.6094,113.3763 552.5,112.9231 Q552.4531,112.6106 552.2813,112.4388 Q551.9688,112.1106 551.4063,111.9231 Q550.8438,111.72 550.2813,111.72 Q549.5781,111.72 548.9844,112.0013 Q548.4063,112.2825 547.9531,112.9075 Q547.5,113.5325 547.5,114.3919 L547.5,115.3138 Q547.5,116.345 548.3438,117.0325 Q549.1875,117.72 550.6875,117.72 Q551.5781,117.72 552.2031,117.5169 Q552.5625,117.4075 552.9688,117.0481 Q553.2344,116.845 553.375,116.7825 Q553.5156,116.72 553.6875,116.72 Q554.0156,116.72 554.25,116.9856 Q554.5,117.2356 554.5,117.595 Q554.5,117.9388 554.1563,118.345 Q553.6563,118.9388 552.8594,119.2669 Q551.8125,119.72 550.5313,119.72 Q549.0313,119.72 547.8281,119.1263 Q546.8594,118.6575 546.1719,117.6419 Q545.5,116.6263 545.5,115.4231 L545.5,114.3294 Q545.5,113.0794 546.0938,111.9856 Q546.7031,110.8919 547.75,110.3138 Q548.8125,109.72 550,109.72 Q550.7188,109.72 551.3438,109.97 Q551.9688,110.22 552.5,110.72 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="123" x="564.5" y="119.1302">ActivityExecutionStatus</text><line style="stroke:#A80036;stroke-width:1.5;" x1="536.5" x2="689.5" y1="130.22" y2="130.22"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="64" x="541.5" y="145.6389">String status;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="536.5" x2="689.5" y1="152.0559" y2="152.0559"/><!--MD5=[424f8a9ee0075c9e28fb65995f5525c4]
+class ActivityID--><rect codeLine="34" fill="#FEFECE" filter="url(#fs97ojkw5s5h0)" height="61.8359" id="ActivityID" style="stroke:#A80036;stroke-width:1.5;" width="88" x="726" y="98.22"/><ellipse cx="745.05" cy="114.22" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M747.05,110.72 Q747.2531,110.22 747.4875,109.97 Q747.7219,109.72 747.9875,109.72 Q748.4563,109.72 748.7531,110.0013 Q749.05,110.2825 749.05,110.9388 L749.05,112.5013 Q749.05,113.1575 748.7688,113.4388 Q748.4875,113.72 748.05,113.72 Q747.6594,113.72 747.4094,113.5481 Q747.1594,113.3763 747.05,112.9231 Q747.0031,112.6106 746.8313,112.4388 Q746.5188,112.1106 745.9563,111.9231 Q745.3938,111.72 744.8313,111.72 Q744.1281,111.72 743.5344,112.0013 Q742.9563,112.2825 742.5031,112.9075 Q742.05,113.5325 742.05,114.3919 L742.05,115.3138 Q742.05,116.345 742.8938,117.0325 Q743.7375,117.72 745.2375,117.72 Q746.1281,117.72 746.7531,117.5169 Q747.1125,117.4075 747.5188,117.0481 Q747.7844,116.845 747.925,116.7825 Q748.0656,116.72 748.2375,116.72 Q748.5656,116.72 748.8,116.9856 Q749.05,117.2356 749.05,117.595 Q749.05,117.9388 748.7063,118.345 Q748.2063,118.9388 747.4094,119.2669 Q746.3625,119.72 745.0813,119.72 Q743.5813,119.72 742.3781,119.1263 Q741.4094,118.6575 740.7219,117.6419 Q740.05,116.6263 740.05,115.4231 L740.05,114.3294 Q740.05,113.0794 740.6438,111.9856 Q741.2531,110.8919 742.3,110.3138 Q743.3625,109.72 744.55,109.72 Q745.2688,109.72 745.8938,109.97 Q746.5188,110.22 747.05,110.72 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="47" x="759.95" y="119.1302">ActivityID</text><line style="stroke:#A80036;stroke-width:1.5;" x1="727" x2="813" y1="130.22" y2="130.22"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="76" x="732" y="145.6389">String activityId;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="727" x2="813" y1="152.0559" y2="152.0559"/><!--MD5=[4ee12a344adc4f95aa73d50c84060414]
+link RegisterActivityUI to RegisterActivityController--><path codeLine="39" d="M133.27,129.22 C143.02,129.22 152.76,129.22 162.5,129.22 " fill="none" id="RegisterActivityUI-to-RegisterActivityController" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="167.59,129.22,158.59,125.22,162.59,129.22,158.59,133.22,167.59,129.22" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a996aab3b47cf70dc28a4b957273ee81]
+link RegisterActivityController to Activity--><path codeLine="40" d="M336.09,129.22 C346.06,129.22 356.03,129.22 366,129.22 " fill="none" id="RegisterActivityController-to-Activity" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="371.22,129.22,362.22,125.22,366.22,129.22,362.22,133.22,371.22,129.22" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[f5a75d6c208baa2bacb61d8857fae086]
+link Activity to ActivityExecution--><path codeLine="42" d="M485.43,77.68 C500.25,65.5 517.42,54.18 535.5,47.72 C652.27,6 695.13,14.16 814.5,47.72 C835.35,53.58 856.16,63.7 874.94,74.85 " fill="none" id="Activity-to-ActivityExecution" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="879.66,77.71,874.0203,69.6357,875.3788,75.127,869.8875,76.4856,879.66,77.71" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[dcd9cd7760d1797d900353250b6b6000]
+link Activity to ActivityID--><path codeLine="43" d="M485.43,77.68 C500.25,65.5 517.42,54.18 535.5,47.72 C600.37,24.54 627.02,20.96 690.5,47.72 C712.83,57.13 732.01,76.22 745.93,93.56 " fill="none" id="Activity-to-ActivityID" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="749.35,97.93,746.915,88.3869,746.2527,94.0049,740.6348,93.3426,749.35,97.93" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e4d5dfd0135d12a96e5e71f90d4896e9]
+link Activity to ActivityExecutionStatus--><path codeLine="44" d="M500.65,129.22 C510.49,129.22 520.33,129.22 530.17,129.22 " fill="none" id="Activity-to-ActivityExecutionStatus" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="535.32,129.22,526.32,125.22,530.32,129.22,526.32,133.22,535.32,129.22" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[b2a2c43c5b4c30df0dc94acf1d84121f]
+link ActivityExecution to ActivityExecutionID--><path codeLine="45" d="M1047.03,129.22 C1057.07,129.22 1067.12,129.22 1077.17,129.22 " fill="none" id="ActivityExecution-to-ActivityExecutionID" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1082.42,129.22,1073.42,125.22,1077.42,129.22,1073.42,133.22,1082.42,129.22" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[b103efdc14c9ecb7146d084696e730b7]
+@startuml
+'https://plantuml.com/class-diagram
+
+class RegisterActivityUI {
+}
+
+class RegisterActivityController {
+    +registerActivity();
+    +colaborators();
+    +forms();
+}
+
+class Activity{
+    ActivityId activityId;
+    Description description;
+    Form form;
+    Colaborator colaborator;
+}
+
+class ActivityExecution{
+    ActivityExecutionId activityExecutionId;
+    Activity activity;
+    FormAnswer formAnswer;
+    Colaborator colaborator;
+}
+
+class ActivityExecutionID{
+    String activityExecutionId;
+}
+
+class ActivityExecutionStatus{
+    String status;
+}
+
+class ActivityID{
+    String activityId;
+}
+
+
+RegisterActivityUI -> RegisterActivityController
+RegisterActivityController -> Activity
+
+Activity -> ActivityExecution
+Activity -> ActivityID
+Activity -> ActivityExecutionStatus
+ActivityExecution -> ActivityExecutionID
+
+@enduml
+
+@startuml
+
+class RegisterActivityUI {
+}
+
+class RegisterActivityController {
+    +registerActivity();
+    +colaborators();
+    +forms();
+}
+
+class Activity{
+    ActivityId activityId;
+    Description description;
+    Form form;
+    Colaborator colaborator;
+}
+
+class ActivityExecution{
+    ActivityExecutionId activityExecutionId;
+    Activity activity;
+    FormAnswer formAnswer;
+    Colaborator colaborator;
+}
+
+class ActivityExecutionID{
+    String activityExecutionId;
+}
+
+class ActivityExecutionStatus{
+    String status;
+}
+
+class ActivityID{
+    String activityId;
+}
+
+
+RegisterActivityUI -> RegisterActivityController
+RegisterActivityController -> Activity
+
+Activity -> ActivityExecution
+Activity -> ActivityID
+Activity -> ActivityExecutionStatus
+ActivityExecution -> ActivityExecutionID
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 13:40:07 BST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

@@ -1,0 +1,67 @@
+@startuml
+autonumber
+
+actor "Project Manager" as PM
+
+participant "RequestServiceUI" as UI
+participant "RequestServiceController" as CTRL
+participant "ticketBuilder" as CB
+participant "ticket:ticket" as CC
+participant "PersistenceContext" as PC
+participant "RepositoryFactory" as RF
+
+
+database "ticketRepository" as CR
+
+PM --> UI : Register a ticket
+activate UI
+    UI -> CTRL : create
+    UI --> PM : Requests necessary credentials for ticket
+deactivate UI
+
+PM --> UI : Inserts the data
+activate UI
+    UI -> CTRL : service = requestService(theService, params, values)
+    activate CTRL
+        CTRL -> CB: requestService()
+        activate CB
+        deactivate CB
+
+        CTRL -> CB: setticket()
+        activate CB
+        deactivate CB
+
+note over CTRL, CB : Sets the rest of the information
+
+
+        CTRL -> CB: requestService()
+        activate CB
+                CB -> CC: newTicket(ticketId, currentUser().get(), formAnswer, service, wfe)
+                CC -> CB: ticket
+                CB -> CTRL: ticket
+        deactivate CB
+
+        CTRL -> PC:
+        activate PC
+        note over PC, CR : can create an repository in memory or JPA
+         PC->RF: create
+         PC->CTRL: factory
+
+        deactivate PC
+
+        CTRL->RF:ticket()
+        activate RF
+        RF->CR:create
+        RF->CTRL:ticketRepository()
+        deactivate RF
+
+        CTRL->CR:save(ticket)
+
+        CTRL->UI:ticket
+    deactivate CTRL
+
+    UI --> PM : displayTicketInfo
+deactivate UI
+
+
+@enduml

@@ -26,16 +26,12 @@ public class WorkflowBuilder implements DomainFactory<WorkFlow> {
         return this.workFlow = workFlow;
     }
 
-    public List<Activity> withActivities(List<Activity> activities) {
-        return this.activities = activities;
-
-    }
 
     @Override
     public WorkFlow build() {
         // since the factory knows that all the parts are needed it could throw
         // an exception. however, we will leave that to the constructor
         
-        return new WorkFlow(this.workFlow/*, this.activities*/);
+        return new WorkFlow(this.workFlow);
     }
 }
