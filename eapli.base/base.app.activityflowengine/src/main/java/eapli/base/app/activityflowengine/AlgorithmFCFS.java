@@ -10,6 +10,7 @@ import eapli.base.activitymanagement.repositories.ActivityRepository;
 import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
 import eapli.base.infrastructure.persistence.PersistenceContext;
+import eapli.base.teammanagement.domain.Team;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,10 +47,11 @@ public class AlgorithmFCFS implements AssignColaboratorAlgorithm{
     
     
     @Override
-    public Colaborator nextLowestWork(){
+    public Colaborator nextLowestWork(Team team){
         
         //CODE
-        return colabs.get(0);
+        //return colabs.get(0);
+        return null;
     }
     
     

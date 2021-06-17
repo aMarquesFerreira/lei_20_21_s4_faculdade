@@ -6,6 +6,7 @@
 package eapli.base.app.activityflowengine;
 
 import eapli.base.colaboratormanagement.domain.Colaborator;
+import eapli.base.teammanagement.domain.Team;
 
 /**
  *
@@ -14,5 +15,5 @@ import eapli.base.colaboratormanagement.domain.Colaborator;
 public interface AssignColaboratorAlgorithm {
     public Colaborator next();
     
-    public Colaborator nextLowestWork();
+    public Colaborator nextLowestWork(Team team);
 }

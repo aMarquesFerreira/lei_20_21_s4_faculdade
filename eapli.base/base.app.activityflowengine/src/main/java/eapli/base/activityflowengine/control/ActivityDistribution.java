@@ -24,5 +24,9 @@ import java.util.List;
 public class ActivityDistribution {
    
    /*atribui o colaborador escolhido pelos algoritmos as atividades*/
+    public Activity assignActivityToColab(Colaborator colab, Activity act){
+        act.assignToColaborator(colab);
+        return act;
+    }
     
 }

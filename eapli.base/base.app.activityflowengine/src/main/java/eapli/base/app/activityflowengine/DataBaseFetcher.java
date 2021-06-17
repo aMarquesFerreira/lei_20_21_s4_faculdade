@@ -42,4 +42,13 @@ public class DataBaseFetcher {
         
     }
     
+    public Iterable<Activity> activityFetchAsIterable(Colaborator who){
+        
+        Iterable<Activity> list;
+        
+        list = actRepo.findByColaborator(who);
+        
+        return list;
+    }
+    
 }
