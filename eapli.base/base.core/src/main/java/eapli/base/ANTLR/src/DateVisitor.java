@@ -3,12 +3,11 @@ package eapli.base.ANTLR.src;
 import eapli.base.ANTLR.gen.DateBaseVisitor;
 import eapli.base.ANTLR.gen.DateParser;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class DateVisitor extends DateBaseVisitor <String>{
+public class DateVisitor extends DateBaseVisitor<String> {
 
     String verificacao = "";
 

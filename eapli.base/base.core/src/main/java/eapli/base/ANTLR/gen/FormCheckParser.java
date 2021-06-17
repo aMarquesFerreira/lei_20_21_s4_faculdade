@@ -1,20 +1,13 @@
-// Generated from C:/Users/torre/OneDrive/Ambiente de Trabalho/lei20_21_s4_2db_03/eapli.base/base.core/src/main/java/eapli/base/ANTLR\Verifications.g4 by ANTLR 4.9.1
+// Generated from C:/Users/torre/OneDrive/Ambiente de Trabalho/lei20_21_s4_2db_03/eapli.base/base.core/src/main/java/eapli/base/ANTLR\FormCheck.g4 by ANTLR 4.9.1
 package eapli.base.ANTLR.gen;
-
-import org.antlr.v4.runtime.*;
-import org.antlr.v4.runtime.atn.ATN;
-import org.antlr.v4.runtime.atn.ATNDeserializer;
-import org.antlr.v4.runtime.atn.ParserATNSimulator;
-import org.antlr.v4.runtime.atn.PredictionContextCache;
+import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
-import org.antlr.v4.runtime.tree.ParseTreeListener;
-import org.antlr.v4.runtime.tree.ParseTreeVisitor;
-import org.antlr.v4.runtime.tree.TerminalNode;
-
+import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.tree.*;
 import java.util.List;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class VerificationsParser extends Parser {
+public class FormCheckParser extends Parser {
 	static { RuntimeMetaData.checkVersion("4.9.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -86,7 +79,7 @@ public class VerificationsParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "Verifications.g4"; }
+	public String getGrammarFileName() { return "FormCheck.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -97,7 +90,7 @@ public class VerificationsParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public VerificationsParser(TokenStream input) {
+	public FormCheckParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
@@ -106,22 +99,22 @@ public class VerificationsParser extends Parser {
 		public StateContext state() {
 			return getRuleContext(StateContext.class,0);
 		}
-		public TerminalNode EOF() { return getToken(VerificationsParser.EOF, 0); }
+		public TerminalNode EOF() { return getToken(FormCheckParser.EOF, 0); }
 		public ProgramContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_program; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).enterProgram(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).enterProgram(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).exitProgram(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).exitProgram(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof VerificationsVisitor ) return ((VerificationsVisitor<? extends T>)visitor).visitProgram(this);
+			if ( visitor instanceof FormCheckVisitor ) return ((FormCheckVisitor<? extends T>)visitor).visitProgram(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -171,15 +164,15 @@ public class VerificationsParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_state; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).enterState(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).enterState(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).exitState(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).exitState(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof VerificationsVisitor ) return ((VerificationsVisitor<? extends T>)visitor).visitState(this);
+			if ( visitor instanceof FormCheckVisitor ) return ((FormCheckVisitor<? extends T>)visitor).visitState(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -249,22 +242,22 @@ public class VerificationsParser extends Parser {
 	}
 
 	public static class FormIDContext extends ParserRuleContext {
-		public TerminalNode DIGIT() { return getToken(VerificationsParser.DIGIT, 0); }
+		public TerminalNode DIGIT() { return getToken(FormCheckParser.DIGIT, 0); }
 		public FormIDContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_formID; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).enterFormID(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).enterFormID(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).exitFormID(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).exitFormID(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof VerificationsVisitor ) return ((VerificationsVisitor<? extends T>)visitor).visitFormID(this);
+			if ( visitor instanceof FormCheckVisitor ) return ((FormCheckVisitor<? extends T>)visitor).visitFormID(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -305,15 +298,15 @@ public class VerificationsParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_names; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).enterNames(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).enterNames(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).exitNames(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).exitNames(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof VerificationsVisitor ) return ((VerificationsVisitor<? extends T>)visitor).visitNames(this);
+			if ( visitor instanceof FormCheckVisitor ) return ((FormCheckVisitor<? extends T>)visitor).visitNames(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -351,15 +344,15 @@ public class VerificationsParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_name; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).enterName(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).enterName(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).exitName(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).exitName(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof VerificationsVisitor ) return ((VerificationsVisitor<? extends T>)visitor).visitName(this);
+			if ( visitor instanceof FormCheckVisitor ) return ((FormCheckVisitor<? extends T>)visitor).visitName(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -386,29 +379,29 @@ public class VerificationsParser extends Parser {
 	}
 
 	public static class TypeOfDataContext extends ParserRuleContext {
-		public TerminalNode IF() { return getToken(VerificationsParser.IF, 0); }
+		public TerminalNode IF() { return getToken(FormCheckParser.IF, 0); }
 		public OkContext ok() {
 			return getRuleContext(OkContext.class,0);
 		}
 		public NotokContext notok() {
 			return getRuleContext(NotokContext.class,0);
 		}
-		public TerminalNode ELSE() { return getToken(VerificationsParser.ELSE, 0); }
+		public TerminalNode ELSE() { return getToken(FormCheckParser.ELSE, 0); }
 		public TypeOfDataContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_typeOfData; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).enterTypeOfData(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).enterTypeOfData(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).exitTypeOfData(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).exitTypeOfData(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof VerificationsVisitor ) return ((VerificationsVisitor<? extends T>)visitor).visitTypeOfData(this);
+			if ( visitor instanceof FormCheckVisitor ) return ((FormCheckVisitor<? extends T>)visitor).visitTypeOfData(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -454,13 +447,13 @@ public class VerificationsParser extends Parser {
 	}
 
 	public static class DescriptionContext extends ParserRuleContext {
-		public List<TerminalNode> UPPERCHAR() { return getTokens(VerificationsParser.UPPERCHAR); }
+		public List<TerminalNode> UPPERCHAR() { return getTokens(FormCheckParser.UPPERCHAR); }
 		public TerminalNode UPPERCHAR(int i) {
-			return getToken(VerificationsParser.UPPERCHAR, i);
+			return getToken(FormCheckParser.UPPERCHAR, i);
 		}
-		public List<TerminalNode> LOWERCHAR() { return getTokens(VerificationsParser.LOWERCHAR); }
+		public List<TerminalNode> LOWERCHAR() { return getTokens(FormCheckParser.LOWERCHAR); }
 		public TerminalNode LOWERCHAR(int i) {
-			return getToken(VerificationsParser.LOWERCHAR, i);
+			return getToken(FormCheckParser.LOWERCHAR, i);
 		}
 		public DescriptionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -468,15 +461,15 @@ public class VerificationsParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_description; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).enterDescription(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).enterDescription(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).exitDescription(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).exitDescription(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof VerificationsVisitor ) return ((VerificationsVisitor<? extends T>)visitor).visitDescription(this);
+			if ( visitor instanceof FormCheckVisitor ) return ((FormCheckVisitor<? extends T>)visitor).visitDescription(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -524,13 +517,13 @@ public class VerificationsParser extends Parser {
 	}
 
 	public static class LettersContext extends ParserRuleContext {
-		public List<TerminalNode> LOWERCHAR() { return getTokens(VerificationsParser.LOWERCHAR); }
+		public List<TerminalNode> LOWERCHAR() { return getTokens(FormCheckParser.LOWERCHAR); }
 		public TerminalNode LOWERCHAR(int i) {
-			return getToken(VerificationsParser.LOWERCHAR, i);
+			return getToken(FormCheckParser.LOWERCHAR, i);
 		}
-		public List<TerminalNode> UPPERCHAR() { return getTokens(VerificationsParser.UPPERCHAR); }
+		public List<TerminalNode> UPPERCHAR() { return getTokens(FormCheckParser.UPPERCHAR); }
 		public TerminalNode UPPERCHAR(int i) {
-			return getToken(VerificationsParser.UPPERCHAR, i);
+			return getToken(FormCheckParser.UPPERCHAR, i);
 		}
 		public LettersContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -538,15 +531,15 @@ public class VerificationsParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_letters; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).enterLetters(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).enterLetters(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).exitLetters(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).exitLetters(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof VerificationsVisitor ) return ((VerificationsVisitor<? extends T>)visitor).visitLetters(this);
+			if ( visitor instanceof FormCheckVisitor ) return ((FormCheckVisitor<? extends T>)visitor).visitLetters(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -601,22 +594,22 @@ public class VerificationsParser extends Parser {
 	}
 
 	public static class IgnoreContext extends ParserRuleContext {
-		public TerminalNode SPACE() { return getToken(VerificationsParser.SPACE, 0); }
+		public TerminalNode SPACE() { return getToken(FormCheckParser.SPACE, 0); }
 		public IgnoreContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_ignore; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).enterIgnore(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).enterIgnore(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).exitIgnore(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).exitIgnore(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof VerificationsVisitor ) return ((VerificationsVisitor<? extends T>)visitor).visitIgnore(this);
+			if ( visitor instanceof FormCheckVisitor ) return ((FormCheckVisitor<? extends T>)visitor).visitIgnore(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -657,9 +650,9 @@ public class VerificationsParser extends Parser {
 	}
 
 	public static class NumberContext extends ParserRuleContext {
-		public List<TerminalNode> DIGIT() { return getTokens(VerificationsParser.DIGIT); }
+		public List<TerminalNode> DIGIT() { return getTokens(FormCheckParser.DIGIT); }
 		public TerminalNode DIGIT(int i) {
-			return getToken(VerificationsParser.DIGIT, i);
+			return getToken(FormCheckParser.DIGIT, i);
 		}
 		public NumberContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -667,15 +660,15 @@ public class VerificationsParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_number; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).enterNumber(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).enterNumber(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).exitNumber(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).exitNumber(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof VerificationsVisitor ) return ((VerificationsVisitor<? extends T>)visitor).visitNumber(this);
+			if ( visitor instanceof FormCheckVisitor ) return ((FormCheckVisitor<? extends T>)visitor).visitNumber(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -721,15 +714,15 @@ public class VerificationsParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_ok; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).enterOk(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).enterOk(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).exitOk(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).exitOk(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof VerificationsVisitor ) return ((VerificationsVisitor<? extends T>)visitor).visitOk(this);
+			if ( visitor instanceof FormCheckVisitor ) return ((FormCheckVisitor<? extends T>)visitor).visitOk(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -762,15 +755,15 @@ public class VerificationsParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_notok; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).enterNotok(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).enterNotok(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof VerificationsListener ) ((VerificationsListener)listener).exitNotok(this);
+			if ( listener instanceof FormCheckListener ) ((FormCheckListener)listener).exitNotok(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof VerificationsVisitor ) return ((VerificationsVisitor<? extends T>)visitor).visitNotok(this);
+			if ( visitor instanceof FormCheckVisitor ) return ((FormCheckVisitor<? extends T>)visitor).visitNotok(this);
 			else return visitor.visitChildren(this);
 		}
 	}
