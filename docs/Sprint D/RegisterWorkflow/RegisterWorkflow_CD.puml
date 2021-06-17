@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class RegisterWorkflowUI {
+}
+
+class RegisterWorkflowController {
+    +registerWorkflow();
+    +activities();
+    +services();
+}
+
+class Workflow{
+    WorkFlowId workflowId
+}
+
+class WorkflowExecution{
+    WorkFlowExecutionId workFlowExecutionId
+    WorkFlow workFlow
+}
+
+class WorkflowExecutionID{
+    String WorkflowExecutionId;
+}
+
+class WorkflowID{
+    String WorkflowId;
+}
+
+
+RegisterWorkflowUI -> RegisterWorkflowController
+RegisterWorkflowController -> Workflow
+
+Workflow -> WorkflowExecution
+Workflow -> WorkflowID
+WorkflowExecution -> WorkflowExecutionID
+
+@enduml

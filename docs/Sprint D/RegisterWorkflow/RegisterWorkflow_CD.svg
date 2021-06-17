@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="160px" preserveAspectRatio="none" style="width:1119px;height:160px;background:#FFFFFF;" version="1.1" viewBox="0 0 1119 160" width="1119px" zoomAndPan="magnify"><defs><filter height="300%" id="fphs2s2z4v603" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[3d3590e0f5d96653b06e3db69728637e]
+class RegisterWorkflowUI--><rect codeLine="3" fill="#FEFECE" filter="url(#fphs2s2z4v603)" height="48" id="RegisterWorkflowUI" style="stroke:#A80036;stroke-width:1.5;" width="141" x="7" y="78.11"/><ellipse cx="22" cy="94.11" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M24,90.61 Q24.2031,90.11 24.4375,89.86 Q24.6719,89.61 24.9375,89.61 Q25.4063,89.61 25.7031,89.8913 Q26,90.1725 26,90.8288 L26,92.3913 Q26,93.0475 25.7188,93.3288 Q25.4375,93.61 25,93.61 Q24.6094,93.61 24.3594,93.4381 Q24.1094,93.2663 24,92.8131 Q23.9531,92.5006 23.7813,92.3288 Q23.4688,92.0006 22.9063,91.8131 Q22.3438,91.61 21.7813,91.61 Q21.0781,91.61 20.4844,91.8913 Q19.9063,92.1725 19.4531,92.7975 Q19,93.4225 19,94.2819 L19,95.2038 Q19,96.235 19.8438,96.9225 Q20.6875,97.61 22.1875,97.61 Q23.0781,97.61 23.7031,97.4069 Q24.0625,97.2975 24.4688,96.9381 Q24.7344,96.735 24.875,96.6725 Q25.0156,96.61 25.1875,96.61 Q25.5156,96.61 25.75,96.8756 Q26,97.1256 26,97.485 Q26,97.8288 25.6563,98.235 Q25.1563,98.8288 24.3594,99.1569 Q23.3125,99.61 22.0313,99.61 Q20.5313,99.61 19.3281,99.0163 Q18.3594,98.5475 17.6719,97.5319 Q17,96.5163 17,95.3131 L17,94.2194 Q17,92.9694 17.5938,91.8756 Q18.2031,90.7819 19.25,90.2038 Q20.3125,89.61 21.5,89.61 Q22.2188,89.61 22.8438,89.86 Q23.4688,90.11 24,90.61 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="109" x="36" y="99.0202">RegisterWorkflowUI</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="147" y1="110.11" y2="110.11"/><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="147" y1="118.11" y2="118.11"/><!--MD5=[7e7a068b57dcb4e3c7a00cf104302b20]
+class RegisterWorkflowController--><rect codeLine="6" fill="#FEFECE" filter="url(#fphs2s2z4v603)" height="89.5078" id="RegisterWorkflowController" style="stroke:#A80036;stroke-width:1.5;" width="183" x="183" y="57.11"/><ellipse cx="198" cy="73.11" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M200,69.61 Q200.2031,69.11 200.4375,68.86 Q200.6719,68.61 200.9375,68.61 Q201.4063,68.61 201.7031,68.8913 Q202,69.1725 202,69.8288 L202,71.3913 Q202,72.0475 201.7188,72.3288 Q201.4375,72.61 201,72.61 Q200.6094,72.61 200.3594,72.4381 Q200.1094,72.2663 200,71.8131 Q199.9531,71.5006 199.7813,71.3288 Q199.4688,71.0006 198.9063,70.8131 Q198.3438,70.61 197.7813,70.61 Q197.0781,70.61 196.4844,70.8913 Q195.9063,71.1725 195.4531,71.7975 Q195,72.4225 195,73.2819 L195,74.2038 Q195,75.235 195.8438,75.9225 Q196.6875,76.61 198.1875,76.61 Q199.0781,76.61 199.7031,76.4069 Q200.0625,76.2975 200.4688,75.9381 Q200.7344,75.735 200.875,75.6725 Q201.0156,75.61 201.1875,75.61 Q201.5156,75.61 201.75,75.8756 Q202,76.1256 202,76.485 Q202,76.8288 201.6563,77.235 Q201.1563,77.8288 200.3594,78.1569 Q199.3125,78.61 198.0313,78.61 Q196.5313,78.61 195.3281,78.0163 Q194.3594,77.5475 193.6719,76.5319 Q193,75.5163 193,74.3131 L193,73.2194 Q193,71.9694 193.5938,70.8756 Q194.2031,69.7819 195.25,69.2038 Q196.3125,68.61 197.5,68.61 Q198.2188,68.61 198.8438,68.86 Q199.4688,69.11 200,69.61 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="151" x="212" y="78.0202">RegisterWorkflowController</text><line style="stroke:#A80036;stroke-width:1.5;" x1="184" x2="365" y1="89.11" y2="89.11"/><line style="stroke:#A80036;stroke-width:1.5;" x1="184" x2="365" y1="97.11" y2="97.11"/><ellipse cx="194" cy="108.11" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="95" x="203" y="112.5289">registerWorkflow();</text><ellipse cx="194" cy="121.9459" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53" x="203" y="126.3649">activities();</text><ellipse cx="194" cy="135.7819" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53" x="203" y="140.2008">services();</text><!--MD5=[29607c184b58cc12f86f8e7971e51efd]
+class Workflow--><rect codeLine="12" fill="#FEFECE" filter="url(#fphs2s2z4v603)" height="61.8359" id="Workflow" style="stroke:#A80036;stroke-width:1.5;" width="127" x="401" y="71.11"/><ellipse cx="436.25" cy="87.11" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M438.25,83.61 Q438.4531,83.11 438.6875,82.86 Q438.9219,82.61 439.1875,82.61 Q439.6563,82.61 439.9531,82.8913 Q440.25,83.1725 440.25,83.8288 L440.25,85.3913 Q440.25,86.0475 439.9688,86.3288 Q439.6875,86.61 439.25,86.61 Q438.8594,86.61 438.6094,86.4381 Q438.3594,86.2663 438.25,85.8131 Q438.2031,85.5006 438.0313,85.3288 Q437.7188,85.0006 437.1563,84.8131 Q436.5938,84.61 436.0313,84.61 Q435.3281,84.61 434.7344,84.8913 Q434.1563,85.1725 433.7031,85.7975 Q433.25,86.4225 433.25,87.2819 L433.25,88.2038 Q433.25,89.235 434.0938,89.9225 Q434.9375,90.61 436.4375,90.61 Q437.3281,90.61 437.9531,90.4069 Q438.3125,90.2975 438.7188,89.9381 Q438.9844,89.735 439.125,89.6725 Q439.2656,89.61 439.4375,89.61 Q439.7656,89.61 440,89.8756 Q440.25,90.1256 440.25,90.485 Q440.25,90.8288 439.9063,91.235 Q439.4063,91.8288 438.6094,92.1569 Q437.5625,92.61 436.2813,92.61 Q434.7813,92.61 433.5781,92.0163 Q432.6094,91.5475 431.9219,90.5319 Q431.25,89.5163 431.25,88.3131 L431.25,87.2194 Q431.25,85.9694 431.8438,84.8756 Q432.4531,83.7819 433.5,83.2038 Q434.5625,82.61 435.75,82.61 Q436.4688,82.61 437.0938,82.86 Q437.7188,83.11 438.25,83.61 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="50" x="454.75" y="92.0202">Workflow</text><line style="stroke:#A80036;stroke-width:1.5;" x1="402" x2="527" y1="103.11" y2="103.11"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="115" x="407" y="118.5289">WorkFlowId workflowId</text><line style="stroke:#A80036;stroke-width:1.5;" x1="402" x2="527" y1="124.9459" y2="124.9459"/><!--MD5=[236f2aba18d5108ae172a2aee4a94236]
+class WorkflowExecution--><rect codeLine="16" fill="#FEFECE" filter="url(#fphs2s2z4v603)" height="75.6719" id="WorkflowExecution" style="stroke:#A80036;stroke-width:1.5;" width="223" x="699" y="64.11"/><ellipse cx="754.75" cy="80.11" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M756.75,76.61 Q756.9531,76.11 757.1875,75.86 Q757.4219,75.61 757.6875,75.61 Q758.1563,75.61 758.4531,75.8913 Q758.75,76.1725 758.75,76.8288 L758.75,78.3913 Q758.75,79.0475 758.4688,79.3288 Q758.1875,79.61 757.75,79.61 Q757.3594,79.61 757.1094,79.4381 Q756.8594,79.2663 756.75,78.8131 Q756.7031,78.5006 756.5313,78.3288 Q756.2188,78.0006 755.6563,77.8131 Q755.0938,77.61 754.5313,77.61 Q753.8281,77.61 753.2344,77.8913 Q752.6563,78.1725 752.2031,78.7975 Q751.75,79.4225 751.75,80.2819 L751.75,81.2038 Q751.75,82.235 752.5938,82.9225 Q753.4375,83.61 754.9375,83.61 Q755.8281,83.61 756.4531,83.4069 Q756.8125,83.2975 757.2188,82.9381 Q757.4844,82.735 757.625,82.6725 Q757.7656,82.61 757.9375,82.61 Q758.2656,82.61 758.5,82.8756 Q758.75,83.1256 758.75,83.485 Q758.75,83.8288 758.4063,84.235 Q757.9063,84.8288 757.1094,85.1569 Q756.0625,85.61 754.7813,85.61 Q753.2813,85.61 752.0781,85.0163 Q751.1094,84.5475 750.4219,83.5319 Q749.75,82.5163 749.75,81.3131 L749.75,80.2194 Q749.75,78.9694 750.3438,77.8756 Q750.9531,76.7819 752,76.2038 Q753.0625,75.61 754.25,75.61 Q754.9688,75.61 755.5938,75.86 Q756.2188,76.11 756.75,76.61 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="103" x="775.25" y="85.0202">WorkflowExecution</text><line style="stroke:#A80036;stroke-width:1.5;" x1="700" x2="921" y1="96.11" y2="96.11"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="211" x="705" y="111.5289">WorkFlowExecutionId workFlowExecutionId</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="101" x="705" y="125.3649">WorkFlow workFlow</text><line style="stroke:#A80036;stroke-width:1.5;" x1="700" x2="921" y1="131.7819" y2="131.7819"/><!--MD5=[b818ceca6f312d7ab4f6517a26efb7fb]
+class WorkflowExecutionID--><rect codeLine="21" fill="#FEFECE" filter="url(#fphs2s2z4v603)" height="61.8359" id="WorkflowExecutionID" style="stroke:#A80036;stroke-width:1.5;" width="148" x="957.5" y="71.11"/><ellipse cx="972.95" cy="87.11" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M974.95,83.61 Q975.1531,83.11 975.3875,82.86 Q975.6219,82.61 975.8875,82.61 Q976.3563,82.61 976.6531,82.8913 Q976.95,83.1725 976.95,83.8288 L976.95,85.3913 Q976.95,86.0475 976.6688,86.3288 Q976.3875,86.61 975.95,86.61 Q975.5594,86.61 975.3094,86.4381 Q975.0594,86.2663 974.95,85.8131 Q974.9031,85.5006 974.7313,85.3288 Q974.4188,85.0006 973.8563,84.8131 Q973.2938,84.61 972.7313,84.61 Q972.0281,84.61 971.4344,84.8913 Q970.8563,85.1725 970.4031,85.7975 Q969.95,86.4225 969.95,87.2819 L969.95,88.2038 Q969.95,89.235 970.7938,89.9225 Q971.6375,90.61 973.1375,90.61 Q974.0281,90.61 974.6531,90.4069 Q975.0125,90.2975 975.4188,89.9381 Q975.6844,89.735 975.825,89.6725 Q975.9656,89.61 976.1375,89.61 Q976.4656,89.61 976.7,89.8756 Q976.95,90.1256 976.95,90.485 Q976.95,90.8288 976.6063,91.235 Q976.1063,91.8288 975.3094,92.1569 Q974.2625,92.61 972.9813,92.61 Q971.4813,92.61 970.2781,92.0163 Q969.3094,91.5475 968.6219,90.5319 Q967.95,89.5163 967.95,88.3131 L967.95,87.2194 Q967.95,85.9694 968.5438,84.8756 Q969.1531,83.7819 970.2,83.2038 Q971.2625,82.61 972.45,82.61 Q973.1688,82.61 973.7938,82.86 Q974.4188,83.11 974.95,83.61 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="115" x="987.05" y="92.0202">WorkflowExecutionID</text><line style="stroke:#A80036;stroke-width:1.5;" x1="958.5" x2="1104.5" y1="103.11" y2="103.11"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="136" x="963.5" y="118.5289">String WorkflowExecutionId;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="958.5" x2="1104.5" y1="124.9459" y2="124.9459"/><!--MD5=[64aab166b1072f0191e2d158e4d4bf63]
+class WorkflowID--><rect codeLine="25" fill="#FEFECE" filter="url(#fphs2s2z4v603)" height="61.8359" id="WorkflowID" style="stroke:#A80036;stroke-width:1.5;" width="101" x="563" y="71.11"/><ellipse cx="581.15" cy="87.11" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M583.15,83.61 Q583.3531,83.11 583.5875,82.86 Q583.8219,82.61 584.0875,82.61 Q584.5563,82.61 584.8531,82.8913 Q585.15,83.1725 585.15,83.8288 L585.15,85.3913 Q585.15,86.0475 584.8688,86.3288 Q584.5875,86.61 584.15,86.61 Q583.7594,86.61 583.5094,86.4381 Q583.2594,86.2663 583.15,85.8131 Q583.1031,85.5006 582.9313,85.3288 Q582.6188,85.0006 582.0563,84.8131 Q581.4938,84.61 580.9313,84.61 Q580.2281,84.61 579.6344,84.8913 Q579.0563,85.1725 578.6031,85.7975 Q578.15,86.4225 578.15,87.2819 L578.15,88.2038 Q578.15,89.235 578.9938,89.9225 Q579.8375,90.61 581.3375,90.61 Q582.2281,90.61 582.8531,90.4069 Q583.2125,90.2975 583.6188,89.9381 Q583.8844,89.735 584.025,89.6725 Q584.1656,89.61 584.3375,89.61 Q584.6656,89.61 584.9,89.8756 Q585.15,90.1256 585.15,90.485 Q585.15,90.8288 584.8063,91.235 Q584.3063,91.8288 583.5094,92.1569 Q582.4625,92.61 581.1813,92.61 Q579.6813,92.61 578.4781,92.0163 Q577.5094,91.5475 576.8219,90.5319 Q576.15,89.5163 576.15,88.3131 L576.15,87.2194 Q576.15,85.9694 576.7438,84.8756 Q577.3531,83.7819 578.4,83.2038 Q579.4625,82.61 580.65,82.61 Q581.3688,82.61 581.9938,82.86 Q582.6188,83.11 583.15,83.61 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="62" x="595.85" y="92.0202">WorkflowID</text><line style="stroke:#A80036;stroke-width:1.5;" x1="564" x2="663" y1="103.11" y2="103.11"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="89" x="569" y="118.5289">String WorkflowId;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="564" x2="663" y1="124.9459" y2="124.9459"/><!--MD5=[4f121c3934e9e075ab662edf334cb7a9]
+link RegisterWorkflowUI to RegisterWorkflowController--><path codeLine="30" d="M148.3,102.11 C158.09,102.11 167.89,102.11 177.68,102.11 " fill="none" id="RegisterWorkflowUI-to-RegisterWorkflowController" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="182.81,102.11,173.81,98.11,177.81,102.11,173.81,106.11,182.81,102.11" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[c196982c9e03949aa92a0b912a4f7c28]
+link RegisterWorkflowController to Workflow--><path codeLine="31" d="M366.16,102.11 C375.97,102.11 385.79,102.11 395.6,102.11 " fill="none" id="RegisterWorkflowController-to-Workflow" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="400.73,102.11,391.73,98.11,395.73,102.11,391.73,106.11,400.73,102.11" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9630c32b8e52c0b95c9376befdc0a9fd]
+link Workflow to WorkflowExecution--><path codeLine="33" d="M494.62,70.82 C512.69,54.36 537.14,35.84 563,27.11 C625.56,6 697.92,33.9 748.18,61.46 " fill="none" id="Workflow-to-WorkflowExecution" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="752.67,63.95,746.7452,56.0826,748.2992,61.5218,742.86,63.0758,752.67,63.95" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[4e1c4bbe00369450e4ae72601481a1a9]
+link Workflow to WorkflowID--><path codeLine="34" d="M528.23,102.11 C538.07,102.11 547.9,102.11 557.73,102.11 " fill="none" id="Workflow-to-WorkflowID" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="562.87,102.11,553.87,98.11,557.87,102.11,553.87,106.11,562.87,102.11" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[3b8de2d087b07496f4c9c1de57740c68]
+link WorkflowExecution to WorkflowExecutionID--><path codeLine="35" d="M922.29,102.11 C932.22,102.11 942.15,102.11 952.08,102.11 " fill="none" id="WorkflowExecution-to-WorkflowExecutionID" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="957.27,102.11,948.27,98.11,952.27,102.11,948.27,106.11,957.27,102.11" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[97e3d4184cc6d5c8152d9092d560caf6]
+@startuml
+'https://plantuml.com/class-diagram
+
+class RegisterWorkflowUI {
+}
+
+class RegisterWorkflowController {
+    +registerWorkflow();
+    +activities();
+    +services();
+}
+
+class Workflow{
+    WorkFlowId workflowId
+}
+
+class WorkflowExecution{
+    WorkFlowExecutionId workFlowExecutionId
+    WorkFlow workFlow
+}
+
+class WorkflowExecutionID{
+    String WorkflowExecutionId;
+}
+
+class WorkflowID{
+    String WorkflowId;
+}
+
+
+RegisterWorkflowUI -> RegisterWorkflowController
+RegisterWorkflowController -> Workflow
+
+Workflow -> WorkflowExecution
+Workflow -> WorkflowID
+WorkflowExecution -> WorkflowExecutionID
+
+@enduml
+
+@startuml
+
+class RegisterWorkflowUI {
+}
+
+class RegisterWorkflowController {
+    +registerWorkflow();
+    +activities();
+    +services();
+}
+
+class Workflow{
+    WorkFlowId workflowId
+}
+
+class WorkflowExecution{
+    WorkFlowExecutionId workFlowExecutionId
+    WorkFlow workFlow
+}
+
+class WorkflowExecutionID{
+    String WorkflowExecutionId;
+}
+
+class WorkflowID{
+    String WorkflowId;
+}
+
+
+RegisterWorkflowUI -> RegisterWorkflowController
+RegisterWorkflowController -> Workflow
+
+Workflow -> WorkflowExecution
+Workflow -> WorkflowID
+WorkflowExecution -> WorkflowExecutionID
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 13:40:07 BST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

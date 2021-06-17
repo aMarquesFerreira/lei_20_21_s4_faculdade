@@ -1,0 +1,17 @@
+@startuml
+autonumber
+
+actor "Utilizador" as PM
+participant "System" as UI
+
+activate PM
+PM --> UI : Wants to request a service
+activate UI
+    UI --> PM : Requests necessary information for service
+deactivate UI
+PM --> UI : Inserts the data
+activate UI
+UI --> PM : displayTicketInfo
+deactivate UI
+
+@enduml
