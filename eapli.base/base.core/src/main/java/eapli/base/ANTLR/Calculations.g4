@@ -1,4 +1,4 @@
-grammar Rules;
+grammar Calculations;
 prog: stat* EOF;
 stat: expr NEWLINE # printExpr
 | ID '=' expr NEWLINE # assign

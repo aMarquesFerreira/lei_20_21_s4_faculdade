@@ -23,11 +23,11 @@ public class AutomaticTaskEmail {
 
             String teste = scanner.nextLine();
             //FileInputStream fis = new FileInputStream(new File("eapli.base/base.core/src/main/java/eapli/base/ANTLR/teste.txt"));
-            RulesLexer lexer = new RulesLexer(new ANTLRInputStream(teste));
+            CalculationsLexer lexer = new CalculationsLexer(new ANTLRInputStream(teste));
             CommonTokenStream tokens = new CommonTokenStream(lexer);
-            RulesParser parser = new RulesParser(tokens);
+            CalculationsParser parser = new CalculationsParser(tokens);
             ParseTree tree = parser.prog(); // parse
-            EvalVisitor eval = new EvalVisitor();
+            CalculationsVisitor eval = new CalculationsVisitor();
             String content =  ("Pagamento:" + eval.visit(tree) + "€");
 
 

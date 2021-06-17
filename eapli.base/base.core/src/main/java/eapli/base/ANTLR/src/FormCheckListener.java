@@ -1,14 +1,14 @@
 package eapli.base.ANTLR.src;
 
-import eapli.base.ANTLR.gen.VerificationsBaseListener;
-import eapli.base.ANTLR.gen.VerificationsParser;
+import eapli.base.ANTLR.gen.FormCheckBaseListener;
+import eapli.base.ANTLR.gen.FormCheckParser;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
 import java.util.Stack;
 
-public class Listener extends VerificationsBaseListener {
+public class FormCheckListener extends FormCheckBaseListener {
 
     private final Stack<String> stack = new Stack<>();
 
@@ -17,12 +17,12 @@ public class Listener extends VerificationsBaseListener {
     }
 
     @Override
-    public void enterProgram(VerificationsParser.ProgramContext ctx) {
+    public void enterProgram(FormCheckParser.ProgramContext ctx) {
         stack.push(ctx.getChild(0).getText());
     }
 
     @Override
-    public void exitProgram(VerificationsParser.ProgramContext ctx) {
+    public void exitProgram(FormCheckParser.ProgramContext ctx) {
         String child = stack.pop();
         String content="";
         if(child!=null){
@@ -32,12 +32,12 @@ public class Listener extends VerificationsBaseListener {
     }
 
     @Override
-    public void enterState(VerificationsParser.StateContext ctx) {
+    public void enterState(FormCheckParser.StateContext ctx) {
         stack.push(ctx.getParent().getText());
     }
 
     @Override
-    public void exitState(VerificationsParser.StateContext ctx) {
+    public void exitState(FormCheckParser.StateContext ctx) {
         String child = stack.pop();
         String content="";
         if(child!=null){
@@ -47,12 +47,12 @@ public class Listener extends VerificationsBaseListener {
     }
 
     @Override
-    public void enterFormID(VerificationsParser.FormIDContext ctx) {
+    public void enterFormID(FormCheckParser.FormIDContext ctx) {
         stack.push(ctx.getChild(0).getText());
     }
 
     @Override
-    public void exitFormID(VerificationsParser.FormIDContext ctx) {
+    public void exitFormID(FormCheckParser.FormIDContext ctx) {
         String child = stack.pop();
         String content="";
         if(child!=null){
@@ -62,12 +62,12 @@ public class Listener extends VerificationsBaseListener {
     }
 
     @Override
-    public void enterNames(VerificationsParser.NamesContext ctx) {
+    public void enterNames(FormCheckParser.NamesContext ctx) {
         stack.push(ctx.getChild(0).getText());
     }
 
     @Override
-    public void exitNames(VerificationsParser.NamesContext ctx) {
+    public void exitNames(FormCheckParser.NamesContext ctx) {
         String child = stack.pop();
         String content="";
         if(child!=null){
@@ -78,12 +78,12 @@ public class Listener extends VerificationsBaseListener {
     }
 
     @Override
-    public void enterName(VerificationsParser.NameContext ctx) {
+    public void enterName(FormCheckParser.NameContext ctx) {
         stack.push(ctx.getChild(0).getText());
     }
 
     @Override
-    public void exitName(VerificationsParser.NameContext ctx) {
+    public void exitName(FormCheckParser.NameContext ctx) {
         String child = stack.pop();
         String content="";
         if(child!=null){
@@ -93,12 +93,12 @@ public class Listener extends VerificationsBaseListener {
     }
 
     @Override
-    public void enterTypeOfData(VerificationsParser.TypeOfDataContext ctx) {
+    public void enterTypeOfData(FormCheckParser.TypeOfDataContext ctx) {
         stack.push(ctx.getChild(0).getChild(2).getText());
     }
 
     @Override
-    public void exitTypeOfData(VerificationsParser.TypeOfDataContext ctx) {
+    public void exitTypeOfData(FormCheckParser.TypeOfDataContext ctx) {
         String child = stack.pop();
         String content="";
         if(child!=null){
@@ -108,12 +108,12 @@ public class Listener extends VerificationsBaseListener {
     }
 
     @Override
-    public void enterDescription(VerificationsParser.DescriptionContext ctx) {
+    public void enterDescription(FormCheckParser.DescriptionContext ctx) {
         stack.push(ctx.getChild(0).getText());
     }
 
     @Override
-    public void exitDescription(VerificationsParser.DescriptionContext ctx) {
+    public void exitDescription(FormCheckParser.DescriptionContext ctx) {
         String child = stack.pop();
         String content="";
         if(child!=null){
@@ -123,12 +123,12 @@ public class Listener extends VerificationsBaseListener {
     }
 
     @Override
-    public void enterLetters(VerificationsParser.LettersContext ctx) {
+    public void enterLetters(FormCheckParser.LettersContext ctx) {
         super.enterLetters(ctx);
     }
 
     @Override
-    public void exitLetters(VerificationsParser.LettersContext ctx) {
+    public void exitLetters(FormCheckParser.LettersContext ctx) {
         String child = stack.pop();
         String content="";
         if(child!=null){
@@ -138,12 +138,12 @@ public class Listener extends VerificationsBaseListener {
     }
 
     @Override
-    public void enterIgnore(VerificationsParser.IgnoreContext ctx) {
+    public void enterIgnore(FormCheckParser.IgnoreContext ctx) {
         super.enterIgnore(ctx);
     }
 
     @Override
-    public void exitIgnore(VerificationsParser.IgnoreContext ctx) {
+    public void exitIgnore(FormCheckParser.IgnoreContext ctx) {
         String child = stack.pop();
         String content="";
         if(child!=null){
@@ -153,12 +153,12 @@ public class Listener extends VerificationsBaseListener {
     }
 
     @Override
-    public void enterNumber(VerificationsParser.NumberContext ctx) {
+    public void enterNumber(FormCheckParser.NumberContext ctx) {
         super.enterNumber(ctx);
     }
 
     @Override
-    public void exitNumber(VerificationsParser.NumberContext ctx) {
+    public void exitNumber(FormCheckParser.NumberContext ctx) {
         String child = stack.pop();
         String content="";
         if(child!=null){
@@ -168,12 +168,12 @@ public class Listener extends VerificationsBaseListener {
     }
 
     @Override
-    public void enterOk(VerificationsParser.OkContext ctx) {
+    public void enterOk(FormCheckParser.OkContext ctx) {
         super.enterOk(ctx);
     }
 
     @Override
-    public void exitOk(VerificationsParser.OkContext ctx) {
+    public void exitOk(FormCheckParser.OkContext ctx) {
         String child = stack.pop();
         String content="";
         if(child!=null){
@@ -183,12 +183,12 @@ public class Listener extends VerificationsBaseListener {
     }
 
     @Override
-    public void enterNotok(VerificationsParser.NotokContext ctx) {
+    public void enterNotok(FormCheckParser.NotokContext ctx) {
         super.enterNotok(ctx);
     }
 
     @Override
-    public void exitNotok(VerificationsParser.NotokContext ctx) {
+    public void exitNotok(FormCheckParser.NotokContext ctx) {
         String child = stack.pop();
         String content="";
         if(child!=null){

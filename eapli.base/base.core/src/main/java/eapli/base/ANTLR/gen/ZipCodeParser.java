@@ -1,4 +1,4 @@
-// Generated from C:/Users/torre/OneDrive/Ambiente de Trabalho/lei20_21_s4_2db_03/eapli.base/base.core/src/main/java/eapli/base/ANTLR\TitleInfoCheck.g4 by ANTLR 4.9.1
+// Generated from C:/Users/torre/OneDrive/Ambiente de Trabalho/lei20_21_s4_2db_03/eapli.base/base.core/src/main/java/eapli/base/ANTLR\ZipCode.g4 by ANTLR 4.9.1
 package eapli.base.ANTLR.gen;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -10,31 +10,32 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class TitleInfoCheckParser extends Parser {
+public class ZipCodeParser extends Parser {
 	static { RuntimeMetaData.checkVersion("4.9.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		SPECIALCHARACTERS=1, DIGIT=2, LOWERCHAR=3, UPPERCHAR=4, SPACE=5;
+		SPECIALCHARACTER=1, DIGIT=2, WS=3;
 	public static final int
-		RULE_state = 0, RULE_title = 1;
+		RULE_state = 0, RULE_zip = 1;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"state", "title"
+			"state", "zip"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
+			null, "'-'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "SPECIALCHARACTERS", "DIGIT", "LOWERCHAR", "UPPERCHAR", "SPACE"
+			null, "SPECIALCHARACTER", "DIGIT", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -72,7 +73,7 @@ public class TitleInfoCheckParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "TitleInfoCheck.g4"; }
+	public String getGrammarFileName() { return "ZipCode.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -83,14 +84,14 @@ public class TitleInfoCheckParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public TitleInfoCheckParser(TokenStream input) {
+	public ZipCodeParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
 	public static class StateContext extends ParserRuleContext {
-		public TitleContext title() {
-			return getRuleContext(TitleContext.class,0);
+		public ZipContext zip() {
+			return getRuleContext(ZipContext.class,0);
 		}
 		public StateContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -98,15 +99,15 @@ public class TitleInfoCheckParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_state; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof TitleInfoCheckListener ) ((TitleInfoCheckListener)listener).enterState(this);
+			if ( listener instanceof ZipCodeListener ) ((ZipCodeListener)listener).enterState(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof TitleInfoCheckListener ) ((TitleInfoCheckListener)listener).exitState(this);
+			if ( listener instanceof ZipCodeListener ) ((ZipCodeListener)listener).exitState(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TitleInfoCheckVisitor ) return ((TitleInfoCheckVisitor<? extends T>)visitor).visitState(this);
+			if ( visitor instanceof ZipCodeVisitor ) return ((ZipCodeVisitor<? extends T>)visitor).visitState(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -118,7 +119,7 @@ public class TitleInfoCheckParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(4);
-			title();
+			zip();
 			}
 		}
 		catch (RecognitionException re) {
@@ -132,75 +133,56 @@ public class TitleInfoCheckParser extends Parser {
 		return _localctx;
 	}
 
-	public static class TitleContext extends ParserRuleContext {
-		public List<TerminalNode> UPPERCHAR() { return getTokens(TitleInfoCheckParser.UPPERCHAR); }
-		public TerminalNode UPPERCHAR(int i) {
-			return getToken(TitleInfoCheckParser.UPPERCHAR, i);
-		}
-		public List<TerminalNode> LOWERCHAR() { return getTokens(TitleInfoCheckParser.LOWERCHAR); }
-		public TerminalNode LOWERCHAR(int i) {
-			return getToken(TitleInfoCheckParser.LOWERCHAR, i);
-		}
-		public List<TerminalNode> DIGIT() { return getTokens(TitleInfoCheckParser.DIGIT); }
+	public static class ZipContext extends ParserRuleContext {
+		public List<TerminalNode> DIGIT() { return getTokens(ZipCodeParser.DIGIT); }
 		public TerminalNode DIGIT(int i) {
-			return getToken(TitleInfoCheckParser.DIGIT, i);
+			return getToken(ZipCodeParser.DIGIT, i);
 		}
-		public List<TerminalNode> SPECIALCHARACTERS() { return getTokens(TitleInfoCheckParser.SPECIALCHARACTERS); }
-		public TerminalNode SPECIALCHARACTERS(int i) {
-			return getToken(TitleInfoCheckParser.SPECIALCHARACTERS, i);
-		}
-		public List<TerminalNode> SPACE() { return getTokens(TitleInfoCheckParser.SPACE); }
-		public TerminalNode SPACE(int i) {
-			return getToken(TitleInfoCheckParser.SPACE, i);
-		}
-		public TitleContext(ParserRuleContext parent, int invokingState) {
+		public TerminalNode SPECIALCHARACTER() { return getToken(ZipCodeParser.SPECIALCHARACTER, 0); }
+		public TerminalNode EOF() { return getToken(ZipCodeParser.EOF, 0); }
+		public ZipContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_title; }
+		@Override public int getRuleIndex() { return RULE_zip; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof TitleInfoCheckListener ) ((TitleInfoCheckListener)listener).enterTitle(this);
+			if ( listener instanceof ZipCodeListener ) ((ZipCodeListener)listener).enterZip(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof TitleInfoCheckListener ) ((TitleInfoCheckListener)listener).exitTitle(this);
+			if ( listener instanceof ZipCodeListener ) ((ZipCodeListener)listener).exitZip(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TitleInfoCheckVisitor ) return ((TitleInfoCheckVisitor<? extends T>)visitor).visitTitle(this);
+			if ( visitor instanceof ZipCodeVisitor ) return ((ZipCodeVisitor<? extends T>)visitor).visitZip(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final TitleContext title() throws RecognitionException {
-		TitleContext _localctx = new TitleContext(_ctx, getState());
-		enterRule(_localctx, 2, RULE_title);
-		int _la;
+	public final ZipContext zip() throws RecognitionException {
+		ZipContext _localctx = new ZipContext(_ctx, getState());
+		enterRule(_localctx, 2, RULE_zip);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(7); 
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			do {
-				{
-				{
-				setState(6);
-				_la = _input.LA(1);
-				if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << SPECIALCHARACTERS) | (1L << DIGIT) | (1L << LOWERCHAR) | (1L << UPPERCHAR) | (1L << SPACE))) != 0)) ) {
-				_errHandler.recoverInline(this);
-				}
-				else {
-					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-					_errHandler.reportMatch(this);
-					consume();
-				}
-				}
-				}
-				setState(9); 
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << SPECIALCHARACTERS) | (1L << DIGIT) | (1L << LOWERCHAR) | (1L << UPPERCHAR) | (1L << SPACE))) != 0) );
+			setState(6);
+			match(DIGIT);
+			setState(7);
+			match(DIGIT);
+			setState(8);
+			match(DIGIT);
+			setState(9);
+			match(DIGIT);
+			setState(10);
+			match(SPECIALCHARACTER);
+			setState(11);
+			match(DIGIT);
+			setState(12);
+			match(DIGIT);
+			setState(13);
+			match(DIGIT);
+			setState(14);
+			match(EOF);
 			}
 		}
 		catch (RecognitionException re) {
@@ -215,10 +197,11 @@ public class TitleInfoCheckParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\7\16\4\2\t\2\4\3"+
-		"\t\3\3\2\3\2\3\3\6\3\n\n\3\r\3\16\3\13\3\3\2\2\4\2\4\2\3\3\2\3\7\2\f\2"+
-		"\6\3\2\2\2\4\t\3\2\2\2\6\7\5\4\3\2\7\3\3\2\2\2\b\n\t\2\2\2\t\b\3\2\2\2"+
-		"\n\13\3\2\2\2\13\t\3\2\2\2\13\f\3\2\2\2\f\5\3\2\2\2\3\13";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\5\23\4\2\t\2\4\3"+
+		"\t\3\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\2\2\4\2\4\2\2"+
+		"\2\20\2\6\3\2\2\2\4\b\3\2\2\2\6\7\5\4\3\2\7\3\3\2\2\2\b\t\7\4\2\2\t\n"+
+		"\7\4\2\2\n\13\7\4\2\2\13\f\7\4\2\2\f\r\7\3\2\2\r\16\7\4\2\2\16\17\7\4"+
+		"\2\2\17\20\7\4\2\2\20\21\7\2\2\3\21\5\3\2\2\2\2";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

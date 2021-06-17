@@ -1,4 +1,4 @@
-// Generated from C:/Users/torre/OneDrive/Ambiente de Trabalho/lei20_21_s4_2db_03/eapli.base/base.core/src/main/java/eapli/base/ANTLR\Rules.g4 by ANTLR 4.9.1
+// Generated from C:/Users/torre/OneDrive/Ambiente de Trabalho/lei20_21_s4_2db_03/eapli.base/base.core/src/main/java/eapli/base/ANTLR\Calculations.g4 by ANTLR 4.9.1
 package eapli.base.ANTLR.gen;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -6,119 +6,119 @@ import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
 /**
- * This class provides an empty implementation of {@link RulesListener},
+ * This class provides an empty implementation of {@link CalculationsListener},
  * which can be extended to create a listener which only needs to handle a subset
  * of the available methods.
  */
-public class RulesBaseListener implements RulesListener {
+public class CalculationsBaseListener implements CalculationsListener {
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterProg(RulesParser.ProgContext ctx) { }
+	@Override public void enterProg(CalculationsParser.ProgContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitProg(RulesParser.ProgContext ctx) { }
+	@Override public void exitProg(CalculationsParser.ProgContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrintExpr(RulesParser.PrintExprContext ctx) { }
+	@Override public void enterPrintExpr(CalculationsParser.PrintExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrintExpr(RulesParser.PrintExprContext ctx) { }
+	@Override public void exitPrintExpr(CalculationsParser.PrintExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAssign(RulesParser.AssignContext ctx) { }
+	@Override public void enterAssign(CalculationsParser.AssignContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAssign(RulesParser.AssignContext ctx) { }
+	@Override public void exitAssign(CalculationsParser.AssignContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBlank(RulesParser.BlankContext ctx) { }
+	@Override public void enterBlank(CalculationsParser.BlankContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBlank(RulesParser.BlankContext ctx) { }
+	@Override public void exitBlank(CalculationsParser.BlankContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParens(RulesParser.ParensContext ctx) { }
+	@Override public void enterParens(CalculationsParser.ParensContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitParens(RulesParser.ParensContext ctx) { }
+	@Override public void exitParens(CalculationsParser.ParensContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMulDiv(RulesParser.MulDivContext ctx) { }
+	@Override public void enterMulDiv(CalculationsParser.MulDivContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMulDiv(RulesParser.MulDivContext ctx) { }
+	@Override public void exitMulDiv(CalculationsParser.MulDivContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAddSub(RulesParser.AddSubContext ctx) { }
+	@Override public void enterAddSub(CalculationsParser.AddSubContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAddSub(RulesParser.AddSubContext ctx) { }
+	@Override public void exitAddSub(CalculationsParser.AddSubContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterId(RulesParser.IdContext ctx) { }
+	@Override public void enterId(CalculationsParser.IdContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitId(RulesParser.IdContext ctx) { }
+	@Override public void exitId(CalculationsParser.IdContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterInt(RulesParser.IntContext ctx) { }
+	@Override public void enterInt(CalculationsParser.IntContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitInt(RulesParser.IntContext ctx) { }
+	@Override public void exitInt(CalculationsParser.IntContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

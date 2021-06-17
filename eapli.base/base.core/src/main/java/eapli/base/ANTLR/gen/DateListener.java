@@ -8,6 +8,16 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface DateListener extends ParseTreeListener {
 	/**
+	 * Enter a parse tree produced by {@link DateParser#program}.
+	 * @param ctx the parse tree
+	 */
+	void enterProgram(DateParser.ProgramContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DateParser#program}.
+	 * @param ctx the parse tree
+	 */
+	void exitProgram(DateParser.ProgramContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link DateParser#state}.
 	 * @param ctx the parse tree
 	 */
@@ -69,4 +79,24 @@ public interface DateListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitDay(DateParser.DayContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DateParser#faultType}.
+	 * @param ctx the parse tree
+	 */
+	void enterFaultType(DateParser.FaultTypeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DateParser#faultType}.
+	 * @param ctx the parse tree
+	 */
+	void exitFaultType(DateParser.FaultTypeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DateParser#content}.
+	 * @param ctx the parse tree
+	 */
+	void enterContent(DateParser.ContentContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DateParser#content}.
+	 * @param ctx the parse tree
+	 */
+	void exitContent(DateParser.ContentContext ctx);
 }

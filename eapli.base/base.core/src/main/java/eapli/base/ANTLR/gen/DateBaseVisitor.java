@@ -2,8 +2,6 @@
 package eapli.base.ANTLR.gen;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
-import java.text.ParseException;
-
 /**
  * This class provides an empty implementation of {@link DateVisitor},
  * which can be extended to create a visitor which only needs to handle a subset
@@ -13,6 +11,13 @@ import java.text.ParseException;
  * operations with no return type.
  */
 public class DateBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements DateVisitor<T> {
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitProgram(DateParser.ProgramContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -55,4 +60,18 @@ public class DateBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements D
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitDay(DateParser.DayContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitFaultType(DateParser.FaultTypeContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitContent(DateParser.ContentContext ctx) { return visitChildren(ctx); }
 }

@@ -2,8 +2,6 @@
 package eapli.base.ANTLR.gen;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
-import java.text.ParseException;
-
 /**
  * This interface defines a complete generic visitor for a parse tree produced
  * by {@link DateParser}.
@@ -12,6 +10,12 @@ import java.text.ParseException;
  * operations with no return type.
  */
 public interface DateVisitor<T> extends ParseTreeVisitor<T> {
+	/**
+	 * Visit a parse tree produced by {@link DateParser#program}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitProgram(DateParser.ProgramContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link DateParser#state}.
 	 * @param ctx the parse tree
@@ -49,4 +53,16 @@ public interface DateVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitDay(DateParser.DayContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link DateParser#faultType}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFaultType(DateParser.FaultTypeContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link DateParser#content}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitContent(DateParser.ContentContext ctx);
 }

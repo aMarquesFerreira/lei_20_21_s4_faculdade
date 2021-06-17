@@ -1,8 +1,8 @@
-grammar Verifications;
+grammar FormCheck;
 
 program : state EOF;
 
-state : formID  name  typeOfData  names  description
+state : formID  name  typeOfData names description
         | formID  name  typeOfData
         | formID  description
         | formID typeOfData
@@ -14,19 +14,15 @@ names : name name;
 
 name : letters ;
 
-typeOfData : IF ( 'boolean' | 'BOOLEAN' | 'Boolean'
+typeOfData :  ( 'boolean' | 'BOOLEAN' | 'Boolean'
                   | 'String' | 'string' | 'STRING'
-                  | 'INTEGER' | 'INT' | 'Int' | 'int' | 'integer' | 'Integer')ok
-                   (ELSE) notok
+                  | 'INTEGER' | 'INT' | 'Int' | 'int' | 'integer' | 'Integer')
  ;
-
-
-
 
 description : (UPPERCHAR | LOWERCHAR)*;
 
 letters : (LOWERCHAR | UPPERCHAR)+;
-ignore : ( | SPACE);
+ignore : (SPACE);
 number : DIGIT+;
 
 ok: 'OK';
