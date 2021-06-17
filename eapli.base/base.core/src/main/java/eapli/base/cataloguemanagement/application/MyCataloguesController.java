@@ -7,6 +7,7 @@ package eapli.base.cataloguemanagement.application;
 
 import eapli.base.catalogue.repositories.CatalogueRepository;
 import eapli.base.cataloguemanagement.domain.Catalogue;
+import eapli.base.clientusermanagement.domain.MecanographicNumber;
 import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
 import eapli.base.infrastructure.persistence.PersistenceContext;
@@ -41,6 +42,15 @@ public class MyCataloguesController {
         return authz.session()
                 .flatMap(s -> colabRepo.findByUsername(s.authenticatedUser().username()));
     }
+    
+    
+    /*public Iterable<Catalogue> myCataloguesForBootstrapp(MecanographicNumber mcn) {
+        Optional<Colaborator> colab = colabRepo.findByMecanographicNumber(mcn);
+        
+        catRepo.findByColaborator(colab);
+        
+        return 
+    }*/
 
    /* public Iterable<Meal> allMealsByDateAndType(final Calendar theDay, final MealType mealType) {
         return svcMeals.mealsByDayAndType(theDay, mealType);
