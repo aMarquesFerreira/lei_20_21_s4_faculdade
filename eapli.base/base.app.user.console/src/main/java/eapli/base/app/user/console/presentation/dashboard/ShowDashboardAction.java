@@ -17,7 +17,7 @@ public class ShowDashboardAction implements Action {
     public boolean execute() {
         System.out.println("Starting HTTP Server");
         
-        DashboardServer.getInstance("127.0.0.1").start();
+        DashboardServerSSL.getInstance("127.0.0.1").start();
         
         return true;
     }

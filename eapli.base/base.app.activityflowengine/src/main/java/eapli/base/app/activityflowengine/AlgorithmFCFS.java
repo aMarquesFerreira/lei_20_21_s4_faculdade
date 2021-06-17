@@ -10,17 +10,52 @@ import eapli.base.activitymanagement.repositories.ActivityRepository;
 import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
 import eapli.base.infrastructure.persistence.PersistenceContext;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Omen
  */
-public class AlgorithmFCFS {
+public class AlgorithmFCFS implements AssignColaboratorAlgorithm{
    
     private final ColaboratorRepository colabRepo = PersistenceContext.repositories().colaborators();
     private final ActivityRepository actRepo = PersistenceContext.repositories().activities();
+
+    private List<Colaborator> colabs;
+    private int next=-1;
     
-    public void execute(){
+    public AlgorithmFCFS() {
+        colabs = new ArrayList();
+        for (Colaborator colab : colabRepo.findAllActive()) {
+            colabs.add(colab);
+        }
+    }
+    
+    /*Algorithm that chooses the next colab*/
+    @Override
+    public Colaborator next(){
+        next++;
+        if (next==colabs.size())
+            next=0;
+        
+        //next = (next++)%colabs.size();
+        
+        return colabs.get(0);
+    }
+    
+    
+    @Override
+    public Colaborator nextLowestWork(){
+        
+        //CODE
+        return colabs.get(0);
+    }
+    
+    
+    
+    
+    /*public void execute(){
         AssignActToColab aatc = new AssignActToColab();
         
         Iterable<Colaborator> colabs = colabRepo.findAllActive();
@@ -36,13 +71,13 @@ public class AlgorithmFCFS {
             System.out.println("Error");
         }
         
-        /*for(Activity act : acts){
+        for(Activity act : acts){
             try{
                 thr.join();
             }catch(Exception e){
                 System.out.println("Interrupted");
             }
-        }*/
+        }
         
-    }
+    }*/
 }

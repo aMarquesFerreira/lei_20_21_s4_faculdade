@@ -8,4 +8,12 @@
     </parent>
     <artifactId>base.app.automatictaskrunner</artifactId>
     <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>eapli</groupId>
+            <artifactId>base.core</artifactId>
+            <version>1.3.0-SNAPSHOT</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
 </project>

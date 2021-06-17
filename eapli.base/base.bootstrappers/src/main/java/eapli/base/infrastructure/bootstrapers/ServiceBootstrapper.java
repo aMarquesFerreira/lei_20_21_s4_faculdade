@@ -40,8 +40,8 @@ public class ServiceBootstrapper implements Action {
 
     @Override
     public boolean execute() {
-        Catalogue c1 = catRepo.findByCatalogueId(CatalogueId.valueOf("Catalogue with services for vacations")).get();
-        Catalogue c2 = catRepo.findByCatalogueId(CatalogueId.valueOf("Catalogue for repairs")).get();
+        Catalogue c1 = catRepo.findByCatalogueId(CatalogueId.valueOf("Catalogue with services for vacations ex")).get();
+        Catalogue c2 = catRepo.findByCatalogueId(CatalogueId.valueOf("Catalogue for repairs ex")).get();
         Catalogue c3 = catRepo.findByCatalogueId(CatalogueId.valueOf("Catalogue for Discounts")).get();
         //Catalogue c3 = catRepo.findByCatalogueId(CatalogueId.valueOf("Catalogue For Books")).get();
         /*WorkFlow w1 = workflowRepo.findByID(WorkFlowId.valueOf("W1")).get();

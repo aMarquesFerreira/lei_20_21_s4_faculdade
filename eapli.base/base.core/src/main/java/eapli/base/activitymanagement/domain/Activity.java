@@ -70,14 +70,14 @@ public class Activity implements AggregateRoot<ActivityId> {
      * @param execTime
      * @param colaborator
      */
-    public Activity(final ActivityId activityId,final Description description/*, final Form form*/,ActivityType type, ExecutionTime execTime, final Colaborator colaborator) {
-        if (activityId == null || description  == null || colaborator == null) {
+    public Activity(final ActivityId activityId,final Description description/*, final Form form*/,ActivityType type, ExecutionTime execTime/*, final Colaborator colaborator*/) {
+        if (activityId == null || description  == null || type == null || execTime ==  null/* || colaborator == null*/) {
             throw new IllegalArgumentException();
         }
         this.activityId = activityId;
         this.description = description;
         //this.form = form;
-        this.colaborator = colaborator;
+        //this.colaborator = colaborator;
         this.type = type;
         this.active = true;
 
@@ -125,6 +125,10 @@ public class Activity implements AggregateRoot<ActivityId> {
     
     public ExecutionTime executionTime() {
         return this.execTime;
+    }
+
+    public void assignToColaborator(Colaborator colaborator) {
+        this.colaborator = colaborator;
     }
     
     public ActivityType type() {

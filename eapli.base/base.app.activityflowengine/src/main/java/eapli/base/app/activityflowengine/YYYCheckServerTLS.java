@@ -8,7 +8,7 @@ import javax.security.cert.X509Certificate;
  *
  * @author andre
  */
-public class CheckServerTLS {
+public class YYYCheckServerTLS {
 	static private SSLSocket sock;
 	static private InetAddress serverIP;
 	static private int serverPort;

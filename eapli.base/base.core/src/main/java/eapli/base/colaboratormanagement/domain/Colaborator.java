@@ -76,7 +76,7 @@ public class Colaborator implements AggregateRoot<MecanographicNumber> {
     private boolean active;
 
     
-    protected Colaborator() {
+    private Colaborator() {
         // for ORM only
     }
 

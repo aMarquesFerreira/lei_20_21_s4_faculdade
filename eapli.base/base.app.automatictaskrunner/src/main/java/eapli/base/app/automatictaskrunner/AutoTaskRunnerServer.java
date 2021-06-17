@@ -3,25 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package eapli.base.app.activityflowengine;
+package eapli.base.app.automatictaskrunner;
 
-import eapli.base.sdp2021.Sdp2021;
-import javax.net.ssl.SSLServerSocket;
-import javax.net.ssl.SSLServerSocketFactory;
 import java.io.IOException;
 import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.net.ssl.SSLServerSocket;
+import javax.net.ssl.SSLServerSocketFactory;
+import eapli.base.sdp2021.Sdp2021;
 
 /**
  *
  * @author andre
  */
-class TcpServer {
-    //static ServerSocket sock;
+public class AutoTaskRunnerServer {//static ServerSocket sock;
     
     //static final int SERVER_PORT = 32507;
-    static final String TRUSTED_STORE = "server_mfa.jks";
+    static final String TRUSTED_STORE = "server_eta1.jks";
     static final String KEYSTORE_PASS = "forgotten";
 
     public static void xxmain(String[] args) throws IOException {
@@ -42,11 +41,11 @@ class TcpServer {
         
        
         try {
-            new TcpServer().run();
+            new AutoTaskRunnerServer().run();
             //sock = (SSLServerSocket) sslF.createServerSocket(SERVER_PORT);
             //sock.setNeedClientAuth(true);
         } catch (IOException ex) {
-            Logger.getLogger(TcpServer.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AutoTaskRunnerServer.class.getName()).log(Level.SEVERE, null, ex);
             //System.out.println("Server failed to open local port " + SERVER_PORT);
            // System.exit(1);
         } /*while(true){
@@ -81,7 +80,7 @@ class TcpServer {
         }
         while (true) {
             cliSock = sock.accept();
-            new Thread(new TcpServerThread(cliSock)).start();
+            new Thread(new AutoTaskRunnerThread(cliSock)).start();
         }
     }
 }

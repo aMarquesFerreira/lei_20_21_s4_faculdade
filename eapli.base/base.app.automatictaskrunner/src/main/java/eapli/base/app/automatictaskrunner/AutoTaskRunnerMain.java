@@ -1,28 +1,28 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates and open the template
- * in the editor.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-package eapli.base.app.activityflowengine;
+package eapli.base.app.automatictaskrunner;
 
 import java.io.IOException;
 
 /**
  *
- * @author Paulo Gandra Sousa
+ * @author andre
  */
 @SuppressWarnings("squid:S106")
-public final class ActivityFlowEngineMain {
+public class AutoTaskRunnerMain {
 
     /**
      * Empty constructor is private to avoid instantiation of this class.
      */
-    private ActivityFlowEngineMain() {
+    private AutoTaskRunnerMain() {
     }
 
     public static void main(final String[] args) {
         System.out.println("======================================");
-        System.out.println("Motor de fluxo Actividades");
+        System.out.println("Executor Actividades");
         System.out.println("(C) 2016, 2017, 2018, 2019, 2020, 2021");
         System.out.println("======================================");
 /*
@@ -42,29 +42,16 @@ public final class ActivityFlowEngineMain {
 //            fcfs.execute();
         }*/
 
-        TcpServer tcpServer = new TcpServer();
+        AutoTaskRunnerServer autoTaskServer = new AutoTaskRunnerServer();
         try {
-            tcpServer.run();
+            autoTaskServer.run();
         } catch (IOException ex) {
             System.out.println("Error: " + ex);
             ex.printStackTrace();
         }
-
-        //ler da configuracao qual o algoritmo a usar
-        String algorithm = "fcfs";
-        
-        AssignColaboratorAlgorithm assignAlgorithm;
-        
-        switch(algorithm){
-            case "fcfs":
-                assignAlgorithm = new AlgorithmFCFS();
-                break;
-            case "xpto":
-                break;
-        }
-        
         
         // exiting the application, closing all threads
         System.exit(0);
     }
+    
 }

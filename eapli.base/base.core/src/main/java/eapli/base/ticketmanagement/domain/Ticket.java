@@ -61,6 +61,7 @@ public class Ticket implements AggregateRoot<TicketId>{
      * Constructor.
      *
      * @param ticketId
+     * @param booker
      * @param formAnswer
      * @param service
      * @param workFlowExecution

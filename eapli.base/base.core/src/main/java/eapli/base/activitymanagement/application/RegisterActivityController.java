@@ -43,7 +43,7 @@ public class RegisterActivityController {
        
         authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.HELP_DESK_SERVICE_MANAGER);
 
-        final Activity newActivity = new Activity(ActivityId.valueOf(activityId), Description.valueOf(description),ActivityType.valueOf(type),ExecutionTime.valueOf(execTime)/*,form*/, colaborator);
+        final Activity newActivity = new Activity(ActivityId.valueOf(activityId), Description.valueOf(description),ActivityType.valueOf(type),ExecutionTime.valueOf(execTime)/*,form, colaborator*/);
                     
         return activityRepository.save(newActivity);
       

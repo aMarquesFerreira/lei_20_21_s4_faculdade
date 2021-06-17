@@ -14,7 +14,7 @@ import static org.junit.Assert.assertTrue;
 
 public class ColaboratorTest {
 
-
+/*
     private final String aMecanographicNumber = "isep2021";
     private final String anotherMecanographicNumber = "isep2020";
 
@@ -111,6 +111,6 @@ public class ColaboratorTest {
         final boolean expected = aColaborator.sameAs(anotherColaborator);
 
         assertFalse(expected);
-    }
+    }*/
 
 }

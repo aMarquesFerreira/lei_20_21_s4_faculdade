@@ -74,7 +74,7 @@ public class WorkFlow implements AggregateRoot<WorkFlowId> {
     }
 
 
-     public Iterable<Activity> activities() {
+    public Iterable<Activity> activities() {
         return this.activities;
     }
 
