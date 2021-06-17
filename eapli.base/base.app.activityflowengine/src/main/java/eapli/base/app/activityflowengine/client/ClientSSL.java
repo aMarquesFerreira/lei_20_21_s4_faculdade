@@ -36,7 +36,7 @@ import javax.net.ssl.SSLSocketFactory;
  * @author andre
  */
 public class ClientSSL {
-    private final AuthorizationService authz = AuthzRegistry.authorizationService();
+    //private final AuthorizationService authz = AuthzRegistry.authorizationService();
     private final ColaboratorRepository colabRepo = PersistenceContext.repositories().colaborators();
     private static ClientSSL instance;
     private SSLSocket executorTarefasClient;
@@ -83,23 +83,7 @@ public class ClientSSL {
             dis = new DataInputStream(executorTarefasClient.getInputStream());
 
             sdp = new Sdp2021();
-            /*
-                            System.out.println("Send TEST to motor server");
-                            sdp.writeTest(dos);
-
-                            Sdp2021Message response = sdp.readMessage(dis);
-                            System.out.println("Received responde from motor server: " + response);
-
-                            byte[] testData = new byte[1000];
-                            for(int i=0;i<1000;i++)
-                                testData[i]=(byte)(i%255);
-
-                            sdp.writeMessage(new Sdp2021Message(Sdp2021.VERSION, (byte)5, testData), dos);
-
-                            response = sdp.readMessage(dis);
-                            System.out.println(response.dados().length);
-                            System.out.println("byte 500= " + response.dados()[500]);
-             */
+            
 
         } catch (IOException ex) {
             System.out.println("Error connecting to executorAutoServer");

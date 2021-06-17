@@ -25,22 +25,7 @@ public class AutoTaskRunnerMain {
         System.out.println("Executor Actividades");
         System.out.println("(C) 2016, 2017, 2018, 2019, 2020, 2021");
         System.out.println("======================================");
-/*
-        AuthzRegistry.configure(PersistenceContext.repositories().users(),
-                new BasePasswordPolicy(), new PlainTextEncoder());
 
-        // login and go to main menu
-        if (new LoginAction(BaseRoles.CASHIER).execute()) {
-            final MainMenu menu = new MainMenu();
-            menu.mainLoop();
-        }*/
-
-        // Algorithm 1 = FCFS, 2 = task time
-        int algo = 1;
-        /*if(algo == 1){
-//            AlgorithmFCFS fcfs = new AlgorithmFCFS();
-//            fcfs.execute();
-        }*/
 
         AutoTaskRunnerServer autoTaskServer = new AutoTaskRunnerServer();
         try {

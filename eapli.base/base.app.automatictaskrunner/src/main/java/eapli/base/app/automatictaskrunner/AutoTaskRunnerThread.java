@@ -27,7 +27,7 @@ public class AutoTaskRunnerThread implements Runnable {
 
     private final Socket cliSock;
     private static final int VERSAO = 0;
-    private final ColaboratorRepository colabRepo = PersistenceContext.repositories().colaborators();
+   // private final ColaboratorRepository colabRepo = PersistenceContext.repositories().colaborators();
 
     public AutoTaskRunnerThread(Socket cliSock) {
         this.cliSock = cliSock;
@@ -68,8 +68,8 @@ public class AutoTaskRunnerThread implements Runnable {
                         
                         
                     default:
-                        /*Sdp2021Message response = processMessage(request);
-                        sdp.writeMessage(response, sOut);*/
+                        Sdp2021Message response = processMessage(request);
+                        sdp.writeMessage(response, sOut);
                         break;
                 }
             }
@@ -84,44 +84,49 @@ public class AutoTaskRunnerThread implements Runnable {
 
 
 
-//    private Sdp2021Message processMessage(Sdp2021Message message) throws IOException {
-//        if (message.getCodigo()==10){//pedidos stats
-//            String stat = new String(message.getDados());
-//            
-//            //recebe STATS_ACTIVITIES:userId
-//            if (stat.startsWith("STATS_ACTIVITIES:")){
-//                String userId = stat.substring(17);
-//                
-//                    //STATS_ACTIVITIES:isep959
-//                    //Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)11, "53".getBytes());
-//                    /*
-//                    
-//                    ByteArrayOutputStream bos = new ByteArrayOutputStream();
-//                    ObjectOutputStream out = new ObjectOutputStream(bos);   
-//                    out.write(53);
-//                    out.write(53);
-//                    out.write(53);
-//                    out.flush();
-//                    bos.flush();
-//                    Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)11, bos.toByteArray());
-//                    */
-//                    Colaborator c1 = colabRepo.findByMecanographicNumber(MecanographicNumber.valueOf(userId)).get();
-//                    
-//                    Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)11, fetcher.activityFetchAsJson(c1).getBytes());
-//                    
-//                    return response;
-//            }
-//           
-//            
-//            
-//        }
-//        
-//        
-//        
-//        
-//        
-//        return null;
-//    }
+    private Sdp2021Message processMessage(Sdp2021Message message) throws IOException {
+      
+        if (message.getCodigo()==10){//pedidos stats
+            String stat = new String(message.getDados());
+            
+            //recebe STATS_ACTIVITIES:userId
+            if (stat.startsWith("STATS_ACTIVITIES:")){
+                String userId = stat.substring(17);
+                
+                    //STATS_ACTIVITIES:isep959
+                    //Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)11, "53".getBytes());
+                    /*
+                    
+                    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                    ObjectOutputStream out = new ObjectOutputStream(bos);   
+                    out.write(53);
+                    out.write(53);
+                    out.write(53);
+                    out.flush();
+                    bos.flush();
+                    Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)11, bos.toByteArray());
+                    */
+                    //Colaborator c1 = colabRepo.findByMecanographicNumber(MecanographicNumber.valueOf(userId)).get();
+                    
+                    Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)11, "something".getBytes());
+                    
+                    return response;
+            }
+            /*else if (){
+                
+            }*/
+            
+            
+        }
+        
+        
+        
+        
+        
+        return null;
+    
+
+    }
 
     
 }

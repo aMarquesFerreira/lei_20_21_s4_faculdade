@@ -5,6 +5,7 @@
  */
 package eapli.base.app.activityflowengine;
 
+import eapli.base.app.activityflowengine.client.InitializeConnectionAction;
 import java.io.IOException;
 
 /**
@@ -49,6 +50,15 @@ public final class ActivityFlowEngineMain {
             System.out.println("Error: " + ex);
             ex.printStackTrace();
         }
+        
+        ///
+        
+//        InitializeConnectionAction initializeConnectionAction = new InitializeConnectionAction();
+//        
+//        initializeConnectionAction.execute();
+//        
+        
+        ///
 
         //ler da configuracao qual o algoritmo a usar
         String algorithm = "fcfs";
