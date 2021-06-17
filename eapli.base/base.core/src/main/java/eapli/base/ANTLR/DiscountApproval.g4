@@ -10,7 +10,7 @@ decision : (LOWERCHAR | UPPERCHAR)+;
 discountType :  ( 'percentage' | 'valor')
  ;
 
-recurrence : (DIGIT)*;
+recurrence : (DIGIT)+;
 
 confirmPercentage : (DIGIT PERCENT);
 
