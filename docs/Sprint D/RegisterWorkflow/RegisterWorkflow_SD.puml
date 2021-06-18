@@ -1,0 +1,67 @@
+@startuml
+autonumber
+
+actor "Project Manager" as PM
+
+participant "RegisterWorkFlowUI" as UI
+participant "RegisterWorkFlowController" as CTRL
+participant "WorkFlowBuilder" as CB
+participant "WorkFlow:WorkFlow" as CC
+participant "PersistenceContext" as PC
+participant "RepositoryFactory" as RF
+
+
+database "WorkFlowRepository" as CR
+
+PM --> UI : Register a WorkFlow
+activate UI
+    UI -> CTRL : create
+    UI --> PM : Requests necessary credentials for WorkFlow
+deactivate UI
+
+PM --> UI : Inserts the data
+activate UI
+    UI -> CTRL : workFlow = newWorkFlow(WorkFlowExecutionId workFlowExecutionId,WorkFlow workFlow)
+    activate CTRL
+        CTRL -> CB: registerWorkFlow
+        activate CB
+        deactivate CB
+
+        CTRL -> CB: setWorkFlow()
+        activate CB
+        deactivate CB
+
+note over CTRL, CB : Sets the rest of the information
+
+
+        CTRL -> CB: registerWorkFlow()
+        activate CB
+                CB -> CC: newWorkFlow(WorkFlowExecutionId workFlowExecutionId,WorkFlow workFlow)
+                CC -> CB: WorkFlow
+                CB -> CTRL: WorkFlow
+        deactivate CB
+
+        CTRL -> PC:
+        activate PC
+        note over PC, CR : can create an repository in memory or JPA
+         PC->RF: create
+         PC->CTRL: factory
+
+        deactivate PC
+
+        CTRL->RF:WorkFlow()
+        activate RF
+        RF->CR:create
+        RF->CTRL:WorkFlowRepository()
+        deactivate RF
+
+        CTRL->CR:save(WorkFlow)
+
+        CTRL->UI:WorkFlow
+    deactivate CTRL
+
+    UI --> PM : displayWorkFlowInfo
+deactivate UI
+
+
+@enduml

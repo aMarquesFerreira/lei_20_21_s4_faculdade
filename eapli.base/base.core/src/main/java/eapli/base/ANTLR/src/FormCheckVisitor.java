@@ -21,9 +21,7 @@ public class FormCheckVisitor extends FormCheckBaseVisitor<String> {
     }
 
     @Override
-    public String visitName(FormCheckParser.NameContext ctx) {
-        return ctx.getChild(1).getText();
-    }
+    public String visitName(FormCheckParser.NameContext ctx) { return ctx.getChild(1).getText(); }
 
     @Override
     public String visitTypeOfData(FormCheckParser.TypeOfDataContext ctx) {

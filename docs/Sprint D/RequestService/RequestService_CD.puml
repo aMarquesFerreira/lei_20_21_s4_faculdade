@@ -1,0 +1,59 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class RequestServiceUI {
+}
+
+class RequestServiceController {
+    +getServicesByCatalogue();
+    +requestService();
+    +currentUser();
+}
+
+class Workflow{
+    WorkFlowId workflowId
+}
+
+class WorkflowExecution{
+    WorkFlowExecutionId workFlowExecutionId
+    WorkFlow workFlow
+}
+
+class WorkflowExecutionID{
+    String WorkflowExecutionId;
+}
+
+class WorkflowID{
+    String WorkflowId;
+}
+
+class Ticket{
+    TicketId ticketId
+    Colaborator booker
+    FormAnswer formAnswer
+    Service service
+    WorkFlowExecution workFlowExecutionId
+}
+
+class TicketID{
+    int year
+    int number
+}
+
+class TicketStatus{
+    String status
+}
+
+
+RequestServiceUI -> RequestServiceController
+RequestServiceController -> Workflow
+RequestServiceController -> Ticket
+
+Workflow -> WorkflowExecution
+Workflow -> WorkflowID
+WorkflowExecution -> WorkflowExecutionID
+
+Ticket -> TicketID
+Ticket -> TicketStatus
+
+@enduml
