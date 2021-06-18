@@ -55,24 +55,4 @@ public class DateVisitor extends DateBaseVisitor<String> {
         }
         else return verificacao = "NotOk";
     }
-
-    @Override
-    public String visitDate(DateParser.DateContext ctx) {
-        return super.visitDate(ctx);
-    }
-
-    @Override
-    public String visitYear(DateParser.YearContext ctx) {
-        return ctx.getChild(3).getText();
-    }
-
-    @Override
-    public String visitMonth(DateParser.MonthContext ctx) {
-        return ctx.getChild(2).getText();
-    }
-
-    @Override
-    public String visitDay(DateParser.DayContext ctx) {
-        return ctx.getChild(1).getText();
-    }
 }

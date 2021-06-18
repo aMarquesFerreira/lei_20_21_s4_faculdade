@@ -28,13 +28,13 @@ public class DiscountApprovalBaseListener implements DiscountApprovalListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterState(DiscountApprovalParser.StateContext ctx) { }
+	@Override public void enterSendEmail(DiscountApprovalParser.SendEmailContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitState(DiscountApprovalParser.StateContext ctx) { }
+	@Override public void exitSendEmail(DiscountApprovalParser.SendEmailContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -47,30 +47,6 @@ public class DiscountApprovalBaseListener implements DiscountApprovalListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitDecision(DiscountApprovalParser.DecisionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterDiscountType(DiscountApprovalParser.DiscountTypeContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitDiscountType(DiscountApprovalParser.DiscountTypeContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterRecurrence(DiscountApprovalParser.RecurrenceContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitRecurrence(DiscountApprovalParser.RecurrenceContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -95,18 +71,6 @@ public class DiscountApprovalBaseListener implements DiscountApprovalListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitConfirmValue(DiscountApprovalParser.ConfirmValueContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterInvoiceID(DiscountApprovalParser.InvoiceIDContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitInvoiceID(DiscountApprovalParser.InvoiceIDContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

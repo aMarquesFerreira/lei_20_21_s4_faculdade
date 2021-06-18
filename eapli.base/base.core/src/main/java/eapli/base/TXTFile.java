@@ -28,31 +28,30 @@ public class TXTFile {
         fr.close();
     }
 
-    public String readVerificationTypeOfDataAndContent() throws FileNotFoundException {
+    public String readVerificationTypeOfDataAndContent(String path) throws FileNotFoundException {
         File clientFile = new File(path);
         Scanner scanClient = new Scanner(clientFile);
-        scanClient.nextLine();
         String[] column;
         String typeofData;
 
         while (scanClient.hasNextLine()) {
-            column = scanClient.nextLine().split(" ");
+            column = scanClient.nextLine().split(";");
             typeofData = column[0];
 
             if (typeofData.equals("String") | typeofData.equals("string") | typeofData.equals("STRING")) {
                 String content = column[1];
-                return "Ok";
+                return ("Ok" + " " + content);
             }
 
             if (typeofData.equals("Boolean") | typeofData.equals("boolean") | typeofData.equals("BOOLEAN")) {
                 boolean content = Boolean.parseBoolean(column[1]);
-                return "Ok";
+                return "Ok" + " " + content;
             }
 
             if (typeofData.equals("Integer") | typeofData.equals("integer") | typeofData.equals("INTEGER") |
                     typeofData.equals("Int") | typeofData.equals("int") | typeofData.equals("INT")) {
                 int content = Integer.parseInt(column[1]);
-                return "Ok";
+                return "Ok" + " " + content;
             }
 
             else return "NotOk";

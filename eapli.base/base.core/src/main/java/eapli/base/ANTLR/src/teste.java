@@ -47,7 +47,7 @@ public class teste {
             System.out.println(listener.getResult());
 
 
-        }*/
+        }
 
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
@@ -65,15 +65,47 @@ public class teste {
     }
 
 
+    public static void main(String[] args) throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        String teste = scanner.nextLine();
+        FileInputStream fis = new FileInputStream(new File("eapli.base/base.core/src/main/java/eapli/base/ANTLR/testeRules.txt"));
+        DiscountApprovalLexer lexer = new DiscountApprovalLexer(new ANTLRInputStream(teste));
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        DiscountApprovalParser parser = new DiscountApprovalParser(tokens);
+        ParseTree tree = parser.state(); // parse
+        ParseTreeWalker walker = new ParseTreeWalker();
+        ApprovalListener approvalListener = new ApprovalListener();
+        walker.walk(approvalListener, tree);
+
+        System.out.println(approvalListener.getResult());
+
+    }*/
+
+    public static void main(String[] args) throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        String teste = scanner.nextLine();
+        FileInputStream fis = new FileInputStream(new File("eapli.base/base.core/src/main/java/eapli/base/ANTLR/testeRules.txt"));
+        FileReaderLexer lexer = new FileReaderLexer(new ANTLRInputStream(teste));
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        FileReaderParser parser = new FileReaderParser(tokens);
+        ParseTree tree = parser.state(); // parse
+        ParseTreeWalker walker = new ParseTreeWalker();
+        FileReadVisitor fileReadVisitor = new FileReadVisitor();
+        fileReadVisitor.visit(tree);
+
+        System.out.println(fileReadVisitor.getResult());
+
+    }
 
 
 
+    //ESTE MÉTODO ESTÁ A SER USADO
     private static void sendEmail(String from, String to, String subject, String body) {
         EmailService eService = new EmailService(to, from);
         eService.send(subject, body);
 
-        }
     }
+}
 
 
 

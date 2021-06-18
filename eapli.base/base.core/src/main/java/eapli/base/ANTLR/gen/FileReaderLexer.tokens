@@ -1,0 +1,8 @@
+T__0=1
+DIGIT=2
+DOT=3
+LOWERCHAR=4
+UPPERCHAR=5
+WS=6
+'.txt'=1
+'.'=3

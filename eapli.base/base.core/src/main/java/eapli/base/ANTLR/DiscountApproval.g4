@@ -2,21 +2,14 @@ grammar DiscountApproval;
 
 program : state EOF;
 
-state : decision base confirmPercentage confirmValue deadline
+state : decision SPACE base SPACE confirmPercentage SPACE confirmValue #sendEmail
       ;
 
 decision : (LOWERCHAR | UPPERCHAR)+;
 
-discountType :  ( 'percentage' | 'valor')
- ;
-
-recurrence : (DIGIT)+;
-
 confirmPercentage : (DIGIT PERCENT);
 
 confirmValue : DIGIT;
-
-invoiceID : DIGIT;
 
 deadline    : (day DOT month DOT year)
             ;
@@ -33,12 +26,13 @@ day     :   ('0'? DIGIT_NO_ZERO)
         |   ('3' ('0'|'1'))
         ;
 
-base : (UPPERCHAR | LOWERCHAR)+;
+base : (UPPERCHAR | LOWERCHAR | SPACE)+;
 
+SPACE : ' ';
 PERCENT : '%';
 DIGIT_NO_ZERO : [1-9];
 DIGIT : [0-9]+;
-DOT : '.';
+DOT : '-';
 LOWERCHAR : [a-z] ;
 UPPERCHAR : [A-Z] ;
 WS : [ \t\r\n]+ -> skip;
