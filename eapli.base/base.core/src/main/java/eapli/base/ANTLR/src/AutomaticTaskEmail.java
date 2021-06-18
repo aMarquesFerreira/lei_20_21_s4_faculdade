@@ -73,19 +73,19 @@ public class AutomaticTaskEmail {
         String subject = tiVisitor.visit(treeTitle).toString();
         String body = contVisitor.visit(treeContent).toString();
 
-        sendEmail("36861@ufp.edu.pt", to, subject, body, session);
+        sendEmail("1191526@isep.ipp.pt", to, subject, body, session);
 
     }
 
 
-    private static void sendEmail(String from, String to, String subject, String body, Session session) {
+    public static boolean sendEmail(String from, String to, String subject, String body, Session session) {
 
         EmailService eService = new EmailService(to, from, session);
-        eService.send(subject, body);
+        return eService.send(subject, body);
 
     }
 
-    private static Session criarSessionMail() {
+    public static Session criarSessionMail() {
         Properties props = new Properties();
 
         props.put("mail.smtp.host", "smtp.gmail.com");

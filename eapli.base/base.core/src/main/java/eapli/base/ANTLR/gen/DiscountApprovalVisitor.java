@@ -17,29 +17,18 @@ public interface DiscountApprovalVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitProgram(DiscountApprovalParser.ProgramContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link DiscountApprovalParser#state}.
+	 * Visit a parse tree produced by the {@code sendEmail}
+	 * labeled alternative in {@link DiscountApprovalParser#state}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitState(DiscountApprovalParser.StateContext ctx);
+	T visitSendEmail(DiscountApprovalParser.SendEmailContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link DiscountApprovalParser#decision}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitDecision(DiscountApprovalParser.DecisionContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link DiscountApprovalParser#discountType}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitDiscountType(DiscountApprovalParser.DiscountTypeContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link DiscountApprovalParser#recurrence}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitRecurrence(DiscountApprovalParser.RecurrenceContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link DiscountApprovalParser#confirmPercentage}.
 	 * @param ctx the parse tree
@@ -52,12 +41,6 @@ public interface DiscountApprovalVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitConfirmValue(DiscountApprovalParser.ConfirmValueContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link DiscountApprovalParser#invoiceID}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitInvoiceID(DiscountApprovalParser.InvoiceIDContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link DiscountApprovalParser#deadline}.
 	 * @param ctx the parse tree

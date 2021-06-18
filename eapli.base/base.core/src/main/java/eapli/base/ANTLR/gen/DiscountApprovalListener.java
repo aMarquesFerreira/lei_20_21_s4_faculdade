@@ -18,15 +18,17 @@ public interface DiscountApprovalListener extends ParseTreeListener {
 	 */
 	void exitProgram(DiscountApprovalParser.ProgramContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link DiscountApprovalParser#state}.
+	 * Enter a parse tree produced by the {@code sendEmail}
+	 * labeled alternative in {@link DiscountApprovalParser#state}.
 	 * @param ctx the parse tree
 	 */
-	void enterState(DiscountApprovalParser.StateContext ctx);
+	void enterSendEmail(DiscountApprovalParser.SendEmailContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link DiscountApprovalParser#state}.
+	 * Exit a parse tree produced by the {@code sendEmail}
+	 * labeled alternative in {@link DiscountApprovalParser#state}.
 	 * @param ctx the parse tree
 	 */
-	void exitState(DiscountApprovalParser.StateContext ctx);
+	void exitSendEmail(DiscountApprovalParser.SendEmailContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link DiscountApprovalParser#decision}.
 	 * @param ctx the parse tree
@@ -37,26 +39,6 @@ public interface DiscountApprovalListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitDecision(DiscountApprovalParser.DecisionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link DiscountApprovalParser#discountType}.
-	 * @param ctx the parse tree
-	 */
-	void enterDiscountType(DiscountApprovalParser.DiscountTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link DiscountApprovalParser#discountType}.
-	 * @param ctx the parse tree
-	 */
-	void exitDiscountType(DiscountApprovalParser.DiscountTypeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link DiscountApprovalParser#recurrence}.
-	 * @param ctx the parse tree
-	 */
-	void enterRecurrence(DiscountApprovalParser.RecurrenceContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link DiscountApprovalParser#recurrence}.
-	 * @param ctx the parse tree
-	 */
-	void exitRecurrence(DiscountApprovalParser.RecurrenceContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link DiscountApprovalParser#confirmPercentage}.
 	 * @param ctx the parse tree
@@ -77,16 +59,6 @@ public interface DiscountApprovalListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitConfirmValue(DiscountApprovalParser.ConfirmValueContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link DiscountApprovalParser#invoiceID}.
-	 * @param ctx the parse tree
-	 */
-	void enterInvoiceID(DiscountApprovalParser.InvoiceIDContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link DiscountApprovalParser#invoiceID}.
-	 * @param ctx the parse tree
-	 */
-	void exitInvoiceID(DiscountApprovalParser.InvoiceIDContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link DiscountApprovalParser#deadline}.
 	 * @param ctx the parse tree
