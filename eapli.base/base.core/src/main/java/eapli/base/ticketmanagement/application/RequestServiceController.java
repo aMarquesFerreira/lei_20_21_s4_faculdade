@@ -90,6 +90,35 @@ public class RequestServiceController{
         return ticketRepo.save(ticket);
     }
     
+    
+    public Ticket requestServiceOnlyForBootstrap(final Service service, List<FormParameter> params, List<String> values, Colaborator booker) {
+        int year = LocalDate.now().getYear();
+        
+        int number = ticketRepo.getMaxNumber(year) + 1;
+
+        TicketId ticketId = TicketId.valueOf(year,number);
+        
+        WorkFlow workFlow = service.getWorkFlow();
+        
+        WorkFlowExecution wfe = WorkFlowExecution.from(WorkFlowExecutionId.valueOf(ticketId.toString()), workFlow);
+ 
+        String formAnswerId = service.getForm().identity()+"/"+LocalDateTime.now().hashCode();//para ter um id unico
+        
+        FormAnswer formAnswer = new FormAnswer(FormAnswerId.valueOf(formAnswerId), service.getForm(), booker);
+    
+        int n=0;
+        for(FormParameter p: params){
+            FormParameterAnswer fpa = new FormParameterAnswer(FormParameterAnswerId.valueOf(formAnswerId+"/"+n), p, Answer.valueOf(values.get(n)));
+            formAnswer.addFormParameterAnswer(fpa);
+            n++;
+        }
+        
+        Ticket ticket = new Ticket(ticketId, booker, formAnswer, service, wfe);
+        
+        
+        return ticketRepo.save(ticket);
+    }
+    
    /* public void assigneActivityToColaborator(final Activity activity, final Ticket ticket, final WorkFlowExecution wfe, WorkFlow workflow, Activity activity, Service service){
         
         workflow = service.getWorkFlow();

@@ -5,6 +5,7 @@
  */
 package eapli.base.app.activityflowengine;
 
+import eapli.base.activityflowengine.simulate.AssignActivityToColabSimulation;
 import eapli.base.app.activityflowengine.client.InitializeConnectionAction;
 import java.io.IOException;
 
@@ -53,11 +54,10 @@ public final class ActivityFlowEngineMain {
         
         ///
         
-//        InitializeConnectionAction initializeConnectionAction = new InitializeConnectionAction();
-//        
-//        initializeConnectionAction.execute();
-//        
-        
+        AssignActivityToColabSimulation aac = new AssignActivityToColabSimulation();
+        aac.execute();
+
+
         ///
 
         //ler da configuracao qual o algoritmo a usar

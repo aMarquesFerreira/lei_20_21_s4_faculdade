@@ -60,7 +60,8 @@ public class BaseDemoBootstrapper implements Action {
                                    new FormInActivityBootstrapper(),
                                    new ServiceBootstrapper(),
                                    new FormBootstrapper(), //precisa de servico
-                                   new WorkflowBootstrapper()
+                                   new WorkflowBootstrapper(),
+                                   new TicketBootstrapper()
                                    
                                    
                                    

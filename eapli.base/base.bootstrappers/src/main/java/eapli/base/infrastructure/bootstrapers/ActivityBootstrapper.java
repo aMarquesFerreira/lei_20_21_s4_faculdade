@@ -37,7 +37,7 @@ public class ActivityBootstrapper implements Action {
         //Form f1 = formRepo.findByFormId(FormId.valueOf("F1")).get();
         
         registerNewActivity("A1", "send email","A",4, c1);
-        registerNewActivity("A1", "send email","M",4, c1);
+        registerNewActivity("A2", "send email","M",4, c1);
         
         //registerNewActivity("A2", "sum all the costs", c1);
 

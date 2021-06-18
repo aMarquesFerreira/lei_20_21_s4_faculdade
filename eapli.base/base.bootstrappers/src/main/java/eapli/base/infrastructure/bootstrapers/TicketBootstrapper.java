@@ -13,10 +13,14 @@ import eapli.base.clientusermanagement.domain.MecanographicNumber;
 import eapli.base.colaboratormanagement.application.AddColaboratorToTeamController;
 import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
+import eapli.base.formmanagement.domain.Form;
+import eapli.base.formmanagement.domain.FormId;
 import eapli.base.formmanagement.domain.FormParameter;
 import eapli.base.formmanagement.domain.FormParameterData;
 import eapli.base.formmanagement.domain.FormParameterId;
 import eapli.base.formmanagement.domain.Label;
+import eapli.base.formmanagement.repositories.FormParameterRepository;
+import eapli.base.formmanagement.repositories.FormRepository;
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.servicemanagement.domain.Service;
 import eapli.base.servicemanagement.domain.ServiceCode;
@@ -47,40 +51,41 @@ public class TicketBootstrapper implements Action {
     private final ActivityRepository actRepo = PersistenceContext.repositories().activities();
     private final ColaboratorRepository colabRepo = PersistenceContext.repositories().colaborators();
     private final CatalogueRepository catRepo = PersistenceContext.repositories().catalogues();
+    private final FormRepository formRepo = PersistenceContext.repositories().forms();
+    private final FormParameterRepository formParRepo = PersistenceContext.repositories().formParameters();
+    
     private List<Catalogue> cats;
-    List<FormParameter> formParameters = new ArrayList<>();
+    List<FormParameter> formParameters;
     List<String> values = new ArrayList<>();
     
      @Override     
     public boolean execute() {  
-        Service s1 = servRepo.findByServiceCode(ServiceCode.valueOf("S4")).get();
-        FormParameter fp1 = new FormParameter(FormParameterId.valueOf("2"),
-                Designation.valueOf("test Name"),
-                Label.valueOf("test"),
-                Description.valueOf("test"),
-                FormParameterData.valueOf("Boolean"));
-        formParameters.add(fp1);
+        Colaborator c1 = colabRepo.findByMecanographicNumber(MecanographicNumber.valueOf("isep959")).get();
+        Service s1 = servRepo.findByServiceCode(ServiceCode.valueOf("S1")).get();
+        Form f1 = s1.getForm();
+       
+        
+        formParameters = new ArrayList();
+        for (FormParameter formPar : f1.getFormParameters()) {
+            formParameters.add(formPar);
+        }
+    
+        
         
         String answer1 = "Resposta de teste";
         values.add(answer1);
         
-        requestService(s1, formParameters, values, "isep959");
+        requestService(s1, formParameters, values, c1);
         
         
         
         return true;
     }
     
-    private void requestService(Service service, List<FormParameter> params, List<String> values, String mcn) {
+    private void requestService(Service service, List<FormParameter> params, List<String> values, Colaborator booker) {
         
-        Colaborator c1 = colabRepo.findByMecanographicNumber(MecanographicNumber.valueOf(mcn)).get();
-             
-        cats = new ArrayList();
-        for (Catalogue cat : catRepo.findByColaborator(c1)) {
-            cats.add(cat);
-        }
                 
-        requestServiceController.requestService(service, params, values);
+        requestServiceController.requestServiceOnlyForBootstrap(service, params, values, booker);
         
         LOGGER.debug("»»» Requesting Service %s", service);
     }
