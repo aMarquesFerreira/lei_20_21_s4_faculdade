@@ -42,17 +42,21 @@ public class ServiceBootstrapper implements Action {
     public boolean execute() {
         Catalogue c1 = catRepo.findByCatalogueId(CatalogueId.valueOf("Catalogue with services for vacations ex")).get();
         Catalogue c2 = catRepo.findByCatalogueId(CatalogueId.valueOf("Catalogue for repairs ex")).get();
-        Catalogue c3 = catRepo.findByCatalogueId(CatalogueId.valueOf("Catalogue for Discounts")).get();
-        //Catalogue c3 = catRepo.findByCatalogueId(CatalogueId.valueOf("Catalogue For Books")).get();
-        /*WorkFlow w1 = workflowRepo.findByID(WorkFlowId.valueOf("W1")).get();
-        WorkFlow w2 = workflowRepo.findByID(WorkFlowId.valueOf("W2")).get();
-        WorkFlow w3 = workflowRepo.findByID(WorkFlowId.valueOf("W3")).get();*/
-
+        
+        //FOR SERVICE 2
+        Catalogue c3 = catRepo.findByCatalogueId(CatalogueId.valueOf("Catalogo de Descontos")).get();
+        registerNewService("S5", "Autorização para Aplicação de Desconto", "Desconto", c3 );
+        //FOR SERVICE 2
+        
+ 
+        //TESTES
         registerNewService("S1", "Vacations", "Vacations Service", c1);
         registerNewService("S2", "ask for Repairs", "repairs Service", c2);
         registerNewService("S3", "ask for books", "books Service", c1);
-        
         registerNewService("S4", "ask for discount", "discount", c3);
+        //TESTES
+        
+       
         
 
         return true;

@@ -1,10 +1,13 @@
 package eapli.base.persistence.impl.jpa;
 
 import eapli.base.Application;
+import eapli.base.activitymanagement.repositories.ActivityExecutionRepository;
 import eapli.base.activitymanagement.repositories.ActivityRepository;
 import eapli.base.catalogue.repositories.CatalogueRepository;
 import eapli.base.clientusermanagement.repositories.SignupRequestRepository;
 import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
+import eapli.base.formmanagement.repositories.FormAnswerRepository;
+import eapli.base.formmanagement.repositories.FormParameterAnswerRepository;
 import eapli.base.formmanagement.repositories.FormParameterRepository;
 import eapli.base.formmanagement.repositories.FormRepository;
 import eapli.base.infrastructure.persistence.RepositoryFactory;
@@ -110,9 +113,24 @@ public class JpaRepositoryFactory implements RepositoryFactory {
         return new JpaActivityRepository(Application.settings().getPersistenceUnitName());
     }
     
-     @Override
+    @Override
     public FormParameterRepository formParameters() {
         return new JpaFormParameterRepository(Application.settings().getPersistenceUnitName());
+    }
+    
+    @Override
+    public FormParameterAnswerRepository formParameterAnswers() {
+        return new JpaFormParameterAnswerRepository(Application.settings().getPersistenceUnitName());
+    }
+    
+    @Override
+    public FormAnswerRepository formAnswers() {
+        return new JpaFormAnswerRepository(Application.settings().getPersistenceUnitName());
+    }
+    
+    @Override
+    public ActivityExecutionRepository activityExecutions() {
+        return new JpaActivityExecutionRepository(Application.settings().getPersistenceUnitName());
     }
 
 }

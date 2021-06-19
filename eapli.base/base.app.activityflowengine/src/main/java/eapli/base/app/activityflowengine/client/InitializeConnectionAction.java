@@ -17,7 +17,9 @@ public class InitializeConnectionAction implements Action {
     public boolean execute() {
         System.out.println("Starting Connection to AutoTaskRunner");
         
-        ClientSSL.getInstance("127.0.0.1").start();
+        //ClientSSL.getInstance("ssh1.dei.isep.ipp.pt").start();
+        ClientSSL.getInstance("10.8.0.80").start();     /*For isep*/
+        //ClientSSL.getInstance("127.0.0.1").start();   /*for local*/
         
         return true;
     }

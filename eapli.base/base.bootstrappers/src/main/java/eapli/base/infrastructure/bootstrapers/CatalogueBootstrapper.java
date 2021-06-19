@@ -51,7 +51,9 @@ public class CatalogueBootstrapper implements Action {
         registerNewCatalogue(c1, "Catalogue for repairs ex", "Repairs", "Repairs Catalogue", teams);
         registerNewCatalogue(c1, "Catalogue For Books ex", "Books", "Books Catalogue", teams);
         
-        registerNewCatalogue(c1, "Catalogue for Discounts", "In this catalogue are services for discounts", "Discounts Catalogue", teams2);
+        //Service2
+        registerNewCatalogue(c1, "Catalogo de Descontos", "Catalogo com servicos de descontos", "Catalogo de Descontos", teams2);
+       //Service2
 
         return true;
     }

@@ -28,6 +28,7 @@ import eapli.base.app.common.console.presentation.authz.MyUserMenu;
 import eapli.base.app.user.console.presentation.dashboard.ShowDashboardAction;
 import eapli.base.app.user.console.presentation.mycatalogues.CataloguePrinter;
 import eapli.base.app.user.console.presentation.myservices.RequestServiceAction;
+import eapli.base.app.user.console.presentation.performactivities.PerformActivityAction;
 import eapli.base.cataloguemanagement.application.MyCataloguesController;
 import eapli.framework.actions.Actions;
 import eapli.framework.actions.menu.Menu;
@@ -60,6 +61,7 @@ class MainMenu extends ClientUserBaseUI {
     private static final int REQUEST_OPTION = 4;
     private static final int SETTINGS_OPTION = 5;
     private static final int DASHBOARD_OPTION = 6;
+    private static final int PERFORM_OPTION = 7;
     
     //CATALOGUES MENU
     private static final int LIST_CATALOGUES_OPTION = 1;
@@ -70,6 +72,9 @@ class MainMenu extends ClientUserBaseUI {
     
     //DASHBOARD MENU
     private static final int SHOW_DASHBOARD_OPTION = 1;
+    
+    //PERFORMS
+    private static final int PERFORM_ACTIVITY_OPTION = 1;
 
     // BOOKINGS MENU
     private static final int BOOK_A_MEAL_OPTION = 2;
@@ -115,6 +120,8 @@ class MainMenu extends ClientUserBaseUI {
 
         mainMenu.addSubMenu(DASHBOARD_OPTION, buildDashboardMenu());
 
+        mainMenu.addSubMenu(PERFORM_OPTION, buildPerformMenu());
+
         mainMenu.addItem(EXIT_OPTION, "Exit", new ExitWithMessageAction("Bye, Bye"));
 
         return mainMenu;
@@ -144,6 +151,15 @@ class MainMenu extends ClientUserBaseUI {
     private Menu buildDashboardMenu() {
         final Menu menu = new Menu("Dashboard");
         menu.addItem(SHOW_DASHBOARD_OPTION, "Show Dashboard", new ShowDashboardAction());
+        //menu.addItem(STOP_DASHBOARD_OPTION, "Stop Dashboard HTTP Server", new ShowDashboardAction());
+        menu.addItem(EXIT_OPTION, RETURN, Actions.SUCCESS);
+        return menu;
+    }
+    
+    
+    private Menu buildPerformMenu() {
+        final Menu menu = new Menu("Activity Perform");
+        menu.addItem(PERFORM_ACTIVITY_OPTION, "Perform Activity", new PerformActivityAction());
         //menu.addItem(STOP_DASHBOARD_OPTION, "Stop Dashboard HTTP Server", new ShowDashboardAction());
         menu.addItem(EXIT_OPTION, RETURN, Actions.SUCCESS);
         return menu;

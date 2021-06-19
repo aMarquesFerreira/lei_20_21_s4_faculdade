@@ -9,15 +9,19 @@ import eapli.base.activityflowengine.control.ActivityDistribution;
 import eapli.base.activitymanagement.application.RegisterActivityController;
 import eapli.base.activitymanagement.domain.Activity;
 import eapli.base.activitymanagement.domain.ActivityId;
+import eapli.base.activitymanagement.domain.ActivityType;
+import eapli.base.activitymanagement.domain.ExecutionTime;
 import eapli.base.activitymanagement.repositories.ActivityRepository;
 import eapli.base.clientusermanagement.domain.MecanographicNumber;
 import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
 import eapli.base.formmanagement.repositories.FormRepository;
-import eapli.base.infrastructure.bootstrapers.XXAssigneActivityToColabBootstrapper;
+import eapli.base.infrastructure.bootstrapers.AssigneActivityToColabBootstrapper;
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.ticketmanagement.application.RequestServiceController;
+import eapli.base.usermanagement.domain.BaseRoles;
 import eapli.framework.actions.Action;
+import eapli.framework.general.domain.model.Description;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,7 +29,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author andre
  */
-public class AssignActivityToColabSimulation implements Action {
+public class XXAssignActivityToColabSimulation /*implements Action*/ {/*
     
     private static final Logger LOGGER = LoggerFactory.getLogger(XXAssigneActivityToColabBootstrapper.class);
 
@@ -46,15 +50,17 @@ public class AssignActivityToColabSimulation implements Action {
         Activity a1 = actRepo.findByActivityId(ActivityId.valueOf("A2")).get();
         
         assignActivityToColab(c1, a1);
+        actRepo.save(a1);
 
         return true;
     }
     private void assignActivityToColab(Colaborator colab, Activity act) {
         
         actDistrib.assignActivityToColab(colab, act);
+        
         LOGGER.debug("»»» Creating new Activity %s", colab, act);
         
     }
 
-    
+    */
 }

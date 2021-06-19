@@ -35,8 +35,8 @@ public class JpaFormParameterRepository extends JpaAutoTxRepository<FormParamete
     @Override
     public Optional<FormParameter> findByFormParameterId(FormParameterId formParameterId) {
         final Map<String, Object> params = new HashMap<>();
-        params.put("formId", formParameterId);
-        return matchOne("e.formId=:formId", params);
+        params.put("formParameterId", formParameterId);
+        return matchOne("e.formParameterId=:formParameterId", params);
     }
 
   

@@ -24,6 +24,8 @@
 package eapli.base.app.backoffice.console.presentation;
 
 import eapli.base.Application;
+import eapli.base.app.backoffice.console.presentation.activity.AssignActivityToColabAction;
+import eapli.base.app.backoffice.console.presentation.activity.RegisterActivityAction;
 import eapli.base.app.backoffice.console.presentation.authz.AddUserUI;
 import eapli.base.app.backoffice.console.presentation.authz.DeactivateUserAction;
 import eapli.base.app.backoffice.console.presentation.authz.ListUsersAction;
@@ -101,6 +103,10 @@ public class MainMenu extends AbstractUI {
     //WORKFLOW 
     private static final int WORKFLOW_REGISTER_OPTION = 1;
     
+    //ACTIVITY
+    private static final int ACTIVITY_REGISTER_OPTION = 1;
+    private static final int ASSIGN_ACTIVITY_TO_COLAB_OPTION = 2;
+    
 
     // MAIN MENU
     private static final int MY_USER_OPTION = 1;
@@ -111,16 +117,17 @@ public class MainMenu extends AbstractUI {
     private static final int TYPEOFTEAM_OPTION = 6;
     private static final int SERVICE_OPTION = 7;
     private static final int WORKFLOW_OPTION = 8;
+    private static final int ACTIVITY_OPTION = 9;
     
     
     
     
     
-    private static final int SETTINGS_OPTION = 9;
-    private static final int DISH_OPTION = 10;
-    private static final int TRACEABILITY_OPTION = 11;
-    private static final int MEALS_OPTION = 12;
-    private static final int REPORTING_DISHES_OPTION = 13;
+    private static final int SETTINGS_OPTION = 10;
+    private static final int DISH_OPTION = 11;
+    private static final int TRACEABILITY_OPTION = 12;
+    private static final int MEALS_OPTION = 13;
+    private static final int REPORTING_DISHES_OPTION = 14;
     
 
     private static final String SEPARATOR_LABEL = "--------------";
@@ -193,6 +200,11 @@ public class MainMenu extends AbstractUI {
         if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.ADMIN)) {
             final Menu usersMenu = buildWorkflowMenu();
             mainMenu.addSubMenu(WORKFLOW_OPTION, usersMenu);
+        }
+        
+        if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.ADMIN)) {
+            final Menu usersMenu = buildActivityMenu();
+            mainMenu.addSubMenu(ACTIVITY_OPTION, usersMenu);
         }
          
         if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.ADMIN)) {
@@ -284,10 +296,20 @@ public class MainMenu extends AbstractUI {
         return menu;
     }
       
-      private Menu buildWorkflowMenu() {
+    private Menu buildWorkflowMenu() {
         final Menu menu = new Menu("Workflows >");
 
         menu.addItem(WORKFLOW_REGISTER_OPTION, "Register Workflow", new RegisterWorkflowAction());
+        menu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
+
+        return menu;
+    }
+      
+    private Menu buildActivityMenu() {
+        final Menu menu = new Menu("Activities >");
+
+        menu.addItem(ACTIVITY_REGISTER_OPTION, "Register Activity", new RegisterActivityAction());
+        menu.addItem(ASSIGN_ACTIVITY_TO_COLAB_OPTION, "Assign Activity to Colaborator", new AssignActivityToColabAction());
         menu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
 
         return menu;

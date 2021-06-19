@@ -2,12 +2,16 @@ package eapli.base.activitymanagement.domain;
 
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.util.StringPredicates;
+import javax.persistence.Embeddable;
 
+@Embeddable
 public class ActivityExecutionStatus implements ValueObject, Comparable<ActivityExecutionStatus> {
 
     private static final long serialVersionUID = 1L;
     public static ActivityExecutionStatus PENDING = ActivityExecutionStatus.valueOf("PENDING");
     public static ActivityExecutionStatus DONE = ActivityExecutionStatus.valueOf("DONE");
+    public static ActivityExecutionStatus UNASSIGNED = ActivityExecutionStatus.valueOf("UNASSIGNED");
+    public static ActivityExecutionStatus DOING = ActivityExecutionStatus.valueOf("DOING");
 
     private String status;
 
@@ -55,5 +59,6 @@ public class ActivityExecutionStatus implements ValueObject, Comparable<Activity
     public int compareTo(final ActivityExecutionStatus oName) {
         return status.compareTo(oName.status);
     }
+
 
 }
