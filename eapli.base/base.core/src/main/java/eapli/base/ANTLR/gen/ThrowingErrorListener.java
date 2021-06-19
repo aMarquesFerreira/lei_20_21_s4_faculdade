@@ -21,7 +21,6 @@ public class ThrowingErrorListener extends BaseErrorListener {
         List<String> stack = ((Parser) recognizer).getRuleInvocationStack();
         Collections.reverse(stack);
 
-        System.err.println("NotOk!!");
         System.err.println("Syntax Error!");
         System.err.println("Token " + "\"" + ((Token) offendingSymbol).getText() + "\"" + " (line"
                 +

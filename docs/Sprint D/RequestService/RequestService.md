@@ -11,52 +11,36 @@
 
 ##**Tests**
 ```java
-
-public class TicketTest {
-
-    public Ticket dummyTicket(final TicketId id) {
-        
-    }
-
-    public static SystemUser dummyUser(final String username, final Role... roles) { 
-        
-    }
-
-    private SystemUser getNewDummyUser() {
-        
-    }
-
-    private Ticket getNewDummyTicket() {
-        
-    }
-
-    private Ticket getNewDummyTicketTwo() {
+public class ServiceTest {
+    
+    @Test
+    public void ensureServiceEqualsPassesForTheSameServiceCode() throws Exception {
         
     }
 
     @Test
-    public void ensureTicketEqualsPassesForTheSameTicketID() {
-        
+    public void ensureServiceEqualsFailsForDifferenteServiceCode() throws Exception {
+
     }
 
     @Test
-    public void ensureTicketEqualsFailsForDifferenteTicketID() {
+    public void ensureServiceEqualsAreTheSameForTheSameInstance() throws Exception {
+
     }
 
     @Test
-    public void ensureTicketEqualsAreTheSameForTheSameInstance() {
+    public void ensureServiceEqualsFailsForDifferenteObjectTypes() throws Exception {
+
     }
 
     @Test
-    public void ensureTicketEqualsFailsForDifferenteObjectTypes() {
+    public void ensureServiceIsTheSameAsItsInstance() throws Exception {
+
     }
 
     @Test
-    public void ensureTicketIsTheSameAsItsInstance() {
-    }
+    public void ensureTwoServiceWithDifferentServiceCodesAreNotTheSame() throws Exception {
 
-    @Test
-    public void ensureTwoTicketWithDifferentTicketIDsAreNotTheSame() {
     }
 }
 

@@ -33,22 +33,4 @@ public class FormCheckVisitor extends FormCheckBaseVisitor<String> {
         return ctx.getChild(3).getText();
 
     }
-
-    @Override
-    public String visitDescription(FormCheckParser.DescriptionContext ctx) {
-        return ctx.getChild(4).getText();
-
-    }
-
-    @Override
-    public String visitLetters(FormCheckParser.LettersContext ctx) {
-        return ctx.getChild(0).getText();
-
-    }
-
-    @Override
-    public String visitNumber(FormCheckParser.NumberContext ctx) {
-        return ctx.getChild(0).getText();
-
-    }
 }
