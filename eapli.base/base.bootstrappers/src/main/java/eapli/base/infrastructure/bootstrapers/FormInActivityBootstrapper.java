@@ -51,6 +51,38 @@ public class FormInActivityBootstrapper implements Action{
                 FormParameterData.valueOf("String"));
         formParameters.add(fp1);
         
+        
+        
+        //FOR SERVICE 2
+        
+        FormParameter fp11 = new FormParameter(FormParameterId.valueOf("12"),
+                Designation.valueOf("Decisao"),
+                Label.valueOf("D"),
+                Description.valueOf("Decisao"),
+                FormParameterData.valueOf("String"));
+        
+        FormParameter fp12 = new FormParameter(FormParameterId.valueOf("13"),
+                Designation.valueOf("Motivo"),
+                Label.valueOf("M"),
+                Description.valueOf("Motivo da decisao"),
+                FormParameterData.valueOf("String"));
+        
+        FormParameter fp13 = new FormParameter(FormParameterId.valueOf("14"),
+                Designation.valueOf("Percentagem de desconto"),
+                Label.valueOf("D"),
+                Description.valueOf("Percentagem de desconto"),
+                FormParameterData.valueOf("String"));// pode mudar
+        
+        FormParameter fp14 = new FormParameter(FormParameterId.valueOf("15"),
+                Designation.valueOf("data limite (caso faça sentido)"),
+                Label.valueOf("DL"),
+                Description.valueOf("data limite (caso faça sentido)"),
+                FormParameterData.valueOf("STRING"));
+        
+        
+        
+        // FOR SERVICE 2
+        
         Activity a1 = actRepo.findByActivityId(ActivityId.valueOf("A1")).get();
         
         registerFormInActivity("F3", "Form3",a1, formParameters);

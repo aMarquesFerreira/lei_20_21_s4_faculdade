@@ -3,6 +3,7 @@
  */
 package eapli.base.infrastructure.persistence;
 
+import eapli.base.activitymanagement.repositories.ActivityExecutionRepository;
 import eapli.base.activitymanagement.repositories.ActivityRepository;
 import eapli.base.catalogue.repositories.CatalogueRepository;
 import eapli.base.clientusermanagement.repositories.ClientUserRepository;
@@ -100,4 +101,5 @@ public interface RepositoryFactory {
         
         FormAnswerRepository formAnswers();
 
+        ActivityExecutionRepository activityExecutions();
 }

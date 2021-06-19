@@ -9,6 +9,8 @@ import eapli.base.activitymanagement.domain.Activity;
 import eapli.base.activitymanagement.domain.ActivityExecution;
 import eapli.base.activitymanagement.domain.ActivityExecutionId;
 import eapli.base.activitymanagement.domain.ActivityExecutionStatus;
+import eapli.base.activitymanagement.dto.TicketActivityExecutionDto;
+import eapli.base.activitymanagement.repositories.ActivityExecutionRepository;
 import eapli.base.catalogue.repositories.CatalogueRepository;
 import eapli.base.cataloguemanagement.domain.Catalogue;
 import eapli.base.colaboratormanagement.domain.Colaborator;
@@ -42,10 +44,12 @@ import java.util.Optional;
  */
 public class PerformActivityController {
     private final ServiceRepository servRepo = PersistenceContext.repositories().services();
+    private final ActivityExecutionRepository actExctRepo = PersistenceContext.repositories().activityExecutions();
     private final CatalogueRepository catRepo = PersistenceContext.repositories().catalogues();
     private final FormAnswerRepository formAnswerRepo = PersistenceContext.repositories().formAnswers();
     private final ColaboratorRepository colabRepo = PersistenceContext.repositories().colaborators();
     private final AuthorizationService authz = AuthzRegistry.authorizationService();
+    private final TicketRepository ticketRepo = PersistenceContext.repositories().tickets();
     
     
     
@@ -69,11 +73,11 @@ public class PerformActivityController {
      * @return
      * @see MyBookingsController#bookMealForMe(Meal)
      */
-    public FormAnswer performActivity(ActivityExecution actExec, List<FormParameter> params, List<String> values) {
+    public FormAnswer performActivity(TicketActivityExecutionDto actExec, List<FormParameter> params, List<String> values) {
         
-        String formAnswerId = actExec.getActivity().getForm().identity()+"/"+LocalDateTime.now().hashCode();//para ter um id unico
+        String formAnswerId = actExec.activityExecution.getActivity().getForm().identity()+"/"+LocalDateTime.now().hashCode();//para ter um id unico
         
-        FormAnswer formAnswer = new FormAnswer(FormAnswerId.valueOf(formAnswerId), actExec.getActivity().getForm(), currentUser().get());
+        FormAnswer formAnswer = new FormAnswer(FormAnswerId.valueOf(formAnswerId), actExec.activityExecution.getActivity().getForm(), currentUser().get());
         
         int n=0;
         for(FormParameter p: params){
@@ -82,11 +86,29 @@ public class PerformActivityController {
             n++;
         }
        
-        actExec.setFormAnswer(formAnswer);
-        actExec.statusDone();
         
+        formAnswer = formAnswerRepo.save(formAnswer);
+        
+        actExec.activityExecution.setFormAnswer(formAnswer);
+        actExec.activityExecution.statusDone();
+
+        actExctRepo.save(actExec.activityExecution);
+        
+        //check if all done
+        boolean allDone=true;
+        for(ActivityExecution ae: actExec.ticket.getWorkFlowExecution().activityExecutions()){
+            if (!ae.getStatus().equals(ActivityExecutionStatus.DONE)){
+                allDone=false;
+                break;
+            }
+        }
+        
+        if (allDone){
+            actExec.ticket.close();
+            ticketRepo.save(actExec.ticket);
+        }
             
-        return formAnswerRepo.save(formAnswer);
+        return formAnswer;
     }
     
     

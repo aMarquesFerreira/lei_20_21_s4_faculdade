@@ -7,6 +7,7 @@ package eapli.base.app.user.console.presentation.performactivities;
 
 import eapli.base.activitymanagement.domain.Activity;
 import eapli.base.activitymanagement.domain.ActivityExecution;
+import eapli.base.activitymanagement.dto.TicketActivityExecutionDto;
 import eapli.base.cataloguemanagement.domain.Catalogue;
 import eapli.framework.visitor.Visitor;
 
@@ -15,10 +16,10 @@ import eapli.framework.visitor.Visitor;
  * @author andre
  */
 @SuppressWarnings("squid:S106")
-public class ActivityExecutionPrinter implements Visitor<ActivityExecution> {
+public class ActivityExecutionPrinter implements Visitor<TicketActivityExecutionDto> {
     
     @Override
-    public void visit(final ActivityExecution visitee){
-       System.out.printf("%-10s - %s", visitee.identity(), visitee.getActivity().description());
+    public void visit(final TicketActivityExecutionDto visitee){
+       System.out.printf("%s: %-10s - %s", visitee.ticket.ticketId(), visitee.activityExecution.identity(), visitee.activityExecution.getActivity().description());
     }
 }

@@ -142,7 +142,7 @@ public class ActivityExecution implements AggregateRoot<ActivityExecutionId> {
 
     
     public void statusDone() {
-        status.setToDone(status);
+        status = ActivityExecutionStatus.DONE;
     }
 
     public void assignToColaborator(Colaborator colab) {

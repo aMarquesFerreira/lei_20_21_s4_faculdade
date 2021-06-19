@@ -10,6 +10,7 @@ import eapli.base.activitymanagement.application.MyActivitiesController;
 import eapli.base.activitymanagement.application.PerformActivityController;
 import eapli.base.activitymanagement.domain.Activity;
 import eapli.base.activitymanagement.domain.ActivityExecution;
+import eapli.base.activitymanagement.dto.TicketActivityExecutionDto;
 import eapli.base.colaboratormanagement.application.ListColaboratorService;
 import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
@@ -39,15 +40,15 @@ public class PerformActivityUI extends AbstractUI {
     @Override
     protected boolean doShow(){
    
-        final Iterable<ActivityExecution> activities = this.myActController.myActivities();
+        final Iterable<TicketActivityExecutionDto> activities = this.myActController.myActivities();
 
-        final SelectWidget<ActivityExecution> Selector = new SelectWidget<>("Activities:", activities,
+        final SelectWidget<TicketActivityExecutionDto> Selector = new SelectWidget<>("Activities:", activities,
                 new ActivityExecutionPrinter());
         Selector.show();
 
-        final ActivityExecution theActivityExecution = Selector.selectedElement();
+        final TicketActivityExecutionDto theActivityExecution = Selector.selectedElement();
         
-        Form form = theActivityExecution.getActivity().getForm();
+        Form form = theActivityExecution.activityExecution.getActivity().getForm();
         
         List<FormParameter> params = new ArrayList<>();
         List<String> values = new ArrayList<>();        

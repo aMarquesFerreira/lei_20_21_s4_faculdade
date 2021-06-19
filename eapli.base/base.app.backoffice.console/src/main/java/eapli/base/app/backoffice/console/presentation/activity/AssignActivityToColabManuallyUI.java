@@ -10,6 +10,7 @@ import eapli.base.activitymanagement.application.PerformActivityController;
 import eapli.base.activitymanagement.application.RegisterActivityController;
 import eapli.base.activitymanagement.domain.Activity;
 import eapli.base.activitymanagement.domain.ActivityExecution;
+import eapli.base.activitymanagement.dto.TicketActivityExecutionDto;
 import eapli.base.app.backoffice.console.presentation.colaborator.ColaboratorPrinter;
 import eapli.base.backoffice.console.presentation.form.FormPrinter;
 import eapli.base.backoffice.console.presentation.workflow.RegisterWorkflowUI;
@@ -41,12 +42,12 @@ public class AssignActivityToColabManuallyUI extends AbstractUI {
         
         
         //-----------especificaçao de activity
-        final Iterable<ActivityExecution> activity = this.myActivitiesController.myActivities();
+        final Iterable<TicketActivityExecutionDto> activity = this.myActivitiesController.myActivities();
         
-        final SelectWidget<ActivityExecution> selector = new SelectWidget<>("Activities:", activity,
+        final SelectWidget<TicketActivityExecutionDto> selector = new SelectWidget<>("Activities:", activity,
                 new ActivityExecutionPrinter());
         selector.show();
-        final ActivityExecution theActivity = selector.selectedElement();
+        final TicketActivityExecutionDto theActivity = selector.selectedElement();
         //-----------
         
         //especificaçao do colab
@@ -60,7 +61,7 @@ public class AssignActivityToColabManuallyUI extends AbstractUI {
         
         //Activity activity;
          try {
-         this.theController.assignActivityToColabManually(theColaborator, theActivity);
+         this.theController.assignActivityToColabManually(theColaborator, theActivity.activityExecution);
             
         } catch (@SuppressWarnings("unused") final IntegrityViolationException e) {
             System.out.println("You tried to add an Activity to a Colab wich already exists in the database.");

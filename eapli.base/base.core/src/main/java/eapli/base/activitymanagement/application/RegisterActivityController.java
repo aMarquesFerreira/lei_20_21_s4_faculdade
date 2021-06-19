@@ -54,7 +54,7 @@ public class RegisterActivityController {
      * @param colaborator
      * @return
      */
-    public Activity RegisterActivity(final String activityId, final String description,final String type,final Integer execTime, final Colaborator colaborator/*,final Form form*/) {
+    public Activity RegisterActivity(final String activityId, final String description,final String type,final Integer execTime/*, final Colaborator colaborator,final Form form*/) {
        
         authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.HELP_DESK_SERVICE_MANAGER);
 

@@ -41,6 +41,7 @@ public class FormBootstrapper implements Action{
     List<FormParameter> formParameters = new ArrayList<>();
 
     List<FormParameter> formParameters2 = new ArrayList<>();
+    List<FormParameter> formParameters3 = new ArrayList<>();
 
     
 
@@ -53,7 +54,7 @@ public class FormBootstrapper implements Action{
                 FormParameterData.valueOf("Boolean"));
         formParameters.add(fp1);
 
-        FormParameter fp2 = new FormParameter(FormParameterId.valueOf("3"),
+        /*FormParameter fp2 = new FormParameter(FormParameterId.valueOf("3"),
                 Designation.valueOf("Internal Code"),
                 Label.valueOf("IC"),
                 Description.valueOf("internal code of the client"),
@@ -105,7 +106,69 @@ public class FormBootstrapper implements Action{
                 Designation.valueOf("Fundamentação do pedido"),
                 Label.valueOf("FP"),
                 Description.valueOf("Fundamentação do pedido"),
+                FormParameterData.valueOf("String"));*/
+        
+        ///////////////// FOR SERVICE 2//
+ //Código Interno Cliente, Nome, Tipo de Desconto, Recorrência, Percentagem de Desconto, Valor de Desconto, Identificação da Fatura, Data Limite, Fundamentação do pedido      
+        FormParameter fp11 = new FormParameter(FormParameterId.valueOf("12"),
+                Designation.valueOf("Codigo Interno Cliente"),
+                Label.valueOf("CI"),
+                Description.valueOf("Codigo Interno Cliente"),
                 FormParameterData.valueOf("String"));
+        
+        FormParameter fp12 = new FormParameter(FormParameterId.valueOf("13"),
+                Designation.valueOf("Nome"),
+                Label.valueOf("NM"),
+                Description.valueOf("Nome"),
+                FormParameterData.valueOf("String"));
+        
+        FormParameter fp13 = new FormParameter(FormParameterId.valueOf("14"),
+                Designation.valueOf("Tipo de Desconto"),
+                Label.valueOf("TD"),
+                Description.valueOf("Tipo de Desconto"),
+                FormParameterData.valueOf("String"));// pode mudar
+        
+        FormParameter fp14 = new FormParameter(FormParameterId.valueOf("15"),
+                Designation.valueOf("Recorrência"),
+                Label.valueOf("RC"),
+                Description.valueOf("Recorrência"),
+                FormParameterData.valueOf("STRING"));
+        
+         FormParameter fp15 = new FormParameter(FormParameterId.valueOf("15"),
+                Designation.valueOf("Percentagem de Desconto"),
+                Label.valueOf("PD"),
+                Description.valueOf("Percentagem de Desconto"),
+                FormParameterData.valueOf("STRING"));
+         
+          FormParameter fp16 = new FormParameter(FormParameterId.valueOf("15"),
+                Designation.valueOf("Valor de Desconto"),
+                Label.valueOf("VD"),
+                Description.valueOf("Valor de Desconto"),
+                FormParameterData.valueOf("STRING"));
+          
+           FormParameter fp17 = new FormParameter(FormParameterId.valueOf("15"),
+                Designation.valueOf("Identificação da Fatura,"),
+                Label.valueOf("IF"),
+                Description.valueOf("Identificação da Fatura,"),
+                FormParameterData.valueOf("STRING"));
+           
+            FormParameter fp18 = new FormParameter(FormParameterId.valueOf("15"),
+                Designation.valueOf("Data Limite"),
+                Label.valueOf("DL"),
+                Description.valueOf("Data Limite"),
+                FormParameterData.valueOf("STRING"));
+            
+             FormParameter fp19 = new FormParameter(FormParameterId.valueOf("15"),
+                Designation.valueOf("Fundamentação do pedido"),
+                Label.valueOf("FP"),
+                Description.valueOf("Fundamentação do pedido"),
+                FormParameterData.valueOf("STRING"));
+        
+        
+        ///////////////////// FOR SERVICE 2
+        
+        
+       /* //SERVICE 1
         formParameters2.add(fp2);
         formParameters2.add(fp3);
         formParameters2.add(fp4);
@@ -115,16 +178,30 @@ public class FormBootstrapper implements Action{
         formParameters2.add(fp8);
         formParameters2.add(fp9);
         formParameters2.add(fp10);
+        //SERVICE 1*/
         
+        //SERVICE 2
+        formParameters3.add(fp11);
+        formParameters3.add(fp12);
+        formParameters3.add(fp13);
+        formParameters3.add(fp14);
+        formParameters3.add(fp15);
+        formParameters3.add(fp16);
+        formParameters3.add(fp17);
+        formParameters3.add(fp18);
+        formParameters3.add(fp19);
+        Service svc2 = servRepo.findByServiceCode(ServiceCode.valueOf("S5")).get();
+        registerNewFormInService("F4", "Formulario de Descontos",svc2, formParameters3);
+        //SERVICE 2
     
         
         Service svc1 = servRepo.findByServiceCode(ServiceCode.valueOf("S1")).get();
-        Service svc2 = servRepo.findByServiceCode(ServiceCode.valueOf("S4")).get();
+       
 
         
             
         registerNewFormInService("F1", "Form1",svc1, formParameters);
-        registerNewFormInService("F4", "discount form",svc2, formParameters2);
+        
         
         
         return true;

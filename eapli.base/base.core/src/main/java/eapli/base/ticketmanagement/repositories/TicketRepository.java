@@ -7,6 +7,7 @@ package eapli.base.ticketmanagement.repositories;
 
 import eapli.base.activitymanagement.domain.Activity;
 import eapli.base.activitymanagement.domain.ActivityExecution;
+import eapli.base.activitymanagement.dto.TicketActivityExecutionDto;
 import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.ticketmanagement.domain.Ticket;
 import eapli.base.ticketmanagement.domain.TicketId;
@@ -37,7 +38,7 @@ public interface TicketRepository extends DomainRepository<TicketId, Ticket> {
     
     /*public int getMaxNumber();*/
 
-    public Iterable<ActivityExecution> findActivitiesAssignedTo(Colaborator colaborator);
+    public Iterable<TicketActivityExecutionDto> findActivitiesAssignedTo(Colaborator colaborator);
 
     
 }

@@ -7,6 +7,8 @@ package eapli.base.persistence.impl.jpa;
 
 import eapli.base.Application;
 import eapli.base.activitymanagement.domain.ActivityExecution;
+import eapli.base.activitymanagement.domain.ActivityExecutionStatus;
+import eapli.base.activitymanagement.dto.TicketActivityExecutionDto;
 import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.ticketmanagement.domain.Ticket;
 import eapli.base.ticketmanagement.domain.TicketId;
@@ -91,15 +93,27 @@ public class JpaTicketRepository extends JpaAutoTxRepository<Ticket, TicketId, T
     }*/
 
     @Override
-    public Iterable<ActivityExecution> findActivitiesAssignedTo(Colaborator colaborator) {
-        List<ActivityExecution> activities = new ArrayList<>();
+    public Iterable<TicketActivityExecutionDto> findActivitiesAssignedTo(Colaborator colaborator) {
+        List<TicketActivityExecutionDto> activities = new ArrayList<>();
         
         Iterable<Ticket> tickets = findAll();
         for (Ticket ticket : tickets) {
             WorkFlowExecution wfe = ticket.getWorkFlowExecution();
+            
+            //if two activities, the second is available only if the first is done
+            boolean first=true;
+            boolean firstDone=false;
             for(ActivityExecution ae: wfe.activityExecutions()){
-                if (colaborator.equals(ae.getColaborator()))
-                    activities.add(ae);
+                if (ae.getStatus().equals(ActivityExecutionStatus.DONE)){
+                    if (first)
+                        firstDone=true;
+                }else{
+                    if (colaborator.equals(ae.getColaborator())){
+                        if (first || firstDone){//first allways allowed, second requires first to be done
+                            activities.add(new TicketActivityExecutionDto(ticket,ae));                    
+                        }
+                    }
+                }
             }            
         }
         

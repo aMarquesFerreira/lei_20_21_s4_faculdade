@@ -7,6 +7,7 @@ package eapli.base.activitymanagement.application;
 
 import eapli.base.activitymanagement.domain.Activity;
 import eapli.base.activitymanagement.domain.ActivityExecution;
+import eapli.base.activitymanagement.dto.TicketActivityExecutionDto;
 import eapli.base.activitymanagement.repositories.ActivityRepository;
 import eapli.base.catalogue.repositories.CatalogueRepository;
 import eapli.base.cataloguemanagement.application.ListCatalogueService;
@@ -37,7 +38,7 @@ public class MyActivitiesController {
      *
      * @return the catalogues of the authenticated colaborator
      */
-    public Iterable<ActivityExecution> myActivities() {
+    public Iterable<TicketActivityExecutionDto> myActivities() {
         //authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.COLABORATOR);
 
         return ticketRepo.findActivitiesAssignedTo(currentUser().get());

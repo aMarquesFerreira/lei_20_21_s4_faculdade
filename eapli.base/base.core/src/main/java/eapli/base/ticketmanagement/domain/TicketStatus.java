@@ -2,7 +2,10 @@ package eapli.base.ticketmanagement.domain;
 
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.util.StringPredicates;
+import javax.persistence.Embeddable;
 
+
+@Embeddable
 public class TicketStatus implements ValueObject, Comparable<TicketStatus> {
 
     private static final long serialVersionUID = 1L;

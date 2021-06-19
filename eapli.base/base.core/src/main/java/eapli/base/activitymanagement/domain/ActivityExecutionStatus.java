@@ -2,7 +2,9 @@ package eapli.base.activitymanagement.domain;
 
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.util.StringPredicates;
+import javax.persistence.Embeddable;
 
+@Embeddable
 public class ActivityExecutionStatus implements ValueObject, Comparable<ActivityExecutionStatus> {
 
     private static final long serialVersionUID = 1L;
@@ -58,7 +60,5 @@ public class ActivityExecutionStatus implements ValueObject, Comparable<Activity
         return status.compareTo(oName.status);
     }
 
-    public void setToDone(ActivityExecutionStatus status){
-        status = DONE;
-    }
+
 }
