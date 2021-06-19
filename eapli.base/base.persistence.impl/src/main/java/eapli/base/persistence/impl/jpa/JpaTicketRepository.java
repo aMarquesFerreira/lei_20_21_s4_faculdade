@@ -6,14 +6,19 @@
 package eapli.base.persistence.impl.jpa;
 
 import eapli.base.Application;
+import eapli.base.activitymanagement.domain.ActivityExecution;
+import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.ticketmanagement.domain.Ticket;
 import eapli.base.ticketmanagement.domain.TicketId;
 import eapli.base.ticketmanagement.repositories.TicketRepository;
+import eapli.base.workflowmanagement.domain.WorkFlowExecution;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.repositories.impl.jpa.JpaAutoTxRepository;
+import java.util.ArrayList;
 
 import javax.persistence.TypedQuery;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -84,5 +89,28 @@ public class JpaTicketRepository extends JpaAutoTxRepository<Ticket, TicketId, T
     public int getMaxNumber() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }*/
+
+    @Override
+    public Iterable<ActivityExecution> findActivitiesAssignedTo(Colaborator colaborator) {
+        List<ActivityExecution> activities = new ArrayList<>();
+        
+        Iterable<Ticket> tickets = findAll();
+        for (Ticket ticket : tickets) {
+            WorkFlowExecution wfe = ticket.getWorkFlowExecution();
+            for(ActivityExecution ae: wfe.activityExecutions()){
+                if (colaborator.equals(ae.getColaborator()))
+                    activities.add(ae);
+            }            
+        }
+        
+        return activities;
+        /*TypedQuery q = 
+                createQuery("select activityExecution from Ticket "
+                          + "where workFlowExecution.activityExecution.colaborator=:colab", ActivityExecution.class);
+        q.setParameter("colab", colaborator);
+        
+        List<ActivityExecution> result = q.getResultList();
+        return result;*/
+    }
         
 }

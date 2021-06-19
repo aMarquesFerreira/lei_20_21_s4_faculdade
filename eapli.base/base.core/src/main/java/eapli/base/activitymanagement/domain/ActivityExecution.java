@@ -32,6 +32,8 @@ public class ActivityExecution implements AggregateRoot<ActivityExecutionId> {
     @EmbeddedId
     private ActivityExecutionId activityExecutionId;
     
+    @XmlElement
+    @JsonProperty
     private ActivityExecutionStatus status; 
 
     /**
@@ -87,6 +89,10 @@ public class ActivityExecution implements AggregateRoot<ActivityExecutionId> {
     public Colaborator colaborator() {
         return this.colaborator;
     }
+
+    public Activity getActivity() {
+        return activity;
+    }
     
     @Override
     public boolean equals(final Object o) {
@@ -134,6 +140,18 @@ public class ActivityExecution implements AggregateRoot<ActivityExecutionId> {
         return colaborator;
     }
 
+    
+    public void statusDone() {
+        status.setToDone(status);
+    }
+
+    public void assignToColaborator(Colaborator colab) {
+        this.colaborator=colab;
+    }
+
+    public void setFormAnswer(FormAnswer formAnswer) {
+        this.formAnswer=formAnswer;
+    }
 
 
     

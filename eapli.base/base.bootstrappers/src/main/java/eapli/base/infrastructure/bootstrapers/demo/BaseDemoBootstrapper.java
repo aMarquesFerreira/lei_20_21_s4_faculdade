@@ -61,7 +61,8 @@ public class BaseDemoBootstrapper implements Action {
                                    new ServiceBootstrapper(),
                                    new FormBootstrapper(), //precisa de servico
                                    new WorkflowBootstrapper(),
-                                   new TicketBootstrapper()
+                                   new TicketBootstrapper(),
+                                   new AssigneActivityToColabBootstrapper()
                                    
                                    
                                    

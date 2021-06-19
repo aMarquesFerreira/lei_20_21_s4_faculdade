@@ -23,6 +23,7 @@ import javax.xml.bind.annotation.XmlElement;
 @Entity
 public class Activity implements AggregateRoot<ActivityId> {
     
+    @Version
     private Long version;
     
     @XmlElement
@@ -154,5 +155,5 @@ public class Activity implements AggregateRoot<ActivityId> {
     public void addForm(Form form) {
         this.form = form;
     }
-
+    
 }

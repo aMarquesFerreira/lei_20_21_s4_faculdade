@@ -5,7 +5,7 @@
  */
 package eapli.base.app.activityflowengine;
 
-import eapli.base.activityflowengine.simulate.AssignActivityToColabSimulation;
+import eapli.base.activityflowengine.simulate.XXAssignActivityToColabSimulation;
 import eapli.base.app.activityflowengine.client.InitializeConnectionAction;
 import java.io.IOException;
 
@@ -52,13 +52,13 @@ public final class ActivityFlowEngineMain {
             ex.printStackTrace();
         }
         
-        ///
-        
-        AssignActivityToColabSimulation aac = new AssignActivityToColabSimulation();
-        aac.execute();
-
-
-        ///
+//        ///SIMULAÇÃO (APAGAR)
+//        
+//        AssignActivityToColabSimulation aac = new AssignActivityToColabSimulation();
+//        aac.execute();
+//
+//
+//        ///SIMULAÇÃO (APAGAR)
 
         //ler da configuracao qual o algoritmo a usar
         String algorithm = "fcfs";

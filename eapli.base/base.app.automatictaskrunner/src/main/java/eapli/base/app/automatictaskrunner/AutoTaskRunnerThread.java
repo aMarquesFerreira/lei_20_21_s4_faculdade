@@ -84,7 +84,7 @@ public class AutoTaskRunnerThread implements Runnable {
 
 
 
-    private Sdp2021Message processMessage(Sdp2021Message message) throws IOException {
+    private Sdp2021Message processMessage(Sdp2021Message message) throws IOException { //LE SCRIPT
       
         if (message.getCodigo()==10){//pedidos stats
             String stat = new String(message.getDados());

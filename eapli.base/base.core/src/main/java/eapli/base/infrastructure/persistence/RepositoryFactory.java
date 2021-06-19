@@ -8,6 +8,8 @@ import eapli.base.catalogue.repositories.CatalogueRepository;
 import eapli.base.clientusermanagement.repositories.ClientUserRepository;
 import eapli.base.clientusermanagement.repositories.SignupRequestRepository;
 import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
+import eapli.base.formmanagement.repositories.FormAnswerRepository;
+import eapli.base.formmanagement.repositories.FormParameterAnswerRepository;
 import eapli.base.formmanagement.repositories.FormParameterRepository;
 import eapli.base.formmanagement.repositories.FormRepository;
 import eapli.base.servicemanagement.repositories.ServiceRepository;
@@ -93,5 +95,9 @@ public interface RepositoryFactory {
         ActivityRepository activities();
         
         FormParameterRepository formParameters();
+        
+        FormParameterAnswerRepository formParameterAnswers();
+        
+        FormAnswerRepository formAnswers();
 
 }
