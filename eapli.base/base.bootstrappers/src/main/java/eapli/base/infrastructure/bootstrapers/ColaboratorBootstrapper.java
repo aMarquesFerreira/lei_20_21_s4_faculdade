@@ -45,8 +45,8 @@ public class ColaboratorBootstrapper implements Action {
         signupAndApproveUser(TestDataConstants.USER_TEST1, "Password1", "John", "Smith",
                 "john@smith.com", TestDataConstants.USER_TEST1);
         
-        signupAndApproveUser("isep959", "Password1", "Mary", "Smith", "mary@smith.com", "isep959");
-        registerColaborator("isep959","Mary");
+        signupAndApproveUser("isep959", "Password1", "Andre", "Ferreira", "1200605@isep.ipp.pt", "isep959");
+        registerColaborator("isep959","Andre");
         
         signupAndApproveUser("isep960", "Password1", "Lamb", "Smith", "lamb@smith.com", "isep960");        
         registerColaborator("isep960","Lamb");

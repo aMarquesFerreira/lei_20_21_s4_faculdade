@@ -80,7 +80,7 @@ public class DashboardServerSSL {
 
             SSLSocketFactory sf = (SSLSocketFactory) SSLSocketFactory.getDefault();
 
-            motorFluxoClient = (SSLSocket) sf.createSocket(motorFluxoServerAddress, Sdp2021.SDP2021_PORT);
+            motorFluxoClient = (SSLSocket) sf.createSocket(motorFluxoServerAddress, Sdp2021.SDP2021_PORT_AFM);
 
             motorFluxoClient.startHandshake();
         

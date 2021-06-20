@@ -33,4 +33,8 @@ public interface ActivityRepository
 
     Iterable<Activity> findAllActive();
     
+    Iterable<Activity> findByManualType();
+    
+    Iterable<Activity> findByAutomaticType();
+    
 }

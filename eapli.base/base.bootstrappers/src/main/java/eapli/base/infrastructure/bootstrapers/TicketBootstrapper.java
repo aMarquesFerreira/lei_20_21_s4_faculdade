@@ -57,6 +57,7 @@ public class TicketBootstrapper implements Action {
     private List<Catalogue> cats;
     List<FormParameter> formParameters;
     List<String> values = new ArrayList<>();
+    List<String> values2 = new ArrayList<>();
     
      @Override     
     public boolean execute() {  
@@ -75,7 +76,36 @@ public class TicketBootstrapper implements Action {
         String answer1 = "Resposta de teste";
         values.add(answer1);
         
-        requestService(s1, formParameters, values, c1);
+        //requestService(s1, formParameters, values, c1);
+        
+        
+        
+        ///////////
+        Service s2 = servRepo.findByServiceCode(ServiceCode.valueOf("S5")).get();
+        Form f2 = s2.getForm();
+       
+        
+        formParameters = new ArrayList();
+        for (FormParameter formPar : f2.getFormParameters()) {
+            formParameters.add(formPar);
+        }
+    
+        
+        
+        String answer2 = "Sim";
+        String answer3 = "É possível";
+        String answer4 = "20%";
+        String answer5 = "10/05/2022";
+        
+        values2.add(answer2);
+        values2.add(answer3);
+        values2.add(answer4);
+        values2.add(answer5);
+        
+        requestService(s2, formParameters, values2, c1);
+        
+        
+        //////////
         
         
         

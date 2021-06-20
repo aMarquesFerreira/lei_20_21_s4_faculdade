@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package eapli.base.app.activityflowengine;
+package eapli.base.app.activityflowengine.algorithms;
 
 import eapli.base.activitymanagement.domain.Activity;
 import eapli.base.activitymanagement.repositories.ActivityRepository;
@@ -18,7 +18,7 @@ import java.util.List;
  *
  * @author Omen
  */
-public class AlgorithmFCFS implements AssignColaboratorAlgorithm{
+public class XXX_AlgorithmFCFS implements AssignColaboratorAlgorithm{
    
     private final ColaboratorRepository colabRepo = PersistenceContext.repositories().colaborators();
     private final ActivityRepository actRepo = PersistenceContext.repositories().activities();
@@ -26,7 +26,7 @@ public class AlgorithmFCFS implements AssignColaboratorAlgorithm{
     private List<Colaborator> colabs;
     private int next=-1;
     
-    public AlgorithmFCFS() {
+    public XXX_AlgorithmFCFS() {
         colabs = new ArrayList();
         for (Colaborator colab : colabRepo.findAllActive()) {
             colabs.add(colab);
@@ -35,7 +35,7 @@ public class AlgorithmFCFS implements AssignColaboratorAlgorithm{
     
     /*Algorithm that chooses the next colab*/
     @Override
-    public Colaborator next(){
+    public Colaborator next(Team team){
         next++;
         if (next==colabs.size())
             next=0;
@@ -46,7 +46,7 @@ public class AlgorithmFCFS implements AssignColaboratorAlgorithm{
     }
     
     
-    @Override
+    
     public Colaborator nextLowestWork(Team team){
         
         //CODE

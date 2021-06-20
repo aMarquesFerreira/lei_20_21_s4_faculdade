@@ -40,5 +40,9 @@ public interface TicketRepository extends DomainRepository<TicketId, Ticket> {
 
     public Iterable<TicketActivityExecutionDto> findActivitiesAssignedTo(Colaborator colaborator);
 
+    public Iterable<TicketActivityExecutionDto> findManualActivities();
+
+    public Iterable<TicketActivityExecutionDto> findAutomaticActivities();
+    
     
 }

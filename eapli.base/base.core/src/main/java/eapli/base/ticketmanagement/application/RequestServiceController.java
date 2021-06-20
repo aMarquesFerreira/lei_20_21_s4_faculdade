@@ -6,6 +6,8 @@
 package eapli.base.ticketmanagement.application;
 
 import eapli.base.activitymanagement.domain.Activity;
+import eapli.base.activitymanagement.domain.ActivityExecution;
+import eapli.base.activitymanagement.dto.TicketActivityExecutionDto;
 import eapli.base.catalogue.repositories.CatalogueRepository;
 import eapli.base.cataloguemanagement.domain.Catalogue;
 import eapli.base.colaboratormanagement.domain.Colaborator;
@@ -26,6 +28,7 @@ import eapli.framework.infrastructure.authz.application.AuthzRegistry;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -114,7 +117,7 @@ public class RequestServiceController{
         }
         
         Ticket ticket = new Ticket(ticketId, booker, formAnswer, service, wfe);
-        
+       
         
         return ticketRepo.save(ticket);
     }

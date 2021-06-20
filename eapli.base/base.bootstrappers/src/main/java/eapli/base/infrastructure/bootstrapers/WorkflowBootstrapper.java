@@ -40,21 +40,27 @@ public class WorkflowBootstrapper implements Action {
     private final ActivityRepository actRepo = PersistenceContext.repositories().activities();
 
     List<Activity> activities = new ArrayList<>();
+    List<Activity> activities2 = new ArrayList<>();
 
     @Override
     public boolean execute() {
         Activity a1 = actRepo.findByActivityId(ActivityId.valueOf("A1")).get();
-        //Activity a2 = actRepo.findByActivityId(ActivityId.valueOf("A2")).get();
+        Activity a2 = actRepo.findByActivityId(ActivityId.valueOf("A3")).get();
         
-        Service s1 = serviceRepo.findByServiceCode(ServiceCode.valueOf("S1")).get();
+        //Service s1 = serviceRepo.findByServiceCode(ServiceCode.valueOf("S1")).get();
+        Service s5 = serviceRepo.findByServiceCode(ServiceCode.valueOf("S5")).get();
      
         activities.add(a1);
+        activities2.add(a2);
+        activities2.add(a1);
         
         
         //activities.add(a2);
         
 
-        registerNewWorkflow("W1", activities, s1);
+        //registerNewWorkflow("W1", activities, s1);
+        
+        registerNewWorkflow("W2", activities2, s5);
        
         return true;
     }

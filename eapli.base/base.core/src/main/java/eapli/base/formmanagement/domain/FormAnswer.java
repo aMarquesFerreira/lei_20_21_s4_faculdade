@@ -121,6 +121,10 @@ public class FormAnswer implements AggregateRoot<FormAnswerId> {
         return isActive();
     }
 
+    public Iterable<FormParameterAnswer> getFormParameters() {
+        return formParametersAnswer;
+    }
+
    
 
 

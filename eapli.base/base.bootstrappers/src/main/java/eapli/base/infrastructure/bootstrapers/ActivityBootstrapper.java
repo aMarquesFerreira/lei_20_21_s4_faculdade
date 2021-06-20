@@ -38,7 +38,7 @@ public class ActivityBootstrapper implements Action {
         
         registerNewActivity("A1", "Enviar Email","A",4/*, c1*/);
         registerNewActivity("A2", "send email","M", 4/*, c1*/);
-        
+        registerNewActivity("A3", "Aprovação Email","M",1/*, c1*/);
         //registerNewActivity("A2", "sum all the costs", c1);
 
         return true;

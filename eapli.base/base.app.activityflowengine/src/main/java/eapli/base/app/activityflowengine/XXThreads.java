@@ -5,6 +5,7 @@
  */
 package eapli.base.app.activityflowengine;
 
+import eapli.base.activityflowengine.control.AssignActToColab;
 import eapli.base.activitymanagement.domain.Activity;
 import eapli.base.colaboratormanagement.domain.Colaborator;
 
@@ -12,17 +13,17 @@ import eapli.base.colaboratormanagement.domain.Colaborator;
  *
  * @author Omen
  */
-public class Threads extends Thread{
+public class XXThreads extends Thread{
     
     private Activity act;
     private Iterable<Colaborator> colabs;
     AssignActToColab aatc;
     
-    public Threads(){
+    public XXThreads(){
         
     }
     
-    public Threads(Activity activity, Iterable<Colaborator> colaborators, AssignActToColab assign){
+    public XXThreads(Activity activity, Iterable<Colaborator> colaborators, AssignActToColab assign){
         act = activity;
         colabs = colaborators;
         aatc = assign;

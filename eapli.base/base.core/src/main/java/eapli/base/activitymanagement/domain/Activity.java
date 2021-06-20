@@ -128,6 +128,8 @@ public class Activity implements AggregateRoot<ActivityId> {
         return this.execTime;
     }
 
+    
+    /*E PARA APAGAR*/
     public void assignToColaborator(Colaborator colaborator) {
         this.colaborator = colaborator;
     }

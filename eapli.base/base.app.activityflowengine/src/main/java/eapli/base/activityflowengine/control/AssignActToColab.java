@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package eapli.base.app.activityflowengine;
+package eapli.base.activityflowengine.control;
 
 import eapli.base.activitymanagement.domain.Activity;
 import eapli.base.colaboratormanagement.domain.Colaborator;

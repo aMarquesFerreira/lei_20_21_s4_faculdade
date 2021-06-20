@@ -16,6 +16,7 @@ import java.io.OutputStream;
 public class Sdp2021 {
     
     public static final int SDP2021_PORT = 32507;
+    public static final int SDP2021_PORT_AFM = 32508;
     
     public final static byte VERSION = 1;  
     public final static byte MESSAGE_TEST = 0;  

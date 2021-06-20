@@ -5,10 +5,7 @@
  */
 package eapli.base.app.automatictaskrunner;
 
-import eapli.base.clientusermanagement.domain.MecanographicNumber;
-import eapli.base.colaboratormanagement.domain.Colaborator;
-import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
-import eapli.base.infrastructure.persistence.PersistenceContext;
+import static eapli.base.ANTLR.src.AutomaticTaskEmail.sendEmail;
 import eapli.base.sdp2021.Sdp2021;
 import eapli.base.sdp2021.Sdp2021Message;
 import java.io.DataInputStream;
@@ -16,8 +13,11 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
 
 /**
  *
@@ -66,10 +66,16 @@ public class AutoTaskRunnerThread implements Runnable {
                         sdp.writeMessage(request, sOut);
                         break;
                         
+                    case 20: //envio email
+                        //request.getDados()[500]=5;
+                        Sdp2021Message response = processSendMail(request);
+                        sdp.writeMessage(response, sOut);
+                        break;
+                        
                         
                     default:
-                        Sdp2021Message response = processMessage(request);
-                        sdp.writeMessage(response, sOut);
+                        //Sdp2021Message response = processMessage(request);
+                        sdp.writeUnderstood(sOut);
                         break;
                 }
             }
@@ -108,9 +114,9 @@ public class AutoTaskRunnerThread implements Runnable {
                     */
                     //Colaborator c1 = colabRepo.findByMecanographicNumber(MecanographicNumber.valueOf(userId)).get();
                     
-                    Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)11, "something".getBytes());
+                    /*Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)11, "something".getBytes());
                     
-                    return response;
+                    return response;*/
             }
             /*else if (){
                 
@@ -121,12 +127,74 @@ public class AutoTaskRunnerThread implements Runnable {
         
         
         
+        Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)11, "something".getBytes());
+                    
+        return response;
         
-        
-        return null;
+        //return null;
     
 
     }
 
+    private Sdp2021Message processSendMail(Sdp2021Message request) {
+        
+        System.out.println("SendEmail: " + new String(request.getDados()));
+        String s = new String(request.getDados());
+        s=s.replace("\\r\\n","\\n");
+        s=s.replace("\\r","\\n");
+
+        String subject = "";
+        String body = "";
+        String from = "";
+        String to = "";
+        String script = "";
+        
+        
+        String[] lines = s.split("\\n");
+        for(String line: lines){
+            if (line.startsWith("from: "))
+                from = line.substring(6);
+            else if (line.startsWith("to: "))
+                to = line.substring(4);
+            else if (line.startsWith("subject: "))
+                subject = line.substring(9);
+            else if (line.startsWith("script: "))
+                script = line.substring(8);
+            else if (line.startsWith("body:"))
+                body = line.substring(5);
+        }
+        
+        Session session = criarSessionMail();
+
+        //sendEmail("antmen132@gmail.com"/*from*/, to, subject, body, session);
+        
+        Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)20, "Email Sent".getBytes());
+        
+        return response;
+    }
+
+    public static Session criarSessionMail() {
+        Properties props = new Properties();
+
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        //props.put("mail.smtp.socketFactory.port", 465);
+        //props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        props.put("mail.smtp.ssl.enable", true);
+        props.put("mail.smtp.auth", true);
+        props.put("mail.smtp.port", 465);
+
+        Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
+
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication("antmen132@gmail.com", "laprevida");
+            }
+        });
+
+        session.setDebug(true);
+
+        return session;
+    }
+    
+    
     
 }

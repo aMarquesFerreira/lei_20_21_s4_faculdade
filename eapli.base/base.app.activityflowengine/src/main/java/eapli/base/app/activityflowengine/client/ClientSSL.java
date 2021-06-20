@@ -8,6 +8,8 @@ package eapli.base.app.activityflowengine.client;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
+import eapli.base.activitymanagement.dto.TicketActivityExecutionDto;
+import eapli.base.app.activityflowengine.ActivityFlowEngineMain;
 import eapli.base.clientusermanagement.domain.MecanographicNumber;
 import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
@@ -35,7 +37,7 @@ import javax.net.ssl.SSLSocketFactory;
  *
  * @author andre
  */
-public class ClientSSL {
+public class ClientSSL extends Thread{
     //private final AuthorizationService authz = AuthzRegistry.authorizationService();
     private final ColaboratorRepository colabRepo = PersistenceContext.repositories().colaborators();
     private static ClientSSL instance;
@@ -45,31 +47,45 @@ public class ClientSSL {
 
     private final String executorTarefasServerAddress;
     private Sdp2021 sdp;
+    private final Sdp2021Message message;
+    private final TicketActivityExecutionDto activity;
 
-    private ClientSSL(String executorTarefasServerAddress) {
+    public ClientSSL(String executorTarefasServerAddress, Sdp2021Message message,TicketActivityExecutionDto activity) {
         this.executorTarefasServerAddress = executorTarefasServerAddress;
+        this.message = message;
+        this.activity = activity;
     }
-
+    /*
     static ClientSSL getInstance(String executorTarefasServerAddress) {
         if (instance == null) {
             instance = new ClientSSL(executorTarefasServerAddress);
         }
 
         return instance;
-    }
+    }*/
 
-    private static final String KEYSTORE_PASS = "forgotten";
+//    private static final String KEYSTORE_PASS = "forgotten";
     
-    public void start() {
+    @Override
+    public void run() {
         
-        // Trust these certificates provided by servers
-        System.setProperty("javax.net.ssl.trustStore", "client_mfa.jks");
+        /*// Trust these certificates provided by servers
+        System.setProperty("javax.net.ssl.trustStore", "server_mfa.jks");
         System.setProperty("javax.net.ssl.trustStorePassword",KEYSTORE_PASS);
 
         // Use this certificate and private key for client certificate when requested by the server
-        System.setProperty("javax.net.ssl.keyStore", "client_mfa.jks");
+        System.setProperty("javax.net.ssl.keyStore", "server_mfa.jks");
         System.setProperty("javax.net.ssl.keyStorePassword",KEYSTORE_PASS);
+        */
+        
+        System.setProperty("javax.net.ssl.trustStore", "server_mfa.jks");
+        System.setProperty("javax.net.ssl.trustStorePassword","forgotten");
 
+        // Use this certificate and private key for client certificate when requested by the server
+        System.setProperty("javax.net.ssl.keyStore", "server_mfa.jks");
+        System.setProperty("javax.net.ssl.keyStorePassword","forgotten");
+        
+        
         try {
 
             SSLSocketFactory sf = (SSLSocketFactory) SSLSocketFactory.getDefault();
@@ -84,7 +100,20 @@ public class ClientSSL {
 
             sdp = new Sdp2021();
             
+            sdp.writeMessage(message, dos);
 
+            Sdp2021Message response = sdp.readMessage(dis);
+            
+            //TODO log the response!!!!!
+            System.out.println(response);
+
+            System.out.println("Terminating SDP Client");
+            sdp.writeEnd(dos);
+
+            executorTarefasClient.close();
+                        
+            ActivityFlowEngineMain.signalExecuted(activity);
+            
         } catch (IOException ex) {
             System.out.println("Error connecting to executorAutoServer");
             ex.printStackTrace();
@@ -95,6 +124,7 @@ public class ClientSSL {
         
     }
 
+    /*
     public void stop() {
 
         try {
@@ -107,5 +137,5 @@ public class ClientSSL {
         }
 
     }
-  
+    */
 }

@@ -33,6 +33,8 @@ public interface ActivityExecutionRepository extends DomainRepository<ActivityEx
 
     Iterable<ActivityExecution> findAllActive();
     
+    //Iterable<ActivityExecution> findByAutoActivy();
+    
     //Iterable<ActivityExecution> findByTicket();
     
 }

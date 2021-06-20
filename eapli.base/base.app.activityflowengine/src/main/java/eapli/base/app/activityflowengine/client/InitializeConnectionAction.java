@@ -5,6 +5,8 @@
  */
 package eapli.base.app.activityflowengine.client;
 
+import eapli.base.sdp2021.Sdp2021;
+import eapli.base.sdp2021.Sdp2021Message;
 import eapli.framework.actions.Action;
 
 /**
@@ -18,7 +20,10 @@ public class InitializeConnectionAction implements Action {
         System.out.println("Starting Connection to AutoTaskRunner");
         
         //ClientSSL.getInstance("ssh1.dei.isep.ipp.pt").start();
-        ClientSSL.getInstance("10.8.0.80").start();     /*For isep*/
+        //ClientSSL client = new ClientSSL("10.8.0.80",new Sdp2021Message(Sdp2021.VERSION, (byte)10, "teste".getBytes()));
+        ClientSSL client = new ClientSSL("127.0.0.1",new Sdp2021Message(Sdp2021.VERSION, (byte)10, "teste".getBytes()), null);
+        
+        client.start();
         //ClientSSL.getInstance("127.0.0.1").start();   /*for local*/
         
         return true;

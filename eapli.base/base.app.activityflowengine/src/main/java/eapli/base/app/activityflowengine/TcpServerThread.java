@@ -109,7 +109,7 @@ public class TcpServerThread implements Runnable {
                     */
                     Colaborator c1 = colabRepo.findByMecanographicNumber(MecanographicNumber.valueOf(userId)).get();
                     
-                    Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)11, fetcher.activityFetchAsJson(c1).getBytes());
+                    Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)11, fetcher.activityExecFetchAsJson(c1).getBytes());
                     
                     return response;
             }

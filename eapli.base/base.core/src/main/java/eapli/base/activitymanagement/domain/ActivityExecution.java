@@ -11,6 +11,7 @@ import eapli.base.colaboratormanagement.domain.Colaborator;
 import eapli.base.formmanagement.domain.FormAnswer;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
+import javax.persistence.CascadeType;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -48,7 +49,7 @@ public class ActivityExecution implements AggregateRoot<ActivityExecutionId> {
     @OneToOne()
     private FormAnswer formAnswer;
 
-    @ManyToOne()
+    @ManyToOne(cascade = CascadeType.ALL)
     private Colaborator colaborator;
 
     /**
@@ -143,6 +144,10 @@ public class ActivityExecution implements AggregateRoot<ActivityExecutionId> {
     
     public void statusDone() {
         status = ActivityExecutionStatus.DONE;
+    }
+    
+    public void statusUnassigned() {
+        status = ActivityExecutionStatus.UNASSIGNED;
     }
 
     public void assignToColaborator(Colaborator colab) {

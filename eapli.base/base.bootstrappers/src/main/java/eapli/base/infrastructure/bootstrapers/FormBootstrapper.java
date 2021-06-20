@@ -109,7 +109,7 @@ public class FormBootstrapper implements Action{
                 FormParameterData.valueOf("String"));*/
         
         ///////////////// FOR SERVICE 2//
- //Código Interno Cliente, Nome, Tipo de Desconto, Recorrência, Percentagem de Desconto, Valor de Desconto, Identificação da Fatura, Data Limite, Fundamentação do pedido      
+ 
         FormParameter fp11 = new FormParameter(FormParameterId.valueOf("12"),
                 Designation.valueOf("Codigo Interno Cliente"),
                 Label.valueOf("CI"),

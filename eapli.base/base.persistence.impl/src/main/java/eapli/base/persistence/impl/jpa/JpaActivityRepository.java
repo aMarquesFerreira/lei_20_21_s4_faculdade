@@ -47,11 +47,29 @@ public class JpaActivityRepository extends JpaAutoTxRepository<Activity, Activit
         return match("e.active = true");
     }
 
-    @Override
+    /*@Override//MUDAR
+    public Iterable<Activity> findByColaborator(Colaborator who) {
+        final Map<String, Object> params = new HashMap<>();
+        params.put("colaborator", who);
+        return match("e.colaborator =:colaborator");
+    
+    }*/
+    
+    @Override//MUDAR
     public Iterable<Activity> findByColaborator(Colaborator who) {
         
         return match("e.colaborator = colaborator");
     
+    }
+    
+    @Override
+    public Iterable<Activity> findByManualType() {
+        return match("e.type = 'M'");
+    }
+
+    @Override
+    public Iterable<Activity> findByAutomaticType() {
+        return match("e.type = 'A'");
     }
     
 }

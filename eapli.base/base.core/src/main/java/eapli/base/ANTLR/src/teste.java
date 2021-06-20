@@ -2,6 +2,8 @@ package eapli.base.ANTLR.src;
 
 import eapli.base.ANTLR.gen.*;
 import eapli.base.EmailService;
+import eapli.base.activitymanagement.domain.ActivityExecution;
+import eapli.base.ticketmanagement.domain.Ticket;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
@@ -63,9 +65,9 @@ public class teste {
         System.out.println("Estado :" + value );
 
     }
+*/ 
 
-
-    public static void main(String[] args) throws IOException {
+   public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         String teste = scanner.nextLine();
         FileInputStream fis = new FileInputStream(new File("eapli.base/base.core/src/main/java/eapli/base/ANTLR/testeRules.txt"));
@@ -79,9 +81,28 @@ public class teste {
 
         System.out.println(approvalListener.getResult());
 
-    }*/
+    }
+   
+   /*public static void main(String[] args) throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        ActivityExecution actExec;
+        String teste = actExec.getFormAnswer().
+        //FileInputStream fis = new FileInputStream(new File("eapli.base/base.core/src/main/java/eapli/base/ANTLR/testeRules.txt"));
+        DiscountApprovalLexer lexer = new DiscountApprovalLexer(new ANTLRInputStream(teste));
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        DiscountApprovalParser parser = new DiscountApprovalParser(tokens);
+        ParseTree tree = parser.state(); // parse
+        ParseTreeWalker walker = new ParseTreeWalker();
+        ApprovalListener approvalListener = new ApprovalListener();
+        walker.walk(approvalListener, tree);
 
-    public static void main(String[] args) throws IOException {
+        System.out.println(approvalListener.getResult());
+
+    }*/
+   
+   
+
+    /*public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         String teste = scanner.nextLine();
         FileInputStream fis = new FileInputStream(new File("eapli.base/base.core/src/main/java/eapli/base/ANTLR/testeRules.txt"));
@@ -95,7 +116,7 @@ public class teste {
 
         System.out.println(fileReadVisitor.getResult());
 
-    }
+    }*/
 
 
 

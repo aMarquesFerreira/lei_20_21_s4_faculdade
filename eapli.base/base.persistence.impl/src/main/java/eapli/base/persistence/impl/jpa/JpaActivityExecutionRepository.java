@@ -10,12 +10,16 @@ import eapli.base.activitymanagement.domain.Activity;
 import eapli.base.activitymanagement.domain.ActivityExecution;
 import eapli.base.activitymanagement.domain.ActivityExecutionId;
 import eapli.base.activitymanagement.domain.ActivityId;
+import eapli.base.activitymanagement.domain.ActivityType;
 import eapli.base.activitymanagement.repositories.ActivityExecutionRepository;
 import eapli.base.activitymanagement.repositories.ActivityRepository;
 import eapli.base.colaboratormanagement.domain.Colaborator;
+import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.repositories.impl.jpa.JpaAutoTxRepository;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -51,9 +55,34 @@ public class JpaActivityExecutionRepository extends JpaAutoTxRepository<Activity
 
     @Override
     public Iterable<ActivityExecution> findByColaborator(Colaborator who) {
+        final Map<String, Colaborator> params = new HashMap<>();
+        params.put("colaborator", who);
         
-        return match("e.colaborator = colaborator");
+        return match("e.colaborator = :colaborator"); //TODO and not done!!!
     
     }
+    
+    
+    /*@Override
+    public Iterable<ActivityExecution> findByAutoActivy() {
+        //all act Executions
+        Iterable<ActivityExecution> list = findAllActive();
+
+        List<ActivityExecution> allActivitiesExecution = new ArrayList<>();
+        
+        for (ActivityExecution activityExec : list) {
+            if (activityExec.getActivity().type().equals(ActivityType.valueOf("A")))
+                allActivitiesExecution.add(activityExec);
+        }
+        
+        return allActivitiesExecution;
+        //all act Executions
+        
+        
+    }*/
+    
+    
+     
+      
     
 }

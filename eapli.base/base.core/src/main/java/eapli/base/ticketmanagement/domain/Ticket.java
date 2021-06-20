@@ -93,6 +93,9 @@ public class Ticket implements AggregateRoot<TicketId>{
         return this.workFlowExecution;
     }
 
+    public Colaborator booker() {
+        return booker;
+    }
 
     @Override
     public boolean equals(final Object o) {
