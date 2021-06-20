@@ -1,0 +1,72 @@
+base.app.activityflowengine
+
+- This module contains most of the implementation regarding the connections between clients and servers.
+
+--- ActivityFlowEngine
+	This is the main class that enables the server side of the Activity Flow Engine to run. Here we
+	create a TcpServer object and initialize the run() method.
+
+--- TcpServer
+	This class is the one that remains running for the whole duration of this application. The server
+	(this class) has to be running before we attempt any connection from the client side, otherwise the
+	client won't connect to anything. After the server is running, it will stay waiting for connections.
+	When such a connection is attempted, one extra verification has to be made, but it will be explained
+	later. If the connection is succeeded, then a TcpServerThread will be created.
+
+--- TcpServerThread
+	This class also has a runnable method that will stay running until the user sends the terminate code.
+	While it stays like this, messages can be sent between client and server. Said message has its own
+	kind of object (Sdp2021Message) that will also be explained further below.
+
+--- ClientSSLMain
+	This class is the main class that calls another class named InitializeConnectionAction.
+
+--- InitializeConnectionAction
+	Having been called the main class, this class will create an instance of the following class called
+	ClientSSL by sending the IP of the server it wants to connect to.
+
+--- ClientSSL
+	This is the class that will create and SSLSocket for the client that tries to connect. As mentioned 
+	before, after the connection is made, there is an extra step that has to succeed to allow the connection
+	and consequent communication to proceed. It is called the handshake and what it means is that the
+	client will demand something called a certificate from the server. With the use of a key, the client
+	will try to decrypt the server certificate and if it concludes that the server is trustworthy, then 
+	the connection will proceed, otherwise an error code (handshake failed) will appear. It is also 
+	worth mentioning that, even though it is not mandatory, the server can also demand for the certificate
+	of the client, but usually that's not the case. It is up to the client to establish the trust between
+	parties.
+
+
+base.core
+
+- Of all the packages present here, the one that is relevant is the one called eapli.base.sdp.2021. It contains
+  2 classes: the protocol itself and the message.
+
+--- Sdp2021
+	In this class we define static final variables such as the port to be used and the types (codes) of 
+	messages that can be sent. We also have the two most relevant methods, readMessage and writeMessage.
+	These are the methods that handle the messages sent and received during the communication.
+
+--- Sdp2021Message
+	This class is the constructor for the message itself. When creating a message, whether is supposed
+	to be sent or received, the behaviour is the pretty much identical, we define the version, the code (type)
+	of the message and the data (information to be sent). There are also methods to retrieve each of
+	the previously mentioned attributes.
+
+
+base.app.user.console
+
+- This package contains the implementation for the HTTP server that is embedded in it. When the user selects 
+  the respective option in the console, the process to present the user's dashboard is initiated.
+
+--- ShowDashboardAction
+	This is the class that is initially called when the user inputs the option in the console. It will
+	create an instance of the DashboardServerSSL class.
+
+--- DashboardServerSSL
+	Firstly, when a new instance is created, it must first receive a vaild IP address, only then will
+	the rest of the process resume. If the IP is valid then this class will attempt to create an SSLSocket.
+	If the socket is created and the handshake succeeds (explained previously), then the Activity Flow
+	Engine will assume the role of server to provide the required data needed by the HTTP server to show
+	on the dashboard.
+
