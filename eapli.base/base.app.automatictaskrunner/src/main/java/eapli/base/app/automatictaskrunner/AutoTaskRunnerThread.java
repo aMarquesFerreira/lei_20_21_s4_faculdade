@@ -166,7 +166,7 @@ public class AutoTaskRunnerThread implements Runnable {
         
         Session session = criarSessionMail();
 
-        //sendEmail("antmen132@gmail.com"/*from*/, to, subject, body, session);
+        sendEmail("antmen132@gmail.com"/*from*/, to, subject, body, session);
         
         Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)20, "Email Sent".getBytes());
         
