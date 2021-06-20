@@ -1,0 +1,17 @@
+@startuml
+autonumber
+
+actor "Colaborator" as C
+participant "System" as UI
+
+activate C
+C -> UI : Wants to perform a activity
+activate UI
+    UI --> C : Requests necessary information for the perform
+deactivate UI
+C -> UI : Inserts the data
+activate UI
+UI --> C : displaysPerformActivityInfo
+deactivate UI
+
+@enduml
