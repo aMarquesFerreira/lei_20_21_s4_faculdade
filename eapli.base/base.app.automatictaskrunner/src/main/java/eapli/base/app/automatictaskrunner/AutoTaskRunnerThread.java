@@ -164,16 +164,16 @@ public class AutoTaskRunnerThread implements Runnable {
                 body = line.substring(5);
         }
         
-        Session session = criarSessionMail();
-
-        sendEmail("antmen132@gmail.com"/*from*/, to, subject, body, session);
+//        Session session = criarSessionMail();
+//
+//        sendEmail("antmen132@gmail.com"/*from*/, to, subject, body, session);
         
         Sdp2021Message response = new Sdp2021Message(Sdp2021.VERSION, (byte)20, "Email Sent".getBytes());
         
         return response;
     }
 
-    public static Session criarSessionMail() {
+   /* public static Session criarSessionMail() {
         Properties props = new Properties();
 
         props.put("mail.smtp.host", "smtp.gmail.com");
@@ -194,7 +194,7 @@ public class AutoTaskRunnerThread implements Runnable {
 
         return session;
     }
-    
+    */
     
     
 }
