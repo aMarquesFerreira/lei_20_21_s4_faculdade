@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="171px" preserveAspectRatio="none" style="width:1216px;height:171px;background:#FFFFFF;" version="1.1" viewBox="0 0 1216 171" width="1216px" zoomAndPan="magnify"><defs><filter height="300%" id="fna2hr48kgulg" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[4a697920940185de712a501a929c1e36]
+class PerformActivityUI--><rect codeLine="3" fill="#FEFECE" filter="url(#fna2hr48kgulg)" height="48" id="PerformActivityUI" style="stroke:#A80036;stroke-width:1.5;" width="123" x="7" y="82"/><ellipse cx="22" cy="98" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M24,94.5 Q24.2031,94 24.4375,93.75 Q24.6719,93.5 24.9375,93.5 Q25.4063,93.5 25.7031,93.7813 Q26,94.0625 26,94.7188 L26,96.2813 Q26,96.9375 25.7188,97.2188 Q25.4375,97.5 25,97.5 Q24.6094,97.5 24.3594,97.3281 Q24.1094,97.1563 24,96.7031 Q23.9531,96.3906 23.7813,96.2188 Q23.4688,95.8906 22.9063,95.7031 Q22.3438,95.5 21.7813,95.5 Q21.0781,95.5 20.4844,95.7813 Q19.9063,96.0625 19.4531,96.6875 Q19,97.3125 19,98.1719 L19,99.0938 Q19,100.125 19.8438,100.8125 Q20.6875,101.5 22.1875,101.5 Q23.0781,101.5 23.7031,101.2969 Q24.0625,101.1875 24.4688,100.8281 Q24.7344,100.625 24.875,100.5625 Q25.0156,100.5 25.1875,100.5 Q25.5156,100.5 25.75,100.7656 Q26,101.0156 26,101.375 Q26,101.7188 25.6563,102.125 Q25.1563,102.7188 24.3594,103.0469 Q23.3125,103.5 22.0313,103.5 Q20.5313,103.5 19.3281,102.9063 Q18.3594,102.4375 17.6719,101.4219 Q17,100.4063 17,99.2031 L17,98.1094 Q17,96.8594 17.5938,95.7656 Q18.2031,94.6719 19.25,94.0938 Q20.3125,93.5 21.5,93.5 Q22.2188,93.5 22.8438,93.75 Q23.4688,94 24,94.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="91" x="36" y="102.9102">PerformActivityUI</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="129" y1="114" y2="114"/><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="129" y1="122" y2="122"/><!--MD5=[87a29a45a79eba9c2e69d04a58772943]
+class PerformActivityController--><rect codeLine="6" fill="#FEFECE" filter="url(#fna2hr48kgulg)" height="89.5078" id="PerformActivityController" style="stroke:#A80036;stroke-width:1.5;" width="165" x="165" y="61"/><ellipse cx="180" cy="77" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M182,73.5 Q182.2031,73 182.4375,72.75 Q182.6719,72.5 182.9375,72.5 Q183.4063,72.5 183.7031,72.7813 Q184,73.0625 184,73.7188 L184,75.2813 Q184,75.9375 183.7188,76.2188 Q183.4375,76.5 183,76.5 Q182.6094,76.5 182.3594,76.3281 Q182.1094,76.1563 182,75.7031 Q181.9531,75.3906 181.7813,75.2188 Q181.4688,74.8906 180.9063,74.7031 Q180.3438,74.5 179.7813,74.5 Q179.0781,74.5 178.4844,74.7813 Q177.9063,75.0625 177.4531,75.6875 Q177,76.3125 177,77.1719 L177,78.0938 Q177,79.125 177.8438,79.8125 Q178.6875,80.5 180.1875,80.5 Q181.0781,80.5 181.7031,80.2969 Q182.0625,80.1875 182.4688,79.8281 Q182.7344,79.625 182.875,79.5625 Q183.0156,79.5 183.1875,79.5 Q183.5156,79.5 183.75,79.7656 Q184,80.0156 184,80.375 Q184,80.7188 183.6563,81.125 Q183.1563,81.7188 182.3594,82.0469 Q181.3125,82.5 180.0313,82.5 Q178.5313,82.5 177.3281,81.9063 Q176.3594,81.4375 175.6719,80.4219 Q175,79.4063 175,78.2031 L175,77.1094 Q175,75.8594 175.5938,74.7656 Q176.2031,73.6719 177.25,73.0938 Q178.3125,72.5 179.5,72.5 Q180.2188,72.5 180.8438,72.75 Q181.4688,73 182,73.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="133" x="194" y="81.9102">PerformActivityController</text><line style="stroke:#A80036;stroke-width:1.5;" x1="166" x2="329" y1="93" y2="93"/><line style="stroke:#A80036;stroke-width:1.5;" x1="166" x2="329" y1="101" y2="101"/><ellipse cx="176" cy="112" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="130" x="185" y="116.4189">getServicesByCatalogue();</text><ellipse cx="176" cy="125.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="85" x="185" y="130.2549">performActivity();</text><ellipse cx="176" cy="139.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="69" x="185" y="144.0908">currentUser();</text><!--MD5=[8a1056b6ff7d74d04e94a7ec3e2f3689]
+class FormAnswer--><rect codeLine="12" fill="#FEFECE" filter="url(#fna2hr48kgulg)" height="103.3438" id="FormAnswer" style="stroke:#A80036;stroke-width:1.5;" width="129" x="365" y="54.5"/><ellipse cx="392.15" cy="70.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M394.15,67 Q394.3531,66.5 394.5875,66.25 Q394.8219,66 395.0875,66 Q395.5563,66 395.8531,66.2813 Q396.15,66.5625 396.15,67.2188 L396.15,68.7813 Q396.15,69.4375 395.8688,69.7188 Q395.5875,70 395.15,70 Q394.7594,70 394.5094,69.8281 Q394.2594,69.6563 394.15,69.2031 Q394.1031,68.8906 393.9313,68.7188 Q393.6188,68.3906 393.0563,68.2031 Q392.4938,68 391.9313,68 Q391.2281,68 390.6344,68.2813 Q390.0563,68.5625 389.6031,69.1875 Q389.15,69.8125 389.15,70.6719 L389.15,71.5938 Q389.15,72.625 389.9938,73.3125 Q390.8375,74 392.3375,74 Q393.2281,74 393.8531,73.7969 Q394.2125,73.6875 394.6188,73.3281 Q394.8844,73.125 395.025,73.0625 Q395.1656,73 395.3375,73 Q395.6656,73 395.9,73.2656 Q396.15,73.5156 396.15,73.875 Q396.15,74.2188 395.8063,74.625 Q395.3063,75.2188 394.5094,75.5469 Q393.4625,76 392.1813,76 Q390.6813,76 389.4781,75.4063 Q388.5094,74.9375 387.8219,73.9219 Q387.15,72.9063 387.15,71.7031 L387.15,70.6094 Q387.15,69.3594 387.7438,68.2656 Q388.3531,67.1719 389.4,66.5938 Q390.4625,66 391.65,66 Q392.3688,66 392.9938,66.25 Q393.6188,66.5 394.15,67 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="70" x="408.85" y="75.4102">FormAnswer</text><line style="stroke:#A80036;stroke-width:1.5;" x1="366" x2="493" y1="86.5" y2="86.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="92" x="371" y="101.9189">ActivityId activityId;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="113" x="371" y="115.7549">Description description;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="52" x="371" y="129.5908">Form form;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="117" x="371" y="143.4268">Colaborator colaborator;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="366" x2="493" y1="149.8438" y2="149.8438"/><!--MD5=[79ef8f40842bf3bbd82dcd1e7cfded72]
+class ActivityExecution--><rect codeLine="19" fill="#FEFECE" filter="url(#fna2hr48kgulg)" height="103.3438" id="ActivityExecution" style="stroke:#A80036;stroke-width:1.5;" width="198" x="643.5" y="54.5"/><ellipse cx="694.25" cy="70.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M696.25,67 Q696.4531,66.5 696.6875,66.25 Q696.9219,66 697.1875,66 Q697.6563,66 697.9531,66.2813 Q698.25,66.5625 698.25,67.2188 L698.25,68.7813 Q698.25,69.4375 697.9688,69.7188 Q697.6875,70 697.25,70 Q696.8594,70 696.6094,69.8281 Q696.3594,69.6563 696.25,69.2031 Q696.2031,68.8906 696.0313,68.7188 Q695.7188,68.3906 695.1563,68.2031 Q694.5938,68 694.0313,68 Q693.3281,68 692.7344,68.2813 Q692.1563,68.5625 691.7031,69.1875 Q691.25,69.8125 691.25,70.6719 L691.25,71.5938 Q691.25,72.625 692.0938,73.3125 Q692.9375,74 694.4375,74 Q695.3281,74 695.9531,73.7969 Q696.3125,73.6875 696.7188,73.3281 Q696.9844,73.125 697.125,73.0625 Q697.2656,73 697.4375,73 Q697.7656,73 698,73.2656 Q698.25,73.5156 698.25,73.875 Q698.25,74.2188 697.9063,74.625 Q697.4063,75.2188 696.6094,75.5469 Q695.5625,76 694.2813,76 Q692.7813,76 691.5781,75.4063 Q690.6094,74.9375 689.9219,73.9219 Q689.25,72.9063 689.25,71.7031 L689.25,70.6094 Q689.25,69.3594 689.8438,68.2656 Q690.4531,67.1719 691.5,66.5938 Q692.5625,66 693.75,66 Q694.4688,66 695.0938,66.25 Q695.7188,66.5 696.25,67 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="88" x="714.75" y="75.4102">ActivityExecution</text><line style="stroke:#A80036;stroke-width:1.5;" x1="644.5" x2="840.5" y1="86.5" y2="86.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="186" x="649.5" y="101.9189">ActivityExecutionId activityExecutionId;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="76" x="649.5" y="115.7549">Activity activity;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="132" x="649.5" y="129.5908">FormAnswer formAnswer;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="117" x="649.5" y="143.4268">Colaborator colaborator;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="644.5" x2="840.5" y1="149.8438" y2="149.8438"/><!--MD5=[1947cf5f905dbd1bd4aa69f2b720827b]
+class ActivityExecutionID--><rect codeLine="26" fill="#FEFECE" filter="url(#fna2hr48kgulg)" height="61.8359" id="ActivityExecutionID" style="stroke:#A80036;stroke-width:1.5;" width="135" x="877" y="75"/><ellipse cx="893.35" cy="91" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M895.35,87.5 Q895.5531,87 895.7875,86.75 Q896.0219,86.5 896.2875,86.5 Q896.7563,86.5 897.0531,86.7813 Q897.35,87.0625 897.35,87.7188 L897.35,89.2813 Q897.35,89.9375 897.0688,90.2188 Q896.7875,90.5 896.35,90.5 Q895.9594,90.5 895.7094,90.3281 Q895.4594,90.1563 895.35,89.7031 Q895.3031,89.3906 895.1313,89.2188 Q894.8188,88.8906 894.2563,88.7031 Q893.6938,88.5 893.1313,88.5 Q892.4281,88.5 891.8344,88.7813 Q891.2563,89.0625 890.8031,89.6875 Q890.35,90.3125 890.35,91.1719 L890.35,92.0938 Q890.35,93.125 891.1938,93.8125 Q892.0375,94.5 893.5375,94.5 Q894.4281,94.5 895.0531,94.2969 Q895.4125,94.1875 895.8188,93.8281 Q896.0844,93.625 896.225,93.5625 Q896.3656,93.5 896.5375,93.5 Q896.8656,93.5 897.1,93.7656 Q897.35,94.0156 897.35,94.375 Q897.35,94.7188 897.0063,95.125 Q896.5063,95.7188 895.7094,96.0469 Q894.6625,96.5 893.3813,96.5 Q891.8813,96.5 890.6781,95.9063 Q889.7094,95.4375 889.0219,94.4219 Q888.35,93.4063 888.35,92.2031 L888.35,91.1094 Q888.35,89.8594 888.9438,88.7656 Q889.5531,87.6719 890.6,87.0938 Q891.6625,86.5 892.85,86.5 Q893.5688,86.5 894.1938,86.75 Q894.8188,87 895.35,87.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="100" x="907.65" y="95.9102">ActivityExecutionID</text><line style="stroke:#A80036;stroke-width:1.5;" x1="878" x2="1011" y1="107" y2="107"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="123" x="883" y="122.4189">String activityExecutionId;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="878" x2="1011" y1="128.8359" y2="128.8359"/><!--MD5=[e3034a5e82e82b3df81355b3b70448b9]
+class ActivityExecutionStatus--><rect codeLine="30" fill="#FEFECE" filter="url(#fna2hr48kgulg)" height="61.8359" id="ActivityExecutionStatus" style="stroke:#A80036;stroke-width:1.5;" width="155" x="1047" y="75"/><ellipse cx="1062" cy="91" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1064,87.5 Q1064.2031,87 1064.4375,86.75 Q1064.6719,86.5 1064.9375,86.5 Q1065.4063,86.5 1065.7031,86.7813 Q1066,87.0625 1066,87.7188 L1066,89.2813 Q1066,89.9375 1065.7188,90.2188 Q1065.4375,90.5 1065,90.5 Q1064.6094,90.5 1064.3594,90.3281 Q1064.1094,90.1563 1064,89.7031 Q1063.9531,89.3906 1063.7813,89.2188 Q1063.4688,88.8906 1062.9063,88.7031 Q1062.3438,88.5 1061.7813,88.5 Q1061.0781,88.5 1060.4844,88.7813 Q1059.9063,89.0625 1059.4531,89.6875 Q1059,90.3125 1059,91.1719 L1059,92.0938 Q1059,93.125 1059.8438,93.8125 Q1060.6875,94.5 1062.1875,94.5 Q1063.0781,94.5 1063.7031,94.2969 Q1064.0625,94.1875 1064.4688,93.8281 Q1064.7344,93.625 1064.875,93.5625 Q1065.0156,93.5 1065.1875,93.5 Q1065.5156,93.5 1065.75,93.7656 Q1066,94.0156 1066,94.375 Q1066,94.7188 1065.6563,95.125 Q1065.1563,95.7188 1064.3594,96.0469 Q1063.3125,96.5 1062.0313,96.5 Q1060.5313,96.5 1059.3281,95.9063 Q1058.3594,95.4375 1057.6719,94.4219 Q1057,93.4063 1057,92.2031 L1057,91.1094 Q1057,89.8594 1057.5938,88.7656 Q1058.2031,87.6719 1059.25,87.0938 Q1060.3125,86.5 1061.5,86.5 Q1062.2188,86.5 1062.8438,86.75 Q1063.4688,87 1064,87.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="123" x="1076" y="95.9102">ActivityExecutionStatus</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1048" x2="1201" y1="107" y2="107"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="64" x="1053" y="122.4189">String status;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1048" x2="1201" y1="128.8359" y2="128.8359"/><!--MD5=[424f8a9ee0075c9e28fb65995f5525c4]
+class ActivityID--><rect codeLine="34" fill="#FEFECE" filter="url(#fna2hr48kgulg)" height="48" id="ActivityID" style="stroke:#A80036;stroke-width:1.5;" width="79" x="529" y="82"/><ellipse cx="544" cy="98" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M546,94.5 Q546.2031,94 546.4375,93.75 Q546.6719,93.5 546.9375,93.5 Q547.4063,93.5 547.7031,93.7813 Q548,94.0625 548,94.7188 L548,96.2813 Q548,96.9375 547.7188,97.2188 Q547.4375,97.5 547,97.5 Q546.6094,97.5 546.3594,97.3281 Q546.1094,97.1563 546,96.7031 Q545.9531,96.3906 545.7813,96.2188 Q545.4688,95.8906 544.9063,95.7031 Q544.3438,95.5 543.7813,95.5 Q543.0781,95.5 542.4844,95.7813 Q541.9063,96.0625 541.4531,96.6875 Q541,97.3125 541,98.1719 L541,99.0938 Q541,100.125 541.8438,100.8125 Q542.6875,101.5 544.1875,101.5 Q545.0781,101.5 545.7031,101.2969 Q546.0625,101.1875 546.4688,100.8281 Q546.7344,100.625 546.875,100.5625 Q547.0156,100.5 547.1875,100.5 Q547.5156,100.5 547.75,100.7656 Q548,101.0156 548,101.375 Q548,101.7188 547.6563,102.125 Q547.1563,102.7188 546.3594,103.0469 Q545.3125,103.5 544.0313,103.5 Q542.5313,103.5 541.3281,102.9063 Q540.3594,102.4375 539.6719,101.4219 Q539,100.4063 539,99.2031 L539,98.1094 Q539,96.8594 539.5938,95.7656 Q540.2031,94.6719 541.25,94.0938 Q542.3125,93.5 543.5,93.5 Q544.2188,93.5 544.8438,93.75 Q545.4688,94 546,94.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="47" x="558" y="102.9102">ActivityID</text><line style="stroke:#A80036;stroke-width:1.5;" x1="530" x2="607" y1="114" y2="114"/><line style="stroke:#A80036;stroke-width:1.5;" x1="530" x2="607" y1="122" y2="122"/><!--MD5=[877b13f2feb661b5356eb8f950dc3ed5]
+link PerformActivityUI to PerformActivityController--><path codeLine="38" d="M130.03,106 C139.93,106 149.83,106 159.73,106 " fill="none" id="PerformActivityUI-to-PerformActivityController" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="164.9,106,155.9,102,159.9,106,155.9,110,164.9,106" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d8a5f046148dc935c5109ae0c952b086]
+link PerformActivityController to FormAnswer--><path codeLine="39" d="M330.32,106 C340.11,106 349.9,106 359.69,106 " fill="none" id="PerformActivityController-to-FormAnswer" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="364.8,106,355.8,102,359.8,106,355.8,110,364.8,106" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[16d41002e1dc9f5d4593e6cb24507173]
+link FormAnswer to ActivityID--><path codeLine="40" d="M494.11,106 C504.01,106 513.91,106 523.81,106 " fill="none" id="FormAnswer-to-ActivityID" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="528.98,106,519.98,102,523.98,106,519.98,110,528.98,106" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[26bde9dec203b4093538f3bbde7658d1]
+link ActivityID to ActivityExecution--><path codeLine="41" d="M608.26,106 C618.23,106 628.21,106 638.18,106 " fill="none" id="ActivityID-to-ActivityExecution" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="643.39,106,634.39,102,638.39,106,634.39,110,643.39,106" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[cb44ceb80906cad69b2a339e6b9dd29b]
+link ActivityExecution to ActivityExecutionStatus--><path codeLine="42" d="M811.39,54.48 C831.52,42.22 854.25,30.85 877,24.5 C934.79,8.36 954.92,6 1012,24.5 C1040.94,33.88 1068.68,53.81 1089.37,71.61 " fill="none" id="ActivityExecution-to-ActivityExecutionStatus" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1093.15,74.9,1088.9916,65.9721,1089.38,71.6156,1083.7365,72.004,1093.15,74.9" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[b2a2c43c5b4c30df0dc94acf1d84121f]
+link ActivityExecution to ActivityExecutionID--><path codeLine="43" d="M841.53,106 C851.57,106 861.62,106 871.67,106 " fill="none" id="ActivityExecution-to-ActivityExecutionID" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="876.92,106,867.92,102,871.92,106,867.92,110,876.92,106" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[7b4798d4e674d0c89a373ae7c1fd0448]
+@startuml
+'https://plantuml.com/class-diagram
+
+class PerformActivityUI {
+}
+
+class PerformActivityController {
+    +getServicesByCatalogue();
+    +performActivity();
+    +currentUser();
+}
+
+class FormAnswer{
+    ActivityId activityId;
+    Description description;
+    Form form;
+    Colaborator colaborator;
+}
+
+class ActivityExecution{
+    ActivityExecutionId activityExecutionId;
+    Activity activity;
+    FormAnswer formAnswer;
+    Colaborator colaborator;
+}
+
+class ActivityExecutionID{
+    String activityExecutionId;
+}
+
+class ActivityExecutionStatus{
+    String status;
+}
+
+class ActivityID {
+}
+
+
+PerformActivityUI -> PerformActivityController
+PerformActivityController -> FormAnswer
+FormAnswer -> ActivityID
+ActivityID -> ActivityExecution
+ActivityExecution -> ActivityExecutionStatus
+ActivityExecution -> ActivityExecutionID
+
+@enduml
+
+@startuml
+
+class PerformActivityUI {
+}
+
+class PerformActivityController {
+    +getServicesByCatalogue();
+    +performActivity();
+    +currentUser();
+}
+
+class FormAnswer{
+    ActivityId activityId;
+    Description description;
+    Form form;
+    Colaborator colaborator;
+}
+
+class ActivityExecution{
+    ActivityExecutionId activityExecutionId;
+    Activity activity;
+    FormAnswer formAnswer;
+    Colaborator colaborator;
+}
+
+class ActivityExecutionID{
+    String activityExecutionId;
+}
+
+class ActivityExecutionStatus{
+    String status;
+}
+
+class ActivityID {
+}
+
+
+PerformActivityUI -> PerformActivityController
+PerformActivityController -> FormAnswer
+FormAnswer -> ActivityID
+ActivityID -> ActivityExecution
+ActivityExecution -> ActivityExecutionStatus
+ActivityExecution -> ActivityExecutionID
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 13:40:07 BST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

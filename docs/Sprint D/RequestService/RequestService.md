@@ -14,32 +14,32 @@
 public class ServiceTest {
     
     @Test
-    public void ensureServiceEqualsPassesForTheSameServiceCode() throws Exception {
+    public void ensureServiceEqualsPassesForTheSameServiceCode() {
         
     }
 
     @Test
-    public void ensureServiceEqualsFailsForDifferenteServiceCode() throws Exception {
+    public void ensureServiceEqualsFailsForDifferenteServiceCode() {
 
     }
 
     @Test
-    public void ensureServiceEqualsAreTheSameForTheSameInstance() throws Exception {
+    public void ensureServiceEqualsAreTheSameForTheSameInstance() {
 
     }
 
     @Test
-    public void ensureServiceEqualsFailsForDifferenteObjectTypes() throws Exception {
+    public void ensureServiceEqualsFailsForDifferenteObjectTypes() {
 
     }
 
     @Test
-    public void ensureServiceIsTheSameAsItsInstance() throws Exception {
+    public void ensureServiceIsTheSameAsItsInstance() {
 
     }
 
     @Test
-    public void ensureTwoServiceWithDifferentServiceCodesAreNotTheSame() throws Exception {
+    public void ensureTwoServiceWithDifferentServiceCodesAreNotTheSame() {
 
     }
 }

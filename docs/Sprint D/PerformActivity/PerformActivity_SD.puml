@@ -1,0 +1,87 @@
+@startuml
+autonumber
+
+actor "Colaborator" as C
+
+participant "PerformActivityUI" as UI
+participant "PerformActivityController" as CTRL
+participant "ActivityExecutionDto" as AED
+participant "FormAnswer" as FA
+participant "FormParameterAnswer" as FPA
+participant "FormAnswerRepository" as FAR
+participant "ActivityExecution" as AE
+participant "ActivityExecutionRepository" as AER
+participant "ActivityBuilder" as CB
+participant "Activity:Activity" as CC
+participant "TicketRepository" as TR
+participant "PersistenceContext" as PC
+participant "RepositoryFactory" as RF
+
+
+database "ActivityRepository" as CR
+
+C --> UI : Wants to perform an activity
+activate UI
+    UI -> CTRL : doShow
+    UI --> C : Requests necessary credentials for Activity
+deactivate UI
+
+C --> UI : Inserts the data
+activate UI
+    UI -> CTRL : performActivity(TicketActivityExecutionDto actExec, \nList<FormParameter> params, List<String> values)
+    activate CTRL
+        CTRL -> AED: ticketActivityExecutionDto
+        activate AED
+        deactivate AED
+        CTRL -> FA: formAnswer = new FormAnswer(FormAnswerId.valueOf(formAnswerId), \nactExec.activityExecution.getActivity().getForm(), currentUser().get());
+        activate FA
+        deactivate FA
+                CTRL -> FPA: fpa = new FormParameterAnswer(FormParameterAnswerId.valueOf(formAnswerId+"/"+n), p, Answer.valueOf(values.get(n)));
+                activate FPA
+                deactivate FPA
+                CTRL -> FA : formAnswer.addFormParameterAnswer(fpa);
+                activate FA
+                deactivate FA
+
+                CTRL -> FAR : save (formAnswer)
+                activate FAR
+                deactivate FAR
+
+                CTRL -> AE : actExec.activityExecution.setFormAnswer(formAnswer);
+                activate AE
+                deactivate AE
+                CTRL -> AE : actExec.activityExecution.statusDone();
+                activate AE
+                deactivate AE
+                CTRL -> AER : save(actExec.activityExecution)
+        activate CB
+        deactivate CB
+
+        CTRL -> CB: setActivity()
+        activate CB
+        deactivate CB
+
+        CTRL -> CB: PerformActivity()
+        activate CB
+                CTRL -> AE: actExec.ticket.close()
+                CTRL -> TR: ticketRepo.save(actExec.ticket);
+        deactivate CB
+
+        CTRL -> PC: Ticket
+        activate PC
+         PC->RF: create
+         PC->CTRL: factory
+
+        deactivate PC
+
+
+        CTRL->CR:save(Ticket)
+
+        CTRL->UI:Activity performed
+    deactivate CTRL
+
+    UI --> C : displayPerformActivityInfo
+deactivate UI
+
+
+@enduml
