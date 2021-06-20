@@ -1,0 +1,29 @@
+SDP2021
+In this protocol we were tasked with creating several TCP connections along with an HTTP server. Two TCP connections were 
+made: 1-> Client - User App, Server - Activity Flow Engine; 2-> Client - Activity Flow Engine, Server - Automatic Tasks 
+Executor. Lastly, the HTTP server was imbued in the User App. A class designated "Message" was created to handle the
+communication between each Client and Server.
+
+TCP Connections
+When it comes to the first and second TCP connections the behaviour is roughly the same, firstly we run the
+ActivityFlowEngineMain class, which initializes the server side of the connection. It calls the TcpServer class that,
+as it says, contains the code to start up the server. This class waits for connections from the client side of the
+connection and everytime it gets one, it creates a thread, which, in turn, creates an instance of the class called
+TcpServerThread. This class will handle the communication between client and server by the use of a switch that
+receives the code (type) of the message. It is also worth mentioning the class named "Sdp2021Message" that is
+the constructor of the message (content) of the communication. Another important class is the protocol itself
+called "Sdp2021" that contains the methods to both read and write the message.
+
+HTTP Connection
+The HTTP connection enables the user (in the user console) to see an HTML page in the web browser through an HTTP 
+connection. The client side requests the connection by selecting the respective option from the menu (Show Dashboard).
+After a successful connection, the user can see the information in the web page. The class DashboardServerSSL assumes
+the role of server in this connection, most precisely an HTTP server.
+
+SSL/TLS
+When implementing SSL/TLS over our existing HTTP connection, we just had to make a few adjustments to the existing code, 
+such as switching from Sockets to SSL Sockets. An extra step was necessary, which was called the handshake. This was
+accomplished when the client sent a certificate to the server and the server sent its own certificate back. In general it
+isn't need for the server to receive the client certificate, but it is always mandatory for the client to get a valid 
+certificate from the server so that it can be sure that the client isn't communicating with a fake and probably malicious
+server. 

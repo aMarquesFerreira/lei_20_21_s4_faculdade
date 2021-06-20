@@ -1,0 +1,33 @@
+AlgorithmTaskLoad
+
+public List<Colaborator> getColabListByTeam(Team team)
+	Get colaborators from the given team
+	Create a new list for the colaborators
+	For each colaborator in the given team, add them to the created list
+	Return the list 
+
+public List<Colaborator> orderColabListByTaskLoad(List<Colaborator> team)
+	Create a temporary list
+	Create a new DataBaseFetcher object 
+	Create an Activity iterable
+	Create and initialize a Colaborator variable "lowestLoadColab"
+	Create and initialize two Integer variables, one "count" the other "min"
+	While the given team list is not empty do
+		For each colaborator in the team do
+			Fetch the activities from the colaborator in the team
+			For each activity fetched do
+				Increment variable "count"
+			If the variable "count" is lesser than the variable "min" do
+				"min" gets the value from "count"
+				The "lowestLoadColab" gets the value from the colaborator
+		Add the colaborator to the temporary list
+		Remove said colaborator from the team
+	Assign the temporary list values to the team list
+	Return team list
+
+public Colaborator nextLowestWork(Team team)
+	Create a list and fetch the colaborators from the given team
+	Order colaborators by their task load
+	Fetch the colaborator with the smallest load
+	Remove the colaborator from the list
+	Return the colaborator

@@ -1,0 +1,18 @@
+We decided to split the Activity management in two parts: the distribution and the execution.
+
+Distribution
+When it comes to the distribution, we use the requested algorithms: First-Came First-Served and one we don't have an exact name,
+so we'll just call it TaskLoad, this is the one that calculates the amount of work the colaborators of a given team have and
+returns the one with the lowest amount.
+The FCFS just fetches one colaborator from the Colaborator Repository and assigns the activity to him.
+The TaskLoad algorithm is a bit more complex. We begin by receiving a team that has a certain number of colaborators.
+Since we only have access to the colaborators in the form of an Iterable, we use the method "getColabListByTeam" to
+convert the Iterable into a List of colaborators and we return it. Then we use the method "orderColabListByTaskLoad" to do
+exactly what it says, which is ordering the list of colaborators that we made in the previous method by the amount of 
+tasks each colaborator in the given team has. The last step is a method that calls the previous two methods (this is the one
+that gets called from outside the class) and returns the colaborator with the lowest task load from the team that it received
+as a parameter.
+
+Execution
+Regarding the execution, we intended to simulate the actual execution of each activity through the use of a thread. In it,
+we use the command "sleep" with the value that said activity would take to be completed.
