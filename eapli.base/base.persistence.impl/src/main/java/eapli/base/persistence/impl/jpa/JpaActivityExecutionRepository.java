@@ -53,12 +53,21 @@ public class JpaActivityExecutionRepository extends JpaAutoTxRepository<Activity
         return match("e.active = true");
     }
 
-    @Override
+    /*@Override
     public Iterable<ActivityExecution> findByColaborator(Colaborator who) {
         final Map<String, Colaborator> params = new HashMap<>();
         params.put("colaborator", who);
         
         return match("e.colaborator = :colaborator"); //TODO and not done!!!
+    
+    }*/
+    
+    
+     @Override
+    public Iterable<ActivityExecution> findByColaborator(Colaborator who) {
+        
+        
+        return match("e.colaborator = colaborator"); //TODO and not done!!!
     
     }
     

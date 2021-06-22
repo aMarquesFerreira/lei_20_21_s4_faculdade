@@ -56,57 +56,68 @@ public class TicketBootstrapper implements Action {
     
     private List<Catalogue> cats;
     List<FormParameter> formParameters;
+    List<FormParameter> formParameters2;
     List<String> values = new ArrayList<>();
     List<String> values2 = new ArrayList<>();
     
      @Override     
     public boolean execute() {  
+        
+        
+        
+       
+       
+        
+       /* //SERVICE1
         Colaborator c1 = colabRepo.findByMecanographicNumber(MecanographicNumber.valueOf("isep959")).get();
         Service s1 = servRepo.findByServiceCode(ServiceCode.valueOf("S1")).get();
         Form f1 = s1.getForm();
-       
-        
         formParameters = new ArrayList();
         for (FormParameter formPar : f1.getFormParameters()) {
             formParameters.add(formPar);
         }
-    
-        
-        
-        String answer1 = "Resposta de teste";
+        String answer1 = "10/05/2021";
+        String answer2 = "20/05/2021";
+        String answer3 = "Ferias";
+        String answer4 = "Vou de Ferias";
         values.add(answer1);
-        
-        //requestService(s1, formParameters, values, c1);
-        
-        
-        
-        ///////////
-        Service s2 = servRepo.findByServiceCode(ServiceCode.valueOf("S5")).get();
-        Form f2 = s2.getForm();
+        values.add(answer2);
+        values.add(answer3);
+        values.add(answer4);
+        requestService(s1, formParameters, values, c1);
+        //SERVICE1
+        */
        
-        
-        formParameters = new ArrayList();
-        for (FormParameter formPar : f2.getFormParameters()) {
+       
+        /*//SERVICE2
+        Service s2 = servRepo.findByServiceCode(ServiceCode.valueOf("S2")).get();
+        Form f2 = s2.getForm();
+        formParameters2 = new ArrayList();
+        for (FormParameter formPar : f1.getFormParameters()) {
             formParameters.add(formPar);
         }
-    
-        
-        
-        String answer2 = "Sim";
-        String answer3 = "É possível";
-        String answer4 = "20%";
-        String answer5 = "10/05/2022";
-        
-        values2.add(answer2);
-        values2.add(answer3);
-        values2.add(answer4);
+        String answer5 = "12345";
+        String answer6 = "Joao";
+        String answer7 = "percentual";
+        String answer8 = "5";
+        String answer9 = "20";
+        String answer10 = "10";
+        String answer11 = "789927189";
+        String answer12 = "20/05/2021";
+        String answer13 = "cartao de colaborador";
         values2.add(answer5);
-        
+        values2.add(answer6);
+        values2.add(answer7);
+        values2.add(answer8);
+        values2.add(answer9);
+        values2.add(answer10);
+        values2.add(answer11);
+        values2.add(answer12);
+        values2.add(answer13);
         requestService(s2, formParameters, values2, c1);
-        
-        
-        //////////
-        
+        //SERVICE2
+    
+      */
         
         
         return true;

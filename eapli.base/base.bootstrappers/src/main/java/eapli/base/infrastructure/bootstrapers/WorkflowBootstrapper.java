@@ -39,28 +39,44 @@ public class WorkflowBootstrapper implements Action {
     private final ServiceRepository serviceRepo = PersistenceContext.repositories().services();
     private final ActivityRepository actRepo = PersistenceContext.repositories().activities();
 
-    List<Activity> activities = new ArrayList<>();
-    List<Activity> activities2 = new ArrayList<>();
+    List<Activity> activitiesServ1 = new ArrayList<>();
+    List<Activity> activitiesServ2 = new ArrayList<>();
+    List<Activity> activitiesDemo = new ArrayList<>();
+    
 
     @Override
     public boolean execute() {
-        Activity a1 = actRepo.findByActivityId(ActivityId.valueOf("A1")).get();
-        Activity a2 = actRepo.findByActivityId(ActivityId.valueOf("A3")).get();
-        
-        //Service s1 = serviceRepo.findByServiceCode(ServiceCode.valueOf("S1")).get();
-        Service s5 = serviceRepo.findByServiceCode(ServiceCode.valueOf("S5")).get();
      
-        activities.add(a1);
-        activities2.add(a2);
-        activities2.add(a1);
         
         
-        //activities.add(a2);
+        //SERVICE 1
+        Service s1 = serviceRepo.findByServiceCode(ServiceCode.valueOf("S1")).get();
+        Activity a1 = actRepo.findByActivityId(ActivityId.valueOf("A1")).get();
+        Activity a2 = actRepo.findByActivityId(ActivityId.valueOf("A2")).get();
+        activitiesServ1.add(a1);
+        activitiesServ1.add(a2);
+        registerNewWorkflow("W1", activitiesServ1, s1);
+        //SERVICE 1
         
-
-        //registerNewWorkflow("W1", activities, s1);
+        //SERVICE 2
+        Service s2 = serviceRepo.findByServiceCode(ServiceCode.valueOf("S2")).get();
+        Activity a3 = actRepo.findByActivityId(ActivityId.valueOf("A3")).get();
+        Activity a4 = actRepo.findByActivityId(ActivityId.valueOf("A4")).get();
+        activitiesServ2.add(a3);
+        activitiesServ2.add(a4);
+        registerNewWorkflow("W2", activitiesServ2, s2);
+        //SERVICE 2
         
-        registerNewWorkflow("W2", activities2, s5);
+         //SERVICE 3
+        Service s3 = serviceRepo.findByServiceCode(ServiceCode.valueOf("S3")).get();
+        Activity a5 = actRepo.findByActivityId(ActivityId.valueOf("A5")).get();
+        Activity a6 = actRepo.findByActivityId(ActivityId.valueOf("A6")).get();
+        activitiesDemo.add(a5);
+        activitiesDemo.add(a6);
+        registerNewWorkflow("W3", activitiesDemo, s3);
+        //SERVICE 3
+  
+        
        
         return true;
     }

@@ -24,9 +24,11 @@ import org.slf4j.LoggerFactory;
     public boolean execute() {  
         
         registerNewTeam("001", "TeamA", "Team AAAA");
-        registerNewTeam("002", "TeamB", "Team BBBB"); //setor de vendas
+        registerNewTeam("002", "TeamB", "Team BBBB"); 
         registerNewTeam("003", "TeamC", "Team CCCC");
-        registerNewTeam("004", "TeamD", "Team DDDD");
+        registerNewTeam("004", "TeamE", "Team DDDD");
+        registerNewTeam("005", "TeamF", "Team EEEE");
+        registerNewTeam("006", "TeamG", "Team FFFF");
         
         return true;
     }

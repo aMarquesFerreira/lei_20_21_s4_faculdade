@@ -50,19 +50,14 @@ public class AssigneActivityToColabBootstrapper implements Action {
     public boolean execute() {
         Colaborator c1 = colabRepo.findByMecanographicNumber(MecanographicNumber.valueOf("isep959")).get();
         
-        Ticket ticket = ticketRepo.findByTicketId(TicketId.valueOf(2021,1)).get();
-        
+        /*Ticket ticket = ticketRepo.findByTicketId(TicketId.valueOf(2021,2)).get();
         WorkFlowExecution wfe = ticket.getWorkFlowExecution();
-        
         ActivityExecution ae = ((List<ActivityExecution>)wfe.activityExecutions()).get(0); //	2021/1.A1
-        
-        //ActivityExecution a1 = actRepo.findByActivityId(ActivityId.valueOf("A2")).get();
-        
         assignActivityToColab(c1, ae);
         
-        ticketRepo.save(ticket);
+        ticketRepo.save(ticket);*/
         
-        //actRepo.save(a1);
+        
 
         return true;
     }

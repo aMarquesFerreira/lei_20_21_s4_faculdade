@@ -32,28 +32,43 @@ public class CatalogueBootstrapper implements Action {
     private final ColaboratorRepository colabRepo = PersistenceContext.repositories().colaborators();
     private final TeamRepository teamRepo = PersistenceContext.repositories().teams();
 
-    private final List<Team> teams = new ArrayList<Team>();
+    private final List<Team> allTeams = new ArrayList<Team>();
+    private final List<Team> salesTeams = new ArrayList<Team>();
 
 
     @Override
     public boolean execute() {
         Colaborator c1 = colabRepo.findByMecanographicNumber(MecanographicNumber.valueOf("isep959")).get();
+        //Colaborator c2 = colabRepo.findByMecanographicNumber(MecanographicNumber.valueOf("isep960")).get();
         Team team1 = teamRepo.findByTeamCode(TeamCode.valueOf("001")).get();
         Team team2 = teamRepo.findByTeamCode(TeamCode.valueOf("002")).get();
-
-        List<Team> teams = new ArrayList<>();
-        List<Team> teams2 = new ArrayList<>();
-        teams.add(team1);
-        teams2.add(team2);
+        Team team3 = teamRepo.findByTeamCode(TeamCode.valueOf("003")).get();
+        Team team4 = teamRepo.findByTeamCode(TeamCode.valueOf("004")).get();
+        Team team5 = teamRepo.findByTeamCode(TeamCode.valueOf("005")).get();
+        Team team6 = teamRepo.findByTeamCode(TeamCode.valueOf("006")).get();
         
-
-        registerNewCatalogue(c1, "Catalogue with services for vacations ex", "Vacations", "Vacations Catalogue", teams);
-        registerNewCatalogue(c1, "Catalogue for repairs ex", "Repairs", "Repairs Catalogue", teams);
-        registerNewCatalogue(c1, "Catalogue For Books ex", "Books", "Books Catalogue", teams);
+        //ALL TEAMS
+        allTeams.add(team1);
+        allTeams.add(team2);
+        allTeams.add(team3);
+        allTeams.add(team4);
+        allTeams.add(team5);
+        allTeams.add(team6);
+        //ALL TEAMS
         
-        //Service2
-        registerNewCatalogue(c1, "Catalogo de Descontos", "Catalogo com servicos de descontos", "Catalogo de Descontos", teams2);
-       //Service2
+        //CATALOGUE WITH SERVICE 1
+        registerNewCatalogue(c1, "Catalogo Ausencias", "Ausencias", "Catalogo onde contem servicos para ausencias", allTeams);
+        //CATALOGUE WITH SERVICE 1
+        
+        //CATALOGUE WITH SERVICE 2
+        salesTeams.add(team6);
+        registerNewCatalogue(c1, "Catalogo Descontos", "Descontos", "Catalogo onde contem servicos para descontos", allTeams);
+        //CATALOGUE WITH SERVICE 2
+        
+        
+        //CATALOGUE WITH SERVICE 3
+        registerNewCatalogue(c1, "Catalogo Demonstracao atividades auto", "Demonstracao", "Catalogo para demonstracao atividades automaticas", allTeams);
+        //CATALOGUE WITH SERVICE 3
 
         return true;
     }

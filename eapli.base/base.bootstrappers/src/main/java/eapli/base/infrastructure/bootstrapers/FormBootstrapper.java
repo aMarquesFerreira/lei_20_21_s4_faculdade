@@ -40,167 +40,121 @@ public class FormBootstrapper implements Action{
     private final List<Service> services = new ArrayList<Service>();
     List<FormParameter> formParameters = new ArrayList<>();
 
-    List<FormParameter> formParameters2 = new ArrayList<>();
-    List<FormParameter> formParameters3 = new ArrayList<>();
+    List<FormParameter> formParService1 = new ArrayList<>();
+    List<FormParameter> formParService2 = new ArrayList<>();
 
     
 
     @Override
     public boolean execute() {
-        FormParameter fp1 = new FormParameter(FormParameterId.valueOf("2"),
-                Designation.valueOf("test Name"),
-                Label.valueOf("test"),
-                Description.valueOf("test"),
-                FormParameterData.valueOf("Boolean"));
-        formParameters.add(fp1);
-
-        /*FormParameter fp2 = new FormParameter(FormParameterId.valueOf("3"),
-                Designation.valueOf("Internal Code"),
-                Label.valueOf("IC"),
-                Description.valueOf("internal code of the client"),
-                FormParameterData.valueOf("String"));
         
-        FormParameter fp3 = new FormParameter(FormParameterId.valueOf("4"),
+        //FOR SERVICE1
+        FormParameter fp1 = new FormParameter(FormParameterId.valueOf("FP1"),
+                Designation.valueOf("Período de ausência (data inicio)"),
+                Label.valueOf("P.A"),
+                Description.valueOf("Período de ausência (data inicio)"),
+                FormParameterData.valueOf("STRING"));
+        
+        FormParameter fp2 = new FormParameter(FormParameterId.valueOf("FP2"),
+                Designation.valueOf("Período de ausência (data fim)"),
+                Label.valueOf("P.F"),
+                Description.valueOf("Período de ausência (data fim)"),
+                FormParameterData.valueOf("STRING"));
+        
+        FormParameter fp3 = new FormParameter(FormParameterId.valueOf("FP3"),
+                Designation.valueOf("Tipo Ausência"),
+                Label.valueOf("T.A"),
+                Description.valueOf("Tipo Ausência"),
+                FormParameterData.valueOf("STRING"));
+        
+        FormParameter fp4 = new FormParameter(FormParameterId.valueOf("FP4"),
+                Designation.valueOf("Justificação"),
+                Label.valueOf("J"),
+                Description.valueOf("Justificação"),
+                FormParameterData.valueOf("STRING"));
+        
+        formParService1.add(fp1);
+        formParService1.add(fp2);
+        formParService1.add(fp3);
+        formParService1.add(fp4);
+        
+        Service svc1 = servRepo.findByServiceCode(ServiceCode.valueOf("S1")).get();
+        registerNewFormInService("F1", "Formulario de pedido de ausencia",svc1, formParService1);
+        //FOR SERVICE 1
+        
+        
+        
+        //FOR SERVICE 2
+        FormParameter fp5 = new FormParameter(FormParameterId.valueOf("FP14"),
+                Designation.valueOf("Código Interno Cliente"),
+                Label.valueOf("CIC"),
+                Description.valueOf("Código Interno Cliente"),
+                FormParameterData.valueOf("STRING"));
+        
+        FormParameter fp6 = new FormParameter(FormParameterId.valueOf("FP15"),
                 Designation.valueOf("Nome"),
                 Label.valueOf("N"),
-                Description.valueOf("Name of the requester"),
-                FormParameterData.valueOf("String"));
-        
-        FormParameter fp4 = new FormParameter(FormParameterId.valueOf("5"),
-                Designation.valueOf("Tipo de desconto"),
-                Label.valueOf("TD"),
-                Description.valueOf("Tipo de desconto"),
-                FormParameterData.valueOf("String"));
-        
-        FormParameter fp5 = new FormParameter(FormParameterId.valueOf("6"),
-                Designation.valueOf("Recorrência"),
-                Label.valueOf("R"),
-                Description.valueOf("Recorrência"),
-                FormParameterData.valueOf("Integer"));
-        
-        FormParameter fp6 = new FormParameter(FormParameterId.valueOf("7"),
-                Designation.valueOf("Percentagem de Desconto"),
-                Label.valueOf("PD"),
-                Description.valueOf("Percentagem de Desconto"),
-                FormParameterData.valueOf("Integer"));
-        
-        FormParameter fp7 = new FormParameter(FormParameterId.valueOf("8"),
-                Designation.valueOf("Valor de Desconto"),
-                Label.valueOf("VD"),
-                Description.valueOf("Valor de Desconto"),
-                FormParameterData.valueOf("Integer"));
-        
-        FormParameter fp8 = new FormParameter(FormParameterId.valueOf("9"),
-                Designation.valueOf("Identificação da Fatura"),
-                Label.valueOf("IF"),
-                Description.valueOf("Identificação da Fatura"),
-                FormParameterData.valueOf("String"));
-        
-        FormParameter fp9 = new FormParameter(FormParameterId.valueOf("10"),
-                Designation.valueOf("Data Limite"),
-                Label.valueOf("DL"),
-                Description.valueOf("Data Limite"),
-                FormParameterData.valueOf("String"));// pode mudar
-        
-        FormParameter fp10 = new FormParameter(FormParameterId.valueOf("11"),
-                Designation.valueOf("Fundamentação do pedido"),
-                Label.valueOf("FP"),
-                Description.valueOf("Fundamentação do pedido"),
-                FormParameterData.valueOf("String"));*/
-        
-        ///////////////// FOR SERVICE 2//
- 
-        FormParameter fp11 = new FormParameter(FormParameterId.valueOf("12"),
-                Designation.valueOf("Codigo Interno Cliente"),
-                Label.valueOf("CI"),
-                Description.valueOf("Codigo Interno Cliente"),
-                FormParameterData.valueOf("String"));
-        
-        FormParameter fp12 = new FormParameter(FormParameterId.valueOf("13"),
-                Designation.valueOf("Nome"),
-                Label.valueOf("NM"),
                 Description.valueOf("Nome"),
-                FormParameterData.valueOf("String"));
+                FormParameterData.valueOf("STRING"));
         
-        FormParameter fp13 = new FormParameter(FormParameterId.valueOf("14"),
+        FormParameter fp7 = new FormParameter(FormParameterId.valueOf("FP16"),
                 Designation.valueOf("Tipo de Desconto"),
                 Label.valueOf("TD"),
                 Description.valueOf("Tipo de Desconto"),
-                FormParameterData.valueOf("String"));// pode mudar
+                FormParameterData.valueOf("STRING"));
         
-        FormParameter fp14 = new FormParameter(FormParameterId.valueOf("15"),
+        FormParameter fp8 = new FormParameter(FormParameterId.valueOf("FP17"),
                 Designation.valueOf("Recorrência"),
-                Label.valueOf("RC"),
+                Label.valueOf("R"),
                 Description.valueOf("Recorrência"),
                 FormParameterData.valueOf("STRING"));
         
-         FormParameter fp15 = new FormParameter(FormParameterId.valueOf("15"),
+         FormParameter fp9 = new FormParameter(FormParameterId.valueOf("FP18"),
                 Designation.valueOf("Percentagem de Desconto"),
                 Label.valueOf("PD"),
                 Description.valueOf("Percentagem de Desconto"),
-                FormParameterData.valueOf("STRING"));
-         
-          FormParameter fp16 = new FormParameter(FormParameterId.valueOf("15"),
+                FormParameterData.valueOf("INTEGER"));
+        
+        FormParameter fp10 = new FormParameter(FormParameterId.valueOf("FP19"),
                 Designation.valueOf("Valor de Desconto"),
                 Label.valueOf("VD"),
                 Description.valueOf("Valor de Desconto"),
-                FormParameterData.valueOf("STRING"));
-          
-           FormParameter fp17 = new FormParameter(FormParameterId.valueOf("15"),
-                Designation.valueOf("Identificação da Fatura,"),
+                FormParameterData.valueOf("INTEGER"));
+        
+        FormParameter fp11 = new FormParameter(FormParameterId.valueOf("FP20"),
+                Designation.valueOf("Identificação da Fatura"),
                 Label.valueOf("IF"),
-                Description.valueOf("Identificação da Fatura,"),
+                Description.valueOf(" Identificação da Fatura"),
                 FormParameterData.valueOf("STRING"));
-           
-            FormParameter fp18 = new FormParameter(FormParameterId.valueOf("15"),
+        
+        FormParameter fp12 = new FormParameter(FormParameterId.valueOf("FP21"),
                 Designation.valueOf("Data Limite"),
                 Label.valueOf("DL"),
                 Description.valueOf("Data Limite"),
                 FormParameterData.valueOf("STRING"));
-            
-             FormParameter fp19 = new FormParameter(FormParameterId.valueOf("15"),
+        
+        FormParameter fp13 = new FormParameter(FormParameterId.valueOf("FP22"),
                 Designation.valueOf("Fundamentação do pedido"),
                 Label.valueOf("FP"),
                 Description.valueOf("Fundamentação do pedido"),
                 FormParameterData.valueOf("STRING"));
         
+        formParService2.add(fp5);
+        formParService2.add(fp6);
+        formParService2.add(fp7);
+        formParService2.add(fp8);
+        formParService2.add(fp9);
+        formParService2.add(fp10);
+        formParService2.add(fp11);
+        formParService2.add(fp12);
+        formParService2.add(fp13);
         
-        ///////////////////// FOR SERVICE 2
+        Service svc2 = servRepo.findByServiceCode(ServiceCode.valueOf("S2")).get();
+        registerNewFormInService("F3", "Formulario de pedido de desconto",svc2, formParService2);
+        //FOR SERVICE 2
         
         
-       /* //SERVICE 1
-        formParameters2.add(fp2);
-        formParameters2.add(fp3);
-        formParameters2.add(fp4);
-        formParameters2.add(fp5);
-        formParameters2.add(fp6);
-        formParameters2.add(fp7);
-        formParameters2.add(fp8);
-        formParameters2.add(fp9);
-        formParameters2.add(fp10);
-        //SERVICE 1*/
         
-        //SERVICE 2
-        formParameters3.add(fp11);
-        formParameters3.add(fp12);
-        formParameters3.add(fp13);
-        formParameters3.add(fp14);
-        formParameters3.add(fp15);
-        formParameters3.add(fp16);
-        formParameters3.add(fp17);
-        formParameters3.add(fp18);
-        formParameters3.add(fp19);
-        Service svc2 = servRepo.findByServiceCode(ServiceCode.valueOf("S5")).get();
-        registerNewFormInService("F4", "Formulario de Descontos",svc2, formParameters3);
-        //SERVICE 2
-    
-        
-        Service svc1 = servRepo.findByServiceCode(ServiceCode.valueOf("S1")).get();
-       
-
-        
-            
-        registerNewFormInService("F1", "Form1",svc1, formParameters);
         
         
         

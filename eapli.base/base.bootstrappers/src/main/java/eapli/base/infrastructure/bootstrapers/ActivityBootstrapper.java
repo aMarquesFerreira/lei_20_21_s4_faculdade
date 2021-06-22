@@ -33,13 +33,25 @@ public class ActivityBootstrapper implements Action {
 
     @Override
     public boolean execute() {
-        Colaborator c1 = colabRepo.findByMecanographicNumber(MecanographicNumber.valueOf("isep959")).get();
+        //Colaborator c1 = colabRepo.findByMecanographicNumber(MecanographicNumber.valueOf("isep959")).get();
         //Form f1 = formRepo.findByFormId(FormId.valueOf("F1")).get();
         
-        registerNewActivity("A1", "Enviar Email","A",4/*, c1*/);
-        registerNewActivity("A2", "send email","M", 4/*, c1*/);
-        registerNewActivity("A3", "Aprovação Email","M",1/*, c1*/);
-        //registerNewActivity("A2", "sum all the costs", c1);
+        //registerNewActivity("A1", "Enviar Email","A",4);
+        
+        // SERVICE 1
+        registerNewActivity("A1", "Aprovação de pedido de ausencia","M", 4);
+        registerNewActivity("A2", "Realizacao de pedido de ausencia","M", 4);
+        // SERVICE 1
+        
+        // SERVICE 2
+        registerNewActivity("A3", "Aprovação de desconto","M", 2);
+        registerNewActivity("A4", "Enviar Email","A", 1);
+        // SERVICE 2
+        
+         // SERVICE 3
+        registerNewActivity("A5", "DemonstracaoAuto1","A", 2);
+        registerNewActivity("A6", "DemonstracaoAuto2","A", 1);
+        // SERVICE 3
 
         return true;
     }

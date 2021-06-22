@@ -40,23 +40,22 @@ public class ServiceBootstrapper implements Action {
 
     @Override
     public boolean execute() {
-        Catalogue c1 = catRepo.findByCatalogueId(CatalogueId.valueOf("Catalogue with services for vacations ex")).get();
-        Catalogue c2 = catRepo.findByCatalogueId(CatalogueId.valueOf("Catalogue for repairs ex")).get();
+        //SERVICE 1
+        Catalogue c1 = catRepo.findByCatalogueId(CatalogueId.valueOf("Catalogo Ausencias")).get();
+        registerNewService("S1", "Pedido de Ausência Futura", "Ausencia", c1 );
+        //SERVICE 1
         
-        //FOR SERVICE 2
-        Catalogue c3 = catRepo.findByCatalogueId(CatalogueId.valueOf("Catalogo de Descontos")).get();
-        registerNewService("S5", "Autorização para Aplicação de Desconto", "Desconto", c3 );
-        //FOR SERVICE 2
+        //SERVICE 2
+        Catalogue c2 = catRepo.findByCatalogueId(CatalogueId.valueOf("Catalogo Descontos")).get();
+        registerNewService("S2", "Autorização para Aplicação de Desconto", "Aplicação de Desconto", c2 );
+        //SERVICE 2
         
- 
-        //TESTES
-        registerNewService("S1", "Vacations", "Vacations Service", c1);
-        registerNewService("S2", "ask for Repairs", "repairs Service", c2);
-        registerNewService("S3", "ask for books", "books Service", c1);
-        registerNewService("S4", "ask for discount", "discount", c3);
-        //TESTES
         
-       
+        //SERVICE 3
+        Catalogue c3 = catRepo.findByCatalogueId(CatalogueId.valueOf("Catalogo Demonstracao atividades auto")).get();
+        registerNewService("S3", "Demonstracao atividades automaticas", "Demonstracao atividades automaticas", c3 );
+        //SERVICE 3
+     
         
 
         return true;

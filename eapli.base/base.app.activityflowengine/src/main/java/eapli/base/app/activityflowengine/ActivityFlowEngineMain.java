@@ -17,6 +17,7 @@ import eapli.base.app.activityflowengine.client.ClientSSL;
 import eapli.base.app.activityflowengine.client.ClientSSLMain;
 import eapli.base.app.activityflowengine.client.InitializeConnectionAction;
 import eapli.base.colaboratormanagement.domain.Colaborator;
+import eapli.base.colaboratormanagement.repositories.ColaboratorRepository;
 import eapli.base.formmanagement.domain.FormAnswer;
 import eapli.base.formmanagement.domain.FormParameterAnswer;
 import eapli.base.infrastructure.persistence.PersistenceContext;
@@ -50,6 +51,7 @@ public final class ActivityFlowEngineMain {
     private static AssignColaboratorAlgorithm assignAlgorithm;
     private static TeamRepository teamRepo = PersistenceContext.repositories().teams();
     private static ActivityExecutionRepository actExecRepo = PersistenceContext.repositories().activityExecutions();
+    private static ColaboratorRepository colabRepo = PersistenceContext.repositories().colaborators();
     private static final String KEYSTORE_PASS = "forgotten";
     
     /**
@@ -161,7 +163,7 @@ public final class ActivityFlowEngineMain {
         
         while(true){
             
-            //assignManualTasks(); <<<<<<<<<<<<<<<<<<<<
+            assignManualTasks(); 
             
             executeAutomaticTasks();
             try{    
@@ -178,10 +180,35 @@ public final class ActivityFlowEngineMain {
         
     }
     
+    //----------------------------------//
+    
+    static List<TicketActivityExecutionDto> running1 = new ArrayList<>();
+    static List<Colaborator> listColabs = new ArrayList<>();
+    
+    private static void assignManualTasks() {
+        
+       Iterable<ActivityExecution> activities = actExecRepo.findAll();
+       ActivityDistribution1 assignActivityToColab = new ActivityDistribution1();
+       //AlgorithmFCFS1 fcfs = new AlgorithmFCFS1();
+       Team team = teamRepo.findByTeamCode(TeamCode.valueOf("001")).get();
+       
+        for (ActivityExecution actExec : activities) {   
+            if (actExec.getColaborator()==null){
+                Colaborator colab = assignAlgorithm.next(team);
+                assignActivityToColab.assignActivityToColab(colab, actExec);
+                System.out.println("activity assigned to " + colab.identity().toString());
+            }
+        }
+    
+    }
+    
+    //----------------------------------//
+    
     
     static TicketRepository ticketRepo = PersistenceContext.repositories().tickets();
 
     static List<TicketActivityExecutionDto> running = new ArrayList<>();
+    
     
 
     public static void signalExecuted(TicketActivityExecutionDto activity){
@@ -235,7 +262,7 @@ public final class ActivityFlowEngineMain {
         //script += "to: "+ activity.ticket.booker().user().email() +"\n";
         script += "to: "+ activity.ticket.booker().user().email() +"\n";
         script += "script: Recusado Nao Pode 20% 0\n";
-        script += "subject: Mensagem de Teste\n"; 
+        script += "subject: Resposta ao Pedido\n"; 
         script += "body: \n"; 
         for (FormParameterAnswer fpa : form.getFormParameters()) {
             script += fpa.formParameter().description()+": " + fpa.answer() + "\n"; 
@@ -248,6 +275,7 @@ public final class ActivityFlowEngineMain {
         
         
         String server = serverAlgorithm.getServer();
+        System.out.println("Selected Server: " + server);
         //String server = "127.0.0.1";
         Sdp2021Message msg = new Sdp2021Message(Sdp2021.VERSION, (byte)20, script.getBytes());
         

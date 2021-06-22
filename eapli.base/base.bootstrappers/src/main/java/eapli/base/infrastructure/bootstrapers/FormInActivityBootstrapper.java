@@ -39,54 +39,138 @@ public class FormInActivityBootstrapper implements Action{
    
     private final List<Service> services = new ArrayList<Service>();
     private final List<FormParameter> formParameters = new ArrayList<FormParameter>();
+    private final List<FormParameter> fpApprovAusencia = new ArrayList<FormParameter>();
+    private final List<FormParameter> formParameters2 = new ArrayList<FormParameter>();
 
     
 
     @Override
     public boolean execute() {
-        FormParameter fp1 = new FormParameter(FormParameterId.valueOf("1"),
-                Designation.valueOf("User Name"),
-                Label.valueOf("NAME"),
-                Description.valueOf("Name of the person filling the form"),
+        
+        //SERVICE 1
+        FormParameter fp1 = new FormParameter(FormParameterId.valueOf("FP5"),
+                Designation.valueOf("Dias de férias já gozados no ano"),
+                Label.valueOf("DF"),
+                Description.valueOf("Dias de férias já gozados no ano"),
+                FormParameterData.valueOf("String"));
+        
+        FormParameter fp2 = new FormParameter(FormParameterId.valueOf("FP6"),
+                Designation.valueOf("Dias de férias gozados do período solicitado"),
+                Label.valueOf("DFS"),
+                Description.valueOf("Dias de férias gozados do período solicitado"),
+                FormParameterData.valueOf("String"));
+        
+        FormParameter fp3 = new FormParameter(FormParameterId.valueOf("FP7"),
+                Designation.valueOf("Dias de férias totais"),
+                Label.valueOf("DFT"),
+                Description.valueOf("Dias de férias totais"),
+                FormParameterData.valueOf("String"));
+        
+        FormParameter fp4 = new FormParameter(FormParameterId.valueOf("FP8"),
+                Designation.valueOf("Dias de falta justificadas já ocorridas no ano"),
+                Label.valueOf("DF"),
+                Description.valueOf("Dias de falta justificadas já ocorridas no ano"),
+                FormParameterData.valueOf("String"));
+        
+        FormParameter fp5 = new FormParameter(FormParameterId.valueOf("FP9"),
+                Designation.valueOf("Dias de faltas justificadas do período solicitado"),
+                Label.valueOf("DF"),
+                Description.valueOf("Dias de faltas justificadas do período solicitado"),
+                FormParameterData.valueOf("String"));
+        
+        FormParameter fp6 = new FormParameter(FormParameterId.valueOf("FP10"),
+                Designation.valueOf("Dias de faltas justificadas totais"),
+                Label.valueOf("DF"),
+                Description.valueOf("Dias de faltas justificadas totais"),
+                FormParameterData.valueOf("String"));
+        
+        FormParameter fp7 = new FormParameter(FormParameterId.valueOf("FP11"),
+                Designation.valueOf("Dias de falta não justificadas já ocorridas no ano"),
+                Label.valueOf("DF"),
+                Description.valueOf("Dias de falta não justificadas já ocorridas no ano"),
+                FormParameterData.valueOf("String"));
+        
+        FormParameter fp8 = new FormParameter(FormParameterId.valueOf("FP12"),
+                Designation.valueOf("Dias de faltas não justificadas do período solicitado"),
+                Label.valueOf("DF"),
+                Description.valueOf("Dias de faltas não justificadas do período solicitado"),
+                FormParameterData.valueOf("String"));
+        
+        FormParameter fp9 = new FormParameter(FormParameterId.valueOf("FP13"),
+                Designation.valueOf("Dias de faltas não justificadas totais e uma comentário"),
+                Label.valueOf("DF"),
+                Description.valueOf("Dias de faltas não justificadas totais e uma comentário"),
                 FormParameterData.valueOf("String"));
         formParameters.add(fp1);
+        formParameters.add(fp2);
+        formParameters.add(fp3);
+        formParameters.add(fp4);
+        formParameters.add(fp5);
+        formParameters.add(fp6);
+        formParameters.add(fp7);
+        formParameters.add(fp8);
+        formParameters.add(fp9);
+        
+        Activity a1 = actRepo.findByActivityId(ActivityId.valueOf("A1")).get();
+        registerFormInActivity("F2", "Formulario para aprovar servico de ausencia",a1, formParameters);
         
         
-        
-        //FOR SERVICE 2
-        
-        FormParameter fp11 = new FormParameter(FormParameterId.valueOf("12"),
+        Activity a2 = actRepo.findByActivityId(ActivityId.valueOf("A2")).get();
+        FormParameter fp10 = new FormParameter(FormParameterId.valueOf("FP23"),
                 Designation.valueOf("Decisao"),
                 Label.valueOf("D"),
                 Description.valueOf("Decisao"),
                 FormParameterData.valueOf("String"));
         
-        FormParameter fp12 = new FormParameter(FormParameterId.valueOf("13"),
+        FormParameter fp11 = new FormParameter(FormParameterId.valueOf("FP24"),
+                Designation.valueOf("Fundamentacao da decisao"),
+                Label.valueOf("fd"),
+                Description.valueOf("Fundamentacao da decisao"),
+                FormParameterData.valueOf("String"));
+        
+        fpApprovAusencia.add(fp10);
+        fpApprovAusencia.add(fp11);
+        registerFormInActivity("F4", "Formulario para executar servico de ausencia",a2, fpApprovAusencia);
+        //SERVICE 1
+        
+        
+        //FOR SERVICE 2
+        
+        FormParameter fp12 = new FormParameter(FormParameterId.valueOf("FP25"),
+                Designation.valueOf("Decisao"),
+                Label.valueOf("D"),
+                Description.valueOf("Decisao"),
+                FormParameterData.valueOf("String"));
+        
+        FormParameter fp13 = new FormParameter(FormParameterId.valueOf("FP26"),
                 Designation.valueOf("Motivo"),
                 Label.valueOf("M"),
                 Description.valueOf("Motivo da decisao"),
                 FormParameterData.valueOf("String"));
         
-        FormParameter fp13 = new FormParameter(FormParameterId.valueOf("14"),
+        FormParameter fp14 = new FormParameter(FormParameterId.valueOf("FP27"),
                 Designation.valueOf("Percentagem de desconto"),
                 Label.valueOf("D"),
                 Description.valueOf("Percentagem de desconto"),
                 FormParameterData.valueOf("String"));// pode mudar
         
-        FormParameter fp14 = new FormParameter(FormParameterId.valueOf("15"),
+        FormParameter fp15 = new FormParameter(FormParameterId.valueOf("FP28"),
                 Designation.valueOf("data limite (caso faça sentido)"),
                 Label.valueOf("DL"),
                 Description.valueOf("data limite (caso faça sentido)"),
                 FormParameterData.valueOf("STRING"));
         
+        formParameters2.add(fp12);
+        formParameters2.add(fp13);
+        formParameters2.add(fp14);
+        formParameters2.add(fp15);
         
         
+        Activity a3 = actRepo.findByActivityId(ActivityId.valueOf("A3")).get();
+        registerFormInActivity("F6", "Formulario para aprovar servico de desconto",a3, formParameters2);
         // FOR SERVICE 2
         
-        Activity a1 = actRepo.findByActivityId(ActivityId.valueOf("A3")).get();
         
-        registerFormInActivity("F8", "Form3",a1, formParameters);
-        //registerFormInActivity("F4", "Form2",a1, formParameters);
 
         return true;
     }

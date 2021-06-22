@@ -17,6 +17,7 @@ public class ClientSSLMain {
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args) {
         
         InitializeConnectionAction initializeConnectionAction = new InitializeConnectionAction();

@@ -70,7 +70,7 @@ public class teste {
    public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         String teste = scanner.nextLine();
-        FileInputStream fis = new FileInputStream(new File("eapli.base/base.core/src/main/java/eapli/base/ANTLR/testeRules.txt"));
+        //FileInputStream fis = new FileInputStream(new File("eapli.base/base.core/src/main/java/eapli/base/ANTLR/testeRules.txt"));
         DiscountApprovalLexer lexer = new DiscountApprovalLexer(new ANTLRInputStream(teste));
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         DiscountApprovalParser parser = new DiscountApprovalParser(tokens);
